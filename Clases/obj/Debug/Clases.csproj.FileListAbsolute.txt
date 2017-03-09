@@ -3,3 +3,8 @@ c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\Clases\bin\D
 c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\Clases\obj\Debug\Clases.dll
 c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\Clases\obj\Debug\Clases.pdb
 C:\Users\Usuario\documents\visual studio 2010\Projects\ProyectoLab3\Clases\obj\Debug\Clases.csprojResolveAssemblyReference.cache
+C:\ProyectoLab3\Clases\bin\Debug\Clases.dll
+C:\ProyectoLab3\Clases\bin\Debug\Clases.pdb
+C:\ProyectoLab3\Clases\obj\Debug\Clases.csprojResolveAssemblyReference.cache
+C:\ProyectoLab3\Clases\obj\Debug\Clases.dll
+C:\ProyectoLab3\Clases\obj\Debug\Clases.pdb

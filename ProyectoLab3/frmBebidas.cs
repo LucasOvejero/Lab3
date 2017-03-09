@@ -15,16 +15,17 @@ namespace ProyectoLab3
         {
             InitializeComponent();
         }
-
+        clsBebida bebida;
         private void frmBebidas_Load(object sender, EventArgs e)
         {
+            bebida = new clsBebida();
             refrescar();
         }
 
         private void refrescar()
         {
             dgvBebidas.DataSource = null;
-            dgvBebidas.DataSource = clsConexion.seleccionarBebidas();
+            dgvBebidas.DataSource = bebida.seleccionarBebidas();
         }
     }
 }
