@@ -1,0 +1,5 @@
+c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\Clases\bin\Debug\Clases.dll
+c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\Clases\bin\Debug\Clases.pdb
+c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\Clases\obj\Debug\Clases.dll
+c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\Clases\obj\Debug\Clases.pdb
+C:\Users\Usuario\documents\visual studio 2010\Projects\ProyectoLab3\Clases\obj\Debug\Clases.csprojResolveAssemblyReference.cache
