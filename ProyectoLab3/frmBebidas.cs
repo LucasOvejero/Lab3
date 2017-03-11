@@ -27,5 +27,16 @@ namespace ProyectoLab3
             dgvBebidas.DataSource = null;
             dgvBebidas.DataSource = bebida.seleccionarBebidas();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            bebida.NombreBebida = tbNombre.Text;
+            bebida.Alcohol = cbAlcohol.Checked;
+            bebida.Costo = nudCosto.Value;
+            bebida.Precio = nudPrecio.Value;
+            bebida.Litros = nudLitros.Value;
+            bebida.insertarBebida();
+            refrescar();
+        }
     }
 }

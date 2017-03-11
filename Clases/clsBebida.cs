@@ -58,13 +58,12 @@ namespace Clases
         public int insertarBebida()
         {
             int r = 0;
-            SqlParameter[] parametros = new SqlParameter[6];
+            SqlParameter[] parametros = new SqlParameter[5];
             parametros[0] = new SqlParameter("@Nombre", NombreBebida);
-            parametros[1] = new SqlParameter("@Cantidad", Cantidad);
-            parametros[2] = new SqlParameter("@Costo", Costo);
-            parametros[3] = new SqlParameter("@Precio", Precio);
-            parametros[4] = new SqlParameter("@Litros", Litros);
-            parametros[5] = new SqlParameter("@Alcohol", Alcohol);
+            parametros[1] = new SqlParameter("@Costo", Costo);
+            parametros[2] = new SqlParameter("@Precio", Precio);
+            parametros[3] = new SqlParameter("@Litros", Litros);
+            parametros[4] = new SqlParameter("@Alcohol", Alcohol);
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "sp_IBebida";
@@ -72,7 +71,7 @@ namespace Clases
             {
                 comando.Connection = clsConexion.getCon();
                 comando.Parameters.AddRange(parametros);
-                r = (Int32)comando.ExecuteScalar();
+                r = (Int32)comando.ExecuteNonQuery();
             }
             catch (NullReferenceException n) { }
             catch (SqlException x) { }

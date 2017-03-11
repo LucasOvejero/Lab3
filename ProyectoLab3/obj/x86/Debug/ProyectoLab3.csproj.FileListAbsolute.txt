@@ -17,6 +17,6 @@ C:\ProyectoLab3\ProyectoLab3\bin\Debug\Clases.dll
 C:\ProyectoLab3\ProyectoLab3\bin\Debug\Clases.pdb
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csprojResolveAssemblyReference.cache
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.Form1.resources
-C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmBebidas.resources
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.Properties.Resources.resources
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csproj.GenerateResource.Cache
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmBebidas.resources
