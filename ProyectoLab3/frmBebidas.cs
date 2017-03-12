@@ -19,13 +19,15 @@ namespace ProyectoLab3
         private void frmBebidas_Load(object sender, EventArgs e)
         {
             bebida = new clsBebida();
-            refrescar();
+       
+            refrescarInterfaz();
         }
 
-        private void refrescar()
+        private void refrescarInterfaz()
         {
             dgvBebidas.DataSource = null;
             dgvBebidas.DataSource = bebida.seleccionarBebidas();
+            darFormato();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -36,7 +38,19 @@ namespace ProyectoLab3
             bebida.Precio = nudPrecio.Value;
             bebida.Litros = nudLitros.Value;
             bebida.insertarBebida();
-            refrescar();
+            refrescarInterfaz();
+        }
+
+        private void darFormato() {
+            if (dgvBebidas.DataSource != null)
+            {
+                dgvBebidas.Columns["IdBebida"].Visible = false;
+                dgvBebidas.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvBebidas.Columns["Costo"].DefaultCellStyle.Format = "c";
+                dgvBebidas.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvBebidas.Columns["Precio"].DefaultCellStyle.Format = "c";
+                dgvBebidas.Columns["Litros"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
         }
     }
 }
