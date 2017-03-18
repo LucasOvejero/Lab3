@@ -22,7 +22,7 @@ namespace Clases
         {
 
             ChangingText = true;
-            Regex decimalRegex = new Regex(@"(\d+([.,]\d{1,2})?)");
+            Regex decimalRegex = new Regex(@"(\d+([,]\d{1,2})?)");
             Match m = decimalRegex.Match(this.Text);
             if (m.Success)
             {

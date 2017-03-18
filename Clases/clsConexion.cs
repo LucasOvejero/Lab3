@@ -18,7 +18,10 @@ namespace Clases
 
         static public SqlConnection getCon()
         {
-            try { cnn.Open(); }
+            try {
+                if(cnn.State!= ConnectionState.Open)
+                    cnn.Open();
+                }
             catch (SqlException x) { }
             return cnn;
         }

@@ -54,7 +54,9 @@ namespace Clases
             set { costo = value; }
         }
         #endregion
-
+        SqlDataAdapter da = new SqlDataAdapter();
+        DataTable dt = new DataTable();
+        SqlCommand comando;
         public int insertarBebida()
         {
             int r = 0;
@@ -64,7 +66,7 @@ namespace Clases
             parametros[2] = new SqlParameter("@Precio", Precio);
             parametros[3] = new SqlParameter("@Litros", Litros);
             parametros[4] = new SqlParameter("@Alcohol", Alcohol);
-            SqlCommand comando = new SqlCommand();
+            comando = new SqlCommand();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "sp_IBebida";
             try
@@ -81,9 +83,9 @@ namespace Clases
         }
         public DataTable seleccionarBebidas()
         {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter();
-            SqlCommand comando = new SqlCommand("select * from Bebida");
+           
+           
+           comando = new SqlCommand("select * from Bebida");
             try
             {
                 comando.Connection = clsConexion.getCon();
@@ -93,6 +95,37 @@ namespace Clases
             catch (SqlException x) { }
             finally { clsConexion.closeCon(); }
             return dt;
+        }
+        public void eliminarBebida(int IdBebida)
+        {
+            
+            comando = new SqlCommand("delete from Bebida where IdBebida=" + IdBebida);
+            try
+            {
+                comando.Connection = clsConexion.getCon();
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException e) { }
+            finally { clsConexion.closeCon(); }
+           
+        }
+        public void modificarBebida(int IdBebida)
+        {
+            comando = new SqlCommand("update Bebida set NombreBebida=@Nombre, Costo=@Costo, Precio=@Precio, Litros=@Litros, Alcohol=@Alcohol where IdBebida=@IdBebida");
+            SqlParameter[] parametros = new SqlParameter[6];
+            parametros[0] = new SqlParameter("@Nombre", NombreBebida);
+            parametros[1] = new SqlParameter("@Costo", Costo);
+            parametros[2] = new SqlParameter("@Precio", Precio);
+            parametros[3] = new SqlParameter("@Litros", Litros);
+            parametros[4] = new SqlParameter("@Alcohol", Alcohol);
+            parametros[5] = new SqlParameter("@IdBebida", IdBebida);
+            try
+            {
+                comando.Connection = clsConexion.getCon();
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException e) { }
+            finally { clsConexion.closeCon(); }
         }
     }
 }

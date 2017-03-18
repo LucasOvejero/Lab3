@@ -16,6 +16,7 @@ namespace ProyectoLab3
             InitializeComponent();
         }
         clsBebida bebida;
+        
         private void frmBebidas_Load(object sender, EventArgs e)
         {
             bebida = new clsBebida();
@@ -51,6 +52,20 @@ namespace ProyectoLab3
                 dgvBebidas.Columns["Precio"].DefaultCellStyle.Format = "c";
                 dgvBebidas.Columns["Litros"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            int idSeleccionado;
+            if (dgvBebidas.SelectedRows != null)
+            {
+                idSeleccionado = (Int32)dgvBebidas.SelectedRows[0].Cells["IdBebida"].Value;
+                bebida.eliminarBebida(idSeleccionado);
+                refrescarInterfaz();
+                MessageBox.Show("Se ha eliminado correctamente la bebida", "Borrado");
+            }
+            else
+                MessageBox.Show("Seleccione la bebida en la grilla que desea eliminar","No se ha seleccionado bebida", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

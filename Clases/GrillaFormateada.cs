@@ -23,6 +23,7 @@ namespace Clases
            base.AllowUserToResizeColumns = false;
            base.AllowUserToResizeRows = false;
            base.RowHeadersVisible = false;
+           base.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
            base.ReadOnly = true;
         }
     }
