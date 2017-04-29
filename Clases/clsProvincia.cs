@@ -10,8 +10,8 @@ namespace Clases
     {
         int idProvincia;
         string nombreProvincia;
-        SqlCommand comando;
-        SqlDataAdapter adaptador= new SqlDataAdapter();
+       static SqlCommand comando;
+        static SqlDataAdapter adaptador= new SqlDataAdapter();
         public int IdProvincia{
             get { return idProvincia; }
             set { idProvincia = value; }
@@ -21,7 +21,7 @@ namespace Clases
             set { nombreProvincia = value; }
         }
 
-        public DataTable seleccionarProvincias() {
+        public static DataTable seleccionarProvincias() {
             DataTable prov = new DataTable("Provincias");
             comando = new SqlCommand("Select * from provincia");
             try

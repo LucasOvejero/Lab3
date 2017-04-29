@@ -20,3 +20,4 @@ C:\ProyectoLab3\ProyectoLab3\bin\Debug\Clases.pdb
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csprojResolveAssemblyReference.cache
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.exe
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.pdb
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmSucursales.resources

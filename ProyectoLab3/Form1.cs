@@ -28,6 +28,12 @@ namespace ProyectoLab3
             ofrmBebidas.ShowDialog();
         }
 
+        private void btnSuc_Click(object sender, EventArgs e)
+        {
+            frmSucursales ofrmSuc = new frmSucursales();
+            ofrmSuc.ShowDialog();
+        }
+
        
 
      
