@@ -8,7 +8,7 @@ namespace Clases
 {
     public static class clsConexion
     {
-        static string conexion = @"Data Source=cdr\sqlexpress ;Initial Catalog=lab3; User ID =NaLu ; Password=12345";
+        static string conexion = @"Data Source=cdr\sqlexpress ;Initial Catalog=lab3; User ID =NaLu ; Password=1234";
         static SqlConnection cnn = new SqlConnection(conexion);
 
         /*public clsConexion()

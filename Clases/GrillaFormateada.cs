@@ -25,6 +25,7 @@ namespace Clases
            base.RowHeadersVisible = false;
            base.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
            base.ReadOnly = true;
+           base.MultiSelect = false;
         }
     }
 }

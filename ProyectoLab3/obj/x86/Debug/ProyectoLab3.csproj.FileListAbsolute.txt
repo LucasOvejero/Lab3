@@ -9,15 +9,15 @@ c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\ProyectoLab3
 c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.exe
 c:\users\usuario\documents\visual studio 2010\Projects\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.pdb
 C:\Users\Usuario\documents\visual studio 2010\Projects\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmBebidas.resources
-C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.Form1.resources
-C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmBebidas.resources
-C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.Properties.Resources.resources
-C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csproj.GenerateResource.Cache
 C:\ProyectoLab3\ProyectoLab3\bin\Debug\ProyectoLab3.exe
 C:\ProyectoLab3\ProyectoLab3\bin\Debug\ProyectoLab3.pdb
 C:\ProyectoLab3\ProyectoLab3\bin\Debug\Clases.dll
 C:\ProyectoLab3\ProyectoLab3\bin\Debug\Clases.pdb
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csprojResolveAssemblyReference.cache
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.Form1.resources
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmBebidas.resources
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmSucursales.resources
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.Properties.Resources.resources
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csproj.GenerateResource.Cache
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.exe
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.pdb
-C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmSucursales.resources

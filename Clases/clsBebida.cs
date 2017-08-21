@@ -43,6 +43,7 @@ namespace Clases
             get { return nombreBebida; }
             set { nombreBebida = value; }
         }
+        DataTable dt = new DataTable();
         public int Cantidad
         {
             get { return cantidad; }
@@ -55,7 +56,6 @@ namespace Clases
         }
         #endregion
         SqlDataAdapter da = new SqlDataAdapter();
-        DataTable dt = new DataTable();
         SqlCommand comando;
         public int insertarBebida()
         {
@@ -83,7 +83,7 @@ namespace Clases
         }
         public DataTable seleccionarBebidas()
         {
-           
+            dt.Clear();
            
            comando = new SqlCommand("select * from Bebida");
             try

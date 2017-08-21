@@ -27,6 +27,7 @@ namespace ProyectoLab3
         private void refrescarInterfaz()
         {
             dgvBebidas.DataSource = null;
+
             dgvBebidas.DataSource = bebida.seleccionarBebidas();
             darFormato();
         }
@@ -61,11 +62,13 @@ namespace ProyectoLab3
             {
                 idSeleccionado = (Int32)dgvBebidas.SelectedRows[0].Cells["IdBebida"].Value;
                 bebida.eliminarBebida(idSeleccionado);
+                MessageBox.Show("Se ha eliminado correctamente la bebida", "Borrado"); 
                 refrescarInterfaz();
-                MessageBox.Show("Se ha eliminado correctamente la bebida", "Borrado");
             }
             else
                 MessageBox.Show("Seleccione la bebida en la grilla que desea eliminar","No se ha seleccionado bebida", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
+
+
     }
 }

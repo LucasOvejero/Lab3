@@ -12,6 +12,7 @@ namespace Clases
         string nombreLocalidad;
        static SqlCommand comando;
        static SqlDataAdapter adaptador;
+       static private DataTable localidades;
         public int IdLocalidad {
             get { return idLocalidad; }
             set { idLocalidad = value; }
@@ -20,21 +21,52 @@ namespace Clases
             get { return nombreLocalidad; }
             set { nombreLocalidad = value; }
         }
-        public static DataTable seleccionar()
+        public static DataTable seleccionarLocalidad()
         {
-            DataTable tabla = new DataTable("Localidades");
+            localidades = new DataTable("Localidades");
             comando = new SqlCommand("select * from Localidad");
             try
             {
                 comando.Connection = clsConexion.getCon();
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
-                adaptador.Fill(tabla);
+                adaptador.Fill(localidades);
             }
             catch (SqlException e) { }
             finally { clsConexion.closeCon(); }
 
-            return tabla;
+            return localidades;
+        }
+        public static string insertarLocalidad(string localidad,int idProvincia) {
+            string respuesta = "";
+            comando = new SqlCommand();
+            comando.CommandText = "insert into Localidad (NombreLocalidad,IdProvincia) values (@NombreLocalidad,@IdProvincia);select SCOPE_IDENTITY();";
+            SqlParameter[] parametros = new SqlParameter[2];
+            parametros[0] = new SqlParameter("@NombreLocalidad", localidad);
+            parametros[1] = new SqlParameter("@IdProvincia",idProvincia);
+            try
+            {
+                comando.Parameters.AddRange(parametros);
+                comando.Connection = clsConexion.getCon();
+                int id = Convert.ToInt32(comando.ExecuteScalar());
+                if (id > 0)
+                {
+                    respuesta = "La Localidad " + localidad + " insertada correctamente";
+                    actualizar(id);
+                }
+            }
+            catch (SqlException e) {
+            
+            }
+            return respuesta;
+        }
+
+
+        private static void actualizar(int id) {
+            comando.CommandText = "select * from Localidad where IdLocalidad="+id;
+            adaptador.SelectCommand = comando;
+            adaptador.Fill(localidades);
+            clsConexion.closeCon();
         }
     }
 }

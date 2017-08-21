@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Data;
+using System.Data.SqlClient;
 using Clases;
 namespace ProyectoLab3
 {
@@ -15,6 +15,7 @@ namespace ProyectoLab3
         #region variables
         BindingSource bsLoc= new BindingSource(), bsProv=new BindingSource(), bsSuc= new BindingSource();
         DataSet ds;
+        SqlDataAdapter adapter;
         DataRelation relacion;
         #endregion
         public frmSucursales()
@@ -24,13 +25,17 @@ namespace ProyectoLab3
        
         private void frmSucursales_Load(object sender, EventArgs e)
         {
+          
             configurar();
         }
+
+    
+        
         private void configurar()
         {
             
             ds = new DataSet();
-            ds.Tables.Add(clsLocalidad.seleccionar());
+            ds.Tables.Add(clsLocalidad.seleccionarLocalidad());
             ds.Tables.Add(clsProvincia.seleccionarProvincias());
             ds.Tables.Add(clsSucursal.seleccionarSucursales());
             relacion = new DataRelation("RelProvLoc", ds.Tables["Provincias"].Columns["IdProvincia"], ds.Tables["Localidades"].Columns["IdProvincia"]);
@@ -57,5 +62,36 @@ namespace ProyectoLab3
             dgvSucursal.Columns["IdLocalidad"].Visible = false;
             dgvSucursal.Columns["IdSucursal"].Visible = false;
             }
+
+        private void btnAddProv_Click(object sender, EventArgs e)
+        {
+            if (tbProvincia.Text != string.Empty)
+            {
+                string respuesta = clsProvincia.insertProvincia(tbProvincia.Text);
+                MessageBox.Show(respuesta);
+                tbProvincia.Clear();
+            }
+            else
+            {
+                MessageBox.Show("No se puede ingresar un campo vacío","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAddLocalidad_Click(object sender, EventArgs e)
+        {
+            if (dgvProvincia.SelectedRows.Count ==1 && tbLocalidad.Text!=string.Empty)
+            {   
+                int idProvincia= Convert.ToInt32(dgvProvincia.SelectedRows[0].Cells["IdProvincia"].Value);
+                string resp= clsLocalidad.insertarLocalidad(tbLocalidad.Text, idProvincia);
+                MessageBox.Show(resp);
+                tbLocalidad.Clear();
+            }
+        }
+
+        private void tbTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

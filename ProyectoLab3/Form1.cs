@@ -14,6 +14,7 @@ namespace ProyectoLab3
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -25,7 +26,9 @@ namespace ProyectoLab3
         private void btnBebidas_Click(object sender, EventArgs e)
         {
             frmBebidas ofrmBebidas = new frmBebidas();
-            ofrmBebidas.ShowDialog();
+
+
+            ofrmBebidas.Show();
         }
 
         private void btnSuc_Click(object sender, EventArgs e)
