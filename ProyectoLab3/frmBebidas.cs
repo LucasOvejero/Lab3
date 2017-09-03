@@ -69,6 +69,11 @@ namespace ProyectoLab3
                 MessageBox.Show("Seleccione la bebida en la grilla que desea eliminar","No se ha seleccionado bebida", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

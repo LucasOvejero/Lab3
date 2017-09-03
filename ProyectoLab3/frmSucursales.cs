@@ -56,11 +56,16 @@ namespace ProyectoLab3
             formatearGrillas();
         }
         private void formatearGrillas() {
-            dgvLocalidad.Columns["IdLocalidad"].Visible = false;
-            dgvLocalidad.Columns["IdProvincia"].Visible = false;
-            dgvProvincia.Columns["IdProvincia"].Visible = false;
-            dgvSucursal.Columns["IdLocalidad"].Visible = false;
-            dgvSucursal.Columns["IdSucursal"].Visible = false;
+                dgvLocalidad.Columns["IdLocalidad"].Visible = false;
+                dgvLocalidad.Columns["IdProvincia"].Visible = false;
+                dgvProvincia.Columns["IdProvincia"].Visible = false;
+                dgvSucursal.Columns["IdLocalidad"].Visible = false;
+                dgvSucursal.Columns["IdSucursal"].Visible = false;
+                dgvSucursal.Columns["Direccion"].Width=270;
+                dgvProvincia.Columns["NombreProvincia"].Width=120;
+                dgvProvincia.Columns["NombreProvincia"].HeaderText = "Nombre de provincia";
+                dgvLocalidad.Columns["NombreLocalidad"].Width = 122;
+                dgvLocalidad.Columns["NombreLocalidad"].HeaderText = "Nonmbre de localidad";
             }
 
         private void btnAddProv_Click(object sender, EventArgs e)

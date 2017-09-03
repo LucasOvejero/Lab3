@@ -173,6 +173,7 @@
             this.btnEditar.TabIndex = 0;
             this.btnEditar.Text = "Aceptar edicion";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // groupBox1
             // 
@@ -208,6 +209,7 @@
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBebidas.Location = new System.Drawing.Point(69, 82);
+            this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
