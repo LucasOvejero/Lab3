@@ -44,11 +44,11 @@
             this.dgvLocalidad = new Clases.GrillaFormateada();
             this.dgvProvincia = new Clases.GrillaFormateada();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnAddSucursal = new System.Windows.Forms.Button();
-            this.tbTelefono = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.rtbDir = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbTelefono = new System.Windows.Forms.TextBox();
+            this.btnAddSucursal = new System.Windows.Forms.Button();
             this.gpProv.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursal)).BeginInit();
@@ -229,31 +229,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sucursal";
             // 
-            // btnAddSucursal
+            // rtbDir
             // 
-            this.btnAddSucursal.Location = new System.Drawing.Point(106, 124);
-            this.btnAddSucursal.Name = "btnAddSucursal";
-            this.btnAddSucursal.Size = new System.Drawing.Size(75, 23);
-            this.btnAddSucursal.TabIndex = 0;
-            this.btnAddSucursal.Text = "Agregar";
-            this.btnAddSucursal.UseVisualStyleBackColor = true;
-            // 
-            // tbTelefono
-            // 
-            this.tbTelefono.Location = new System.Drawing.Point(81, 98);
-            this.tbTelefono.Name = "tbTelefono";
-            this.tbTelefono.Size = new System.Drawing.Size(100, 20);
-            this.tbTelefono.TabIndex = 1;
-            this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Telefono";
+            this.rtbDir.Location = new System.Drawing.Point(19, 32);
+            this.rtbDir.Name = "rtbDir";
+            this.rtbDir.Size = new System.Drawing.Size(162, 60);
+            this.rtbDir.TabIndex = 4;
+            this.rtbDir.Text = "";
             // 
             // label5
             // 
@@ -264,13 +246,32 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Dirección";
             // 
-            // rtbDir
+            // label4
             // 
-            this.rtbDir.Location = new System.Drawing.Point(19, 32);
-            this.rtbDir.Name = "rtbDir";
-            this.rtbDir.Size = new System.Drawing.Size(162, 60);
-            this.rtbDir.TabIndex = 4;
-            this.rtbDir.Text = "";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Telefono";
+            // 
+            // tbTelefono
+            // 
+            this.tbTelefono.Location = new System.Drawing.Point(81, 98);
+            this.tbTelefono.Name = "tbTelefono";
+            this.tbTelefono.Size = new System.Drawing.Size(100, 20);
+            this.tbTelefono.TabIndex = 1;
+            this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
+            // 
+            // btnAddSucursal
+            // 
+            this.btnAddSucursal.Location = new System.Drawing.Point(106, 124);
+            this.btnAddSucursal.Name = "btnAddSucursal";
+            this.btnAddSucursal.Size = new System.Drawing.Size(75, 23);
+            this.btnAddSucursal.TabIndex = 0;
+            this.btnAddSucursal.Text = "Agregar";
+            this.btnAddSucursal.UseVisualStyleBackColor = true;
+            this.btnAddSucursal.Click += new System.EventHandler(this.btnAddSucursal_Click);
             // 
             // frmSucursales
             // 

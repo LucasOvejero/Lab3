@@ -32,7 +32,9 @@ namespace Clases
                 adaptador.SelectCommand = comando;
                 adaptador.Fill(localidades);
             }
-            catch (SqlException e) { }
+            catch (SqlException e) {
+               
+            }
             finally { clsConexion.closeCon(); }
 
             return localidades;
@@ -48,15 +50,20 @@ namespace Clases
             {
                 comando.Parameters.AddRange(parametros);
                 comando.Connection = clsConexion.getCon();
-                int id = Convert.ToInt32(comando.ExecuteScalar());
-                if (id > 0)
+                int id = -1;
+                id = Convert.ToInt32(comando.ExecuteScalar());
+                if (id >= 0)
                 {
                     respuesta = "La Localidad " + localidad + " insertada correctamente";
                     actualizar(id);
                 }
             }
-            catch (SqlException e) {
-            
+            catch (SqlException e)
+            {
+                respuesta = e.Message;
+            }
+            finally {
+                clsConexion.closeCon();
             }
             return respuesta;
         }
@@ -66,7 +73,6 @@ namespace Clases
             comando.CommandText = "select * from Localidad where IdLocalidad="+id;
             adaptador.SelectCommand = comando;
             adaptador.Fill(localidades);
-            clsConexion.closeCon();
         }
     }
 }

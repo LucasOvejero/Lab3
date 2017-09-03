@@ -93,5 +93,18 @@ namespace ProyectoLab3
             if (!char.IsNumber(e.KeyChar))
                 e.Handled = true;
         }
+
+        private void btnAddSucursal_Click(object sender, EventArgs e)
+        {
+            
+            if (dgvLocalidad.SelectedRows.Count == 1 && rtbDir.Text!= string.Empty && tbTelefono.Text!= string.Empty)
+            {
+                int idSucursal = Convert.ToInt32(dgvLocalidad.SelectedRows[0].Cells["IdLocalidad"].Value);
+                string resp=clsSucursal.insertarSucursal(rtbDir.Text, tbTelefono.Text, idSucursal);
+                MessageBox.Show(resp);
+                rtbDir.Clear();
+                tbTelefono.Clear();
+            }
+        }
     }
 }
