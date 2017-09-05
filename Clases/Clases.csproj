@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="clsBebida.cs" />
     <Compile Include="clsConexion.cs" />
+    <Compile Include="clsEmpleado.cs" />
+    <Compile Include="clsIngrediente.cs" />
     <Compile Include="clsLocalidad.cs" />
     <Compile Include="clsProvincia.cs" />
     <Compile Include="clsSucursal.cs" />

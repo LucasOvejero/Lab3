@@ -33,7 +33,7 @@ namespace Clases
                 adaptador.Fill(provincias);
             }
             catch (SqlException e) {
-            
+                Console.WriteLine(e.Message);
             }
             finally { clsConexion.closeCon(); }
             return provincias;      

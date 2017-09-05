@@ -13,7 +13,7 @@ namespace ProyectoLab3
     public partial class frmSucursales : Form
     {
         #region variables
-        BindingSource bsLoc= new BindingSource(), bsProv=new BindingSource(), bsSuc= new BindingSource();
+        BindingSource bsLoc = new BindingSource(), bsProv = new BindingSource(), bsSuc = new BindingSource();
         DataSet ds;
         SqlDataAdapter adapter;
         DataRelation relacion;
@@ -22,28 +22,29 @@ namespace ProyectoLab3
         {
             InitializeComponent();
         }
-       
+
         private void frmSucursales_Load(object sender, EventArgs e)
         {
-          
+
             configurar();
         }
 
-    
-        
+
+
         private void configurar()
         {
-            
+
             ds = new DataSet();
             ds.Tables.Add(clsLocalidad.seleccionarLocalidad());
             ds.Tables.Add(clsProvincia.seleccionarProvincias());
             ds.Tables.Add(clsSucursal.seleccionarSucursales());
             relacion = new DataRelation("RelProvLoc", ds.Tables["Provincias"].Columns["IdProvincia"], ds.Tables["Localidades"].Columns["IdProvincia"]);
             ds.Relations.Add(relacion);
-            ds.Relations.Add(new DataRelation("RelLocSuc",ds.Tables["Localidades"].Columns["IdLocalidad"],ds.Tables["Sucursales"].Columns["IdLocalidad"]));
+            ds.Relations.Add(new DataRelation("RelLocSuc", ds.Tables["Localidades"].Columns["IdLocalidad"], ds.Tables["Sucursales"].Columns["IdLocalidad"]));
             AsignarGrillas();
         }
-        private void AsignarGrillas() {
+        private void AsignarGrillas()
+        {
             bsProv.DataSource = ds;
             bsProv.DataMember = "Provincias";
             bsLoc.DataSource = bsProv;
@@ -55,18 +56,19 @@ namespace ProyectoLab3
             dgvSucursal.DataSource = bsSuc;
             formatearGrillas();
         }
-        private void formatearGrillas() {
-                dgvLocalidad.Columns["IdLocalidad"].Visible = false;
-                dgvLocalidad.Columns["IdProvincia"].Visible = false;
-                dgvProvincia.Columns["IdProvincia"].Visible = false;
-                dgvSucursal.Columns["IdLocalidad"].Visible = false;
-                dgvSucursal.Columns["IdSucursal"].Visible = false;
-                dgvSucursal.Columns["Direccion"].Width=270;
-                dgvProvincia.Columns["NombreProvincia"].Width=120;
-                dgvProvincia.Columns["NombreProvincia"].HeaderText = "Nombre de provincia";
-                dgvLocalidad.Columns["NombreLocalidad"].Width = 122;
-                dgvLocalidad.Columns["NombreLocalidad"].HeaderText = "Nonmbre de localidad";
-            }
+        private void formatearGrillas()
+        {
+            dgvLocalidad.Columns["IdLocalidad"].Visible = false;
+            dgvLocalidad.Columns["IdProvincia"].Visible = false;
+            dgvProvincia.Columns["IdProvincia"].Visible = false;
+            dgvSucursal.Columns["IdLocalidad"].Visible = false;
+            dgvSucursal.Columns["IdSucursal"].Visible = false;
+            dgvSucursal.Columns["Direccion"].Width = 270;
+            dgvProvincia.Columns["NombreProvincia"].Width = 120;
+            dgvProvincia.Columns["NombreProvincia"].HeaderText = "Nombre de provincia";
+            dgvLocalidad.Columns["NombreLocalidad"].Width = 122;
+            dgvLocalidad.Columns["NombreLocalidad"].HeaderText = "Nombre de localidad";
+        }
 
         private void btnAddProv_Click(object sender, EventArgs e)
         {
@@ -78,16 +80,16 @@ namespace ProyectoLab3
             }
             else
             {
-                MessageBox.Show("No se puede ingresar un campo vacío","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("No se puede ingresar un campo vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnAddLocalidad_Click(object sender, EventArgs e)
         {
-            if (dgvProvincia.SelectedRows.Count ==1 && tbLocalidad.Text!=string.Empty)
-            {   
-                int idProvincia= Convert.ToInt32(dgvProvincia.SelectedRows[0].Cells["IdProvincia"].Value);
-                string resp= clsLocalidad.insertarLocalidad(tbLocalidad.Text, idProvincia);
+            if (dgvProvincia.SelectedRows.Count == 1 && tbLocalidad.Text != string.Empty)
+            {
+                int idProvincia = Convert.ToInt32(dgvProvincia.SelectedRows[0].Cells["IdProvincia"].Value);
+                string resp = clsLocalidad.insertarLocalidad(tbLocalidad.Text, idProvincia);
                 MessageBox.Show(resp);
                 tbLocalidad.Clear();
             }
@@ -101,14 +103,87 @@ namespace ProyectoLab3
 
         private void btnAddSucursal_Click(object sender, EventArgs e)
         {
-            
-            if (dgvLocalidad.SelectedRows.Count == 1 && rtbDir.Text!= string.Empty && tbTelefono.Text!= string.Empty)
+
+            if (dgvLocalidad.SelectedRows.Count == 1 && rtbDir.Text != string.Empty && tbTelefono.Text != string.Empty)
             {
                 int idSucursal = Convert.ToInt32(dgvLocalidad.SelectedRows[0].Cells["IdLocalidad"].Value);
-                string resp=clsSucursal.insertarSucursal(rtbDir.Text, tbTelefono.Text, idSucursal);
+                string resp = clsSucursal.insertarSucursal(rtbDir.Text, tbTelefono.Text, idSucursal);
                 MessageBox.Show(resp);
                 rtbDir.Clear();
                 tbTelefono.Clear();
+            }
+        }
+
+        private void dgvLocalidad_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvSucursal_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvSucursal_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvSucursal.SelectedRows.Count > 0)
+            {
+                pnlConfig.Visible = true;
+
+                DataGridViewRow row = dgvSucursal.SelectedRows[0];
+                string dir = row.Cells["Direccion"].Value.ToString();
+                string tel = row.Cells["Telefono"].Value.ToString();
+                bool activo = (bool)row.Cells["Estado"].Value;
+
+
+
+                tbDir.Text = dir;
+                tbTel.Text = tel;
+
+
+                btnEstado.Tag = row.Cells["IdSucursal"].Value.ToString();
+
+                if (activo)
+                {
+                    btnEstado.Text = "Dar de Baja";
+                }
+                else
+                {
+                    btnEstado.Text = "Dar de Alta";
+                }
+
+            }
+        }
+        
+
+        private void btnEstado_Click(object sender, EventArgs e)
+        {
+            if ((sender as Button).Text == "Dar de Baja")
+            {
+                clsSucursal.darDeBaja(Convert.ToInt32((sender as Button).Tag));
+            }
+            else
+            {
+                clsSucursal.darDeAlta(Convert.ToInt32((sender as Button).Tag));
+            }
+            configurar();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (lblDir.Text.Length < 5)
+            {
+                MessageBox.Show("Ingrese una Direccion Valida");
+            }
+            else if (tbTel.Text.Length < 5)
+            {
+                MessageBox.Show("Ingrese un telefono valido");
+            }
+            else 
+            {
+                int id = (int)dgvSucursal.SelectedRows[0].Cells["IdSucursal"].Value;
+                clsSucursal.actualizar(id, tbDir.Text, tbTel.Text);
+                configurar();
             }
         }
     }

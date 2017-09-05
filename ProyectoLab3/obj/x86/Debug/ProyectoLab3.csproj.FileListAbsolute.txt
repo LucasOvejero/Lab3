@@ -21,3 +21,15 @@ C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.Properties.Resources.res
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csproj.GenerateResource.Cache
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.exe
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.pdb
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\bin\Debug\ProyectoLab3.exe
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\bin\Debug\ProyectoLab3.pdb
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\bin\Debug\Clases.dll
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\bin\Debug\Clases.pdb
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\obj\x86\Debug\ProyectoLab3.Form1.resources
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmBebidas.resources
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmSucursales.resources
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\obj\x86\Debug\ProyectoLab3.Properties.Resources.resources
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csproj.GenerateResource.Cache
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\obj\x86\Debug\ProyectoLab3.exe
+C:\Users\Usuario\Desktop\Lab3-master\ProyectoLab3\obj\x86\Debug\ProyectoLab3.pdb

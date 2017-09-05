@@ -33,7 +33,7 @@ namespace Clases
                 adaptador.Fill(localidades);
             }
             catch (SqlException e) {
-               
+                Console.WriteLine(e.Message);
             }
             finally { clsConexion.closeCon(); }
 

@@ -56,7 +56,7 @@ namespace Clases
                adaptador.SelectCommand = comando;
                adaptador.Fill(sucursales);
            }
-           catch (SqlException x) { }
+           catch (SqlException x) { Console.WriteLine(x.Message); }
            finally { clsConexion.closeCon(); }
            return sucursales;
        }
@@ -90,10 +90,60 @@ namespace Clases
            
            return resp;
        }
+
+
        private static void actualizar(int id) { 
             comando.CommandText="select * from Sucursal where IdSucursal="+id;
             adaptador.SelectCommand = comando;
             adaptador.Fill(sucursales);
        }
+
+
+       public static void darDeBaja(int id) {
+           comando = new SqlCommand("UPDATE Sucursal SET Estado = 0 WHERE IdSucursal = " + id);
+           try
+           {
+               sucursales = new DataTable("Sucursales");
+               comando.Connection = clsConexion.getCon();
+               adaptador = new SqlDataAdapter();
+               adaptador.SelectCommand = comando;
+               adaptador.Fill(sucursales);
+               comando.ExecuteNonQuery();
+           }
+           catch (SqlException x) { Console.WriteLine(x.Message); }
+           finally { clsConexion.closeCon(); }
+       }
+
+       public static void darDeAlta(int id)
+       {
+           comando = new SqlCommand("UPDATE Sucursal SET Estado = 1 WHERE IdSucursal = " + id);
+           try
+           {
+               sucursales = new DataTable("Sucursales");
+               comando.Connection = clsConexion.getCon();
+               adaptador = new SqlDataAdapter();
+               adaptador.SelectCommand = comando;
+               comando.ExecuteNonQuery();
+           }
+           catch (SqlException x) { Console.WriteLine(x.Message); }
+           finally { clsConexion.closeCon(); }
+       }
+
+       public static void actualizar(int id,string dir,string tel)
+       {
+           comando = new SqlCommand("UPDATE Sucursal SET Direccion = '" + dir + "' , Telefono = '" + tel + "' WHERE IdSucursal = " + id);
+           try
+           {
+               sucursales = new DataTable("Sucursales");
+               comando.Connection = clsConexion.getCon();
+               adaptador = new SqlDataAdapter();
+               adaptador.SelectCommand = comando;
+               comando.ExecuteNonQuery();
+           }
+           catch (SqlException x) { Console.WriteLine(x.Message); }
+           finally { clsConexion.closeCon(); }
+       }
+
+
     }
 }

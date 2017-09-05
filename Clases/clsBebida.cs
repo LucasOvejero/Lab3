@@ -75,8 +75,8 @@ namespace Clases
                 comando.Parameters.AddRange(parametros);
                 r = (Int32)comando.ExecuteNonQuery();
             }
-            catch (NullReferenceException n) { }
-            catch (SqlException x) { }
+            catch (NullReferenceException n) { Console.WriteLine(n.Message); }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
             finally
             { clsConexion.closeCon(); }
             return r;
@@ -92,7 +92,7 @@ namespace Clases
                 da.SelectCommand = comando;
                 da.Fill(dt);
             }
-            catch (SqlException x) { }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
             finally { clsConexion.closeCon(); }
             return dt;
         }
@@ -105,7 +105,7 @@ namespace Clases
                 comando.Connection = clsConexion.getCon();
                 comando.ExecuteNonQuery();
             }
-            catch (SqlException e) { }
+            catch (SqlException e) { Console.WriteLine(e.Message);  }
             finally { clsConexion.closeCon(); }
            
         }
@@ -124,7 +124,7 @@ namespace Clases
                 comando.Connection = clsConexion.getCon();
                 comando.ExecuteNonQuery();
             }
-            catch (SqlException e) { }
+            catch (SqlException e) { Console.WriteLine(e.Message); }
             finally { clsConexion.closeCon(); }
         }
     }

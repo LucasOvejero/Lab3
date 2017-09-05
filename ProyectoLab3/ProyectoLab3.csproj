@@ -64,6 +64,12 @@
     <Compile Include="frmSucursales.Designer.cs">
       <DependentUpon>frmSucursales.cs</DependentUpon>
     </Compile>
+    <Compile Include="GrillaFormateada.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GrillaFormateada.Designer.cs">
+      <DependentUpon>GrillaFormateada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
