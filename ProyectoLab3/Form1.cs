@@ -26,8 +26,6 @@ namespace ProyectoLab3
         private void btnBebidas_Click(object sender, EventArgs e)
         {
             frmBebidas ofrmBebidas = new frmBebidas();
-
-
             ofrmBebidas.Show();
         }
 
@@ -35,6 +33,12 @@ namespace ProyectoLab3
         {
             frmSucursales ofrmSuc = new frmSucursales();
             ofrmSuc.ShowDialog();
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            frmEmpleados ofrmEmp = new frmEmpleados();
+            ofrmEmp.ShowDialog();
         }
 
        

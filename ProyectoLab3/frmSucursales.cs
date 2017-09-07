@@ -103,7 +103,7 @@ namespace ProyectoLab3
 
         private void btnAddSucursal_Click(object sender, EventArgs e)
         {
-
+            string error = "";
             if (dgvLocalidad.SelectedRows.Count == 1 && rtbDir.Text != string.Empty && tbTelefono.Text != string.Empty)
             {
                 int idSucursal = Convert.ToInt32(dgvLocalidad.SelectedRows[0].Cells["IdLocalidad"].Value);
@@ -112,6 +112,19 @@ namespace ProyectoLab3
                 rtbDir.Clear();
                 tbTelefono.Clear();
             }
+            else if (rtbDir.Text == string.Empty)
+            {
+                error += "Ingrese una Direccion valida \n";
+            }
+            else if (tbTel.Text == string.Empty)
+            {
+                error += "Ingrese un telefono Valido";
+            }
+
+            if (error != "") {
+                MessageBox.Show(error, "Error");
+            }
+
         }
 
         private void dgvLocalidad_CellContentClick(object sender, DataGridViewCellEventArgs e)

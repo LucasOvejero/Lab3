@@ -30,6 +30,7 @@
         {
             this.btnBebidas = new System.Windows.Forms.Button();
             this.btnSuc = new System.Windows.Forms.Button();
+            this.btnEmpleados = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -52,11 +53,22 @@
             this.btnSuc.UseVisualStyleBackColor = true;
             this.btnSuc.Click += new System.EventHandler(this.btnSuc_Click);
             // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.Location = new System.Drawing.Point(427, 50);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Size = new System.Drawing.Size(75, 23);
+            this.btnEmpleados.TabIndex = 2;
+            this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
+            this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSuc);
             this.Controls.Add(this.btnBebidas);
             this.Name = "Form1";
@@ -70,6 +82,7 @@
 
         private System.Windows.Forms.Button btnBebidas;
         private System.Windows.Forms.Button btnSuc;
+        private System.Windows.Forms.Button btnEmpleados;
     }
 }
 
