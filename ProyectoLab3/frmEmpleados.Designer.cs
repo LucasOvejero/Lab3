@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCargar = new System.Windows.Forms.Button();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -39,17 +39,17 @@
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.pnlNuevo = new System.Windows.Forms.Panel();
-            this.tbApellido = new System.Windows.Forms.TextBox();
-            this.tbDni = new System.Windows.Forms.TextBox();
-            this.tbTelefono = new System.Windows.Forms.TextBox();
-            this.lblSucursal = new System.Windows.Forms.Label();
-            this.lblBusqueda = new System.Windows.Forms.Label();
-            this.tbBusqueda = new System.Windows.Forms.TextBox();
-            this.dgvEmpleados = new Clases.GrillaFormateada();
             this.dgvSucursales = new Clases.GrillaFormateada();
+            this.tbBusqueda = new System.Windows.Forms.TextBox();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.lblSucursal = new System.Windows.Forms.Label();
+            this.tbTelefono = new System.Windows.Forms.TextBox();
+            this.tbDni = new System.Windows.Forms.TextBox();
+            this.tbApellido = new System.Windows.Forms.TextBox();
+            this.dgvEmpleados = new Clases.GrillaFormateada();
             this.pnlNuevo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCargar
@@ -146,76 +146,6 @@
             this.pnlNuevo.Size = new System.Drawing.Size(311, 331);
             this.pnlNuevo.TabIndex = 5;
             // 
-            // tbApellido
-            // 
-            this.tbApellido.Location = new System.Drawing.Point(21, 92);
-            this.tbApellido.Name = "tbApellido";
-            this.tbApellido.Size = new System.Drawing.Size(121, 20);
-            this.tbApellido.TabIndex = 1;
-            // 
-            // tbDni
-            // 
-            this.tbDni.Location = new System.Drawing.Point(20, 147);
-            this.tbDni.Name = "tbDni";
-            this.tbDni.Size = new System.Drawing.Size(122, 20);
-            this.tbDni.TabIndex = 2;
-            // 
-            // tbTelefono
-            // 
-            this.tbTelefono.Location = new System.Drawing.Point(21, 202);
-            this.tbTelefono.Name = "tbTelefono";
-            this.tbTelefono.Size = new System.Drawing.Size(121, 20);
-            this.tbTelefono.TabIndex = 3;
-            // 
-            // lblSucursal
-            // 
-            this.lblSucursal.AutoSize = true;
-            this.lblSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursal.Location = new System.Drawing.Point(184, 13);
-            this.lblSucursal.Name = "lblSucursal";
-            this.lblSucursal.Size = new System.Drawing.Size(66, 18);
-            this.lblSucursal.TabIndex = 6;
-            this.lblSucursal.Text = "Sucursal";
-            // 
-            // lblBusqueda
-            // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(173, 37);
-            this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(91, 13);
-            this.lblBusqueda.TabIndex = 7;
-            this.lblBusqueda.Text = "Buscar Direccion:";
-            // 
-            // tbBusqueda
-            // 
-            this.tbBusqueda.Location = new System.Drawing.Point(149, 60);
-            this.tbBusqueda.Name = "tbBusqueda";
-            this.tbBusqueda.Size = new System.Drawing.Size(141, 20);
-            this.tbBusqueda.TabIndex = 6;
-            // 
-            // dgvEmpleados
-            // 
-            this.dgvEmpleados.AllowUserToAddRows = false;
-            this.dgvEmpleados.AllowUserToResizeColumns = false;
-            this.dgvEmpleados.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(329, 12);
-            this.dgvEmpleados.MultiSelect = false;
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.RowHeadersVisible = false;
-            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleados.Size = new System.Drawing.Size(307, 331);
-            this.dgvEmpleados.TabIndex = 0;
-            // 
             // dgvSucursales
             // 
             this.dgvSucursales.AllowUserToAddRows = false;
@@ -239,11 +169,81 @@
             this.dgvSucursales.Size = new System.Drawing.Size(141, 191);
             this.dgvSucursales.TabIndex = 7;
             // 
+            // tbBusqueda
+            // 
+            this.tbBusqueda.Location = new System.Drawing.Point(149, 60);
+            this.tbBusqueda.Name = "tbBusqueda";
+            this.tbBusqueda.Size = new System.Drawing.Size(141, 20);
+            this.tbBusqueda.TabIndex = 6;
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Location = new System.Drawing.Point(173, 37);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(91, 13);
+            this.lblBusqueda.TabIndex = 7;
+            this.lblBusqueda.Text = "Buscar Direccion:";
+            // 
+            // lblSucursal
+            // 
+            this.lblSucursal.AutoSize = true;
+            this.lblSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursal.Location = new System.Drawing.Point(184, 13);
+            this.lblSucursal.Name = "lblSucursal";
+            this.lblSucursal.Size = new System.Drawing.Size(66, 18);
+            this.lblSucursal.TabIndex = 6;
+            this.lblSucursal.Text = "Sucursal";
+            // 
+            // tbTelefono
+            // 
+            this.tbTelefono.Location = new System.Drawing.Point(21, 202);
+            this.tbTelefono.Name = "tbTelefono";
+            this.tbTelefono.Size = new System.Drawing.Size(121, 20);
+            this.tbTelefono.TabIndex = 3;
+            // 
+            // tbDni
+            // 
+            this.tbDni.Location = new System.Drawing.Point(20, 147);
+            this.tbDni.Name = "tbDni";
+            this.tbDni.Size = new System.Drawing.Size(122, 20);
+            this.tbDni.TabIndex = 2;
+            // 
+            // tbApellido
+            // 
+            this.tbApellido.Location = new System.Drawing.Point(21, 92);
+            this.tbApellido.Name = "tbApellido";
+            this.tbApellido.Size = new System.Drawing.Size(121, 20);
+            this.tbApellido.TabIndex = 1;
+            // 
+            // dgvEmpleados
+            // 
+            this.dgvEmpleados.AllowUserToAddRows = false;
+            this.dgvEmpleados.AllowUserToResizeColumns = false;
+            this.dgvEmpleados.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Location = new System.Drawing.Point(329, 12);
+            this.dgvEmpleados.MultiSelect = false;
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.ReadOnly = true;
+            this.dgvEmpleados.RowHeadersVisible = false;
+            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmpleados.Size = new System.Drawing.Size(628, 331);
+            this.dgvEmpleados.TabIndex = 0;
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 359);
+            this.ClientSize = new System.Drawing.Size(977, 461);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.pnlNuevo);
             this.Name = "frmEmpleados";
@@ -251,8 +251,8 @@
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             this.pnlNuevo.ResumeLayout(false);
             this.pnlNuevo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -47,7 +47,7 @@ namespace Clases
 
 
        public static DataTable seleccionarSucursales() {
-           comando = new SqlCommand("select * from Sucursal");
+           comando = new SqlCommand("select s.IdSucursal, s.Direccion,s.Telefono,  Nombre +' '+ Apellido AS Manager, s.Estado , IdLocalidad from Sucursal s  left outer join Empleado ON IdManager = IdEmpleado");
            try
            {
                sucursales = new DataTable("Sucursales");
@@ -129,9 +129,9 @@ namespace Clases
            finally { clsConexion.closeCon(); }
        }
 
-       public static void actualizar(int id,string dir,string tel)
+       public static void actualizar(int id,string dir, int idManager,string tel)
        {
-           comando = new SqlCommand("UPDATE Sucursal SET Direccion = '" + dir + "' , Telefono = '" + tel + "' WHERE IdSucursal = " + id);
+           comando = new SqlCommand("UPDATE Sucursal SET Direccion = '" + dir + "' , IdManager= "+ idManager +", Telefono = '" + tel + "' WHERE IdSucursal = " + id);
            try
            {
                sucursales = new DataTable("Sucursales");

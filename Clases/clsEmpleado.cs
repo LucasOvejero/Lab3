@@ -197,7 +197,9 @@ namespace Clases
 
         public static DataTable joinSucursales() {
             comando = new SqlCommand(
-                "select s.IdSucursal,Nombre,Apellido,DNI, e.Telefono \" Contacto \", Direccion \"Trabaja\", e.Tipo \" Puesto\" ,e.Estado  from Empleado e Join Sucursal s ON (e.IdSucursal = s.IdSucursal)"
+                "select s.IdSucursal,Nombre,Apellido,DNI, e.Telefono \" Tel. Contacto \"" +
+                ", s.Telefono \" Tel. Sucursal \" , Direccion \"Trabaja\", e.Tipo \" Puesto\" ,e.Estado "+
+                "from Empleado e Join Sucursal s ON (e.IdSucursal = s.IdSucursal)"
                 );
             try
             {
@@ -212,5 +214,25 @@ namespace Clases
             return empleados;
         }
 
+
+        //podria ser activos NO MANAGERS
+        public static DataTable selectActivos()
+        {
+            comando = new SqlCommand("select * from Empleado where ESTADO = 1");
+            try
+            {
+                empleados = new DataTable("Activos");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(empleados);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return empleados;
+
+        }
+            
+        
     }
 }

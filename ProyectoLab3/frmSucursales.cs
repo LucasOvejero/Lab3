@@ -12,8 +12,11 @@ namespace ProyectoLab3
 {
     public partial class frmSucursales : Form
     {
+
+
         #region variables
         BindingSource bsLoc = new BindingSource(), bsProv = new BindingSource(), bsSuc = new BindingSource();
+        BindingSource bsEmps = new BindingSource();
         DataSet ds;
         SqlDataAdapter adapter;
         DataRelation relacion;
@@ -38,6 +41,7 @@ namespace ProyectoLab3
             ds.Tables.Add(clsLocalidad.seleccionarLocalidad());
             ds.Tables.Add(clsProvincia.seleccionarProvincias());
             ds.Tables.Add(clsSucursal.seleccionarSucursales());
+            ds.Tables.Add(clsEmpleado.selectActivos());
             relacion = new DataRelation("RelProvLoc", ds.Tables["Provincias"].Columns["IdProvincia"], ds.Tables["Localidades"].Columns["IdProvincia"]);
             ds.Relations.Add(relacion);
             ds.Relations.Add(new DataRelation("RelLocSuc", ds.Tables["Localidades"].Columns["IdLocalidad"], ds.Tables["Sucursales"].Columns["IdLocalidad"]));
@@ -54,6 +58,12 @@ namespace ProyectoLab3
             bsSuc.DataSource = bsLoc;
             bsSuc.DataMember = "RelLocSuc";
             dgvSucursal.DataSource = bsSuc;
+
+            bsEmps.DataSource = ds;
+            bsEmps.DataMember = "Activos";
+
+            dgvManagers.DataSource = bsEmps;
+
             formatearGrillas();
         }
         private void formatearGrillas()
@@ -68,6 +78,13 @@ namespace ProyectoLab3
             dgvProvincia.Columns["NombreProvincia"].HeaderText = "Nombre de provincia";
             dgvLocalidad.Columns["NombreLocalidad"].Width = 122;
             dgvLocalidad.Columns["NombreLocalidad"].HeaderText = "Nombre de localidad";
+            
+            dgvManagers.Columns["Tipo"].Visible = false;
+            dgvManagers.Columns["IdSucursal"].Visible = false;
+            dgvManagers.Columns["IdEmpleado"].Visible = false;
+            dgvManagers.Columns["Estado"].Visible = false;
+
+
         }
 
         private void btnAddProv_Click(object sender, EventArgs e)
@@ -194,10 +211,17 @@ namespace ProyectoLab3
             }
             else 
             {
-                int id = (int)dgvSucursal.SelectedRows[0].Cells["IdSucursal"].Value;
-                clsSucursal.actualizar(id, tbDir.Text, tbTel.Text);
+                int idSucursal = (int)dgvSucursal.SelectedRows[0].Cells["IdSucursal"].Value;
+                int idManager = (int)dgvManagers.SelectedRows[0].Cells["IdEmpleado"].Value;
+
+                clsSucursal.actualizar(idSucursal, tbDir.Text, idManager, tbTel.Text);
                 configurar();
             }
+        }
+
+        private void dgvManagers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
