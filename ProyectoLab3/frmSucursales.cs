@@ -38,14 +38,22 @@ namespace ProyectoLab3
         {
 
             ds = new DataSet();
-            ds.Tables.Add(clsLocalidad.seleccionarLocalidad());
-            ds.Tables.Add(clsProvincia.seleccionarProvincias());
-            ds.Tables.Add(clsSucursal.seleccionarSucursales());
-            ds.Tables.Add(clsEmpleado.selectActivos());
-            relacion = new DataRelation("RelProvLoc", ds.Tables["Provincias"].Columns["IdProvincia"], ds.Tables["Localidades"].Columns["IdProvincia"]);
-            ds.Relations.Add(relacion);
-            ds.Relations.Add(new DataRelation("RelLocSuc", ds.Tables["Localidades"].Columns["IdLocalidad"], ds.Tables["Sucursales"].Columns["IdLocalidad"]));
-            AsignarGrillas();
+            try
+            {
+                ds.Tables.Add(clsLocalidad.seleccionarLocalidad());
+                ds.Tables.Add(clsProvincia.seleccionarProvincias());
+                ds.Tables.Add(clsSucursal.seleccionarSucursales());
+                ds.Tables.Add(clsEmpleado.selectActivos());          
+                relacion = new DataRelation("RelProvLoc", ds.Tables["Provincias"].Columns["IdProvincia"], ds.Tables["Localidades"].Columns["IdProvincia"]);
+                ds.Relations.Add(relacion);
+                ds.Relations.Add(new DataRelation("RelLocSuc", ds.Tables["Localidades"].Columns["IdLocalidad"], ds.Tables["Sucursales"].Columns["IdLocalidad"]));
+                AsignarGrillas();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
         private void AsignarGrillas()
         {

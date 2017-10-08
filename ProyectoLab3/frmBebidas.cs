@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+using System.Data.SqlClient;
 namespace ProyectoLab3
 {
     public partial class frmBebidas : Form
@@ -27,8 +28,14 @@ namespace ProyectoLab3
         private void refrescarInterfaz()
         {
             dgvBebidas.DataSource = null;
-
-            dgvBebidas.DataSource = bebida.seleccionarBebidas();
+            try
+            {
+                dgvBebidas.DataSource = bebida.seleccionarBebidas();
+            }
+            catch (SqlException e) {
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
             darFormato();
         }
 

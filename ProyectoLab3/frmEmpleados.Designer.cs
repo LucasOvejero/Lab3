@@ -248,6 +248,7 @@
             this.Controls.Add(this.pnlNuevo);
             this.Name = "frmEmpleados";
             this.Text = "Empleados";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             this.pnlNuevo.ResumeLayout(false);
             this.pnlNuevo.PerformLayout();

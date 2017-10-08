@@ -31,11 +31,12 @@
             this.btnBebidas = new System.Windows.Forms.Button();
             this.btnSuc = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
+            this.btnDepositos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBebidas
             // 
-            this.btnBebidas.Location = new System.Drawing.Point(268, 51);
+            this.btnBebidas.Location = new System.Drawing.Point(228, 51);
             this.btnBebidas.Name = "btnBebidas";
             this.btnBebidas.Size = new System.Drawing.Size(75, 23);
             this.btnBebidas.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // btnSuc
             // 
-            this.btnSuc.Location = new System.Drawing.Point(115, 51);
+            this.btnSuc.Location = new System.Drawing.Point(67, 51);
             this.btnSuc.Name = "btnSuc";
             this.btnSuc.Size = new System.Drawing.Size(75, 23);
             this.btnSuc.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // btnEmpleados
             // 
-            this.btnEmpleados.Location = new System.Drawing.Point(427, 50);
+            this.btnEmpleados.Location = new System.Drawing.Point(550, 51);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(75, 23);
             this.btnEmpleados.TabIndex = 2;
@@ -63,16 +64,28 @@
             this.btnEmpleados.UseVisualStyleBackColor = true;
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
+            // btnDepositos
+            // 
+            this.btnDepositos.Location = new System.Drawing.Point(389, 51);
+            this.btnDepositos.Name = "btnDepositos";
+            this.btnDepositos.Size = new System.Drawing.Size(75, 23);
+            this.btnDepositos.TabIndex = 3;
+            this.btnDepositos.Text = "Depositos";
+            this.btnDepositos.UseVisualStyleBackColor = true;
+            this.btnDepositos.Click += new System.EventHandler(this.btnIngredientes_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
+            this.Controls.Add(this.btnDepositos);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSuc);
             this.Controls.Add(this.btnBebidas);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Inicio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -83,6 +96,7 @@
         private System.Windows.Forms.Button btnBebidas;
         private System.Windows.Forms.Button btnSuc;
         private System.Windows.Forms.Button btnEmpleados;
+        private System.Windows.Forms.Button btnDepositos;
     }
 }
 

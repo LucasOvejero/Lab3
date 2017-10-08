@@ -33,7 +33,7 @@ namespace Clases
                 adaptador.Fill(provincias);
             }
             catch (SqlException e) {
-                Console.WriteLine(e.Message);
+                throw e;
             }
             finally { clsConexion.closeCon(); }
             return provincias;      
@@ -58,6 +58,11 @@ namespace Clases
             {
                 if (e.Class == 14)
                     respuesta = "No se puede ingresar dos veces la misma provincia";
+                else
+                    respuesta = e.Message;
+            }
+            catch (InvalidOperationException IOE) {
+                respuesta = IOE.Message;
             }
 
             return respuesta;

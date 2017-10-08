@@ -209,7 +209,7 @@ namespace Clases
                 adaptador.SelectCommand = comando;
                 adaptador.Fill(empleados);
             }
-            catch (SqlException x) { Console.WriteLine(x.Message); }
+            catch (SqlException x) { throw x; }
             finally { clsConexion.closeCon(); }
             return empleados;
         }
@@ -227,7 +227,7 @@ namespace Clases
                 adaptador.SelectCommand = comando;
                 adaptador.Fill(empleados);
             }
-            catch (SqlException x) { Console.WriteLine(x.Message); }
+            catch (SqlException x) { throw x; }
             finally { clsConexion.closeCon(); }
             return empleados;
 

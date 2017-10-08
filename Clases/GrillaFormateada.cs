@@ -26,6 +26,16 @@ namespace Clases
            base.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
            base.ReadOnly = true;
            base.MultiSelect = false;
+           base.DataSourceChanged += new EventHandler(GrillaFormateada_DataSourceChanged);
         }
+
+        void GrillaFormateada_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach(DataGridViewColumn x in this.Columns){
+                if (x.Name.StartsWith("Id"))
+                    x.Visible = false;
+            }
+        }
+        
     }
 }

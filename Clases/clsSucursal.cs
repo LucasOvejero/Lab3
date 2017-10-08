@@ -47,7 +47,7 @@ namespace Clases
 
 
        public static DataTable seleccionarSucursales() {
-           comando = new SqlCommand("select s.IdSucursal, s.Direccion,s.Telefono,  Nombre +' '+ Apellido AS Manager, s.Estado , IdLocalidad from Sucursal s  left outer join Empleado ON IdManager = IdEmpleado");
+           comando = new SqlCommand("select IdManager,s.IdSucursal, s.Direccion,s.Telefono,  Nombre +' '+ Apellido AS Manager, s.Estado , IdLocalidad from Sucursal s  left outer join Empleado ON IdManager = IdEmpleado");
            try
            {
                sucursales = new DataTable("Sucursales");
@@ -56,7 +56,9 @@ namespace Clases
                adaptador.SelectCommand = comando;
                adaptador.Fill(sucursales);
            }
-           catch (SqlException x) { Console.WriteLine(x.Message); }
+           catch (SqlException x) {
+               throw x;
+               }
            finally { clsConexion.closeCon(); }
            return sucursales;
        }
@@ -77,6 +79,10 @@ namespace Clases
                if (id >= 0)
                {
                    resp = "La Sucursal con la direccion " + DireccionSucursal + " con el telefono " + telefonoSucursal + " insertada correctamente";
+                   comando.CommandText = "insert into Deposito (IdSucursal,Stock,IdBebida) select "+id+",0,IdBebida from Bebida;";//agrega el "deposito" de bebidas de esa sucursal inicializada en 0
+                   comando.ExecuteNonQuery();
+                   comando.CommandText="insert into Deposito (IdSucursal,Stock,IdIngrediente) select "+id+",0,IdIngrediente from Ingrediente";//Agrega al deposito los ingredientes inicializados en 0
+                   comando.ExecuteNonQuery();
                    actualizar(id);
                }
            }
@@ -92,10 +98,16 @@ namespace Clases
        }
 
 
-       private static void actualizar(int id) { 
-            comando.CommandText="select * from Sucursal where IdSucursal="+id;
-            adaptador.SelectCommand = comando;
-            adaptador.Fill(sucursales);
+       private static void actualizar(int id) {
+           try
+           {
+               comando.CommandText = "select * from Sucursal where IdSucursal=" + id;
+               adaptador.SelectCommand = comando;
+               adaptador.Fill(sucursales);
+           }
+           catch (SqlException e) {
+               throw e;
+           }
        }
 
 

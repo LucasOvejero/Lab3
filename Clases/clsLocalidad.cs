@@ -21,7 +21,7 @@ namespace Clases
             get { return nombreLocalidad; }
             set { nombreLocalidad = value; }
         }
-        public static DataTable seleccionarLocalidad()
+        public static DataTable seleccionarLocalidad() 
         {
             localidades = new DataTable("Localidades");
             comando = new SqlCommand("select * from Localidad");
@@ -33,7 +33,7 @@ namespace Clases
                 adaptador.Fill(localidades);
             }
             catch (SqlException e) {
-                Console.WriteLine(e.Message);
+                throw e;
             }
             finally { clsConexion.closeCon(); }
 

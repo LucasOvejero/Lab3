@@ -83,6 +83,7 @@ namespace Clases
         }
         public DataTable seleccionarBebidas()
         {
+
             dt.Clear();
            
            comando = new SqlCommand("select * from Bebida");
@@ -92,7 +93,7 @@ namespace Clases
                 da.SelectCommand = comando;
                 da.Fill(dt);
             }
-            catch (SqlException x) { Console.WriteLine(x.Message); }
+            catch (SqlException x) { throw x; }
             finally { clsConexion.closeCon(); }
             return dt;
         }

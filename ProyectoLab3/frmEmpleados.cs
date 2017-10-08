@@ -29,19 +29,18 @@ namespace ProyectoLab3
         {
 
             configurar();
-            formatear();
-            tbNombre.Focus();
         }
 
         private void formatear(){
             dgvSucursales.Columns["IdLocalidad"].Visible = false;
             dgvSucursales.Columns["IdSucursal"].Visible = false;
             dgvSucursales.Columns["Telefono"].Visible = false;
-            dgvSucursales.Columns["ManagerId"].Visible = false;
+            dgvSucursales.Columns["IdManager"].Visible = false;
             //dgvSucursales.Columns["Direccion"].Width = 270;
 
 
             dgvEmpleados.Columns["IdSucursal"].Visible = false; //columna del Id
+            tbNombre.Focus();
         }
 
         private void configurar()
@@ -49,18 +48,26 @@ namespace ProyectoLab3
             bsEmp = new BindingSource();
             bsSuc = new BindingSource();
             ds = new DataSet();
+            try
+            {
+                ds.Tables.Add(clsEmpleado.joinSucursales());
+                ds.Tables.Add(clsSucursal.seleccionarSucursales());
 
-            ds.Tables.Add(clsEmpleado.joinSucursales());
-            ds.Tables.Add(clsSucursal.seleccionarSucursales());
+                bsEmp.DataSource = ds;
+                bsEmp.DataMember = "JoinSucursal";
 
-            bsEmp.DataSource = ds;
-            bsEmp.DataMember = "JoinSucursal";
+                bsSuc.DataSource = ds;
+                bsSuc.DataMember = "Sucursales";
 
-            bsSuc.DataSource = ds;
-            bsSuc.DataMember = "Sucursales";
-
-            dgvEmpleados.DataSource = bsEmp;
-            dgvSucursales.DataSource = bsSuc;
+                dgvEmpleados.DataSource = bsEmp;
+                dgvSucursales.DataSource = bsSuc;
+                formatear();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
   
         

@@ -227,6 +227,7 @@
             this.Controls.Add(this.dgvBebidas);
             this.Name = "frmBebidas";
             this.Text = "Bebidas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBebidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).EndInit();

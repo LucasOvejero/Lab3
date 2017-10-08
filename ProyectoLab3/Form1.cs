@@ -16,29 +16,42 @@ namespace ProyectoLab3
             InitializeComponent();
             
         }
+        #region Formularios
+        frmBebidas ofrmBebidas;
+        frmSucursales ofrmSuc;
+        frmEmpleados ofrmEmp;
+        frmIngredientes ofrmIngredientes;
+        #endregion
 
         private void Form1_Load(object sender, EventArgs e)
         {
            // clsConexion con = new clsConexion();
           //  con.insertar();
+            Console.WriteLine("Hola");
         }
 
         private void btnBebidas_Click(object sender, EventArgs e)
         {
-            frmBebidas ofrmBebidas = new frmBebidas();
+            ofrmBebidas = new frmBebidas();
             ofrmBebidas.Show();
         }
 
         private void btnSuc_Click(object sender, EventArgs e)
         {
-            frmSucursales ofrmSuc = new frmSucursales();
+            ofrmSuc = new frmSucursales();
             ofrmSuc.ShowDialog();
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            frmEmpleados ofrmEmp = new frmEmpleados();
+            ofrmEmp = new frmEmpleados();
             ofrmEmp.ShowDialog();
+        }
+
+        private void btnIngredientes_Click(object sender, EventArgs e)
+        {
+            ofrmIngredientes = new frmIngredientes();
+            ofrmIngredientes.ShowDialog();
         }
 
        
