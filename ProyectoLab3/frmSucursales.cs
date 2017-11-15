@@ -76,21 +76,21 @@ namespace ProyectoLab3
         }
         private void formatearGrillas()
         {
-            dgvLocalidad.Columns["IdLocalidad"].Visible = false;
-            dgvLocalidad.Columns["IdProvincia"].Visible = false;
-            dgvProvincia.Columns["IdProvincia"].Visible = false;
-            dgvSucursal.Columns["IdLocalidad"].Visible = false;
-            dgvSucursal.Columns["IdSucursal"].Visible = false;
+           // dgvLocalidad.Columns["IdLocalidad"].Visible = false;
+           // dgvLocalidad.Columns["IdProvincia"].Visible = false;
+           // dgvProvincia.Columns["IdProvincia"].Visible = false;
+           // dgvSucursal.Columns["IdLocalidad"].Visible = false;
+          //  dgvSucursal.Columns["IdSucursal"].Visible = false;
             dgvSucursal.Columns["Direccion"].Width = 270;
             dgvProvincia.Columns["NombreProvincia"].Width = 120;
             dgvProvincia.Columns["NombreProvincia"].HeaderText = "Nombre de provincia";
             dgvLocalidad.Columns["NombreLocalidad"].Width = 122;
             dgvLocalidad.Columns["NombreLocalidad"].HeaderText = "Nombre de localidad";
             
-            dgvManagers.Columns["Tipo"].Visible = false;
-            dgvManagers.Columns["IdSucursal"].Visible = false;
-            dgvManagers.Columns["IdEmpleado"].Visible = false;
-            dgvManagers.Columns["Estado"].Visible = false;
+        //    dgvManagers.Columns["Tipo"].Visible = false;
+        //    dgvManagers.Columns["IdSucursal"].Visible = false;
+        //    dgvManagers.Columns["IdEmpleado"].Visible = false;
+        //    dgvManagers.Columns["Estado"].Visible = false;
 
 
         }

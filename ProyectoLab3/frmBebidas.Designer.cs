@@ -43,7 +43,7 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvBebidas = new Clases.GrillaFormateada();
+            this.dgvBebidas = new Clases.GrillaFormatead();
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -250,7 +250,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Clases.GrillaFormateada dgvBebidas;
+        private Clases.GrillaFormatead dgvBebidas;
         private System.Windows.Forms.NumericUpDown nudCosto;
         private System.Windows.Forms.NumericUpDown nudPrecio;
         private System.Windows.Forms.GroupBox gpEdicion;

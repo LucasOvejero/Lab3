@@ -38,6 +38,24 @@ namespace Clases
             finally { clsConexion.closeCon(); }
             return provincias;      
         }
+        public static List<string> getProvinciasConSucursales() {
+            List<string> c=new List<string>();
+            c.Insert(c.Count, "Todas");
+            comando = new SqlCommand("Select NombreProvincia from Provincia where IdProvincia in(select IdProvincia from Localidad l JOIN Sucursal s on(s.IdLocalidad=l.IdLocalidad))");
+            try
+            {
+                provincias=new DataTable();
+                comando.Connection = clsConexion.getCon();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(provincias);
+            
+                foreach (DataRow r in provincias.Rows) {
+                    c.Insert(c.Count, r["NombreProvincia"].ToString());
+                }
+            }
+            catch (SqlException e) { throw e; }
+            return c;
+        }
         public static string insertProvincia(string Nombre) {
             string respuesta="";
             comando = new SqlCommand();

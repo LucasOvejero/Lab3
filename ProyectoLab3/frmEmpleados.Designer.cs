@@ -39,14 +39,14 @@
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.pnlNuevo = new System.Windows.Forms.Panel();
-            this.dgvSucursales = new Clases.GrillaFormateada();
+            this.dgvSucursales = new Clases.GrillaFormatead();
             this.tbBusqueda = new System.Windows.Forms.TextBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.lblSucursal = new System.Windows.Forms.Label();
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.tbDni = new System.Windows.Forms.TextBox();
             this.tbApellido = new System.Windows.Forms.TextBox();
-            this.dgvEmpleados = new Clases.GrillaFormateada();
+            this.dgvEmpleados = new Clases.GrillaFormatead();
             this.pnlNuevo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -275,7 +275,7 @@
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.TextBox tbBusqueda;
-        private Clases.GrillaFormateada dgvEmpleados;
-        private Clases.GrillaFormateada dgvSucursales;
+        private Clases.GrillaFormatead dgvEmpleados;
+        private Clases.GrillaFormatead dgvSucursales;
     }
 }

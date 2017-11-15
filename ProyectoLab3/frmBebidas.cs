@@ -53,7 +53,7 @@ namespace ProyectoLab3
         private void darFormato() {
             if (dgvBebidas.DataSource != null)
             {
-                dgvBebidas.Columns["IdBebida"].Visible = false;
+               
                 dgvBebidas.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvBebidas.Columns["Costo"].DefaultCellStyle.Format = "c";
                 dgvBebidas.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

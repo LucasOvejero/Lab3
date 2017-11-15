@@ -29,18 +29,23 @@ namespace ProyectoLab3
             ds = new DataSet();
             try
             {
-                ds.Tables.Add(clsIngrediente.seleccionarIngredientes());
-                AsignarGrillas();
+                dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
+               
+                cboProvincia.Items.AddRange( clsProvincia.getProvinciasConSucursales().ToArray());
+                cboProvincia.SelectedIndex = 0;
+               // ds.Tables.Add(clsIngrediente.seleccionarIngredientes());
+              //  AsignarGrillas();
             }
             catch (SqlException e) {
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
+
         }
 
         private void AsignarGrillas() {
-            dgvIngred.DataSource = ds;
-            dgvIngred.DataMember = "Ingredientes";
+           // dgvIngredientes.DataSource = ds;
+          //  dgvIngredientes.DataMember = "Ingredientes";
         }
 
         private void btnAddIngrediente_Click(object sender, EventArgs e)
@@ -55,6 +60,11 @@ namespace ProyectoLab3
                 MessageBox.Show(r,"Mensaje", MessageBoxButtons.OK);
                 configurar();
             }
+        }
+
+        private void cboProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,11 +48,11 @@
     <Compile Include="clsLocalidad.cs" />
     <Compile Include="clsProvincia.cs" />
     <Compile Include="clsSucursal.cs" />
-    <Compile Include="GrillaFormateada.cs">
+    <Compile Include="GrillaFormatead.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GrillaFormateada.Designer.cs">
-      <DependentUpon>GrillaFormateada.cs</DependentUpon>
+    <Compile Include="GrillaFormatead.Designer.cs">
+      <DependentUpon>GrillaFormatead.cs</DependentUpon>
     </Compile>
     <Compile Include="nudP.cs">
       <SubType>Component</SubType>

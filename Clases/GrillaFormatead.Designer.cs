@@ -1,6 +1,6 @@
 ﻿namespace Clases
 {
-    partial class GrillaFormateada
+    partial class GrillaFormatead
     {
         /// <summary>
         /// Variable del diseñador requerida.

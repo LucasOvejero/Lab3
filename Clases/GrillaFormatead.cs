@@ -8,11 +8,12 @@ using System.Windows.Forms;
 
 namespace Clases
 {
-    public partial class GrillaFormateada : DataGridView
+    public partial class GrillaFormatead : DataGridView
     {
-        public GrillaFormateada()
+        public GrillaFormatead()
         {
             InitializeComponent();
+            base.DataSourceChanged += new EventHandler(GrillaFormateada_DataSourceChanged);
             darFormato();
             
         }
@@ -26,6 +27,18 @@ namespace Clases
            base.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
            base.ReadOnly = true;
            base.MultiSelect = false;
+        
         }
+
+        void GrillaFormateada_DataSourceChanged(object sender, EventArgs e)
+        {
+
+            foreach (DataGridViewColumn x in this.Columns)
+            {
+                if (x.Name.StartsWith("Id"))
+                    x.Visible = false;
+            }
+        }
+        
     }
 }

@@ -32,14 +32,14 @@ namespace ProyectoLab3
         }
 
         private void formatear(){
-            dgvSucursales.Columns["IdLocalidad"].Visible = false;
+           // dgvSucursales.Columns["IdLocalidad"].Visible = false;
             dgvSucursales.Columns["IdSucursal"].Visible = false;
             dgvSucursales.Columns["Telefono"].Visible = false;
             dgvSucursales.Columns["IdManager"].Visible = false;
             //dgvSucursales.Columns["Direccion"].Width = 270;
 
 
-            dgvEmpleados.Columns["IdSucursal"].Visible = false; //columna del Id
+          //  dgvEmpleados.Columns["IdSucursal"].Visible = false; //columna del Id
             tbNombre.Focus();
         }
 
