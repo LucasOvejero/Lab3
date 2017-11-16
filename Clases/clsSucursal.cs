@@ -62,6 +62,37 @@ namespace Clases
            finally { clsConexion.closeCon(); }
            return sucursales;
        }
+       public static string[] getTodas(){
+           List<string> LSucursales = new List<string>();
+          
+           try
+           {
+                DataTable sc=new DataTable();
+                adaptador = new SqlDataAdapter();
+                comando = new SqlCommand("Select Direccion from Sucursal");
+               comando.Connection = clsConexion.getCon();
+               adaptador.SelectCommand=comando;
+               adaptador.Fill(sc);
+               foreach (DataRow r in sc.Rows)
+               {
+                   LSucursales.Insert(LSucursales.Count, r["Direccion"].ToString());
+               }
+
+           }
+           catch (SqlException e) { throw e; }
+           return LSucursales.ToArray();
+       }
+       public static string[] getPerProv(string provincia) {
+           List<string> lSuc = new List<string>();
+           try
+           {
+               comando = new SqlCommand("Select Direccion from Sucursal where IdSucursal in(Select IdSucursal from Provincia p JOIN Localidad l on(p.IdProvincia=l.IdProvincia) ");
+           }
+           catch (SqlException e) {
+               throw e;
+           }
+           return lSuc.ToArray();
+       }
        public static string insertarSucursal(string DireccionSucursal, string telefonoSucursal, int idLocalidad) {
            string resp = "";
            comando = new SqlCommand();

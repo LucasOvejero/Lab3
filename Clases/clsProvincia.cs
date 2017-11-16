@@ -44,16 +44,20 @@ namespace Clases
             comando = new SqlCommand("Select NombreProvincia from Provincia where IdProvincia in(select IdProvincia from Localidad l JOIN Sucursal s on(s.IdLocalidad=l.IdLocalidad))");
             try
             {
-                provincias=new DataTable();
+                provincias = new DataTable();
                 comando.Connection = clsConexion.getCon();
                 adaptador.SelectCommand = comando;
                 adaptador.Fill(provincias);
-            
-                foreach (DataRow r in provincias.Rows) {
+
+                foreach (DataRow r in provincias.Rows)
+                {
                     c.Insert(c.Count, r["NombreProvincia"].ToString());
                 }
             }
             catch (SqlException e) { throw e; }
+            finally {
+                clsConexion.closeCon();
+            }
             return c;
         }
         public static string insertProvincia(string Nombre) {

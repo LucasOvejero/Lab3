@@ -68,6 +68,26 @@ namespace Clases
             return respuesta;
         }
 
+        public static string[] getLocPerProv(string prov) {
+            List<string> lLocalidades = new List<string>();
+            try
+            {
+                DataTable loc = new DataTable();
+                adaptador = new SqlDataAdapter();
+                comando = new SqlCommand("select NombreLocalidad from Localidad l JOIN Provincia p on (l.IdProvincia=p.IdProvincia) JOIN Sucursal s ON(s.IdLocalidad=l.IdLocalidad) where NombreProvincia='"+prov+"'");
+                comando.Connection = clsConexion.getCon();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(loc);
+                foreach (DataRow r in loc.Rows)
+                {
+                    lLocalidades.Insert(lLocalidades.Count, r["NombreLocalidad"].ToString());
+                }
+            }
+            catch (SqlException e) {
+                throw e;
+            }
+            return lLocalidades.ToArray();
+        }
 
         private static void actualizar(int id) {
             comando.CommandText = "select * from Localidad where IdLocalidad="+id;

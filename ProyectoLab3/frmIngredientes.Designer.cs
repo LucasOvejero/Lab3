@@ -37,6 +37,7 @@
             this.lbSucursales = new System.Windows.Forms.ListBox();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
             this.dgvIngredientes = new Clases.GrillaFormatead();
+            this.cboLocalidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoPorKilo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +89,7 @@
             // lbSucursales
             // 
             this.lbSucursales.FormattingEnabled = true;
-            this.lbSucursales.Location = new System.Drawing.Point(442, 91);
+            this.lbSucursales.Location = new System.Drawing.Point(443, 154);
             this.lbSucursales.Name = "lbSucursales";
             this.lbSucursales.Size = new System.Drawing.Size(120, 95);
             this.lbSucursales.TabIndex = 6;
@@ -125,11 +126,20 @@
             this.dgvIngredientes.Size = new System.Drawing.Size(287, 228);
             this.dgvIngredientes.TabIndex = 5;
             // 
+            // cboLocalidad
+            // 
+            this.cboLocalidad.FormattingEnabled = true;
+            this.cboLocalidad.Location = new System.Drawing.Point(442, 107);
+            this.cboLocalidad.Name = "cboLocalidad";
+            this.cboLocalidad.Size = new System.Drawing.Size(121, 21);
+            this.cboLocalidad.TabIndex = 8;
+            // 
             // frmIngredientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 526);
+            this.Controls.Add(this.cboLocalidad);
             this.Controls.Add(this.cboProvincia);
             this.Controls.Add(this.lbSucursales);
             this.Controls.Add(this.dgvIngredientes);
@@ -159,6 +169,7 @@
         private Clases.GrillaFormatead dgvIngredientes;
         private System.Windows.Forms.ListBox lbSucursales;
         private System.Windows.Forms.ComboBox cboProvincia;
+        private System.Windows.Forms.ComboBox cboLocalidad;
         
     }
 }

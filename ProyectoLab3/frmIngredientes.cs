@@ -64,7 +64,24 @@ namespace ProyectoLab3
 
         private void cboProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lbSucursales.Items.Clear();
+            cboLocalidad.Items.Clear();
+            try{
+                string provincia=cboProvincia.SelectedItem.ToString();
+                if (provincia == "Todas")
+                    lbSucursales.Items.AddRange(clsSucursal.getTodas());
+                else
+                {
+                    cboLocalidad.Items.AddRange(clsLocalidad.getLocPerProv(provincia));
+                }
+             
+                  
+            }catch(SqlException ex){
+            MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
 
+
+           
         }
     }
 }
