@@ -62,6 +62,26 @@ namespace Clases
            finally { clsConexion.closeCon(); }
            return sucursales;
        }
+       public static string[] getPerLoc(string localidad) {
+           List<string> LSucursales = new List<string>();
+
+           try
+           {
+               DataTable sc = new DataTable();
+               adaptador = new SqlDataAdapter();
+               comando = new SqlCommand("Select Direccion from Sucursal where IdLocalidad in(select IdLocalidad from Localidad where NombreLocalidad='"+localidad+"');");
+               comando.Connection = clsConexion.getCon();
+               adaptador.SelectCommand = comando;
+               adaptador.Fill(sc);
+               foreach (DataRow r in sc.Rows)
+               {
+                   LSucursales.Insert(LSucursales.Count, r["Direccion"].ToString());
+               }
+
+           }
+           catch (SqlException e) { throw e; }
+           return LSucursales.ToArray();
+       }
        public static string[] getTodas(){
            List<string> LSucursales = new List<string>();
           
@@ -86,10 +106,22 @@ namespace Clases
            List<string> lSuc = new List<string>();
            try
            {
-               comando = new SqlCommand("Select Direccion from Sucursal where IdSucursal in(Select IdSucursal from Provincia p JOIN Localidad l on(p.IdProvincia=l.IdProvincia) ");
+               DataTable suc = new DataTable();
+               comando = new SqlCommand("Select Direccion from Sucursal where IdLocalidad in(Select IdLocalidad from Provincia p JOIN Localidad l on(p.IdProvincia=l.IdProvincia) Where NombreProvincia='" + provincia + "') ");
+               comando.Connection = clsConexion.getCon();
+               adaptador.SelectCommand = comando;
+               adaptador.Fill(suc);
+               foreach (DataRow r in suc.Rows)
+               {
+                   lSuc.Insert(lSuc.Count, r["Direccion"].ToString());
+               }
            }
-           catch (SqlException e) {
+           catch (SqlException e)
+           {
                throw e;
+           }
+           finally {
+               clsConexion.closeCon();
            }
            return lSuc.ToArray();
        }

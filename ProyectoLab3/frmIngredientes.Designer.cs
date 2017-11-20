@@ -133,6 +133,7 @@
             this.cboLocalidad.Name = "cboLocalidad";
             this.cboLocalidad.Size = new System.Drawing.Size(121, 21);
             this.cboLocalidad.TabIndex = 8;
+            this.cboLocalidad.SelectedIndexChanged += new System.EventHandler(this.cboLocalidad_SelectedIndexChanged);
             // 
             // frmIngredientes
             // 

@@ -69,10 +69,15 @@ namespace ProyectoLab3
             try{
                 string provincia=cboProvincia.SelectedItem.ToString();
                 if (provincia == "Todas")
+                {
                     lbSucursales.Items.AddRange(clsSucursal.getTodas());
+                    cboLocalidad.Items.AddRange(clsLocalidad.getTodas());
+                    cboLocalidad.SelectedIndex = 0;
+                }
                 else
                 {
                     cboLocalidad.Items.AddRange(clsLocalidad.getLocPerProv(provincia));
+                    cboLocalidad.SelectedIndex = 0;
                 }
              
                   
@@ -82,6 +87,35 @@ namespace ProyectoLab3
 
 
            
+        }
+
+        private void cboLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbSucursales.Items.Clear();
+            try
+            {
+                string localidad = cboLocalidad.SelectedItem.ToString();
+                string provincia = cboProvincia.SelectedItem.ToString();
+                if (localidad == "Todas" && provincia=="Todas" )
+                {
+                    lbSucursales.Items.AddRange(clsSucursal.getTodas());
+                    
+                }
+                else if(localidad == "Todas"){
+                    lbSucursales.Items.AddRange(clsSucursal.getPerProv(provincia));
+                    
+                }
+                else
+                {
+                    lbSucursales.Items.AddRange(clsSucursal.getPerLoc(localidad));
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

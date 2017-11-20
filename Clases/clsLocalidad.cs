@@ -67,9 +67,31 @@ namespace Clases
             }
             return respuesta;
         }
-
+        public static string[] getTodas() {
+            List<string> lLocalidades = new List<string>();
+            lLocalidades.Insert(lLocalidades.Count, "Todas");
+            try
+            {
+                DataTable loc = new DataTable();
+                adaptador = new SqlDataAdapter();
+                comando = new SqlCommand("select NombreLocalidad from Localidad");
+                comando.Connection = clsConexion.getCon();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(loc);
+                foreach (DataRow r in loc.Rows)
+                {
+                    lLocalidades.Insert(lLocalidades.Count, r["NombreLocalidad"].ToString());
+                }
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            return lLocalidades.ToArray();
+        }
         public static string[] getLocPerProv(string prov) {
             List<string> lLocalidades = new List<string>();
+            lLocalidades.Insert(lLocalidades.Count, "Todas");
             try
             {
                 DataTable loc = new DataTable();
