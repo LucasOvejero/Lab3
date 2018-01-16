@@ -67,16 +67,16 @@ namespace Clases
             parametros[3] = new SqlParameter("@Litros", Litros);
             parametros[4] = new SqlParameter("@Alcohol", Alcohol);
             comando = new SqlCommand();
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "sp_IBebida";
+
+            comando.CommandText = "INSERT INTO Bebida (NombreBebida,Costo,Precio,Litros,Alcohol) values (@Nombre,@Costo,@Precio,@Litros,@Alcohol); select SCOPE_IDENTITY(); ";
             try
             {
                 comando.Connection = clsConexion.getCon();
                 comando.Parameters.AddRange(parametros);
                 r = (Int32)comando.ExecuteNonQuery();
             }
-            catch (NullReferenceException n) { Console.WriteLine(n.Message); }
-            catch (SqlException x) { Console.WriteLine(x.Message); }
+            catch (NullReferenceException n) { throw n; }
+            catch (SqlException x) { throw x; }
             finally
             { clsConexion.closeCon(); }
             return r;

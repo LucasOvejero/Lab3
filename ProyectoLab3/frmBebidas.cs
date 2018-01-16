@@ -46,8 +46,13 @@ namespace ProyectoLab3
             bebida.Costo = nudCosto.Value;
             bebida.Precio = nudPrecio.Value;
             bebida.Litros = nudLitros.Value;
-            bebida.insertarBebida();
-            refrescarInterfaz();
+            try
+            {
+                bebida.insertarBebida();
+                refrescarInterfaz();
+            }
+            catch (SqlException sqlEx) { MessageBox.Show(sqlEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void darFormato() {
