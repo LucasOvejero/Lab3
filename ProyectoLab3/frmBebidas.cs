@@ -27,10 +27,13 @@ namespace ProyectoLab3
 
         private void refrescarInterfaz()
         {
-            dgvBebidas.DataSource = null;
+            
             try
             {
+                int row = dgvBebidas.SelectedRows.Count > 0 ? dgvBebidas.SelectedRows[0].Index : 0;
+                dgvBebidas.DataSource = null;
                 dgvBebidas.DataSource = bebida.seleccionarBebidas();
+                dgvBebidas.Rows[row].Selected=true;
             }
             catch (SqlException e) {
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -73,8 +76,8 @@ namespace ProyectoLab3
             if (dgvBebidas.SelectedRows != null)
             {
                 idSeleccionado = (Int32)dgvBebidas.SelectedRows[0].Cells["IdBebida"].Value;
-                bebida.eliminarBebida(idSeleccionado);
-                MessageBox.Show("Se ha eliminado correctamente la bebida", "Borrado"); 
+                bebida.UpdateEstadoBebida(idSeleccionado,(bool)dgvBebidas.SelectedRows[0].Cells["Estado"].Value);
+                MessageBox.Show("Se ha actualizado el estado correctamente la bebida", "Actualizado"); 
                 refrescarInterfaz();
             }
             else
@@ -83,9 +86,38 @@ namespace ProyectoLab3
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
+        private void dgvBebidas_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+           
+                
+        }
 
+        private decimal getDecimalValue(DataGridViewCell celda) {
+            decimal res;
+            return decimal.TryParse(celda.Value.ToString(), out res) ? res : 0;
+        }
+        private bool getBoolValue(DataGridViewCell celda) {
+            return bool.Parse(celda.Value.ToString());
+        }
+
+        private void dgvBebidas_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow fila = dgvBebidas.SelectedRows.Count > 0 ? dgvBebidas.SelectedRows[0] : null;
+            if (fila != null)
+            {
+                tbEditName.Text = fila.Cells["NombreBebida"].Value.ToString();
+                nudEditPrecio.Value = getDecimalValue(fila.Cells["Precio"]);
+                nudEditCosto.Value = getDecimalValue(fila.Cells["Costo"]);
+                nudEditLitros.Value = getDecimalValue(fila.Cells["Litros"]);
+                cbEditAlcohol.Checked = getBoolValue(fila.Cells["Alcohol"]);
+                if (getBoolValue(fila.Cells["Estado"]))
+                {
+
+                }
+            }
+        }
     }
 }

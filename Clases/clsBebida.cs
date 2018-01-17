@@ -97,10 +97,10 @@ namespace Clases
             finally { clsConexion.closeCon(); }
             return dt;
         }
-        public void eliminarBebida(int IdBebida)
+        public void UpdateEstadoBebida(int IdBebida,bool EstadoActual)
         {
-            
-            comando = new SqlCommand("delete from Bebida where IdBebida=" + IdBebida);
+            int estado= EstadoActual?0:1;   
+            comando = new SqlCommand("update Bebida set Estado ="+estado+" where IdBebida=" + IdBebida);
             try
             {
                 comando.Connection = clsConexion.getCon();
