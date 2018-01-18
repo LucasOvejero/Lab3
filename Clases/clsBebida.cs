@@ -122,10 +122,12 @@ namespace Clases
             parametros[5] = new SqlParameter("@IdBebida", IdBebida);
             try
             {
+                comando.Parameters.AddRange(parametros);
                 comando.Connection = clsConexion.getCon();
                 comando.ExecuteNonQuery();
             }
-            catch (SqlException e) { Console.WriteLine(e.Message); }
+            catch (SqlException e) { throw e; }
+            catch (Exception ex) { throw ex; }
             finally { clsConexion.closeCon(); }
         }
     }

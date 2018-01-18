@@ -86,7 +86,28 @@ namespace ProyectoLab3
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
+            if (dgvBebidas.SelectedRows.Count > 0)
+            {
+                bebida.NombreBebida = tbEditName.Text;
+                bebida.Precio = nudEditPrecio.Value;
+                bebida.Costo = nudEditCosto.Value;
+                bebida.Alcohol = cbEditAlcohol.Checked;
+                bebida.Litros = nudEditLitros.Value;
+                try
+                {
+                    bebida.modificarBebida((Int32)dgvBebidas.SelectedRows[0].Cells["IdBebida"].Value);
+                    MessageBox.Show("Se ha actualizado correctamente la bebida", "Actualizado");
+                    refrescarInterfaz();
+                }
+                catch (SqlException sqlEx)
+                {
+                    MessageBox.Show(sqlEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
 
         private void dgvBebidas_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -113,10 +134,8 @@ namespace ProyectoLab3
                 nudEditCosto.Value = getDecimalValue(fila.Cells["Costo"]);
                 nudEditLitros.Value = getDecimalValue(fila.Cells["Litros"]);
                 cbEditAlcohol.Checked = getBoolValue(fila.Cells["Alcohol"]);
-                if (getBoolValue(fila.Cells["Estado"]))
-                {
-
-                }
+                btnBorrar.Text = getBoolValue(fila.Cells["Estado"]) ? "Baja" : "Alta";
+                
             }
         }
     }
