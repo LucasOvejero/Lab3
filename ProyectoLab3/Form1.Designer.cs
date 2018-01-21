@@ -40,7 +40,7 @@
             this.btnBebidas.Name = "btnBebidas";
             this.btnBebidas.Size = new System.Drawing.Size(75, 23);
             this.btnBebidas.TabIndex = 0;
-            this.btnBebidas.Text = "Bebidas";
+            this.btnBebidas.Text = "Productos";
             this.btnBebidas.UseVisualStyleBackColor = true;
             this.btnBebidas.Click += new System.EventHandler(this.btnBebidas_Click);
             // 

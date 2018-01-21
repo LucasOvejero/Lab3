@@ -73,7 +73,12 @@ namespace Clases
             {
                 comando.Connection = clsConexion.getCon();
                 comando.Parameters.AddRange(parametros);
-                r = (Int32)comando.ExecuteNonQuery();
+                r = Convert.ToInt32(comando.ExecuteScalar());
+                if (r >= 0)
+                {
+                    comando.CommandText = "insert into Deposito (IdSucursal,Stock,IdBebida) select Distinct(IdSucursal),0," + r + " from Sucursal";
+                    comando.ExecuteNonQuery();
+                }
             }
             catch (NullReferenceException n) { throw n; }
             catch (SqlException x) { throw x; }

@@ -10,11 +10,11 @@ namespace Clases
     {
         private static DataTable Deposito;
         private static SqlCommand comando;
-        public static DataTable getDepositoPerDireccion(string Direccion) {
+        public static DataTable getDepositoPorSucursal(int idSucursal) {
             Deposito = new DataTable();
             try
             {
-                comando = new SqlCommand("");
+                comando = new SqlCommand("Select * from deposito where IdSucursal=@IdSucursal");
 
             }
             catch (SqlException e)

@@ -17,12 +17,13 @@ namespace ProyectoLab3
             InitializeComponent();
         }
         clsBebida bebida;
-        
+        DataSet ds;
         private void frmBebidas_Load(object sender, EventArgs e)
         {
             bebida = new clsBebida();
-       
             refrescarInterfaz();
+            configurarIngredientes();
+            darFormato();
         }
 
         private void refrescarInterfaz()
@@ -39,7 +40,7 @@ namespace ProyectoLab3
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
-            darFormato();
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -67,6 +68,11 @@ namespace ProyectoLab3
                 dgvBebidas.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvBebidas.Columns["Precio"].DefaultCellStyle.Format = "c";
                 dgvBebidas.Columns["Litros"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+            if (dgvIngredientes.DataSource != null) {
+                dgvIngredientes.Columns["CostoxKg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvIngredientes.Columns["CostoxKg"].DefaultCellStyle.Format = "c";
+                dgvIngredientes.Columns["NombreProducto"].HeaderText = "Nombre";
             }
         }
 
@@ -136,6 +142,65 @@ namespace ProyectoLab3
                 cbEditAlcohol.Checked = getBoolValue(fila.Cells["Alcohol"]);
                 btnBorrar.Text = getBoolValue(fila.Cells["Estado"]) ? "Baja" : "Alta";
                 
+            }
+        }
+
+        private void btnAddIngrediente_Click(object sender, EventArgs e)
+        {
+
+            string r;
+            if (tbNombreIngrediente.Text == string.Empty)
+                MessageBox.Show("No se puede ingresar un ingrediente sin nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (nudCostoPorKilo.Value == 0)
+                MessageBox.Show("No se puede ingresar un ingrediente sin coste", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                try
+                {
+                    r = clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text, (double)nudCostoPorKilo.Value);
+                    MessageBox.Show(r, "Mensaje", MessageBoxButtons.OK);
+                    configurarIngredientes();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        private void configurarIngredientes()
+        {
+            ds = new DataSet();
+            try
+            {
+                dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+
+        }
+
+        private void btnActualizarIngrediente_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void dgvIngredientes_SelectionChanged(object sender, EventArgs e)
+        {
+            int c= dgvIngredientes.Rows.Count;
+            if (c > 0) { 
+                DataGridViewRow fila=dgvIngredientes.SelectedRows[0];
+                nudEditCostoIngrediente.Value=getDecimalValue(fila.Cells["CostoxKg"]);
+                tbEditNombreIngrediente.Text = fila.Cells["NombreProducto"].Value.ToString();
             }
         }
     }

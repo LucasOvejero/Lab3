@@ -29,7 +29,7 @@ namespace ProyectoLab3
             ds = new DataSet();
             try
             {
-                dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
+               
                
                 cboProvincia.Items.AddRange( clsProvincia.getProvinciasConSucursales().ToArray());
                 cboProvincia.SelectedIndex = 0;
@@ -48,20 +48,7 @@ namespace ProyectoLab3
           //  dgvIngredientes.DataMember = "Ingredientes";
         }
 
-        private void btnAddIngrediente_Click(object sender, EventArgs e)
-        {
-            string r;
-            if (tbNombreIngrediente.Text == string.Empty)
-                MessageBox.Show("No se puede ingresar un ingrediente sin nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (nudCostoPorKilo.Value == 0)
-                MessageBox.Show("No se puede ingresar un ingrediente sin coste","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else {
-                r= clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text,(double) nudCostoPorKilo.Value);
-                MessageBox.Show(r,"Mensaje", MessageBoxButtons.OK);
-                configurar();
-            }
-        }
-
+    
         private void cboProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbSucursales.Items.Clear();
@@ -116,6 +103,11 @@ namespace ProyectoLab3
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void lbSucursales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

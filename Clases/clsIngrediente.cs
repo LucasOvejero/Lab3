@@ -33,6 +33,7 @@ namespace Clases
             }
             return ingredientes;
         }
+      
         public static string insertarIngrediente(string nombre, double CostoXKilo) {
             string resp="";
             comando = new SqlCommand();
@@ -57,7 +58,7 @@ namespace Clases
             }
             catch (SqlException e)
             {
-                resp = e.Message;
+                throw e;
             }
             finally {
                 clsConexion.closeCon();
