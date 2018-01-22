@@ -77,21 +77,28 @@ namespace Clases
                 throw e;
             }
         }
-        public static string actualizar(int id,string nombre, double precio){
+        public static string actualizar(int id,string nombre, decimal precio){
             string resp = "";
-            comando = new SqlCommand("UPDATE Ingrediente set NombreProducto="+nombre+", PrecioxKilo="+precio+ " where IdIngrediente="+id);
+            comando = new SqlCommand("UPDATE Ingrediente set NombreProducto=@Nombre, CostoxKg=@Precio where IdIngrediente=@IdIngrediente");
+            SqlParameter[] parametros = new SqlParameter[3];
+            parametros[0] = new SqlParameter("Nombre", nombre);
+            parametros[1] = new SqlParameter("Precio",precio);
+            parametros[2] = new SqlParameter("IdIngrediente", id);
             try
             {
                 comando.Connection = clsConexion.getCon();
+                comando.Parameters.AddRange(parametros);
                 if (comando.ExecuteNonQuery() > 0)
                 {
-                    resp = "Actualizado correctamente";
+                    resp = "El Ingrediente "+nombre+" actualizado correctamente";
+                    ingredientes.Clear();
+                    adaptador.Fill(ingredientes);
                 }
                 
             }
             catch (SqlException e)
             {
-                resp = e.Message;
+                throw e;
             }
             finally {
                 clsConexion.closeCon();

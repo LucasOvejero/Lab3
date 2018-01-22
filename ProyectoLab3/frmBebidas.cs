@@ -17,7 +17,7 @@ namespace ProyectoLab3
             InitializeComponent();
         }
         clsBebida bebida;
-        DataSet ds;
+        
         private void frmBebidas_Load(object sender, EventArgs e)
         {
             bebida = new clsBebida();
@@ -122,13 +122,7 @@ namespace ProyectoLab3
                 
         }
 
-        private decimal getDecimalValue(DataGridViewCell celda) {
-            decimal res;
-            return decimal.TryParse(celda.Value.ToString(), out res) ? res : 0;
-        }
-        private bool getBoolValue(DataGridViewCell celda) {
-            return bool.Parse(celda.Value.ToString());
-        }
+      
 
         private void dgvBebidas_SelectionChanged(object sender, EventArgs e)
         {
@@ -175,9 +169,10 @@ namespace ProyectoLab3
 
         private void configurarIngredientes()
         {
-            ds = new DataSet();
+           
             try
             {
+                dgvIngredientes.DataSource = null;
                 dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
             }
             catch (SqlException e)
@@ -190,7 +185,22 @@ namespace ProyectoLab3
 
         private void btnActualizarIngrediente_Click(object sender, EventArgs e)
         {
-
+            int c= dgvIngredientes.Rows.Count;
+            if (c > 0) {
+                DataGridViewRow fila=dgvIngredientes.SelectedRows[0];
+                try
+                {
+                    string resp = clsIngrediente.actualizar(getIntValue(fila.Cells["IdIngrediente"]), tbEditNombreIngrediente.Text, nudEditCostoIngrediente.Value);
+                    MessageBox.Show(resp, "Exito!", MessageBoxButtons.OK);
+                }
+                catch (SqlException sqlEx)
+                {
+                    MessageBox.Show(sqlEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             
         }
 
@@ -203,5 +213,20 @@ namespace ProyectoLab3
                 tbEditNombreIngrediente.Text = fila.Cells["NombreProducto"].Value.ToString();
             }
         }
+        #region getValues
+        private decimal getDecimalValue(DataGridViewCell celda)
+        {
+            decimal res;
+            return decimal.TryParse(celda.Value.ToString(), out res) ? res : 0;
+        }
+        private bool getBoolValue(DataGridViewCell celda)
+        {
+            return bool.Parse(celda.Value.ToString());
+        }
+        private int getIntValue(DataGridViewCell celda) {
+            int res;
+            return int.TryParse(celda.Value.ToString(),out res)?res:0;
+        }
+        #endregion
     }
 }
