@@ -10,13 +10,13 @@ using Clases;
 using System.Data.SqlClient;
 namespace ProyectoLab3
 {
-    public partial class frmIngredientes : Form
+    public partial class frmDepositos : Form
     {
         #region variables
         DataSet ds;
         #endregion
 
-        public frmIngredientes()
+        public frmDepositos()
         {
             InitializeComponent();
         }
@@ -107,6 +107,10 @@ namespace ProyectoLab3
 
         private void lbSucursales_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string direccion=lbSucursales.SelectedItem.ToString();
+            ds=clsDeposito.getDepositoPorDireccion(direccion);
+            dgvBebidas.DataSource = ds.Tables["Bebidas"];
+            dgvIngredientes.DataSource = ds.Tables["Ingredientes"];
 
         }
     }

@@ -20,7 +20,7 @@ namespace ProyectoLab3
         frmBebidas ofrmBebidas;
         frmSucursales ofrmSuc;
         frmEmpleados ofrmEmp;
-        frmIngredientes ofrmIngredientes;
+        frmDepositos ofrmDepositos;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,8 +50,8 @@ namespace ProyectoLab3
 
         private void btnIngredientes_Click(object sender, EventArgs e)
         {
-            ofrmIngredientes = new frmIngredientes();
-            ofrmIngredientes.ShowDialog();
+            ofrmDepositos = new frmDepositos();
+            ofrmDepositos.ShowDialog();
         }
 
        

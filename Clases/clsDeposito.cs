@@ -8,14 +8,30 @@ namespace Clases
 {
     public static class clsDeposito
     {
-        private static DataTable Deposito;
+        private static DataTable Bebidas,Ingredientes;
         private static SqlCommand comando;
-        public static DataTable getDepositoPorSucursal(int idSucursal) {
-            Deposito = new DataTable();
+        private static DataSet ds;
+        private static SqlDataAdapter adapter;
+        public static DataSet getDepositoPorDireccion(string Direccion) {
+            Ingredientes = new DataTable("Ingredientes");
+            adapter=new SqlDataAdapter();
+            Bebidas = new DataTable("Bebidas") ;
             try
             {
-                comando = new SqlCommand("Select * from deposito where IdSucursal=@IdSucursal");
-
+                //recuperamos los ingredientes
+                comando = new SqlCommand("Select i.IdIngrediente,NombreProducto,Stock from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion; ");
+                comando.Connection = clsConexion.getCon();
+                SqlParameter dir = new SqlParameter("@Direccion", Direccion);
+                comando.Parameters.Add(dir);
+                ds = new DataSet("Deposito");
+                adapter.SelectCommand = comando;
+                adapter.Fill(Ingredientes);
+                //recuperamos las bebidas de la sucursal
+                comando.CommandText = "Select b.IdBebida,NombreBebida,Stock from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Bebida b on (d.IdBebida=b.IdBebida) where Direccion=@Direccion;";
+                adapter.SelectCommand = comando;
+                adapter.Fill(Bebidas);
+                ds.Tables.Add(Ingredientes);
+                ds.Tables.Add(Bebidas);
             }
             catch (SqlException e)
             {
@@ -25,7 +41,7 @@ namespace Clases
             finally {
                 clsConexion.closeCon();
             }
-            return Deposito;
+            return ds;
         }
     }
 }
