@@ -94,7 +94,7 @@ namespace ProyectoLab3
                 }
                 else
                 {
-                    lbSucursales.Items.AddRange(clsSucursal.getPerLoc(localidad));
+                    lbSucursales.Items.AddRange(clsSucursal.getPerLocProv(localidad,provincia));
                 }
 
 

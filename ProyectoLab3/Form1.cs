@@ -17,7 +17,7 @@ namespace ProyectoLab3
             
         }
         #region Formularios
-        frmBebidas ofrmBebidas;
+        frmProductos ofrmBebidas;
         frmSucursales ofrmSuc;
         frmEmpleados ofrmEmp;
         frmDepositos ofrmDepositos;
@@ -32,7 +32,7 @@ namespace ProyectoLab3
 
         private void btnBebidas_Click(object sender, EventArgs e)
         {
-            ofrmBebidas = new frmBebidas();
+            ofrmBebidas = new frmProductos();
             ofrmBebidas.Show();
         }
 
@@ -52,6 +52,11 @@ namespace ProyectoLab3
         {
             ofrmDepositos = new frmDepositos();
             ofrmDepositos.ShowDialog();
+        }
+
+        private void btnPlatos_Click(object sender, EventArgs e)
+        {
+
         }
 
        

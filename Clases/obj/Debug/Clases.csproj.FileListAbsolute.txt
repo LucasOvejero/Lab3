@@ -8,8 +8,8 @@ C:\Users\Usuario\Desktop\Lab3-master\Clases\bin\Debug\Clases.pdb
 C:\Users\Usuario\Desktop\Lab3-master\Clases\obj\Debug\Clases.dll
 C:\Users\Usuario\Desktop\Lab3-master\Clases\obj\Debug\Clases.pdb
 C:\Users\Usuario\Desktop\Lab3-master\Clases\obj\Debug\Clases.csprojResolveAssemblyReference.cache
+C:\ProyectoLab3\Clases\obj\Debug\Clases.csprojResolveAssemblyReference.cache
 C:\ProyectoLab3\Clases\bin\Debug\Clases.dll
 C:\ProyectoLab3\Clases\bin\Debug\Clases.pdb
 C:\ProyectoLab3\Clases\obj\Debug\Clases.dll
 C:\ProyectoLab3\Clases\obj\Debug\Clases.pdb
-C:\ProyectoLab3\Clases\obj\Debug\Clases.csprojResolveAssemblyReference.cache
