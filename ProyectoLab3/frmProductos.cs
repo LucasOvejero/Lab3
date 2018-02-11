@@ -10,9 +10,9 @@ using Clases;
 using System.Data.SqlClient;
 namespace ProyectoLab3
 {
-    public partial class frmBebidas : Form
+    public partial class frmProductos : Form
     {
-        public frmBebidas()
+        public frmProductos()
         {
             InitializeComponent();
         }
@@ -24,8 +24,8 @@ namespace ProyectoLab3
             refrescarInterfaz();
             configurarIngredientes();
             darFormato();
+            
         }
-
         private void refrescarInterfaz()
         {
             
@@ -154,7 +154,10 @@ namespace ProyectoLab3
             {
                 try
                 {
-                    r = clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text, (double)nudCostoPorKilo.Value);
+                    DataRowView fila = cboCategorias.SelectedItem as DataRowView;
+                    int idCategoria;
+                    idCategoria= int.TryParse(fila.Row["IdCategoria"].ToString(), out idCategoria)?idCategoria:0;
+                    r = clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text, (double)nudCostoPorKilo.Value,idCategoria);
                     MessageBox.Show(r, "Mensaje", MessageBoxButtons.OK);
                     configurarIngredientes();
                 }
@@ -177,6 +180,9 @@ namespace ProyectoLab3
             {
                 dgvIngredientes.DataSource = null;
                 dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
+                cboCategorias.DataSource = clsIngrediente.obtenerCategoriasIngredientes();
+                cboCategorias.DisplayMember = "Nombre";
+
             }
             catch (SqlException e)
             {
@@ -231,5 +237,19 @@ namespace ProyectoLab3
             return int.TryParse(celda.Value.ToString(),out res)?res:0;
         }
         #endregion
+
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        {
+            string categoria = tbNombreCategoria.Text;
+            if (categoria != string.Empty)
+            {
+                string respuesta = clsIngrediente.agregarCategoriaIngrediente(categoria);
+                if (respuesta == "")
+                    MessageBox.Show(string.Format("Se ha agregado la categoria {0} correctamente la bebida", categoria), "Agregado Correctament");
+                else
+                    MessageBox.Show(respuesta, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbNombreCategoria.Clear();
+            }
+        }
     }
 }

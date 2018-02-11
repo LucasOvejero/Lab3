@@ -52,11 +52,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBebidas.cs">
+    <Compile Include="frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBebidas.Designer.cs">
-      <DependentUpon>frmBebidas.cs</DependentUpon>
+    <Compile Include="frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmpleados.cs">
       <SubType>Form</SubType>
@@ -70,6 +70,7 @@
     <Compile Include="frmIngredientes.Designer.cs">
       <DependentUpon>frmIngredientes.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frmNuevaSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +82,13 @@
     </Compile>
     <Compile Include="frmSolicitudes.Designer.cs">
       <DependentUpon>frmSolicitudes.cs</DependentUpon>
+=======
+    <Compile Include="frmPlatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlatos.Designer.cs">
+      <DependentUpon>frmPlatos.cs</DependentUpon>
+>>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
     </Compile>
     <Compile Include="frmSucursales.cs">
       <SubType>Form</SubType>
@@ -93,8 +101,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBebidas.resx">
-      <DependentUpon>frmBebidas.cs</DependentUpon>
+    <EmbeddedResource Include="frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
@@ -102,11 +110,16 @@
     <EmbeddedResource Include="frmIngredientes.resx">
       <DependentUpon>frmIngredientes.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frmNuevaSolicitud.resx">
       <DependentUpon>frmNuevaSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSolicitudes.resx">
       <DependentUpon>frmSolicitudes.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="frmPlatos.resx">
+      <DependentUpon>frmPlatos.cs</DependentUpon>
+>>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
     </EmbeddedResource>
     <EmbeddedResource Include="frmSucursales.resx">
       <DependentUpon>frmSucursales.cs</DependentUpon>
