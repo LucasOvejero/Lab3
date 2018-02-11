@@ -21,7 +21,6 @@ namespace ProyectoLab3
         frmSucursales ofrmSuc;
         frmEmpleados ofrmEmp;
         frmDepositos ofrmDepositos;
-        frmSolicitudes ofrmSolicitudes;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -56,6 +55,7 @@ namespace ProyectoLab3
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         private void btnSolicitudes_Click(object sender, EventArgs e)
         {
             ofrmSolicitudes = new frmSolicitudes();
@@ -71,5 +71,10 @@ namespace ProyectoLab3
 
      
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
+=======
+       
+
+     
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
     }
 }

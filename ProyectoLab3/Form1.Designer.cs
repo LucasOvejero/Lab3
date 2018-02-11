@@ -33,10 +33,13 @@
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnDepositos = new System.Windows.Forms.Button();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnSolicitudes = new System.Windows.Forms.Button();
 =======
             this.btnPlatos = new System.Windows.Forms.Button();
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -80,6 +83,7 @@
             this.btnDepositos.Click += new System.EventHandler(this.btnIngredientes_Click);
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // btnSolicitudes
             // 
             this.btnSolicitudes.Location = new System.Drawing.Point(332, 229);
@@ -101,16 +105,21 @@
             this.btnPlatos.Click += new System.EventHandler(this.btnPlatos_Click);
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
             // 
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.btnSolicitudes);
 =======
             this.Controls.Add(this.btnPlatos);
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
             this.Controls.Add(this.btnDepositos);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSuc);
@@ -130,10 +139,13 @@
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnDepositos;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.Button btnSolicitudes;
 =======
         private System.Windows.Forms.Button btnPlatos;
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
     }
 }
 

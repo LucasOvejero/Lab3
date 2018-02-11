@@ -71,6 +71,7 @@
       <DependentUpon>frmIngredientes.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="frmNuevaSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +91,8 @@
       <DependentUpon>frmPlatos.cs</DependentUpon>
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
     </Compile>
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
     <Compile Include="frmSucursales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +114,7 @@
       <DependentUpon>frmIngredientes.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <EmbeddedResource Include="frmNuevaSolicitud.resx">
       <DependentUpon>frmNuevaSolicitud.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +125,8 @@
       <DependentUpon>frmPlatos.cs</DependentUpon>
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
     </EmbeddedResource>
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
     <EmbeddedResource Include="frmSucursales.resx">
       <DependentUpon>frmSucursales.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,7 +138,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,12 +154,6 @@
       <Project>{9429B51B-C8EF-4E2D-8244-75799B937CC7}</Project>
       <Name>Clases</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\descarga.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\images.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

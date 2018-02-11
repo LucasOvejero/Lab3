@@ -31,13 +31,10 @@ namespace ProyectoLab3
             
             try
             {
-                if (dgvBebidas.RowCount > 0)
-                {
-                    int row = dgvBebidas.SelectedRows.Count > 0 ? dgvBebidas.SelectedRows[0].Index : 0;
-                    dgvBebidas.DataSource = null;
-                    dgvBebidas.DataSource = bebida.seleccionarBebidas();
-                    dgvBebidas.Rows[row].Selected = true;
-                }
+                int row = dgvBebidas.SelectedRows.Count > 0 ? dgvBebidas.SelectedRows[0].Index : 0;
+                dgvBebidas.DataSource = null;
+                dgvBebidas.DataSource = bebida.seleccionarBebidas();
+                dgvBebidas.Rows[row].Selected=true;
             }
             catch (SqlException e) {
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
