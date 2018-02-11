@@ -168,6 +168,7 @@
             this.dgvSucursales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSucursales.Size = new System.Drawing.Size(141, 191);
             this.dgvSucursales.TabIndex = 7;
+            this.dgvSucursales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSucursales_CellContentClick);
             // 
             // tbBusqueda
             // 

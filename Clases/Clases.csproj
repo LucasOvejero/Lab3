@@ -48,6 +48,7 @@
     <Compile Include="clsIngrediente.cs" />
     <Compile Include="clsLocalidad.cs" />
     <Compile Include="clsProvincia.cs" />
+    <Compile Include="clsSolicitud.cs" />
     <Compile Include="clsSucursal.cs" />
     <Compile Include="GrillaFormatead.cs">
       <SubType>Component</SubType>

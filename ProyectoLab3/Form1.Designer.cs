@@ -32,6 +32,7 @@
             this.btnSuc = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnDepositos = new System.Windows.Forms.Button();
+            this.btnSolicitudes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -74,11 +75,22 @@
             this.btnDepositos.UseVisualStyleBackColor = true;
             this.btnDepositos.Click += new System.EventHandler(this.btnIngredientes_Click);
             // 
+            // btnSolicitudes
+            // 
+            this.btnSolicitudes.Location = new System.Drawing.Point(332, 229);
+            this.btnSolicitudes.Name = "btnSolicitudes";
+            this.btnSolicitudes.Size = new System.Drawing.Size(75, 23);
+            this.btnSolicitudes.TabIndex = 4;
+            this.btnSolicitudes.Text = "Solicitudes";
+            this.btnSolicitudes.UseVisualStyleBackColor = true;
+            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
+            this.Controls.Add(this.btnSolicitudes);
             this.Controls.Add(this.btnDepositos);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSuc);
@@ -97,6 +109,7 @@
         private System.Windows.Forms.Button btnSuc;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnDepositos;
+        private System.Windows.Forms.Button btnSolicitudes;
     }
 }
 

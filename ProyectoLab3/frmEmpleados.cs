@@ -126,5 +126,9 @@ namespace ProyectoLab3
             tbNombre.Focus();
         }
 
+        private void dgvSucursales_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

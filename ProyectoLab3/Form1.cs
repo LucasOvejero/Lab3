@@ -21,6 +21,7 @@ namespace ProyectoLab3
         frmSucursales ofrmSuc;
         frmEmpleados ofrmEmp;
         frmDepositos ofrmDepositos;
+        frmSolicitudes ofrmSolicitudes;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,8 +55,10 @@ namespace ProyectoLab3
             ofrmDepositos.ShowDialog();
         }
 
-       
-
-     
+        private void btnSolicitudes_Click(object sender, EventArgs e)
+        {
+            ofrmSolicitudes = new frmSolicitudes();
+            ofrmSolicitudes.ShowDialog();
+        }
     }
 }
