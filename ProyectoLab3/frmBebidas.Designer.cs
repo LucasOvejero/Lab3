@@ -1,6 +1,6 @@
 ﻿namespace ProyectoLab3
 {
-    partial class frmProductos
+    partial class frmBebidas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.nudLitros = new System.Windows.Forms.NumericUpDown();
@@ -53,27 +53,22 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvBebidas = new Clases.GrillaFormatead();
+            this.dgvIngredientes = new Clases.GrillaFormatead();
             this.label9 = new System.Windows.Forms.Label();
             this.nudCostoPorKilo = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.tbNombreIngrediente = new System.Windows.Forms.TextBox();
             this.btnAddIngrediente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvBebidas = new Clases.GrillaFormatead();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.tbNombreCategoria = new System.Windows.Forms.TextBox();
-            this.btnAgregarCategoria = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.nudEditCostoIngrediente = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.tbEditNombreIngrediente = new System.Windows.Forms.TextBox();
             this.btnActualizarIngrediente = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cboCategorias = new System.Windows.Forms.ComboBox();
-            this.dgvIngredientes = new Clases.GrillaFormatead();
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -82,15 +77,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEditCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditLitros)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoPorKilo)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).BeginInit();
             this.panel2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditCostoIngrediente)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -206,9 +200,9 @@
             this.gpEdicion.Location = new System.Drawing.Point(24, 456);
             this.gpEdicion.Name = "gpEdicion";
             this.gpEdicion.Size = new System.Drawing.Size(667, 98);
-            this.gpEdicion.TabIndex = 2;
+            this.gpEdicion.TabIndex = 12;
             this.gpEdicion.TabStop = false;
-            this.gpEdicion.Text = "Modificar Edicion";
+            this.gpEdicion.Text = "Edicion";
             // 
             // nudEditPrecio
             // 
@@ -221,7 +215,7 @@
             0});
             this.nudEditPrecio.Name = "nudEditPrecio";
             this.nudEditPrecio.Size = new System.Drawing.Size(66, 20);
-            this.nudEditPrecio.TabIndex = 7;
+            this.nudEditPrecio.TabIndex = 12;
             // 
             // nudEditCosto
             // 
@@ -234,7 +228,7 @@
             0});
             this.nudEditCosto.Name = "nudEditCosto";
             this.nudEditCosto.Size = new System.Drawing.Size(70, 20);
-            this.nudEditCosto.TabIndex = 8;
+            this.nudEditCosto.TabIndex = 13;
             // 
             // label5
             // 
@@ -278,7 +272,7 @@
             this.cbEditAlcohol.Location = new System.Drawing.Point(476, 42);
             this.cbEditAlcohol.Name = "cbEditAlcohol";
             this.cbEditAlcohol.Size = new System.Drawing.Size(61, 17);
-            this.cbEditAlcohol.TabIndex = 10;
+            this.cbEditAlcohol.TabIndex = 15;
             this.cbEditAlcohol.Text = "Alcohol";
             this.cbEditAlcohol.UseVisualStyleBackColor = true;
             // 
@@ -288,21 +282,21 @@
             this.nudEditLitros.Location = new System.Drawing.Point(380, 42);
             this.nudEditLitros.Name = "nudEditLitros";
             this.nudEditLitros.Size = new System.Drawing.Size(61, 20);
-            this.nudEditLitros.TabIndex = 9;
+            this.nudEditLitros.TabIndex = 14;
             // 
             // tbEditName
             // 
             this.tbEditName.Location = new System.Drawing.Point(35, 42);
             this.tbEditName.Name = "tbEditName";
             this.tbEditName.Size = new System.Drawing.Size(100, 20);
-            this.tbEditName.TabIndex = 6;
+            this.tbEditName.TabIndex = 11;
             // 
             // btnBorrar
             // 
             this.btnBorrar.Location = new System.Drawing.Point(554, 66);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(101, 23);
-            this.btnBorrar.TabIndex = 12;
+            this.btnBorrar.TabIndex = 1;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
@@ -312,7 +306,7 @@
             this.btnEditar.Location = new System.Drawing.Point(554, 36);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(101, 23);
-            this.btnEditar.TabIndex = 11;
+            this.btnEditar.TabIndex = 0;
             this.btnEditar.Text = "Aceptar edicion";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -332,16 +326,67 @@
             this.groupBox1.Location = new System.Drawing.Point(24, 79);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(667, 68);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Bebida";
+            // 
+            // dgvBebidas
+            // 
+            this.dgvBebidas.AllowUserToAddRows = false;
+            this.dgvBebidas.AllowUserToResizeColumns = false;
+            this.dgvBebidas.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBebidas.Location = new System.Drawing.Point(78, 153);
+            this.dgvBebidas.MultiSelect = false;
+            this.dgvBebidas.Name = "dgvBebidas";
+            this.dgvBebidas.ReadOnly = true;
+            this.dgvBebidas.RowHeadersVisible = false;
+            this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBebidas.Size = new System.Drawing.Size(603, 297);
+            this.dgvBebidas.TabIndex = 11;
+            this.dgvBebidas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBebidas_RowEnter);
+            this.dgvBebidas.SelectionChanged += new System.EventHandler(this.dgvBebidas_SelectionChanged);
+            // 
+            // dgvIngredientes
+            // 
+            this.dgvIngredientes.AllowUserToAddRows = false;
+            this.dgvIngredientes.AllowUserToResizeColumns = false;
+            this.dgvIngredientes.AllowUserToResizeRows = false;
+            this.dgvIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIngredientes.Location = new System.Drawing.Point(133, 153);
+            this.dgvIngredientes.MultiSelect = false;
+            this.dgvIngredientes.Name = "dgvIngredientes";
+            this.dgvIngredientes.ReadOnly = true;
+            this.dgvIngredientes.RowHeadersVisible = false;
+            this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvIngredientes.Size = new System.Drawing.Size(233, 297);
+            this.dgvIngredientes.TabIndex = 19;
+            this.dgvIngredientes.SelectionChanged += new System.EventHandler(this.dgvIngredientes_SelectionChanged);
             // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(169, 15);
+            this.label9.Location = new System.Drawing.Point(183, 15);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 13);
             this.label9.TabIndex = 18;
@@ -352,7 +397,7 @@
             this.nudCostoPorKilo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.nudCostoPorKilo.DecimalPlaces = 2;
-            this.nudCostoPorKilo.Location = new System.Drawing.Point(162, 31);
+            this.nudCostoPorKilo.Location = new System.Drawing.Point(176, 31);
             this.nudCostoPorKilo.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -360,7 +405,7 @@
             0});
             this.nudCostoPorKilo.Name = "nudCostoPorKilo";
             this.nudCostoPorKilo.Size = new System.Drawing.Size(94, 20);
-            this.nudCostoPorKilo.TabIndex = 14;
+            this.nudCostoPorKilo.TabIndex = 17;
             this.nudCostoPorKilo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
@@ -368,7 +413,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(32, 15);
+            this.label10.Location = new System.Drawing.Point(46, 15);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 13);
             this.label10.TabIndex = 16;
@@ -378,18 +423,18 @@
             // 
             this.tbNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNombreIngrediente.Location = new System.Drawing.Point(6, 31);
+            this.tbNombreIngrediente.Location = new System.Drawing.Point(20, 31);
             this.tbNombreIngrediente.Name = "tbNombreIngrediente";
             this.tbNombreIngrediente.Size = new System.Drawing.Size(100, 20);
-            this.tbNombreIngrediente.TabIndex = 13;
+            this.tbNombreIngrediente.TabIndex = 15;
             // 
             // btnAddIngrediente
             // 
             this.btnAddIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddIngrediente.Location = new System.Drawing.Point(412, 27);
+            this.btnAddIngrediente.Location = new System.Drawing.Point(312, 27);
             this.btnAddIngrediente.Name = "btnAddIngrediente";
             this.btnAddIngrediente.Size = new System.Drawing.Size(75, 23);
-            this.btnAddIngrediente.TabIndex = 16;
+            this.btnAddIngrediente.TabIndex = 14;
             this.btnAddIngrediente.Text = "Agregar";
             this.btnAddIngrediente.UseVisualStyleBackColor = true;
             this.btnAddIngrediente.Click += new System.EventHandler(this.btnAddIngrediente_Click);
@@ -407,38 +452,12 @@
             this.panel1.Size = new System.Drawing.Size(702, 811);
             this.panel1.TabIndex = 20;
             // 
-            // dgvBebidas
-            // 
-            this.dgvBebidas.AllowUserToAddRows = false;
-            this.dgvBebidas.AllowUserToResizeColumns = false;
-            this.dgvBebidas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(78, 153);
-            this.dgvBebidas.MultiSelect = false;
-            this.dgvBebidas.Name = "dgvBebidas";
-            this.dgvBebidas.ReadOnly = true;
-            this.dgvBebidas.RowHeadersVisible = false;
-            this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBebidas.Size = new System.Drawing.Size(603, 297);
-            this.dgvBebidas.TabIndex = 1;
-            this.dgvBebidas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBebidas_RowEnter);
-            this.dgvBebidas.SelectionChanged += new System.EventHandler(this.dgvBebidas_SelectionChanged);
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel2.Controls.Add(this.groupBox4);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.dgvIngredientes);
@@ -447,48 +466,19 @@
             this.panel2.Size = new System.Drawing.Size(536, 792);
             this.panel2.TabIndex = 21;
             // 
-            // groupBox4
+            // groupBox2
             // 
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.tbNombreCategoria);
-            this.groupBox4.Controls.Add(this.btnAgregarCategoria);
-            this.groupBox4.Location = new System.Drawing.Point(106, 581);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(325, 86);
-            this.groupBox4.TabIndex = 22;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Agregar Categoria";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(65, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 13);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "Nombre";
-            // 
-            // tbNombreCategoria
-            // 
-            this.tbNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNombreCategoria.Location = new System.Drawing.Point(39, 41);
-            this.tbNombreCategoria.Name = "tbNombreCategoria";
-            this.tbNombreCategoria.Size = new System.Drawing.Size(100, 20);
-            this.tbNombreCategoria.TabIndex = 21;
-            // 
-            // btnAgregarCategoria
-            // 
-            this.btnAgregarCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(178, 38);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(108, 23);
-            this.btnAgregarCategoria.TabIndex = 22;
-            this.btnAgregarCategoria.Text = "Aceptar categoria";
-            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.nudCostoPorKilo);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.tbNombreIngrediente);
+            this.groupBox2.Controls.Add(this.btnAddIngrediente);
+            this.groupBox2.Location = new System.Drawing.Point(58, 79);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(404, 67);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Agregar Bebida";
             // 
             // groupBox3
             // 
@@ -502,7 +492,7 @@
             this.groupBox3.Size = new System.Drawing.Size(404, 86);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Modificar Ingrediente";
+            this.groupBox3.Text = "Agregar Bebida";
             // 
             // label11
             // 
@@ -528,7 +518,7 @@
             0});
             this.nudEditCostoIngrediente.Name = "nudEditCostoIngrediente";
             this.nudEditCostoIngrediente.Size = new System.Drawing.Size(94, 20);
-            this.nudEditCostoIngrediente.TabIndex = 19;
+            this.nudEditCostoIngrediente.TabIndex = 17;
             this.nudEditCostoIngrediente.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
@@ -549,7 +539,7 @@
             this.tbEditNombreIngrediente.Location = new System.Drawing.Point(20, 31);
             this.tbEditNombreIngrediente.Name = "tbEditNombreIngrediente";
             this.tbEditNombreIngrediente.Size = new System.Drawing.Size(100, 20);
-            this.tbEditNombreIngrediente.TabIndex = 18;
+            this.tbEditNombreIngrediente.TabIndex = 15;
             // 
             // btnActualizarIngrediente
             // 
@@ -557,68 +547,19 @@
             this.btnActualizarIngrediente.Location = new System.Drawing.Point(290, 29);
             this.btnActualizarIngrediente.Name = "btnActualizarIngrediente";
             this.btnActualizarIngrediente.Size = new System.Drawing.Size(108, 23);
-            this.btnActualizarIngrediente.TabIndex = 20;
+            this.btnActualizarIngrediente.TabIndex = 14;
             this.btnActualizarIngrediente.Text = "Aceptar edición";
             this.btnActualizarIngrediente.UseVisualStyleBackColor = true;
             this.btnActualizarIngrediente.Click += new System.EventHandler(this.btnActualizarIngrediente_Click);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.cboCategorias);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.nudCostoPorKilo);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.tbNombreIngrediente);
-            this.groupBox2.Controls.Add(this.btnAddIngrediente);
-            this.groupBox2.Location = new System.Drawing.Point(17, 79);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(504, 67);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Agregar Ingrediente";
-            // 
-            // cboCategorias
-            // 
-            this.cboCategorias.FormattingEnabled = true;
-            this.cboCategorias.Location = new System.Drawing.Point(267, 28);
-            this.cboCategorias.Name = "cboCategorias";
-            this.cboCategorias.Size = new System.Drawing.Size(139, 21);
-            this.cboCategorias.TabIndex = 15;
-            // 
-            // dgvIngredientes
-            // 
-            this.dgvIngredientes.AllowUserToAddRows = false;
-            this.dgvIngredientes.AllowUserToResizeColumns = false;
-            this.dgvIngredientes.AllowUserToResizeRows = false;
-            this.dgvIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(85, 153);
-            this.dgvIngredientes.MultiSelect = false;
-            this.dgvIngredientes.Name = "dgvIngredientes";
-            this.dgvIngredientes.ReadOnly = true;
-            this.dgvIngredientes.RowHeadersVisible = false;
-            this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngredientes.Size = new System.Drawing.Size(371, 297);
-            this.dgvIngredientes.TabIndex = 17;
-            this.dgvIngredientes.SelectionChanged += new System.EventHandler(this.dgvIngredientes_SelectionChanged);
-            // 
-            // frmProductos
+            // frmBebidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1235, 702);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "frmProductos";
+            this.Name = "frmBebidas";
             this.Text = "Productos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBebidas_Load);
@@ -632,18 +573,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEditLitros)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoPorKilo)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditCostoIngrediente)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -689,10 +628,5 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tbEditNombreIngrediente;
         private System.Windows.Forms.Button btnActualizarIngrediente;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox tbNombreCategoria;
-        private System.Windows.Forms.Button btnAgregarCategoria;
-        private System.Windows.Forms.ComboBox cboCategorias;
     }
 }

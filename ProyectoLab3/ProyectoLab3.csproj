@@ -52,11 +52,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProductos.cs">
+    <Compile Include="frmBebidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProductos.Designer.cs">
-      <DependentUpon>frmProductos.cs</DependentUpon>
+    <Compile Include="frmBebidas.Designer.cs">
+      <DependentUpon>frmBebidas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmpleados.cs">
       <SubType>Form</SubType>
@@ -72,6 +72,9 @@
     </Compile>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 48bc35e... Merge
     <Compile Include="frmNuevaSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,13 +86,6 @@
     </Compile>
     <Compile Include="frmSolicitudes.Designer.cs">
       <DependentUpon>frmSolicitudes.cs</DependentUpon>
-=======
-    <Compile Include="frmPlatos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPlatos.Designer.cs">
-      <DependentUpon>frmPlatos.cs</DependentUpon>
->>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
     </Compile>
 =======
 >>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
@@ -104,8 +100,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProductos.resx">
-      <DependentUpon>frmProductos.cs</DependentUpon>
+    <EmbeddedResource Include="frmBebidas.resx">
+      <DependentUpon>frmBebidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
@@ -115,15 +111,14 @@
     </EmbeddedResource>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 48bc35e... Merge
     <EmbeddedResource Include="frmNuevaSolicitud.resx">
       <DependentUpon>frmNuevaSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSolicitudes.resx">
       <DependentUpon>frmSolicitudes.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="frmPlatos.resx">
-      <DependentUpon>frmPlatos.cs</DependentUpon>
->>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
     </EmbeddedResource>
 =======
 >>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes

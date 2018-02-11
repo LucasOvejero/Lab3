@@ -34,12 +34,16 @@
             this.btnDepositos = new System.Windows.Forms.Button();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnSolicitudes = new System.Windows.Forms.Button();
 =======
             this.btnPlatos = new System.Windows.Forms.Button();
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
 =======
 >>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
+=======
+            this.btnSolicitudes = new System.Windows.Forms.Button();
+>>>>>>> parent of 48bc35e... Merge
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -84,6 +88,9 @@
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 48bc35e... Merge
             // btnSolicitudes
             // 
             this.btnSolicitudes.Location = new System.Drawing.Point(332, 229);
@@ -93,17 +100,6 @@
             this.btnSolicitudes.Text = "Solicitudes";
             this.btnSolicitudes.UseVisualStyleBackColor = true;
             this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
-=======
-            // btnPlatos
-            // 
-            this.btnPlatos.Location = new System.Drawing.Point(691, 50);
-            this.btnPlatos.Name = "btnPlatos";
-            this.btnPlatos.Size = new System.Drawing.Size(75, 23);
-            this.btnPlatos.TabIndex = 4;
-            this.btnPlatos.Text = "Platos";
-            this.btnPlatos.UseVisualStyleBackColor = true;
-            this.btnPlatos.Click += new System.EventHandler(this.btnPlatos_Click);
->>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
             // 
 =======
 >>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
@@ -114,12 +110,16 @@
             this.ClientSize = new System.Drawing.Size(886, 414);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.btnSolicitudes);
 =======
             this.Controls.Add(this.btnPlatos);
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
 =======
 >>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
+=======
+            this.Controls.Add(this.btnSolicitudes);
+>>>>>>> parent of 48bc35e... Merge
             this.Controls.Add(this.btnDepositos);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSuc);
@@ -140,12 +140,16 @@
         private System.Windows.Forms.Button btnDepositos;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.Button btnSolicitudes;
 =======
         private System.Windows.Forms.Button btnPlatos;
 >>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
 =======
 >>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
+=======
+        private System.Windows.Forms.Button btnSolicitudes;
+>>>>>>> parent of 48bc35e... Merge
     }
 }
 

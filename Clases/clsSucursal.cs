@@ -62,35 +62,14 @@ namespace Clases
            finally { clsConexion.closeCon(); }
            return sucursales;
        }
-       public static string[] getPerLocProv(string localidad,string provincia) {
+       public static string[] getPerLoc(string localidad) {
            List<string> LSucursales = new List<string>();
 
            try
            {
                DataTable sc = new DataTable();
                adaptador = new SqlDataAdapter();
-               comando = new SqlCommand("Select Direccion from Sucursal where IdLocalidad in(select IdLocalidad from Localidad where NombreLocalidad='"+localidad+"' and IdProvincia in(select IdProvincia from Provincia where NombreProvincia='"+provincia+"'));");
-               comando.Connection = clsConexion.getCon();
-               adaptador.SelectCommand = comando;
-               adaptador.Fill(sc);
-               foreach (DataRow r in sc.Rows)
-               {
-                   LSucursales.Insert(LSucursales.Count, r["Direccion"].ToString());
-               }
-
-           }
-           catch (SqlException e) { throw e; }
-           return LSucursales.ToArray();
-       }
-       public static string[] getPerLoc(string localidad)
-       {
-           List<string> LSucursales = new List<string>();
-
-           try
-           {
-               DataTable sc = new DataTable();
-               adaptador = new SqlDataAdapter();
-               comando = new SqlCommand("Select Direccion from Sucursal where IdLocalidad in(select IdLocalidad from Localidad where NombreLocalidad='" + localidad + "');");
+               comando = new SqlCommand("Select Direccion from Sucursal where IdLocalidad in(select IdLocalidad from Localidad where NombreLocalidad='"+localidad+"');");
                comando.Connection = clsConexion.getCon();
                adaptador.SelectCommand = comando;
                adaptador.Fill(sc);
