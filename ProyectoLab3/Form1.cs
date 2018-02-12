@@ -57,6 +57,7 @@ namespace ProyectoLab3
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 48bc35e... Merge
         private void btnSolicitudes_Click(object sender, EventArgs e)
@@ -82,5 +83,10 @@ namespace ProyectoLab3
 >>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
 =======
 >>>>>>> parent of 48bc35e... Merge
+=======
+       
+
+     
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
     }
 }

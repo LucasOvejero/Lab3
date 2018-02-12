@@ -35,6 +35,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnSolicitudes = new System.Windows.Forms.Button();
 =======
             this.btnPlatos = new System.Windows.Forms.Button();
@@ -44,6 +45,8 @@
 =======
             this.btnSolicitudes = new System.Windows.Forms.Button();
 >>>>>>> parent of 48bc35e... Merge
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -89,6 +92,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 48bc35e... Merge
             // btnSolicitudes
@@ -103,11 +107,14 @@
             // 
 =======
 >>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -120,6 +127,8 @@
 =======
             this.Controls.Add(this.btnSolicitudes);
 >>>>>>> parent of 48bc35e... Merge
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
             this.Controls.Add(this.btnDepositos);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSuc);
@@ -141,6 +150,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.Button btnSolicitudes;
 =======
         private System.Windows.Forms.Button btnPlatos;
@@ -150,6 +160,8 @@
 =======
         private System.Windows.Forms.Button btnSolicitudes;
 >>>>>>> parent of 48bc35e... Merge
+=======
+>>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
     }
 }
 
