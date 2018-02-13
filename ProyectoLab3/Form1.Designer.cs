@@ -32,21 +32,7 @@
             this.btnSuc = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnDepositos = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.btnSolicitudes = new System.Windows.Forms.Button();
-=======
-            this.btnPlatos = new System.Windows.Forms.Button();
->>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
-=======
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
-=======
-            this.btnSolicitudes = new System.Windows.Forms.Button();
->>>>>>> parent of 48bc35e... Merge
-=======
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -89,12 +75,6 @@
             this.btnDepositos.UseVisualStyleBackColor = true;
             this.btnDepositos.Click += new System.EventHandler(this.btnIngredientes_Click);
             // 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 48bc35e... Merge
             // btnSolicitudes
             // 
             this.btnSolicitudes.Location = new System.Drawing.Point(332, 229);
@@ -105,30 +85,12 @@
             this.btnSolicitudes.UseVisualStyleBackColor = true;
             this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
             // 
-=======
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
-=======
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.Controls.Add(this.btnSolicitudes);
-=======
-            this.Controls.Add(this.btnPlatos);
->>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
-=======
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
-=======
-            this.Controls.Add(this.btnSolicitudes);
->>>>>>> parent of 48bc35e... Merge
-=======
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
             this.Controls.Add(this.btnDepositos);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSuc);
@@ -137,6 +99,8 @@
             this.Text = "Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Enter += new System.EventHandler(this.Form1_Enter);
+            this.MouseEnter += new System.EventHandler(this.Form1_MouseEnter);
             this.ResumeLayout(false);
 
         }
@@ -147,21 +111,8 @@
         private System.Windows.Forms.Button btnSuc;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnDepositos;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         private System.Windows.Forms.Button btnSolicitudes;
-=======
         private System.Windows.Forms.Button btnPlatos;
->>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
-=======
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
-=======
-        private System.Windows.Forms.Button btnSolicitudes;
->>>>>>> parent of 48bc35e... Merge
-=======
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
     }
 }
 

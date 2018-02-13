@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+
 namespace ProyectoLab3
 {
     public partial class Form1 : Form
@@ -21,13 +22,13 @@ namespace ProyectoLab3
         frmSucursales ofrmSuc;
         frmEmpleados ofrmEmp;
         frmDepositos ofrmDepositos;
+        frmSolicitudes ofrmSolicitudes;
+        frmLogin ofrmLogin;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-           // clsConexion con = new clsConexion();
-          //  con.insertar();
-            Console.WriteLine("Hola");
+        {            
+            verificarLogeo();
         }
 
         private void btnBebidas_Click(object sender, EventArgs e)
@@ -54,39 +55,36 @@ namespace ProyectoLab3
             ofrmDepositos.ShowDialog();
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 48bc35e... Merge
         private void btnSolicitudes_Click(object sender, EventArgs e)
         {
             ofrmSolicitudes = new frmSolicitudes();
             ofrmSolicitudes.ShowDialog();
         }
-<<<<<<< HEAD
-=======
+
         private void btnPlatos_Click(object sender, EventArgs e)
         {
 
         }
 
-       
+        private void Form1_Enter(object sender, EventArgs e)
+        {
+            verificarLogeo();
+        }
 
-     
->>>>>>> c4fe2b292bc6ef1ee1b09c4ce7f678cf3da38ed1
-=======
-       
 
-     
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
-=======
->>>>>>> parent of 48bc35e... Merge
-=======
-       
+        private void verificarLogeo() {
 
-     
->>>>>>> parent of e1108d4... clsSolicitudes + Forms pertinentes
+            if (clsConexion.SucursalSession == -1)
+            {
+                ofrmLogin = new frmLogin();
+                ofrmLogin.ShowDialog();
+            }
+
+        }
+
+        private void Form1_MouseEnter(object sender, EventArgs e)
+        {
+            verificarLogeo();
+        }
     }
 }

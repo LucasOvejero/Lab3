@@ -74,7 +74,7 @@ namespace ProyectoLab3
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            if (verificacion() == string.Empty)
+            if (verificacion() == string.Empty) 
             {
                 int idSucursal = Convert.ToInt32(dgvSucursales.SelectedRows[0].Cells["IdSucursal"].Value);
 
@@ -88,9 +88,10 @@ namespace ProyectoLab3
                     tbTelefono.Text,
                     idSucursal,
                     cbTipo.SelectedItem.ToString(),
-                    true);
-                
-
+                    true,
+                    tbUser.Text,
+                    tbPass.Text
+                    );
 
                 MessageBox.Show(resp);
                 limpiarCampos();
@@ -126,5 +127,14 @@ namespace ProyectoLab3
             tbNombre.Focus();
         }
 
+        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

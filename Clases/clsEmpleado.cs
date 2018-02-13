@@ -112,27 +112,51 @@ namespace Clases
             return empleados;
         }
 
+
+        public static bool logeo(string usuario,string clave) {
+            bool valid = false;
+            comando = new SqlCommand("select * from Empleado where Usuario = '" + usuario + "' AND Clave = '" + clave + "'" );
+            try
+            {
+                empleados = new DataTable("Empleados");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(empleados);
+
+                valid = empleados.Columns.Count > 0;
+                //
+                clsConexion.Tipo = empleados.Rows[0]["Tipo"].ToString();
+                clsConexion.SucursalSession = Convert.ToInt32(empleados.Rows[0]["IdSucursal"].ToString());
+
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+
+            return valid;
+        }
+
         public static string insertarEmpleado(string nombre,
             string apellido,
             string dni,
             string telefono,
             int IdSucursal,
             string tipo,
-            bool estado
+            bool estado,
+            string username,
+            string pass
             )
         {
             int activo;
-            int tipoX;
+            string tipoX = tipo;
             activo = estado ? 1 : 0;
-            if (tipo == "Sin Asignar" || tipo == "") { tipoX = 0; }
-            else { tipoX = -1;  }
             string resp = "";
             comando = new SqlCommand();
-            comando.CommandText = "INSERT INTO Empleado (Nombre,Apellido,DNI,Telefono,IdSucursal,Tipo,Estado)"+
-                "values (@nombre,@apellido,@dni,@telefono,@IdSucursal,@tipo,@estado)"+
+            comando.CommandText = "INSERT INTO Empleado (Nombre,Apellido,DNI,Telefono,IdSucursal,Tipo,Estado,Usuario,Clave  )"+
+                "values (@nombre,@apellido,@dni,@telefono,@IdSucursal,@tipo,@estado,@username,@pass)"+
                 "; select SCOPE_IDENTITY(); ";
 
-            SqlParameter[] parametros = new SqlParameter[7];
+            SqlParameter[] parametros = new SqlParameter[9];
             parametros[0] = new SqlParameter("@nombre", nombre);
             parametros[1] = new SqlParameter("@apellido", apellido);
             parametros[2] = new SqlParameter("@dni", dni);
@@ -140,6 +164,8 @@ namespace Clases
             parametros[4] = new SqlParameter("@IdSucursal", IdSucursal);
             parametros[5] = new SqlParameter("@tipo", tipoX);
             parametros[6] = new SqlParameter("@estado", estado);
+            parametros[7] = new SqlParameter("@username", username);
+            parametros[8] = new SqlParameter("@pass", pass);
             try
             {
                 comando.Parameters.AddRange(parametros);
