@@ -18,7 +18,7 @@ namespace ProyectoLab3
             
         }
         #region Formularios
-        frmBebidas ofrmBebidas;
+        frmProductos ofrmBebidas;
         frmSucursales ofrmSuc;
         frmEmpleados ofrmEmp;
         frmDepositos ofrmDepositos;
@@ -28,12 +28,12 @@ namespace ProyectoLab3
 
         private void Form1_Load(object sender, EventArgs e)
         {            
-            verificarLogeo();
+          //  verificarLogeo();
         }
 
         private void btnBebidas_Click(object sender, EventArgs e)
         {
-            ofrmBebidas = new frmBebidas();
+            ofrmBebidas = new frmProductos();
             ofrmBebidas.Show();
         }
 
@@ -73,12 +73,12 @@ namespace ProyectoLab3
 
 
         private void verificarLogeo() {
-
+/*
             if (clsConexion.SucursalSession == -1)
             {
                 ofrmLogin = new frmLogin();
                 ofrmLogin.ShowDialog();
-            }
+            }*/
 
         }
 

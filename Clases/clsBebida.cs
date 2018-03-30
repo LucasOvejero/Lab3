@@ -9,7 +9,7 @@ namespace Clases
     public  class clsBebida
     {
         String nombreBebida;
-        int cantidad;
+        int cantidad,idCategoria;
         bool alcohol;
         decimal costo, precio, litros;
         #region constructor y propiedades
@@ -27,6 +27,11 @@ namespace Clases
         {
             get { return litros; }
             set { litros = value; }
+        }
+        public int IdCategoria
+        {
+            get { return idCategoria; }
+            set { idCategoria = value; }
         }
         public bool Alcohol
         {
@@ -56,19 +61,21 @@ namespace Clases
         }
         #endregion
         SqlDataAdapter da = new SqlDataAdapter();
+        DataTable categorias;
         SqlCommand comando;
         public int insertarBebida()
         {
             int r = 0;
-            SqlParameter[] parametros = new SqlParameter[5];
+            SqlParameter[] parametros = new SqlParameter[6];
             parametros[0] = new SqlParameter("@Nombre", NombreBebida);
             parametros[1] = new SqlParameter("@Costo", Costo);
             parametros[2] = new SqlParameter("@Precio", Precio);
             parametros[3] = new SqlParameter("@Litros", Litros);
             parametros[4] = new SqlParameter("@Alcohol", Alcohol);
+            parametros[5] = new SqlParameter("@IdCategoria", IdCategoria);
             comando = new SqlCommand();
 
-            comando.CommandText = "INSERT INTO Bebida (NombreBebida,Costo,Precio,Litros,Alcohol) values (@Nombre,@Costo,@Precio,@Litros,@Alcohol); select SCOPE_IDENTITY(); ";
+            comando.CommandText = "INSERT INTO Bebida (NombreBebida,Costo,Precio,Litros,Alcohol,IdCategoria) values (@Nombre,@Costo,@Precio,@Litros,@Alcohol,@IdCategoria); select SCOPE_IDENTITY(); ";
             try
             {
                 comando.Connection = clsConexion.getCon();
@@ -91,7 +98,8 @@ namespace Clases
 
             dt.Clear();
            
-           comando = new SqlCommand("select * from Bebida");
+           comando = new SqlCommand("select IdBebida,NombreBebida,Costo,Precio,Litros,Alcohol,Estado"+
+               ",b.IdCategoria,Nombre as Categoria from Bebida b left outer join CategoriaBebidas c on (b.IdCategoria=c.IdCategoria)");
             try
             {
                 comando.Connection = clsConexion.getCon();
@@ -117,14 +125,15 @@ namespace Clases
         }
         public void modificarBebida(int IdBebida)
         {
-            comando = new SqlCommand("update Bebida set NombreBebida=@Nombre, Costo=@Costo, Precio=@Precio, Litros=@Litros, Alcohol=@Alcohol where IdBebida=@IdBebida");
-            SqlParameter[] parametros = new SqlParameter[6];
+            comando = new SqlCommand("update Bebida set NombreBebida=@Nombre, Costo=@Costo, Precio=@Precio, Litros=@Litros, Alcohol=@Alcohol,IdCategoria=@IdCategoria where IdBebida=@IdBebida");
+            SqlParameter[] parametros = new SqlParameter[7];
             parametros[0] = new SqlParameter("@Nombre", NombreBebida);
             parametros[1] = new SqlParameter("@Costo", Costo);
             parametros[2] = new SqlParameter("@Precio", Precio);
             parametros[3] = new SqlParameter("@Litros", Litros);
             parametros[4] = new SqlParameter("@Alcohol", Alcohol);
             parametros[5] = new SqlParameter("@IdBebida", IdBebida);
+            parametros[6] = new SqlParameter("@IdCategoria", IdCategoria);
             try
             {
                 comando.Parameters.AddRange(parametros);
@@ -135,5 +144,63 @@ namespace Clases
             catch (Exception ex) { throw ex; }
             finally { clsConexion.closeCon(); }
         }
+        #region categorias
+        public  string agregarCategoria(string Categoria)
+        {
+            string resp = "";
+             SqlDataAdapter adaptadorCategorias = new SqlDataAdapter();
+            try
+            {
+                comando = new SqlCommand();
+                comando.CommandText = "Insert into CategoriaBebidas (Nombre) values (@NombreCategoria);Select SCOPE_IDENTITY();";
+                comando.Parameters.Add(new SqlParameter("@NombreCategoria", Categoria));
+                comando.Connection = clsConexion.getCon();
+                int id = int.Parse(comando.ExecuteScalar().ToString());
+                if (id >= 0)
+                {
+                    comando.CommandText = "select * from CategoriaBebidas where IdCategoria=" + id;
+
+                    adaptadorCategorias.SelectCommand = comando;
+                    adaptadorCategorias.Fill(categorias);
+                }
+            }
+            catch (SqlException e)
+            {
+                resp = e.Message;
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                clsConexion.closeCon();
+
+            }
+            return resp;
+        }
+        public DataTable obtenerCategorias()
+        {
+            categorias = new DataTable();
+            SqlDataAdapter adaptadorCategorias = new SqlDataAdapter();
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                comando.CommandText = "select * from CategoriaBebidas";
+                comando.Connection = clsConexion.getCon();
+                adaptadorCategorias.SelectCommand = comando;
+                adaptadorCategorias.Fill(categorias);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                clsConexion.closeCon();
+            }
+            return categorias;
+        }
+        #endregion
     }
 }
