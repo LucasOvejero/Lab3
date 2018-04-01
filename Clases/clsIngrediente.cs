@@ -76,7 +76,7 @@ namespace Clases
         {
             try
             {
-                //comando.CommandText = "select * from Ingrediente i left outer join CategoriaIngredientes c on(i.IdCategoria=c.IdCategoria) where IdIngrediente=" + id;
+                comando.CommandText = "select * from Ingrediente i left outer join CategoriaIngredientes c on(i.IdCategoria=c.IdCategoria) where IdIngrediente=" + id;
                 adaptadorIngredientes.SelectCommand = comando;
                 adaptadorIngredientes.Fill(ingredientes);
             }

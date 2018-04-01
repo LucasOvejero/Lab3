@@ -22,6 +22,8 @@ namespace ProyectoLab3
         {
             bebida = new clsBebida();
             refrescarInterfaz();
+            dgvIngredientes.DataSource = null;
+            dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
             configurarIngredientes();
             darFormato();
 
@@ -219,8 +221,8 @@ namespace ProyectoLab3
 
             try
             {
-                dgvIngredientes.DataSource = null;
-                dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
+                //dgvIngredientes.DataSource = null;
+                //dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
                 actualizarCategoriasIngredientes();
             }
             catch (SqlException e)
