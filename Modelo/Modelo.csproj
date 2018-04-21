@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9429B51B-C8EF-4E2D-8244-75799B937CC7}</ProjectGuid>
+    <ProjectGuid>{56C85345-B21B-403E-886D-BB3B4DE3D21C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Clases</RootNamespace>
-    <AssemblyName>Clases</AssemblyName>
+    <RootNamespace>Modelo</RootNamespace>
+    <AssemblyName>Modelo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,40 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsBebida.cs" />
-    <Compile Include="clsConexion.cs" />
-    <Compile Include="clsDeposito.cs" />
-    <Compile Include="clsEmpleado.cs" />
-    <Compile Include="clsIngrediente.cs" />
-    <Compile Include="clsLocalidad.cs" />
-    <Compile Include="clsPlato.cs" />
-    <Compile Include="clsProvincia.cs" />
-    <Compile Include="clsSolicitud.cs" />
-    <Compile Include="clsSucursal.cs" />
-    <Compile Include="GrillaFormatead.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GrillaFormatead.Designer.cs">
-      <DependentUpon>GrillaFormatead.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nudP.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="nudP.Designer.cs">
-      <DependentUpon>nudP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PanelPlato.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="PanelPlato.Designer.cs">
-      <DependentUpon>PanelPlato.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Ingrediente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PanelPlato.resx">
-      <DependentUpon>PanelPlato.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Clases\Clases.csproj">
+      <Project>{9429B51B-C8EF-4E2D-8244-75799B937CC7}</Project>
+      <Name>Clases</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

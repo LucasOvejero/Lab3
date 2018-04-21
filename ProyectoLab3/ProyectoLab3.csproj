@@ -52,6 +52,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCrearPlatoConfirmar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearPlatoConfirmar.Designer.cs">
+      <DependentUpon>frmCrearPlatoConfirmar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearPlatoSeleccionIng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearPlatoSeleccionIng.Designer.cs">
+      <DependentUpon>frmCrearPlatoSeleccionIng.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +111,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearPlatoConfirmar.resx">
+      <DependentUpon>frmCrearPlatoConfirmar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearPlatoSeleccionIng.resx">
+      <DependentUpon>frmCrearPlatoSeleccionIng.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +158,10 @@
     <ProjectReference Include="..\Clases\Clases.csproj">
       <Project>{9429B51B-C8EF-4E2D-8244-75799B937CC7}</Project>
       <Name>Clases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{56C85345-B21B-403E-886D-BB3B4DE3D21C}</Project>
+      <Name>Modelo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

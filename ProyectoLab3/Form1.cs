@@ -24,6 +24,7 @@ namespace ProyectoLab3
         frmDepositos ofrmDepositos;
         frmSolicitudes ofrmSolicitudes;
         frmLogin ofrmLogin;
+        frmCrearPlatoSeleccionIng ofrmPlato;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,6 +86,12 @@ namespace ProyectoLab3
         private void Form1_MouseEnter(object sender, EventArgs e)
         {
             verificarLogeo();
+        }
+
+        private void btnPlato_Click(object sender, EventArgs e)
+        {
+            ofrmPlato = new frmCrearPlatoSeleccionIng();
+            ofrmPlato.ShowDialog();
         }
     }
 }

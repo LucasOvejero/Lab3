@@ -332,7 +332,7 @@ namespace ProyectoLab3
             {
                 cbAlcohol.Checked = !cbAlcohol.Checked;   // Enter key pressed
             }
-            //TODO: al apretar enter cambiar el estado del control;
+        
         }
 
         private void btnAgregarCatBebida_Click(object sender, EventArgs e)

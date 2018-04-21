@@ -33,11 +33,12 @@
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnDepositos = new System.Windows.Forms.Button();
             this.btnSolicitudes = new System.Windows.Forms.Button();
+            this.btnPlato = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBebidas
             // 
-            this.btnBebidas.Location = new System.Drawing.Point(228, 51);
+            this.btnBebidas.Location = new System.Drawing.Point(224, 51);
             this.btnBebidas.Name = "btnBebidas";
             this.btnBebidas.Size = new System.Drawing.Size(75, 23);
             this.btnBebidas.TabIndex = 0;
@@ -57,7 +58,7 @@
             // 
             // btnEmpleados
             // 
-            this.btnEmpleados.Location = new System.Drawing.Point(550, 51);
+            this.btnEmpleados.Location = new System.Drawing.Point(538, 51);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(75, 23);
             this.btnEmpleados.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // btnDepositos
             // 
-            this.btnDepositos.Location = new System.Drawing.Point(389, 51);
+            this.btnDepositos.Location = new System.Drawing.Point(381, 51);
             this.btnDepositos.Name = "btnDepositos";
             this.btnDepositos.Size = new System.Drawing.Size(75, 23);
             this.btnDepositos.TabIndex = 3;
@@ -85,11 +86,22 @@
             this.btnSolicitudes.UseVisualStyleBackColor = true;
             this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
             // 
+            // btnPlato
+            // 
+            this.btnPlato.Location = new System.Drawing.Point(695, 51);
+            this.btnPlato.Name = "btnPlato";
+            this.btnPlato.Size = new System.Drawing.Size(75, 23);
+            this.btnPlato.TabIndex = 5;
+            this.btnPlato.Text = "Platos";
+            this.btnPlato.UseVisualStyleBackColor = true;
+            this.btnPlato.Click += new System.EventHandler(this.btnPlato_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
+            this.Controls.Add(this.btnPlato);
             this.Controls.Add(this.btnSolicitudes);
             this.Controls.Add(this.btnDepositos);
             this.Controls.Add(this.btnEmpleados);
@@ -113,6 +125,7 @@
         private System.Windows.Forms.Button btnDepositos;
         private System.Windows.Forms.Button btnSolicitudes;
         private System.Windows.Forms.Button btnPlatos;
+        private System.Windows.Forms.Button btnPlato;
     }
 }
 

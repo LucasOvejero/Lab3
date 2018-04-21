@@ -55,3 +55,7 @@ C:\Users\Lucas.DESKTOP-KD066QT\Desktop\Nahuel\Lab3\ProyectoLab3\obj\x86\Debug\Pr
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmNuevaSolicitud.resources
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmLogin.resources
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmProductos.resources
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmCrearPlatoSeleccionIng.resources
+C:\ProyectoLab3\ProyectoLab3\bin\Debug\Modelo.dll
+C:\ProyectoLab3\ProyectoLab3\bin\Debug\Modelo.pdb
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmCrearPlatoConfirmar.resources
