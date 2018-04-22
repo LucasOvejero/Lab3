@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
-namespace Clases
+namespace Componentes
 {
     public partial class nudP : NumericUpDown
     {

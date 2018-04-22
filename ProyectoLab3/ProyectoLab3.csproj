@@ -159,6 +159,10 @@
       <Project>{9429B51B-C8EF-4E2D-8244-75799B937CC7}</Project>
       <Name>Clases</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Componentes\Componentes.csproj">
+      <Project>{5E20169A-EFA4-4060-9FDF-AFD222A7B733}</Project>
+      <Name>Componentes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
       <Project>{56C85345-B21B-403E-886D-BB3B4DE3D21C}</Project>
       <Name>Modelo</Name>

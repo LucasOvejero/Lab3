@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Clases;
 using Modelo;
+using Componentes;
 namespace ProyectoLab3
 {
     public partial class frmCrearPlatoSeleccionIng : Form

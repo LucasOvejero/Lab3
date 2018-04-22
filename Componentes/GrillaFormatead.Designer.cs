@@ -1,6 +1,6 @@
-﻿namespace Clases
+﻿namespace Componentes
 {
-    partial class nudP
+    partial class GrillaFormatead
     {
         /// <summary>
         /// Variable del diseñador requerida.

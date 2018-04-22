@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Clases;
+using Componentes;
 namespace Modelo
 {
     public class Ingrediente

@@ -30,7 +30,7 @@ namespace ProyectoLab3
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvSucursales = new Clases.GrillaFormatead();
+            this.dgvSucursales = new Componentes.GrillaFormatead();
             this.tbBusqueda = new System.Windows.Forms.TextBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.lblSucursal = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@ namespace ProyectoLab3
 
         #endregion
 
-        private Clases.GrillaFormatead dgvSucursales;
+        private Componentes.GrillaFormatead dgvSucursales;
         private System.Windows.Forms.TextBox tbBusqueda;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Label lblSucursal;

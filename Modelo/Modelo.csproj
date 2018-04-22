@@ -46,9 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Clases\Clases.csproj">
-      <Project>{9429B51B-C8EF-4E2D-8244-75799B937CC7}</Project>
-      <Name>Clases</Name>
+    <ProjectReference Include="..\Componentes\Componentes.csproj">
+      <Project>{5E20169A-EFA4-4060-9FDF-AFD222A7B733}</Project>
+      <Name>Componentes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

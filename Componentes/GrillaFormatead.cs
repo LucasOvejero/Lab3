@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Clases
+namespace Componentes
 {
     public partial class GrillaFormatead : DataGridView
     {

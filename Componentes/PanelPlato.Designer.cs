@@ -1,6 +1,7 @@
-﻿namespace Clases
+﻿using System;
+namespace Componentes
 {
-    partial class GrillaFormatead
+    partial class PanelPlato
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -28,9 +29,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // PanelPlato
+            // 
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Size = new System.Drawing.Size(500, 500);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
     }
 }

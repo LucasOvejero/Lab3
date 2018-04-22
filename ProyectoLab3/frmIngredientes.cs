@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+using Componentes;
 using System.Data.SqlClient;
 namespace ProyectoLab3
 {

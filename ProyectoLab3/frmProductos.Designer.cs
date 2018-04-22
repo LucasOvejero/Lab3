@@ -58,7 +58,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cboCatAddBebida = new System.Windows.Forms.ComboBox();
-            this.dgvBebidas = new Clases.GrillaFormatead();
+            this.dgvBebidas = new Componentes.GrillaFormatead();
             this.label9 = new System.Windows.Forms.Label();
             this.nudCostoPorKilo = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -85,7 +85,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cboCategorias = new System.Windows.Forms.ComboBox();
-            this.dgvIngredientes = new Clases.GrillaFormatead();
+            this.dgvIngredientes = new Componentes.GrillaFormatead();
             this.errpNBebida = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
@@ -795,7 +795,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Clases.GrillaFormatead dgvBebidas;
+        private Componentes.GrillaFormatead dgvBebidas;
         private System.Windows.Forms.NumericUpDown nudCosto;
         private System.Windows.Forms.NumericUpDown nudPrecio;
         private System.Windows.Forms.GroupBox gpEdicion;
@@ -811,7 +811,7 @@
         private System.Windows.Forms.CheckBox cbEditAlcohol;
         private System.Windows.Forms.NumericUpDown nudEditLitros;
         private System.Windows.Forms.TextBox tbEditName;
-        private Clases.GrillaFormatead dgvIngredientes;
+        private Componentes.GrillaFormatead dgvIngredientes;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown nudCostoPorKilo;
         private System.Windows.Forms.Label label10;

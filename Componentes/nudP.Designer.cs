@@ -1,7 +1,6 @@
-﻿using System;
-namespace Clases
+﻿namespace Componentes
 {
-    partial class PanelPlato
+    partial class nudP
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -29,17 +28,9 @@ namespace Clases
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // PanelPlato
-            // 
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Size = new System.Drawing.Size(500, 500);
-            this.ResumeLayout(false);
-
+            components = new System.ComponentModel.Container();
         }
 
         #endregion
-
     }
 }

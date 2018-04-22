@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Modelo;
+using Componentes;
 using Clases;
 using System.Data.SqlClient;
 namespace ProyectoLab3
@@ -85,7 +86,27 @@ namespace ProyectoLab3
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            errpPlatos.Clear();
+            if (tbNombre.Text == string.Empty) {
+                errpPlatos.SetError(tbNombre, "No se puede ingresar un plato sin nombre");
+            }
+            else if(cboCategorias.Items.Count==0){
+                errpPlatos.SetError(cboCategorias,"Primero ingrese una categoria");
+                tbCat.Focus();
+            }
+            else{
+                 DataRowView fila = cboCategorias.SelectedItem as DataRowView;//cboCategorias.SelectedItem as DataRowView;
+                int idCategoria;
+                idCategoria = int.TryParse(fila[0].ToString(), out idCategoria) ? idCategoria : 0;
+                string resp=clsPlato.insertarPlato(tbNombre.Text,double.Parse(nudPrecio.Value.ToString()),total,true,idCategoria,cbTACC.Checked,this.ingredientes);
+                if(resp==""){
+                    MessageBox.Show("Se ha ingresado el plato y sus ingredientes correctamente","Éxito");
+                }
+                else
+                {
+                 MessageBox.Show(resp,"Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
         }
 
     }
