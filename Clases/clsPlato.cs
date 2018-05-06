@@ -39,8 +39,9 @@ namespace Clases
                 parametros[4] = new SqlParameter("@IdCategoria", idCat);
                 parametros[5] = new SqlParameter("@TACC", TACC);
                 comando.Parameters.AddRange(parametros);
-                int idPlato=int.Parse(comando.ExecuteScalar().ToString());
-                foreach (Ingrediente i in ingredientes) {
+                int idPlato = int.Parse(comando.ExecuteScalar().ToString());
+                foreach (Ingrediente i in ingredientes)
+                {
                     comando.CommandText = "Insert into Receta values (" + idPlato + "," + i.IdIngrediente + "," + i.Plato.NudGramos.Value.ToString() + ");";
                     //comando.Parameters.Add(new SqlParameter("@IdPlato",idPlato));
                     //comando.Parameters.Add(new SqlParameter("@IdIngrediente", i.IdIngrediente));
@@ -49,16 +50,21 @@ namespace Clases
                 }
                 transaction.Commit();
             }
-            catch (SqlException ex) {
+            catch (SqlException ex)
+            {
                 resp += ex.Message;
                 try
                 {
                     transaction.Rollback();
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
                     resp += e.Message;
                 }
-            
+
+            }
+            finally {
+                clsConexion.closeCon();
             }
             return resp;
         }

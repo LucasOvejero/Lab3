@@ -19,7 +19,7 @@ namespace Clases
             try
             {
                 //recuperamos los ingredientes
-                comando = new SqlCommand("Select i.IdIngrediente,NombreProducto,Stock from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion; ");
+                comando = new SqlCommand("Select i.IdIngrediente,d.IdSucursal,NombreProducto,Stock,0 as 'Agregar gr.' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion; ");
                 comando.Connection = clsConexion.getCon();
                 SqlParameter dir = new SqlParameter("@Direccion", Direccion);
                 comando.Parameters.Add(dir);
@@ -27,7 +27,7 @@ namespace Clases
                 adapter.SelectCommand = comando;
                 adapter.Fill(Ingredientes);
                 //recuperamos las bebidas de la sucursal
-                comando.CommandText = "Select b.IdBebida,NombreBebida,Stock from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Bebida b on (d.IdBebida=b.IdBebida) where Direccion=@Direccion;";
+                comando.CommandText = "Select b.IdBebida,d.IdSucursal,NombreBebida,Stock,0 as 'Agregar U.' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Bebida b on (d.IdBebida=b.IdBebida) where Direccion=@Direccion;";
                 adapter.SelectCommand = comando;
                 adapter.Fill(Bebidas);
                 ds.Tables.Add(Ingredientes);
@@ -42,6 +42,111 @@ namespace Clases
                 clsConexion.closeCon();
             }
             return ds;
+        }
+        public static string actualizarBebidas(DataTable bebidas,string direccion,out DataTable nuevaTablaBebidas) {
+            string resp = "";
+            nuevaTablaBebidas = null;
+            SqlTransaction transaction = clsConexion.getCon().BeginTransaction("ActualizarDeposito");
+            try
+            {
+                SqlCommand comando = clsConexion.getCon().CreateCommand();
+
+                comando.Connection = clsConexion.getCon();
+                comando.Transaction = transaction;
+                foreach (DataRow row in bebidas.Rows)
+                {
+                    if (row.RowState == DataRowState.Modified)
+                    {
+                       
+                        int agregar = Int32.Parse(row["Agregar U."].ToString());
+                        
+                        int idSucursal = Int32.Parse(row["IdSucursal"].ToString());
+                        int idBebida = Int32.Parse(row["IdBebida"].ToString());
+                        comando.CommandText = string.Format("Update Deposito set Stock=Stock+{0} where IdSucursal={1} and IdBebida={2};", agregar, idSucursal, idBebida);
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                transaction.Commit();
+                comando = new SqlCommand();
+                comando.Connection = clsConexion.getCon();
+                comando.Parameters.Add(new SqlParameter("@Direccion", direccion));
+                comando.CommandText = "Select b.IdBebida,d.IdSucursal,NombreBebida,Stock,0 as 'Agregar U.' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Bebida b on (d.IdBebida=b.IdBebida) where Direccion=@Direccion;";
+                adapter.SelectCommand = comando;
+                nuevaTablaBebidas = new DataTable("Bebidas");
+                adapter.Fill(nuevaTablaBebidas);
+               
+            }
+            catch (SqlException ex)
+            {
+                resp += ex.Message;
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch (Exception e)
+                {
+                    resp += e.Message;
+                }
+
+            }
+            finally {
+                clsConexion.closeCon();
+            }
+            return resp;
+        }
+
+        public static string actualizarIngredientes(DataTable ingredientes, string direccion, out DataTable nuevaTablaIngredientes)
+        {
+            string resp = "";
+            nuevaTablaIngredientes = null;
+            SqlTransaction transaction = clsConexion.getCon().BeginTransaction("ActualizarDepositoI");
+            try
+            {
+                SqlCommand comando = clsConexion.getCon().CreateCommand();
+
+                comando.Connection = clsConexion.getCon();
+                comando.Transaction = transaction;
+                foreach (DataRow row in ingredientes.Rows)
+                {
+                    if (row.RowState == DataRowState.Modified)
+                    {
+                        
+                        int agregar = Int32.Parse(row["Agregar gr."].ToString());
+                       
+                        int idSucursal = Int32.Parse(row["IdSucursal"].ToString());
+                        int idIngrediente = Int32.Parse(row["IdIngrediente"].ToString());
+                        comando.CommandText = string.Format("Update Deposito set Stock=Stock+{0} where IdSucursal={1} and IdIngrediente={2};", agregar, idSucursal, idIngrediente);
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                transaction.Commit();
+                comando = new SqlCommand();
+                comando.Connection = clsConexion.getCon();
+                comando.Parameters.Add(new SqlParameter("@Direccion", direccion));
+                comando.CommandText = "Select i.IdIngrediente,d.IdSucursal,NombreProducto,Stock,0 as 'Agregar gr.' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion;";
+                adapter.SelectCommand = comando;
+                nuevaTablaIngredientes = new DataTable("Ingredientes");
+                adapter.Fill(nuevaTablaIngredientes);
+
+            }
+            catch (SqlException ex)
+            {
+                resp += ex.Message;
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch (Exception e)
+                {
+                    resp += e.Message;
+                }
+
+            }
+            finally
+            {
+                clsConexion.closeCon();
+            }
+            return resp;
         }
     }
 }

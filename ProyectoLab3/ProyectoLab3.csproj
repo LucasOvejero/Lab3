@@ -64,6 +64,12 @@
     <Compile Include="frmCrearPlatoSeleccionIng.Designer.cs">
       <DependentUpon>frmCrearPlatoSeleccionIng.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMiDeposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMiDeposito.Designer.cs">
+      <DependentUpon>frmMiDeposito.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearPlatoSeleccionIng.resx">
       <DependentUpon>frmCrearPlatoSeleccionIng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMiDeposito.resx">
+      <DependentUpon>frmMiDeposito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>

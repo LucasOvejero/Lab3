@@ -34,6 +34,7 @@
             this.btnDepositos = new System.Windows.Forms.Button();
             this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnPlato = new System.Windows.Forms.Button();
+            this.btnDeposito = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -96,11 +97,22 @@
             this.btnPlato.UseVisualStyleBackColor = true;
             this.btnPlato.Click += new System.EventHandler(this.btnPlato_Click);
             // 
+            // btnDeposito
+            // 
+            this.btnDeposito.Location = new System.Drawing.Point(381, 100);
+            this.btnDeposito.Name = "btnDeposito";
+            this.btnDeposito.Size = new System.Drawing.Size(75, 23);
+            this.btnDeposito.TabIndex = 6;
+            this.btnDeposito.Text = "Deposito";
+            this.btnDeposito.UseVisualStyleBackColor = true;
+            this.btnDeposito.Click += new System.EventHandler(this.btnDeposito_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
+            this.Controls.Add(this.btnDeposito);
             this.Controls.Add(this.btnPlato);
             this.Controls.Add(this.btnSolicitudes);
             this.Controls.Add(this.btnDepositos);
@@ -126,6 +138,7 @@
         private System.Windows.Forms.Button btnSolicitudes;
         private System.Windows.Forms.Button btnPlatos;
         private System.Windows.Forms.Button btnPlato;
+        private System.Windows.Forms.Button btnDeposito;
     }
 }
 

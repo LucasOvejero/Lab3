@@ -37,22 +37,22 @@
             this.nudPrecio = new System.Windows.Forms.NumericUpDown();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbTACC = new System.Windows.Forms.CheckBox();
             this.lblGanancia = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboCategorias = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.dgvIngredientes = new Componentes.GrillaFormatead();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbCat = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.errpPlatos = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dgvIngredientes = new Componentes.GrillaFormatead();
-            this.cbTACC = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errpPlatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,7 +100,7 @@
             0});
             this.nudPrecio.Name = "nudPrecio";
             this.nudPrecio.Size = new System.Drawing.Size(113, 20);
-            this.nudPrecio.TabIndex = 6;
+            this.nudPrecio.TabIndex = 4;
             this.nudPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPrecio.ValueChanged += new System.EventHandler(this.nudPrecio_ValueChanged);
             // 
@@ -109,7 +109,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(722, 373);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 48);
-            this.btnAgregar.TabIndex = 4;
+            this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar plato";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -136,6 +136,16 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Plato";
+            // 
+            // cbTACC
+            // 
+            this.cbTACC.AutoSize = true;
+            this.cbTACC.Location = new System.Drawing.Point(745, 263);
+            this.cbTACC.Name = "cbTACC";
+            this.cbTACC.Size = new System.Drawing.Size(54, 17);
+            this.cbTACC.TabIndex = 5;
+            this.cbTACC.Text = "TACC";
+            this.cbTACC.UseVisualStyleBackColor = true;
             // 
             // lblGanancia
             // 
@@ -172,6 +182,30 @@
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Categoria";
+            // 
+            // dgvIngredientes
+            // 
+            this.dgvIngredientes.AllowUserToAddRows = false;
+            this.dgvIngredientes.AllowUserToResizeColumns = false;
+            this.dgvIngredientes.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIngredientes.Location = new System.Drawing.Point(37, 38);
+            this.dgvIngredientes.MultiSelect = false;
+            this.dgvIngredientes.Name = "dgvIngredientes";
+            this.dgvIngredientes.ReadOnly = true;
+            this.dgvIngredientes.RowHeadersVisible = false;
+            this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvIngredientes.Size = new System.Drawing.Size(539, 356);
+            this.dgvIngredientes.TabIndex = 1;
+            this.dgvIngredientes.TabStop = false;
             // 
             // groupBox2
             // 
@@ -215,40 +249,6 @@
             // 
             this.errpPlatos.ContainerControl = this;
             // 
-            // dgvIngredientes
-            // 
-            this.dgvIngredientes.AllowUserToAddRows = false;
-            this.dgvIngredientes.AllowUserToResizeColumns = false;
-            this.dgvIngredientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(37, 38);
-            this.dgvIngredientes.MultiSelect = false;
-            this.dgvIngredientes.Name = "dgvIngredientes";
-            this.dgvIngredientes.ReadOnly = true;
-            this.dgvIngredientes.RowHeadersVisible = false;
-            this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngredientes.Size = new System.Drawing.Size(539, 356);
-            this.dgvIngredientes.TabIndex = 1;
-            this.dgvIngredientes.TabStop = false;
-            // 
-            // cbTACC
-            // 
-            this.cbTACC.AutoSize = true;
-            this.cbTACC.Location = new System.Drawing.Point(745, 263);
-            this.cbTACC.Name = "cbTACC";
-            this.cbTACC.Size = new System.Drawing.Size(54, 17);
-            this.cbTACC.TabIndex = 12;
-            this.cbTACC.Text = "TACC";
-            this.cbTACC.UseVisualStyleBackColor = true;
-            // 
             // frmCrearPlatoConfirmar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,10 +263,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errpPlatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             this.ResumeLayout(false);
 
         }

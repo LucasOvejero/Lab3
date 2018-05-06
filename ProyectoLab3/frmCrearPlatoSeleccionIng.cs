@@ -113,13 +113,20 @@ namespace ProyectoLab3
                     }
                 }
                 if (!exist){
-                    PanelPlato pnlPlato = new PanelPlato(i.NombreProducto);
-                    pnlPlato.Location = new Point(x, y);
-                    pnlPlato.Tag = i.IdIngrediente;
-                    
-                    pnlIngredientes.Controls.Add(pnlPlato);
+                    if (i.Plato == null)
+                    {
+                        PanelPlato pnlPlato = new PanelPlato(i.NombreProducto);
+                        pnlPlato.Location = new Point(x, y);
+                        pnlPlato.Tag = i.IdIngrediente;
+                        i.Plato = pnlPlato;
+                    }
+                    //tenemos que "reiniciar" la posición
+                    else {
+                        i.Plato.Location = new Point(x, y);
+                    }
+                    pnlIngredientes.Controls.Add(i.Plato);
                     y += yvar;
-                    i.Plato = pnlPlato;
+                    
                 }
             }
         }

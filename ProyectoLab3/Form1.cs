@@ -25,6 +25,7 @@ namespace ProyectoLab3
         frmSolicitudes ofrmSolicitudes;
         frmLogin ofrmLogin;
         frmCrearPlatoSeleccionIng ofrmPlato;
+        frmMiDeposito ofrMiDepo;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -92,6 +93,12 @@ namespace ProyectoLab3
         {
             ofrmPlato = new frmCrearPlatoSeleccionIng();
             ofrmPlato.ShowDialog();
+        }
+
+        private void btnDeposito_Click(object sender, EventArgs e)
+        {
+            ofrMiDepo = new frmMiDeposito(2);//TODO:asignarle el deposito del usuario actual
+            ofrMiDepo.ShowDialog();
         }
     }
 }
