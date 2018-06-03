@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
-
+using Modelo;
 namespace ProyectoLab3
 {
     public partial class Form1 : Form
@@ -17,6 +17,10 @@ namespace ProyectoLab3
             InitializeComponent();
             
         }
+        #region TEST MOCKITO
+        List<Producto> listaProducto = new List<Producto>();
+        #endregion
+
         #region Formularios
         frmProductos ofrmBebidas;
         frmSucursales ofrmSuc;
@@ -26,11 +30,20 @@ namespace ProyectoLab3
         frmLogin ofrmLogin;
         frmCrearPlatoSeleccionIng ofrmPlato;
         frmMiDeposito ofrMiDepo;
+        frmEditPlato ofrmEditPlato;
+        frmVenta ofrmVenta;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
         {            
           //  verificarLogeo();
+            listaProducto.Add(new Producto() {Nombre="Pizza",Cantidad=2,Precio=14,SubTotal=28});
+            listaProducto.Add(new Producto() { Nombre = "Ensalada", Cantidad = 1, Precio = 14, SubTotal = 14 });
+            listaProducto.Add(new Producto() { Nombre = "Gaseosa", Cantidad = 5, Precio = 20, SubTotal = 100 });
+            listaProducto.Add(new Producto() { Nombre = "Vino", Cantidad = 1, Precio = 200, SubTotal = 200 });
+            listaProducto.Add(new Producto() { Nombre = "Hamburguesa", Cantidad = 6, Precio = 14, SubTotal = 84 });
+         
+          
         }
 
         private void btnBebidas_Click(object sender, EventArgs e)
@@ -99,6 +112,29 @@ namespace ProyectoLab3
         {
             ofrMiDepo = new frmMiDeposito(2);//TODO:asignarle el deposito del usuario actual
             ofrMiDepo.ShowDialog();
+        }
+
+        private void btnEditPlato_Click(object sender, EventArgs e)
+        {
+            ofrmEditPlato = new frmEditPlato();
+            ofrmEditPlato.ShowDialog();
+        }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+            ofrmVenta = new frmVenta(2);//TODO:asignarle el deposito del usuario actual
+            ofrmVenta.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TicketVenta ticket = new TicketVenta();
+
+            ticket.SetDataSource(listaProducto);
+
+            ticket.SetParameterValue("Pago", 10);
+            frmTicketVenta ofrmTicket = new frmTicketVenta(ticket);
+            ofrmTicket.ShowDialog();
         }
     }
 }

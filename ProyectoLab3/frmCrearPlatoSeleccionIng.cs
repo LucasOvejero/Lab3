@@ -216,7 +216,10 @@ namespace ProyectoLab3
             if (ingredientesParaElPlato.Count > 0)
             {
                 ofrmCrearPlatoConfirmar = new frmCrearPlatoConfirmar(ingredientesParaElPlato);
-                ofrmCrearPlatoConfirmar.ShowDialog();
+                DialogResult res=ofrmCrearPlatoConfirmar.ShowDialog();
+                if (res == DialogResult.OK) {
+                    this.Close();
+                }
             }
             else
             {

@@ -18,9 +18,44 @@ namespace Clases
 
         public static DataTable seleccionarPlato()
         {
-            throw new NotImplementedException();
+            DataTable platos = null;
+            try
+            {
+                platos = new DataTable("Platos");
+                SqlCommand select = new SqlCommand("Select * from Plato", clsConexion.getCon());
+                SqlDataAdapter adaptador = new SqlDataAdapter(select);
+                adaptador.Fill(platos);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally {
+                clsConexion.closeCon();
+            }
+            return platos;
         }
-
+        public static DataTable seleccionarPlatoxCategoria(int idSucursal)
+        {
+            DataTable platos = null;
+            try
+            {
+                platos = new DataTable("Platos");
+                //SqlCommand select = new SqlCommand(string.Format("Select p.Nombre,IdPlato,dbo.suficientes_ingredientes(p.IdPlato,{0}) Suficiente,Precio,Costo,c.Nombre Categoria,TACC from Plato p inner join CategoriaPlatos c on (c.IdCategoria=p.IdCategoria);",idSucursal), clsConexion.getCon());
+                SqlCommand select = new SqlCommand(string.Format("Select p.Nombre,p.IdPlato,g.[Posible Cantidad],dbo.suficientes_ingredientes(p.IdPlato,{0}) Suficiente,Precio,Costo,c.Nombre Categoria,TACC from Plato p inner join CategoriaPlatos c on (c.IdCategoria=p.IdCategoria) inner join (select CAST(MIN(Stock/Cantidad) as decimal(5,0)) as 'Posible Cantidad', IdPlato  from Receta r inner join Deposito d on(r.IdIngrediente=d.IdIngrediente) where  d.IdSucursal={0} group by IdPlato ) g on(g.IdPlato=p.IdPlato);", idSucursal), clsConexion.getCon());
+                SqlDataAdapter adaptador = new SqlDataAdapter(select);
+                adaptador.Fill(platos);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally
+            {
+                clsConexion.closeCon();
+            }
+            return platos;
+        }
         public static string insertarPlato(string nombre, double precio, double costo, bool estado,int idCat,bool TACC,List<Ingrediente> ingredientes)
         {
             string resp = "";

@@ -52,6 +52,7 @@
     <Compile Include="clsProvincia.cs" />
     <Compile Include="clsSolicitud.cs" />
     <Compile Include="clsSucursal.cs" />
+    <Compile Include="clsVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

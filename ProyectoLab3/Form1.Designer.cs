@@ -35,6 +35,9 @@
             this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnPlato = new System.Windows.Forms.Button();
             this.btnDeposito = new System.Windows.Forms.Button();
+            this.btnEditPlato = new System.Windows.Forms.Button();
+            this.btnVenta = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -91,9 +94,9 @@
             // 
             this.btnPlato.Location = new System.Drawing.Point(695, 51);
             this.btnPlato.Name = "btnPlato";
-            this.btnPlato.Size = new System.Drawing.Size(75, 23);
+            this.btnPlato.Size = new System.Drawing.Size(75, 42);
             this.btnPlato.TabIndex = 5;
-            this.btnPlato.Text = "Platos";
+            this.btnPlato.Text = "Agregar Platos";
             this.btnPlato.UseVisualStyleBackColor = true;
             this.btnPlato.Click += new System.EventHandler(this.btnPlato_Click);
             // 
@@ -107,11 +110,44 @@
             this.btnDeposito.UseVisualStyleBackColor = true;
             this.btnDeposito.Click += new System.EventHandler(this.btnDeposito_Click);
             // 
+            // btnEditPlato
+            // 
+            this.btnEditPlato.Location = new System.Drawing.Point(695, 111);
+            this.btnEditPlato.Name = "btnEditPlato";
+            this.btnEditPlato.Size = new System.Drawing.Size(75, 42);
+            this.btnEditPlato.TabIndex = 7;
+            this.btnEditPlato.Text = "Ver Platos";
+            this.btnEditPlato.UseVisualStyleBackColor = true;
+            this.btnEditPlato.Click += new System.EventHandler(this.btnEditPlato_Click);
+            // 
+            // btnVenta
+            // 
+            this.btnVenta.Location = new System.Drawing.Point(224, 100);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Size = new System.Drawing.Size(75, 23);
+            this.btnVenta.TabIndex = 8;
+            this.btnVenta.Text = "Vender";
+            this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(108, 198);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "btntest";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVenta);
+            this.Controls.Add(this.btnEditPlato);
             this.Controls.Add(this.btnDeposito);
             this.Controls.Add(this.btnPlato);
             this.Controls.Add(this.btnSolicitudes);
@@ -139,6 +175,9 @@
         private System.Windows.Forms.Button btnPlatos;
         private System.Windows.Forms.Button btnPlato;
         private System.Windows.Forms.Button btnDeposito;
+        private System.Windows.Forms.Button btnEditPlato;
+        private System.Windows.Forms.Button btnVenta;
+        private System.Windows.Forms.Button button1;
     }
 }
 

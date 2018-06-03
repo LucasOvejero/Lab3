@@ -178,5 +178,23 @@ namespace Clases
         }
         #endregion
 
+
+        public static DataTable obtenerIngredientesxReceta()
+        {
+            DataTable tablaRec = new DataTable("Ingredientes");
+            try
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(new SqlCommand("Select * from Ingrediente i Inner Join Receta r on(i.IdIngrediente=r.IdIngrediente)", clsConexion.getCon()));
+                adaptador.Fill(tablaRec);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally {
+                clsConexion.closeCon();
+            }
+            return tablaRec;
+        }
     }
 }

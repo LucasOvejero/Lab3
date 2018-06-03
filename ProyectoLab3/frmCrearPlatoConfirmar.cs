@@ -101,6 +101,8 @@ namespace ProyectoLab3
                 string resp=clsPlato.insertarPlato(tbNombre.Text,double.Parse(nudPrecio.Value.ToString()),total,true,idCategoria,cbTACC.Checked,this.ingredientes);
                 if(resp==""){
                     MessageBox.Show("Se ha ingresado el plato y sus ingredientes correctamente","Éxito");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                 {
