@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,22 +48,22 @@
     <Compile Include="clsEmpleado.cs" />
     <Compile Include="clsIngrediente.cs" />
     <Compile Include="clsLocalidad.cs" />
+    <Compile Include="clsPlato.cs" />
     <Compile Include="clsProvincia.cs" />
     <Compile Include="clsSolicitud.cs" />
     <Compile Include="clsSucursal.cs" />
-    <Compile Include="GrillaFormatead.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GrillaFormatead.Designer.cs">
-      <DependentUpon>GrillaFormatead.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nudP.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="nudP.Designer.cs">
-      <DependentUpon>nudP.cs</DependentUpon>
-    </Compile>
+    <Compile Include="clsVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Componentes\Componentes.csproj">
+      <Project>{5E20169A-EFA4-4060-9FDF-AFD222A7B733}</Project>
+      <Name>Componentes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{56C85345-B21B-403E-886D-BB3B4DE3D21C}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

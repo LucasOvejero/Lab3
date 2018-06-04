@@ -49,8 +49,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbPass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvEmpleados = new Clases.GrillaFormatead();
-            this.dgvSucursales = new Clases.GrillaFormatead();
+            this.dgvEmpleados = new Componentes.GrillaFormatead();
+            this.dgvSucursales = new Componentes.GrillaFormatead();
             this.pnlNuevo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).BeginInit();
@@ -323,8 +323,8 @@
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.TextBox tbBusqueda;
-        private Clases.GrillaFormatead dgvEmpleados;
-        private Clases.GrillaFormatead dgvSucursales;
+        private Componentes.GrillaFormatead dgvEmpleados;
+        private Componentes.GrillaFormatead dgvSucursales;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.TextBox tbUser;

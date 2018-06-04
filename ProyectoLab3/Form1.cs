@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
-
+using Modelo;
 namespace ProyectoLab3
 {
     public partial class Form1 : Form
@@ -17,23 +17,38 @@ namespace ProyectoLab3
             InitializeComponent();
             
         }
+        #region TEST MOCKITO
+        List<Producto> listaProducto = new List<Producto>();
+        #endregion
+
         #region Formularios
-        frmBebidas ofrmBebidas;
+        frmProductos ofrmBebidas;
         frmSucursales ofrmSuc;
         frmEmpleados ofrmEmp;
         frmDepositos ofrmDepositos;
         frmSolicitudes ofrmSolicitudes;
         frmLogin ofrmLogin;
+        frmCrearPlatoSeleccionIng ofrmPlato;
+        frmMiDeposito ofrMiDepo;
+        frmEditPlato ofrmEditPlato;
+        frmVenta ofrmVenta;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
         {            
-            verificarLogeo();
+          //  verificarLogeo();
+            listaProducto.Add(new Producto() {Nombre="Pizza",Cantidad=2,Precio=14,SubTotal=28});
+            listaProducto.Add(new Producto() { Nombre = "Ensalada", Cantidad = 1, Precio = 14, SubTotal = 14 });
+            listaProducto.Add(new Producto() { Nombre = "Gaseosa", Cantidad = 5, Precio = 20, SubTotal = 100 });
+            listaProducto.Add(new Producto() { Nombre = "Vino", Cantidad = 1, Precio = 200, SubTotal = 200 });
+            listaProducto.Add(new Producto() { Nombre = "Hamburguesa", Cantidad = 6, Precio = 14, SubTotal = 84 });
+         
+          
         }
 
         private void btnBebidas_Click(object sender, EventArgs e)
         {
-            ofrmBebidas = new frmBebidas();
+            ofrmBebidas = new frmProductos();
             ofrmBebidas.Show();
         }
 
@@ -73,34 +88,53 @@ namespace ProyectoLab3
 
 
         private void verificarLogeo() {
-
+/*
             if (clsConexion.SucursalSession == -1)
             {
                 ofrmLogin = new frmLogin();
                 ofrmLogin.ShowDialog();
-            }
-            else
-            {
-                lblUserSession.Text = "Bienvenido: " + clsConexion.NombreCompleto;
-
-
-                if (clsConexion.Tipo != "Manager")
-                {
-                    btnEmpleados.Visible = false;
-                    btnSuc.Visible = false;
-                    btnDepositos.Visible = false;
-                    btnSolicitudes.Visible = false;
-                    btnDepositos.Visible = false;
-                    btnProductos.Visible = false;
-                }
-
-            }
+            }*/
 
         }
 
         private void Form1_MouseEnter(object sender, EventArgs e)
         {
             verificarLogeo();
+        }
+
+        private void btnPlato_Click(object sender, EventArgs e)
+        {
+            ofrmPlato = new frmCrearPlatoSeleccionIng();
+            ofrmPlato.ShowDialog();
+        }
+
+        private void btnDeposito_Click(object sender, EventArgs e)
+        {
+            ofrMiDepo = new frmMiDeposito(2);//TODO:asignarle el deposito del usuario actual
+            ofrMiDepo.ShowDialog();
+        }
+
+        private void btnEditPlato_Click(object sender, EventArgs e)
+        {
+            ofrmEditPlato = new frmEditPlato();
+            ofrmEditPlato.ShowDialog();
+        }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+            ofrmVenta = new frmVenta(2);//TODO:asignarle el deposito del usuario actual
+            ofrmVenta.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TicketVenta ticket = new TicketVenta();
+
+            ticket.SetDataSource(listaProducto);
+
+            ticket.SetParameterValue("Pago", 10);
+            frmTicketVenta ofrmTicket = new frmTicketVenta(ticket);
+            ofrmTicket.ShowDialog();
         }
     }
 }

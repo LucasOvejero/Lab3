@@ -35,16 +35,16 @@
             this.tbProvincia = new System.Windows.Forms.TextBox();
             this.btnAddProv = new System.Windows.Forms.Button();
             this.gpProv = new System.Windows.Forms.GroupBox();
-            this.dgvProvincia = new Clases.GrillaFormatead();
+            this.dgvProvincia = new Componentes.GrillaFormatead();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAddLocalidad = new System.Windows.Forms.Button();
             this.tbLocalidad = new System.Windows.Forms.TextBox();
-            this.dgvLocalidad = new Clases.GrillaFormatead();
+            this.dgvLocalidad = new Componentes.GrillaFormatead();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rtbDir = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvSucursal = new Clases.GrillaFormatead();
+            this.dgvSucursal = new Componentes.GrillaFormatead();
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.btnAddSucursal = new System.Windows.Forms.Button();
             this.pnlConfig = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@
             this.btnEstado = new System.Windows.Forms.Button();
             this.tbBusquedaManager = new System.Windows.Forms.TextBox();
             this.lblManager = new System.Windows.Forms.Label();
-            this.dgvManagers = new Clases.GrillaFormatead();
+            this.dgvManagers = new Componentes.GrillaFormatead();
             this.lblManagerActual = new System.Windows.Forms.Label();
             this.gpProv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincia)).BeginInit();
@@ -422,9 +422,9 @@
 
         #endregion
 
-        private Clases.GrillaFormatead dgvProvincia;
-        private Clases.GrillaFormatead dgvLocalidad;
-        private Clases.GrillaFormatead dgvSucursal;
+        private Componentes.GrillaFormatead dgvProvincia;
+        private Componentes.GrillaFormatead dgvLocalidad;
+        private Componentes.GrillaFormatead dgvSucursal;
         private System.Windows.Forms.TextBox tbProvincia;
         private System.Windows.Forms.Button btnAddProv;
         private System.Windows.Forms.GroupBox gpProv;
@@ -446,7 +446,7 @@
         private System.Windows.Forms.TextBox tbDir;
         private System.Windows.Forms.TextBox tbTel;
         private System.Windows.Forms.Button btnGuardar;
-        private Clases.GrillaFormatead dgvManagers;
+        private Componentes.GrillaFormatead dgvManagers;
         private System.Windows.Forms.Label lblManagerActual;
     }
 }

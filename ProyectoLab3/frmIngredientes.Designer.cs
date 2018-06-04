@@ -33,8 +33,8 @@
             this.lbSucursales = new System.Windows.Forms.ListBox();
             this.cboProvincia = new System.Windows.Forms.ComboBox();
             this.cboLocalidad = new System.Windows.Forms.ComboBox();
-            this.dgvIngredientes = new Clases.GrillaFormatead();
-            this.dgvBebidas = new Clases.GrillaFormatead();
+            this.dgvIngredientes = new Componentes.GrillaFormatead();
+            this.dgvBebidas = new Componentes.GrillaFormatead();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).BeginInit();
             this.SuspendLayout();
@@ -141,8 +141,8 @@
         private System.Windows.Forms.ListBox lbSucursales;
         private System.Windows.Forms.ComboBox cboProvincia;
         private System.Windows.Forms.ComboBox cboLocalidad;
-        private Clases.GrillaFormatead dgvBebidas;
-        private Clases.GrillaFormatead dgvIngredientes;
+        private Componentes.GrillaFormatead dgvBebidas;
+        private Componentes.GrillaFormatead dgvIngredientes;
         
     }
 }

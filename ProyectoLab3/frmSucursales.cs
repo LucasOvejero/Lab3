@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Clases;
+using Componentes;
 namespace ProyectoLab3
 {
     public partial class frmSucursales : Form

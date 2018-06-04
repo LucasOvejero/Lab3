@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+using Componentes;
 using System.Data.SqlClient;
 namespace ProyectoLab3
 {
@@ -94,7 +95,7 @@ namespace ProyectoLab3
                 }
                 else
                 {
-                    lbSucursales.Items.AddRange(clsSucursal.getPerLoc(localidad));
+                       lbSucursales.Items.AddRange(clsSucursal.getPerLocProv(localidad, provincia));
                 }
 
 
@@ -110,7 +111,9 @@ namespace ProyectoLab3
             string direccion=lbSucursales.SelectedItem.ToString();
             ds=clsDeposito.getDepositoPorDireccion(direccion);
             dgvBebidas.DataSource = ds.Tables["Bebidas"];
+            dgvBebidas.Columns["Agregar U."].Visible = false;
             dgvIngredientes.DataSource = ds.Tables["Ingredientes"];
+            dgvIngredientes.Columns["Agregar gr."].Visible = false;
 
         }
     }

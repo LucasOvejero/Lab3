@@ -91,3 +91,22 @@ alter table Sucursal ADD constraint DF_estado Default 1 FOR Estado;
 
 
 alter table Bebida add constraint DF_bebida default 1 for Estado;
+
+
+
+alter table Ingrediente add IdCategoria int;
+alter table Ingrediente add foreign key (IdCategoria) references CategoriaIngredientes(IdCategoria);
+
+create table CategoriaPlatos(
+	IdCategoria int identity(1,1),
+	Nombre varchar(100) unique
+);
+alter table Plato add IdCategoria int;
+alter table Plato add foreign key (IdCategoria) references CategoriaPlatos(IdCategoria);
+
+create table CategoriaBebidas(
+	IdCategoria int identity(1,1),
+	Nombre varchar(100) unique
+);
+alter table Bebida add IdCategoria int;
+alter table Bebida add foreign key (IdCategoria) references CategoriaBebidas(IdCategoria);

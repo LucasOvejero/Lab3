@@ -11,36 +11,41 @@ namespace Clases
     {
 
         static SqlCommand comando;
-        static SqlDataAdapter adaptador;
-        static DataTable ingredientes;
+        static SqlCommand selectIngre;
+        static SqlDataAdapter adaptadorIngredientes,adaptadorCategorias;
+        static DataTable ingredientes, categorias;
 
-        public static DataTable seleccionarIngredientes() {
-            comando = new SqlCommand("select * from Ingrediente");
+        public static DataTable seleccionarIngredientes()
+        {
+            selectIngre = new SqlCommand("select * from Ingrediente i left outer  join CategoriaIngredientes c on(i.IdCategoria=c.IdCategoria)");
             try
             {
                 ingredientes = new DataTable("Ingredientes");
-                comando.Connection = clsConexion.getCon();
-                adaptador = new SqlDataAdapter();
-                adaptador.SelectCommand = comando;
-                adaptador.Fill(ingredientes);
+                selectIngre.Connection = clsConexion.getCon();
+                adaptadorIngredientes = new SqlDataAdapter();
+                adaptadorIngredientes.SelectCommand = selectIngre;
+                adaptadorIngredientes.Fill(ingredientes);
             }
             catch (SqlException x)
             {
                 throw x;
             }
-            finally {
+            finally
+            {
                 clsConexion.closeCon();
             }
             return ingredientes;
         }
-      
-        public static string insertarIngrediente(string nombre, double CostoXKilo) {
-            string resp="";
+
+        public static string insertarIngrediente(string nombre, double CostoXKilo, int IdCategoria)
+        {
+            string resp = "";
             comando = new SqlCommand();
-            comando.CommandText = "INSERT INTO Ingrediente (NombreProducto,CostoxKG) values (@NombreProducto,@Costo);Select SCOPE_IDENTITY();";
-            SqlParameter[] parametros = new SqlParameter[2];
-            parametros[0] = new SqlParameter("@NombreProducto",nombre);
+            comando.CommandText = "INSERT INTO Ingrediente (NombreProducto,CostoxKG,IdCategoria) values (@NombreProducto,@Costo,@IdCategoria);Select SCOPE_IDENTITY();";
+            SqlParameter[] parametros = new SqlParameter[3];
+            parametros[0] = new SqlParameter("@NombreProducto", nombre);
             parametros[1] = new SqlParameter("@Costo", CostoXKilo);
+            parametros[2] = new SqlParameter("@IdCategoria", IdCategoria);
             try
             {
                 comando.Parameters.AddRange(parametros);
@@ -60,41 +65,127 @@ namespace Clases
             {
                 throw e;
             }
-            finally {
+            finally
+            {
                 clsConexion.closeCon();
             }
-                
+
             return resp;
         }
-        private static void actualizar(int id){
+        private static void actualizar(int id)
+        {
             try
             {
-                comando.CommandText = "select * from Ingrediente where IdIngrediente=" + id;
-                adaptador.SelectCommand = comando;
-                adaptador.Fill(ingredientes);
+                comando.CommandText = "select * from Ingrediente i left outer join CategoriaIngredientes c on(i.IdCategoria=c.IdCategoria) where IdIngrediente=" + id;
+                adaptadorIngredientes.SelectCommand = comando;
+                adaptadorIngredientes.Fill(ingredientes);
             }
-            catch (SqlException e) {
+            catch (SqlException e)
+            {
                 throw e;
             }
         }
-        public static string actualizar(int id,string nombre, decimal precio){
+        public static string actualizar(int id, string nombre, decimal precio,int idCategoria)
+        {
             string resp = "";
-            comando = new SqlCommand("UPDATE Ingrediente set NombreProducto=@Nombre, CostoxKg=@Precio where IdIngrediente=@IdIngrediente");
-            SqlParameter[] parametros = new SqlParameter[3];
+            comando = new SqlCommand("UPDATE Ingrediente set NombreProducto=@Nombre, CostoxKg=@Precio, IdCategoria=@IdCategoria where IdIngrediente=@IdIngrediente");
+            SqlParameter[] parametros = new SqlParameter[4];
             parametros[0] = new SqlParameter("Nombre", nombre);
-            parametros[1] = new SqlParameter("Precio",precio);
+            parametros[1] = new SqlParameter("Precio", precio);
             parametros[2] = new SqlParameter("IdIngrediente", id);
+            parametros[3] = new SqlParameter("IdCategoria", idCategoria);
             try
             {
                 comando.Connection = clsConexion.getCon();
                 comando.Parameters.AddRange(parametros);
                 if (comando.ExecuteNonQuery() > 0)
                 {
-                    resp = "El Ingrediente "+nombre+" actualizado correctamente";
+                    resp = "El Ingrediente " + nombre + " actualizado correctamente";
                     ingredientes.Clear();
-                    adaptador.Fill(ingredientes);
+                    adaptadorIngredientes.Fill(ingredientes);
                 }
-                
+
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally
+            {
+                clsConexion.closeCon();
+            }
+
+            return resp;
+        }
+
+
+        #region categorias
+        public static string agregarCategoriaIngrediente(string Categoria)
+        {
+            string resp = "";
+            adaptadorCategorias = new SqlDataAdapter();
+            try
+            {
+                comando = new SqlCommand();
+                comando.CommandText = "Insert into CategoriaIngredientes (Nombre) values (@NombreCategoria);Select SCOPE_IDENTITY();";
+                comando.Parameters.Add(new SqlParameter("@NombreCategoria", Categoria));
+                comando.Connection = clsConexion.getCon();
+                int id = int.Parse(comando.ExecuteScalar().ToString());
+                if (id >= 0)
+                {
+                    comando.CommandText = "select * from CategoriaIngredientes where IdCategoria=" + id;
+
+                    adaptadorCategorias.SelectCommand = comando;
+                    adaptadorCategorias.Fill(categorias);
+                }
+            }
+            catch (SqlException e)
+            {
+                resp = e.Message;
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                clsConexion.closeCon();
+
+            }
+            return resp;
+        }
+        public static DataTable obtenerCategoriasIngredientes()
+        {
+            categorias = new DataTable();
+            adaptadorCategorias = new SqlDataAdapter();
+            try
+            {
+               SqlCommand comando = new SqlCommand();
+                comando.CommandText = "select * from CategoriaIngredientes";
+                comando.Connection = clsConexion.getCon();
+                adaptadorCategorias.SelectCommand = comando;
+                adaptadorCategorias.Fill(categorias);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                clsConexion.closeCon();
+            }
+            return categorias;
+        }
+        #endregion
+
+
+        public static DataTable obtenerIngredientesxReceta()
+        {
+            DataTable tablaRec = new DataTable("Ingredientes");
+            try
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(new SqlCommand("Select * from Ingrediente i Inner Join Receta r on(i.IdIngrediente=r.IdIngrediente)", clsConexion.getCon()));
+                adaptador.Fill(tablaRec);
             }
             catch (SqlException e)
             {
@@ -103,9 +194,7 @@ namespace Clases
             finally {
                 clsConexion.closeCon();
             }
-            
-            return resp;
+            return tablaRec;
         }
-
     }
 }
