@@ -11,6 +11,7 @@ namespace Modelo
         public string NombreProducto { get; set; }
         public double CostoxKg { get; set; }
         public string Categoria { get; set; }
+        public int IdCategoria { get;set; }
         public PanelPlato Plato { get; set; }
         
     }

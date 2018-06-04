@@ -17,9 +17,7 @@ namespace ProyectoLab3
             InitializeComponent();
             
         }
-        #region TEST MOCKITO
-        List<Producto> listaProducto = new List<Producto>();
-        #endregion
+       
 
         #region Formularios
         frmProductos ofrmBebidas;
@@ -37,12 +35,7 @@ namespace ProyectoLab3
         private void Form1_Load(object sender, EventArgs e)
         {            
           //  verificarLogeo();
-            listaProducto.Add(new Producto() {Nombre="Pizza",Cantidad=2,Precio=14,SubTotal=28});
-            listaProducto.Add(new Producto() { Nombre = "Ensalada", Cantidad = 1, Precio = 14, SubTotal = 14 });
-            listaProducto.Add(new Producto() { Nombre = "Gaseosa", Cantidad = 5, Precio = 20, SubTotal = 100 });
-            listaProducto.Add(new Producto() { Nombre = "Vino", Cantidad = 1, Precio = 200, SubTotal = 200 });
-            listaProducto.Add(new Producto() { Nombre = "Hamburguesa", Cantidad = 6, Precio = 14, SubTotal = 84 });
-         
+          
           
         }
 
@@ -126,15 +119,5 @@ namespace ProyectoLab3
             ofrmVenta.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            TicketVenta ticket = new TicketVenta();
-
-            ticket.SetDataSource(listaProducto);
-
-            ticket.SetParameterValue("Pago", 10);
-            frmTicketVenta ofrmTicket = new frmTicketVenta(ticket);
-            ofrmTicket.ShowDialog();
-        }
     }
 }

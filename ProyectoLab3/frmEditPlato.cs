@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+using Modelo;
 namespace ProyectoLab3
 {
     public partial class frmEditPlato : Form
@@ -40,6 +41,32 @@ namespace ProyectoLab3
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            List<Ingrediente> ingredientes = new List<Ingrediente>();
+            foreach (DataGridViewRow r in dgvIngredientes.Rows) {
+                Ingrediente ing=new Ingrediente();
+                ing.IdIngrediente=int.Parse(r.Cells["IdIngrediente"].Value.ToString());
+
+                ing.NombreProducto = r.Cells["NombreProducto"].Value.ToString();
+                ing.CostoxKg = double.Parse(r.Cells["CostoxKg"].Value.ToString());
+                ing.IdCategoria = int.Parse(r.Cells["IdCategoria"].Value.ToString());
+                ingredientes.Add(ing);
+            }
+            DataGridViewRow plato= dgvPlatos.SelectedRows[0];
+
+            Plato p = new Plato() { Nombre = plato.Cells["Nombre"].Value.ToString()
+                , IdPlato = int.Parse(plato.Cells["IdPlato"].Value.ToString())
+                ,Precio = decimal.Parse(plato.Cells["Precio"].Value.ToString())
+                ,TACC= bool.Parse(plato.Cells["TACC"].Value.ToString())
+                ,Costo=decimal.Parse(plato.Cells["Costo"].Value.ToString())
+                ,Estado=bool.Parse(plato.Cells["Estado"].Value.ToString())
+                ,IdCategoria=int.Parse(plato.Cells["IdCategoria"].Value.ToString())
+            };
+            frmCrearPlatoSeleccionIng ofrmSelIng = new frmCrearPlatoSeleccionIng(ingredientes, p);
+            ofrmSelIng.ShowDialog();
         }
 
        

@@ -16,25 +16,47 @@ namespace ProyectoLab3
         public frmCrearPlatoSeleccionIng()
         {
             InitializeComponent();
+            ingredientesParaElPlato = new List<Ingrediente>();
+        }
+        public frmCrearPlatoSeleccionIng(List<Ingrediente> ingredientesParaElPlato, Plato plato) {
+            InitializeComponent();
+            this.ingredientesParaElPlato = ingredientesParaElPlato;
+            this.plato = plato;
+        
         }
         frmCrearPlatoConfirmar ofrmCrearPlatoConfirmar;
         List<Ingrediente> ingredientesParaElPlato, todosIngredientes;
         List<int> ingredientesSeleccionados = new List<int>();
         int x = 20, y = 0;
         int yvar = 80;
+        Plato plato;
         private void frmCrearPlatoSeleccionIng_Load(object sender, EventArgs e)
         {
             setear();
-            ingredientesParaElPlato = new List<Ingrediente>();
+           
         }
 
         private void setear()
         {
+
             cboCategoria.DataSource = categoriasObtenerNombre(clsIngrediente.obtenerCategoriasIngredientes());
             DataTable ingredientes = clsIngrediente.seleccionarIngredientes();
             todosIngredientes = ALista(ingredientes);
-            lbIngredientes.DataSource = todosIngredientes;
-            lbIngredientes.DisplayMember = "NombreProducto";
+            if (this.ingredientesParaElPlato.Count == 0)
+            {
+                lbIngredientes.DataSource = todosIngredientes;
+                lbIngredientes.DisplayMember = "NombreProducto";
+            }
+            else {
+                foreach (Ingrediente i in ingredientesParaElPlato)
+                {
+                    int indice = todosIngredientes.FindIndex(ing => ing.IdIngrediente == i.IdIngrediente);
+                    todosIngredientes.RemoveAt(indice);
+                }
+                asignarALosLb();
+                agregarControles(ingredientesParaElPlato);
+            
+            }
 
         }
         private List<Ingrediente> ALista(DataTable dt)
