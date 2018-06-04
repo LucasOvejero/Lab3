@@ -224,6 +224,10 @@ namespace ProyectoLab3
 
                 clsSucursal.actualizar(idSucursal, tbDir.Text, idManager, tbTel.Text);
                 configurar();
+
+                clsEmpleado.ascenderAManager(idSucursal,idManager);
+
+
             }
         }
 

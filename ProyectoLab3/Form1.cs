@@ -79,6 +79,22 @@ namespace ProyectoLab3
                 ofrmLogin = new frmLogin();
                 ofrmLogin.ShowDialog();
             }
+            else
+            {
+                lblUserSession.Text = "Bienvenido: " + clsConexion.NombreCompleto;
+
+
+                if (clsConexion.Tipo != "Manager")
+                {
+                    btnEmpleados.Visible = false;
+                    btnSuc.Visible = false;
+                    btnDepositos.Visible = false;
+                    btnSolicitudes.Visible = false;
+                    btnDepositos.Visible = false;
+                    btnProductos.Visible = false;
+                }
+
+            }
 
         }
 

@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBebidas = new System.Windows.Forms.Button();
+            this.btnProductos = new System.Windows.Forms.Button();
             this.btnSuc = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnDepositos = new System.Windows.Forms.Button();
             this.btnSolicitudes = new System.Windows.Forms.Button();
+            this.lblUserSession = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnBebidas
+            // btnProductos
             // 
-            this.btnBebidas.Location = new System.Drawing.Point(228, 51);
-            this.btnBebidas.Name = "btnBebidas";
-            this.btnBebidas.Size = new System.Drawing.Size(75, 23);
-            this.btnBebidas.TabIndex = 0;
-            this.btnBebidas.Text = "Productos";
-            this.btnBebidas.UseVisualStyleBackColor = true;
-            this.btnBebidas.Click += new System.EventHandler(this.btnBebidas_Click);
+            this.btnProductos.Location = new System.Drawing.Point(187, 148);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(75, 23);
+            this.btnProductos.TabIndex = 0;
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnBebidas_Click);
             // 
             // btnSuc
             // 
-            this.btnSuc.Location = new System.Drawing.Point(67, 51);
+            this.btnSuc.Location = new System.Drawing.Point(70, 77);
             this.btnSuc.Name = "btnSuc";
             this.btnSuc.Size = new System.Drawing.Size(75, 23);
             this.btnSuc.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // btnEmpleados
             // 
-            this.btnEmpleados.Location = new System.Drawing.Point(550, 51);
+            this.btnEmpleados.Location = new System.Drawing.Point(298, 148);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(75, 23);
             this.btnEmpleados.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // btnDepositos
             // 
-            this.btnDepositos.Location = new System.Drawing.Point(389, 51);
+            this.btnDepositos.Location = new System.Drawing.Point(187, 77);
             this.btnDepositos.Name = "btnDepositos";
             this.btnDepositos.Size = new System.Drawing.Size(75, 23);
             this.btnDepositos.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             // btnSolicitudes
             // 
-            this.btnSolicitudes.Location = new System.Drawing.Point(332, 229);
+            this.btnSolicitudes.Location = new System.Drawing.Point(70, 148);
             this.btnSolicitudes.Name = "btnSolicitudes";
             this.btnSolicitudes.Size = new System.Drawing.Size(75, 23);
             this.btnSolicitudes.TabIndex = 4;
@@ -85,16 +86,28 @@
             this.btnSolicitudes.UseVisualStyleBackColor = true;
             this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
             // 
+            // lblUserSession
+            // 
+            this.lblUserSession.AutoSize = true;
+            this.lblUserSession.Font = new System.Drawing.Font("Sitka Banner", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserSession.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblUserSession.Location = new System.Drawing.Point(12, 9);
+            this.lblUserSession.Name = "lblUserSession";
+            this.lblUserSession.Size = new System.Drawing.Size(165, 30);
+            this.lblUserSession.TabIndex = 5;
+            this.lblUserSession.Text = "Ingrese su Usuario";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
+            this.Controls.Add(this.lblUserSession);
             this.Controls.Add(this.btnSolicitudes);
             this.Controls.Add(this.btnDepositos);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSuc);
-            this.Controls.Add(this.btnBebidas);
+            this.Controls.Add(this.btnProductos);
             this.Name = "Form1";
             this.Text = "Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -102,17 +115,19 @@
             this.Enter += new System.EventHandler(this.Form1_Enter);
             this.MouseEnter += new System.EventHandler(this.Form1_MouseEnter);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnBebidas;
+        private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnSuc;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnDepositos;
         private System.Windows.Forms.Button btnSolicitudes;
         private System.Windows.Forms.Button btnPlatos;
+        private System.Windows.Forms.Label lblUserSession;
     }
 }
 

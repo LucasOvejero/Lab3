@@ -19,6 +19,9 @@ namespace Clases
 
         static SqlConnection cnn = new SqlConnection(conexion);
 
+        public static string IdEmpleado { get; internal set; }
+        public static string NombreCompleto { get; internal set; }
+
         /*public clsConexion()
         {
             cnn = new SqlConnection(conexion);
