@@ -48,6 +48,8 @@
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.btnAddSucursal = new System.Windows.Forms.Button();
             this.pnlConfig = new System.Windows.Forms.Panel();
+            this.lblManagerActual = new System.Windows.Forms.Label();
+            this.dgvManagers = new Componentes.GrillaFormatead();
             this.lblTel = new System.Windows.Forms.Label();
             this.lblDir = new System.Windows.Forms.Label();
             this.tbDir = new System.Windows.Forms.TextBox();
@@ -56,8 +58,6 @@
             this.btnEstado = new System.Windows.Forms.Button();
             this.tbBusquedaManager = new System.Windows.Forms.TextBox();
             this.lblManager = new System.Windows.Forms.Label();
-            this.dgvManagers = new Componentes.GrillaFormatead();
-            this.lblManagerActual = new System.Windows.Forms.Label();
             this.gpProv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincia)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -87,8 +87,8 @@
             // 
             // gpProv
             // 
-            this.gpProv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.gpProv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gpProv.Controls.Add(this.btnAddProv);
             this.gpProv.Controls.Add(this.tbProvincia);
             this.gpProv.Controls.Add(this.dgvProvincia);
@@ -104,8 +104,8 @@
             this.dgvProvincia.AllowUserToAddRows = false;
             this.dgvProvincia.AllowUserToResizeColumns = false;
             this.dgvProvincia.AllowUserToResizeRows = false;
-            this.dgvProvincia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvProvincia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,14 +120,15 @@
             this.dgvProvincia.Name = "dgvProvincia";
             this.dgvProvincia.ReadOnly = true;
             this.dgvProvincia.RowHeadersVisible = false;
+            this.dgvProvincia.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvProvincia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProvincia.Size = new System.Drawing.Size(120, 422);
             this.dgvProvincia.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.btnAddLocalidad);
             this.groupBox1.Controls.Add(this.tbLocalidad);
             this.groupBox1.Controls.Add(this.dgvLocalidad);
@@ -160,8 +161,8 @@
             this.dgvLocalidad.AllowUserToAddRows = false;
             this.dgvLocalidad.AllowUserToResizeColumns = false;
             this.dgvLocalidad.AllowUserToResizeRows = false;
-            this.dgvLocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvLocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,6 +177,7 @@
             this.dgvLocalidad.Name = "dgvLocalidad";
             this.dgvLocalidad.ReadOnly = true;
             this.dgvLocalidad.RowHeadersVisible = false;
+            this.dgvLocalidad.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvLocalidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLocalidad.Size = new System.Drawing.Size(124, 422);
             this.dgvLocalidad.TabIndex = 1;
@@ -183,8 +185,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.rtbDir);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -229,8 +231,8 @@
             this.dgvSucursal.AllowUserToAddRows = false;
             this.dgvSucursal.AllowUserToResizeColumns = false;
             this.dgvSucursal.AllowUserToResizeRows = false;
-            this.dgvSucursal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvSucursal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -245,6 +247,7 @@
             this.dgvSucursal.Name = "dgvSucursal";
             this.dgvSucursal.ReadOnly = true;
             this.dgvSucursal.RowHeadersVisible = false;
+            this.dgvSucursal.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvSucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSucursal.Size = new System.Drawing.Size(472, 422);
             this.dgvSucursal.TabIndex = 2;
@@ -286,6 +289,40 @@
             this.pnlConfig.Size = new System.Drawing.Size(431, 506);
             this.pnlConfig.TabIndex = 13;
             this.pnlConfig.Visible = false;
+            // 
+            // lblManagerActual
+            // 
+            this.lblManagerActual.AutoSize = true;
+            this.lblManagerActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerActual.Location = new System.Drawing.Point(169, 43);
+            this.lblManagerActual.Name = "lblManagerActual";
+            this.lblManagerActual.Size = new System.Drawing.Size(93, 20);
+            this.lblManagerActual.TabIndex = 11;
+            this.lblManagerActual.Text = "Sin Definir";
+            // 
+            // dgvManagers
+            // 
+            this.dgvManagers.AllowUserToAddRows = false;
+            this.dgvManagers.AllowUserToResizeColumns = false;
+            this.dgvManagers.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvManagers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvManagers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvManagers.Location = new System.Drawing.Point(18, 123);
+            this.dgvManagers.MultiSelect = false;
+            this.dgvManagers.Name = "dgvManagers";
+            this.dgvManagers.ReadOnly = true;
+            this.dgvManagers.RowHeadersVisible = false;
+            this.dgvManagers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvManagers.Size = new System.Drawing.Size(397, 151);
+            this.dgvManagers.TabIndex = 10;
+            this.dgvManagers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManagers_CellContentClick);
             // 
             // lblTel
             // 
@@ -355,40 +392,6 @@
             this.lblManager.Size = new System.Drawing.Size(84, 20);
             this.lblManager.TabIndex = 1;
             this.lblManager.Text = "Manager:";
-            // 
-            // dgvManagers
-            // 
-            this.dgvManagers.AllowUserToAddRows = false;
-            this.dgvManagers.AllowUserToResizeColumns = false;
-            this.dgvManagers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvManagers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvManagers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManagers.Location = new System.Drawing.Point(18, 123);
-            this.dgvManagers.MultiSelect = false;
-            this.dgvManagers.Name = "dgvManagers";
-            this.dgvManagers.ReadOnly = true;
-            this.dgvManagers.RowHeadersVisible = false;
-            this.dgvManagers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvManagers.Size = new System.Drawing.Size(397, 151);
-            this.dgvManagers.TabIndex = 10;
-            this.dgvManagers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManagers_CellContentClick);
-            // 
-            // lblManagerActual
-            // 
-            this.lblManagerActual.AutoSize = true;
-            this.lblManagerActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManagerActual.Location = new System.Drawing.Point(169, 43);
-            this.lblManagerActual.Name = "lblManagerActual";
-            this.lblManagerActual.Size = new System.Drawing.Size(93, 20);
-            this.lblManagerActual.TabIndex = 11;
-            this.lblManagerActual.Text = "Sin Definir";
             // 
             // frmSucursales
             // 

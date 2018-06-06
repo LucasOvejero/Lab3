@@ -31,17 +31,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvSolicitudes = new Clases.GrillaFormatead();
-            this.dgvPeticiones = new Clases.GrillaFormatead();
+            this.dgvSolicitudes = new Componentes.GrillaFormatead();
+            this.dgvPeticiones = new Componentes.GrillaFormatead();
             this.lblPeticiones = new System.Windows.Forms.Label();
             this.lblSolicitudes = new System.Windows.Forms.Label();
-            this.grillaFormatead1 = new Clases.GrillaFormatead();
+            this.dgvDetalle = new Componentes.GrillaFormatead();
             this.lblDetalles = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticiones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaFormatead1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSolicitudes
@@ -63,9 +63,12 @@
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.RowHeadersVisible = false;
+            this.dgvSolicitudes.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(384, 216);
+            this.dgvSolicitudes.Size = new System.Drawing.Size(399, 216);
             this.dgvSolicitudes.TabIndex = 0;
+            this.dgvSolicitudes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellContentClick);
+            this.dgvSolicitudes.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_RowEnter);
             // 
             // dgvPeticiones
             // 
@@ -81,40 +84,42 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPeticiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPeticiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPeticiones.Location = new System.Drawing.Point(12, 296);
+            this.dgvPeticiones.Location = new System.Drawing.Point(12, 307);
             this.dgvPeticiones.MultiSelect = false;
             this.dgvPeticiones.Name = "dgvPeticiones";
             this.dgvPeticiones.ReadOnly = true;
             this.dgvPeticiones.RowHeadersVisible = false;
+            this.dgvPeticiones.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvPeticiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPeticiones.Size = new System.Drawing.Size(384, 216);
+            this.dgvPeticiones.Size = new System.Drawing.Size(399, 216);
             this.dgvPeticiones.TabIndex = 1;
+            this.dgvPeticiones.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeticiones_RowEnter);
             // 
             // lblPeticiones
             // 
             this.lblPeticiones.AutoSize = true;
             this.lblPeticiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeticiones.Location = new System.Drawing.Point(128, 262);
+            this.lblPeticiones.Location = new System.Drawing.Point(95, 273);
             this.lblPeticiones.Name = "lblPeticiones";
-            this.lblPeticiones.Size = new System.Drawing.Size(125, 22);
+            this.lblPeticiones.Size = new System.Drawing.Size(218, 22);
             this.lblPeticiones.TabIndex = 2;
-            this.lblPeticiones.Text = "Mis Peticiones";
+            this.lblPeticiones.Text = "Mis Solicitudes Envidadas";
             // 
             // lblSolicitudes
             // 
             this.lblSolicitudes.AutoSize = true;
             this.lblSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolicitudes.Location = new System.Drawing.Point(128, 9);
+            this.lblSolicitudes.Location = new System.Drawing.Point(100, 9);
             this.lblSolicitudes.Name = "lblSolicitudes";
-            this.lblSolicitudes.Size = new System.Drawing.Size(129, 22);
+            this.lblSolicitudes.Size = new System.Drawing.Size(213, 22);
             this.lblSolicitudes.TabIndex = 3;
-            this.lblSolicitudes.Text = "Mis Solicitudes";
+            this.lblSolicitudes.Text = "Mis Solicitudes Recibidas";
             // 
-            // grillaFormatead1
+            // dgvDetalle
             // 
-            this.grillaFormatead1.AllowUserToAddRows = false;
-            this.grillaFormatead1.AllowUserToResizeColumns = false;
-            this.grillaFormatead1.AllowUserToResizeRows = false;
+            this.dgvDetalle.AllowUserToAddRows = false;
+            this.dgvDetalle.AllowUserToResizeColumns = false;
+            this.dgvDetalle.AllowUserToResizeRows = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,67 +127,70 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grillaFormatead1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.grillaFormatead1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaFormatead1.Location = new System.Drawing.Point(432, 43);
-            this.grillaFormatead1.MultiSelect = false;
-            this.grillaFormatead1.Name = "grillaFormatead1";
-            this.grillaFormatead1.ReadOnly = true;
-            this.grillaFormatead1.RowHeadersVisible = false;
-            this.grillaFormatead1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grillaFormatead1.Size = new System.Drawing.Size(372, 415);
-            this.grillaFormatead1.TabIndex = 4;
+            this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalle.Location = new System.Drawing.Point(481, 43);
+            this.dgvDetalle.MultiSelect = false;
+            this.dgvDetalle.Name = "dgvDetalle";
+            this.dgvDetalle.ReadOnly = true;
+            this.dgvDetalle.RowHeadersVisible = false;
+            this.dgvDetalle.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetalle.Size = new System.Drawing.Size(287, 397);
+            this.dgvDetalle.TabIndex = 4;
             // 
             // lblDetalles
             // 
             this.lblDetalles.AutoSize = true;
             this.lblDetalles.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalles.Location = new System.Drawing.Point(587, 9);
+            this.lblDetalles.Location = new System.Drawing.Point(600, 18);
             this.lblDetalles.Name = "lblDetalles";
             this.lblDetalles.Size = new System.Drawing.Size(75, 22);
             this.lblDetalles.TabIndex = 5;
             this.lblDetalles.Text = "Detalles";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.BackgroundImage = global::ProyectoLab3.Properties.Resources.Cancelar;
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Location = new System.Drawing.Point(628, 464);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(51, 48);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnAccept
             // 
-            this.btnAccept.BackgroundImage = global::ProyectoLab3.Properties.Resources.Aceptar;
             this.btnAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAccept.Location = new System.Drawing.Point(558, 464);
+            this.btnAccept.Location = new System.Drawing.Point(536, 446);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(51, 48);
+            this.btnAccept.Size = new System.Drawing.Size(90, 48);
             this.btnAccept.TabIndex = 6;
+            this.btnAccept.Text = "ACEPTAR";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Location = new System.Drawing.Point(653, 446);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(82, 48);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "RECHAZAR";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmSolicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 524);
+            this.ClientSize = new System.Drawing.Size(818, 540);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.lblDetalles);
-            this.Controls.Add(this.grillaFormatead1);
+            this.Controls.Add(this.dgvDetalle);
             this.Controls.Add(this.lblSolicitudes);
             this.Controls.Add(this.lblPeticiones);
             this.Controls.Add(this.dgvPeticiones);
             this.Controls.Add(this.dgvSolicitudes);
             this.Name = "frmSolicitudes";
             this.Text = "Solicitudes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmSolicitudes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticiones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaFormatead1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,11 +198,11 @@
 
         #endregion
 
-        private Clases.GrillaFormatead dgvSolicitudes;
-        private Clases.GrillaFormatead dgvPeticiones;
+        private Componentes.GrillaFormatead dgvSolicitudes;
+        private Componentes.GrillaFormatead dgvPeticiones;
         private System.Windows.Forms.Label lblPeticiones;
         private System.Windows.Forms.Label lblSolicitudes;
-        private Clases.GrillaFormatead grillaFormatead1;
+        private Componentes.GrillaFormatead dgvDetalle;
         private System.Windows.Forms.Label lblDetalles;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;

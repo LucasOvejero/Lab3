@@ -255,23 +255,6 @@ namespace Clases
             catch (SqlException x) { Console.WriteLine(x.Message); }
             finally { clsConexion.closeCon(); }
         }
-        public static string getDirecciónSucursal(int IdSucursal) { 
-            comando=new SqlCommand("Select Direccion from Sucursal where IdSucursal="+IdSucursal);
-            string direccion="";
-            try
-            {
-                comando.Connection = clsConexion.getCon();
-                direccion = comando.ExecuteScalar().ToString();
-            }
-            catch (SqlException e)
-            {
-                direccion = "Error:" + e.Message ;
-            }
-            finally {
-                clsConexion.closeCon();
-            }
-            return direccion;
-        }
 
 
     }

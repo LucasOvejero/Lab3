@@ -201,7 +201,7 @@ namespace ProyectoLab3
                     DataRowView fila = cboCategorias.SelectedItem as DataRowView;
                     int idCategoria;
                     idCategoria = int.TryParse(fila[0].ToString(), out idCategoria) ? idCategoria : 0;
-                    r = clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text, (double)nudCostoPorKilo.Value, idCategoria);
+                    r = clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text, nudCostoPorKilo.Value, idCategoria);
                     MessageBox.Show(r, "Mensaje", MessageBoxButtons.OK);
                     configurarIngredientes();
                 }

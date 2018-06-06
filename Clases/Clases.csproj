@@ -46,14 +46,13 @@
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsDeposito.cs" />
     <Compile Include="clsEmpleado.cs" />
-    <Compile Include="clsEstadisticas.cs" />
     <Compile Include="clsIngrediente.cs" />
     <Compile Include="clsLocalidad.cs" />
     <Compile Include="clsPlato.cs" />
     <Compile Include="clsProvincia.cs" />
     <Compile Include="clsSolicitud.cs" />
     <Compile Include="clsSucursal.cs" />
-    <Compile Include="clsVenta.cs" />
+    <Compile Include="ModeloDetalleSolicitud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

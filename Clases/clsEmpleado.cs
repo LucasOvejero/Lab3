@@ -126,11 +126,9 @@ namespace Clases
 
                 valid = empleados.Columns.Count > 0;
                 //
-
                 clsConexion.Tipo = empleados.Rows[0]["Tipo"].ToString();
-                clsConexion.IdEmpleado = empleados.Rows[0]["IdEmpleado"].ToString();
-                clsConexion.NombreCompleto =  empleados.Rows[0]["Nombre"].ToString() + " " +  empleados.Rows[0]["Apellido"].ToString(); ;
                 clsConexion.SucursalSession = Convert.ToInt32(empleados.Rows[0]["IdSucursal"].ToString());
+                clsConexion.IdEmpleado = Convert.ToInt32(empleados.Rows[0]["IdEmpleado"].ToString());
 
             }
             catch (SqlException x) { Console.WriteLine(x.Message); }
@@ -243,43 +241,6 @@ namespace Clases
             return empleados;
         }
 
-        public static void ascenderAManager(int idSucursal,int IdEmpleado) {
-
-            degradarManager(idSucursal);
-
-            comando = new SqlCommand("UPDATE Empleado SET Tipo = 'Manager' WHERE IdEmpleado = " + IdEmpleado + " AND IdSucursal = " + idSucursal);
-            try
-            {
-                empleados = new DataTable("Empleados");
-                comando.Connection = clsConexion.getCon();
-                adaptador = new SqlDataAdapter();
-                adaptador.SelectCommand = comando;
-                adaptador.Fill(empleados);
-                comando.ExecuteNonQuery();
-            }
-            catch (SqlException x) { Console.WriteLine(x.Message); }
-            finally { clsConexion.closeCon(); }
-
-
-
-        }
-
-        private static void degradarManager(int idSucursal) {
-            comando = new SqlCommand("UPDATE Empleado SET Tipo = 'Sin Asignar' WHERE IdSucursal = " + idSucursal + " AND Tipo = 'Manager'");
-            try
-            {
-                empleados = new DataTable("Empleados");
-                comando.Connection = clsConexion.getCon();
-                adaptador = new SqlDataAdapter();
-                adaptador.SelectCommand = comando;
-                adaptador.Fill(empleados);
-                comando.ExecuteNonQuery();
-            }
-            catch (SqlException x) { Console.WriteLine(x.Message); }
-            finally { clsConexion.closeCon(); }
-
-
-        }
 
         //podria ser activos NO MANAGERS
         public static DataTable selectActivos()

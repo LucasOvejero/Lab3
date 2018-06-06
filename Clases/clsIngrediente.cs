@@ -37,8 +37,9 @@ namespace Clases
             return ingredientes;
         }
 
-        public static string insertarIngrediente(string nombre, double CostoXKilo, int IdCategoria)
+        public static string insertarIngrediente(string nombre, decimal CostoXKilo, int IdCategoria)
         {
+
             string resp = "";
             comando = new SqlCommand();
             comando.CommandText = "INSERT INTO Ingrediente (NombreProducto,CostoxKG,IdCategoria) values (@NombreProducto,@Costo,@IdCategoria);Select SCOPE_IDENTITY();";
@@ -178,23 +179,5 @@ namespace Clases
         }
         #endregion
 
-
-        public static DataTable obtenerIngredientesxReceta()
-        {
-            DataTable tablaRec = new DataTable("Ingredientes");
-            try
-            {
-                SqlDataAdapter adaptador = new SqlDataAdapter(new SqlCommand("Select * from Ingrediente i Inner Join Receta r on(i.IdIngrediente=r.IdIngrediente)", clsConexion.getCon()));
-                adaptador.Fill(tablaRec);
-            }
-            catch (SqlException e)
-            {
-                throw e;
-            }
-            finally {
-                clsConexion.closeCon();
-            }
-            return tablaRec;
-        }
     }
 }

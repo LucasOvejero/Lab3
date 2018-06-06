@@ -34,10 +34,7 @@
             this.btnDepositos = new System.Windows.Forms.Button();
             this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnPlato = new System.Windows.Forms.Button();
-            this.btnDeposito = new System.Windows.Forms.Button();
-            this.btnEditPlato = new System.Windows.Forms.Button();
-            this.btnVenta = new System.Windows.Forms.Button();
-            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnNewSolicitud = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -82,11 +79,11 @@
             // 
             // btnSolicitudes
             // 
-            this.btnSolicitudes.Location = new System.Drawing.Point(332, 229);
+            this.btnSolicitudes.Location = new System.Drawing.Point(67, 181);
             this.btnSolicitudes.Name = "btnSolicitudes";
-            this.btnSolicitudes.Size = new System.Drawing.Size(75, 23);
+            this.btnSolicitudes.Size = new System.Drawing.Size(75, 54);
             this.btnSolicitudes.TabIndex = 4;
-            this.btnSolicitudes.Text = "Solicitudes";
+            this.btnSolicitudes.Text = "Administrar Solicitudes";
             this.btnSolicitudes.UseVisualStyleBackColor = true;
             this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
             // 
@@ -94,61 +91,28 @@
             // 
             this.btnPlato.Location = new System.Drawing.Point(695, 51);
             this.btnPlato.Name = "btnPlato";
-            this.btnPlato.Size = new System.Drawing.Size(75, 42);
+            this.btnPlato.Size = new System.Drawing.Size(75, 23);
             this.btnPlato.TabIndex = 5;
-            this.btnPlato.Text = "Agregar Platos";
+            this.btnPlato.Text = "Platos";
             this.btnPlato.UseVisualStyleBackColor = true;
             this.btnPlato.Click += new System.EventHandler(this.btnPlato_Click);
             // 
-            // btnDeposito
+            // btnNewSolicitud
             // 
-            this.btnDeposito.Location = new System.Drawing.Point(381, 100);
-            this.btnDeposito.Name = "btnDeposito";
-            this.btnDeposito.Size = new System.Drawing.Size(75, 23);
-            this.btnDeposito.TabIndex = 6;
-            this.btnDeposito.Text = "Deposito";
-            this.btnDeposito.UseVisualStyleBackColor = true;
-            this.btnDeposito.Click += new System.EventHandler(this.btnDeposito_Click);
-            // 
-            // btnEditPlato
-            // 
-            this.btnEditPlato.Location = new System.Drawing.Point(695, 111);
-            this.btnEditPlato.Name = "btnEditPlato";
-            this.btnEditPlato.Size = new System.Drawing.Size(75, 42);
-            this.btnEditPlato.TabIndex = 7;
-            this.btnEditPlato.Text = "Ver Platos";
-            this.btnEditPlato.UseVisualStyleBackColor = true;
-            this.btnEditPlato.Click += new System.EventHandler(this.btnEditPlato_Click);
-            // 
-            // btnVenta
-            // 
-            this.btnVenta.Location = new System.Drawing.Point(224, 100);
-            this.btnVenta.Name = "btnVenta";
-            this.btnVenta.Size = new System.Drawing.Size(75, 23);
-            this.btnVenta.TabIndex = 8;
-            this.btnVenta.Text = "Vender";
-            this.btnVenta.UseVisualStyleBackColor = true;
-            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
-            // 
-            // btnVentas
-            // 
-            this.btnVentas.Location = new System.Drawing.Point(381, 153);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(75, 23);
-            this.btnVentas.TabIndex = 9;
-            this.btnVentas.Text = "Ventas";
-            this.btnVentas.UseVisualStyleBackColor = true;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            this.btnNewSolicitud.Location = new System.Drawing.Point(224, 181);
+            this.btnNewSolicitud.Name = "btnNewSolicitud";
+            this.btnNewSolicitud.Size = new System.Drawing.Size(75, 54);
+            this.btnNewSolicitud.TabIndex = 6;
+            this.btnNewSolicitud.Text = "Nueva Solicitud";
+            this.btnNewSolicitud.UseVisualStyleBackColor = true;
+            this.btnNewSolicitud.Click += new System.EventHandler(this.btnNewSolicitud_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
-            this.Controls.Add(this.btnVentas);
-            this.Controls.Add(this.btnVenta);
-            this.Controls.Add(this.btnEditPlato);
-            this.Controls.Add(this.btnDeposito);
+            this.Controls.Add(this.btnNewSolicitud);
             this.Controls.Add(this.btnPlato);
             this.Controls.Add(this.btnSolicitudes);
             this.Controls.Add(this.btnDepositos);
@@ -174,10 +138,7 @@
         private System.Windows.Forms.Button btnSolicitudes;
         private System.Windows.Forms.Button btnPlatos;
         private System.Windows.Forms.Button btnPlato;
-        private System.Windows.Forms.Button btnDeposito;
-        private System.Windows.Forms.Button btnEditPlato;
-        private System.Windows.Forms.Button btnVenta;
-        private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.Button btnNewSolicitud;
     }
 }
 

@@ -19,7 +19,6 @@ namespace ProyectoLab3
             InitializeComponent();
             this.ingredientes = ingredientes;
         }
-        public Plato Plato { get; set; }
         int x = 20, y = 0;
         int yvar = 80;
         List<Ingrediente> ingredientes;
@@ -52,23 +51,6 @@ namespace ProyectoLab3
             cboCategorias.DataSource= clsPlato.seleccionarCategorias();
             cboCategorias.DisplayMember = "Nombre";
             nudPrecio.Minimum = decimal.Parse(total.ToString());
-            if (Plato != null) {
-                btnAgregar.Visible = false;
-                btnEditarPlato.Visible = true;
-                tbNombre.Text = Plato.Nombre;
-                nudPrecio.Value = Plato.Precio>nudPrecio.Minimum?Plato.Precio:nudPrecio.Minimum;
-                cbTACC.Checked = Plato.TACC;
-                int indice = -1;
-
-                foreach (DataRowView item in cboCategorias.Items)
-                {
-                    indice++;
-                    if (int.Parse(item.Row.ItemArray[0].ToString()) == Plato.IdCategoria)
-                        break;
-                }
-                cboCategorias.SelectedIndex = indice;
-
-            }
             
         }
 
@@ -119,48 +101,10 @@ namespace ProyectoLab3
                 string resp=clsPlato.insertarPlato(tbNombre.Text,double.Parse(nudPrecio.Value.ToString()),total,true,idCategoria,cbTACC.Checked,this.ingredientes);
                 if(resp==""){
                     MessageBox.Show("Se ha ingresado el plato y sus ingredientes correctamente","Éxito");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
                 }
                 else
                 {
                  MessageBox.Show(resp,"Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void btnEditarPlato_Click(object sender, EventArgs e)
-        {
-            errpPlatos.Clear();
-            if (tbNombre.Text == string.Empty)
-            {
-                errpPlatos.SetError(tbNombre, "No se puede ingresar un plato sin nombre");
-            }
-            else if (cboCategorias.Items.Count == 0)
-            {
-                errpPlatos.SetError(cboCategorias, "Primero ingrese una categoria");
-                tbCat.Focus();
-            }
-            else
-            {
-                DataRowView fila = cboCategorias.SelectedItem as DataRowView;//cboCategorias.SelectedItem as DataRowView;
-                int idCategoria;
-                idCategoria = int.TryParse(fila[0].ToString(), out idCategoria) ? idCategoria : 0;
-                Plato.IdCategoria = idCategoria;
-                Plato.Nombre = tbNombre.Text;
-                Plato.Precio = nudPrecio.Value;
-                Plato.Costo = decimal.Parse(total.ToString());
-                Plato.TACC = cbTACC.Checked;
-                string resp = clsPlato.actualizarPlato(Plato, ingredientes);
-                if (resp == "")
-                {
-                    MessageBox.Show("Se ha actualizado el plato y sus ingredientes correctamente", "Éxito");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show(resp, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

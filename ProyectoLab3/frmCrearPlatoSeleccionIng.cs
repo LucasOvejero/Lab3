@@ -16,47 +16,25 @@ namespace ProyectoLab3
         public frmCrearPlatoSeleccionIng()
         {
             InitializeComponent();
-            ingredientesParaElPlato = new List<Ingrediente>();
-        }
-        public frmCrearPlatoSeleccionIng(List<Ingrediente> ingredientesParaElPlato, Plato plato) {
-            InitializeComponent();
-            this.ingredientesParaElPlato = ingredientesParaElPlato;
-            this.plato = plato;
-        
         }
         frmCrearPlatoConfirmar ofrmCrearPlatoConfirmar;
         List<Ingrediente> ingredientesParaElPlato, todosIngredientes;
         List<int> ingredientesSeleccionados = new List<int>();
         int x = 20, y = 0;
         int yvar = 80;
-        Plato plato;
         private void frmCrearPlatoSeleccionIng_Load(object sender, EventArgs e)
         {
             setear();
-           
+            ingredientesParaElPlato = new List<Ingrediente>();
         }
 
         private void setear()
         {
-
             cboCategoria.DataSource = categoriasObtenerNombre(clsIngrediente.obtenerCategoriasIngredientes());
             DataTable ingredientes = clsIngrediente.seleccionarIngredientes();
             todosIngredientes = ALista(ingredientes);
-            if (this.ingredientesParaElPlato.Count == 0)
-            {
-                lbIngredientes.DataSource = todosIngredientes;
-                lbIngredientes.DisplayMember = "NombreProducto";
-            }
-            else {
-                foreach (Ingrediente i in ingredientesParaElPlato)
-                {
-                    int indice = todosIngredientes.FindIndex(ing => ing.IdIngrediente == i.IdIngrediente);
-                    todosIngredientes.RemoveAt(indice);
-                }
-                asignarALosLb();
-                agregarControles(ingredientesParaElPlato);
-            
-            }
+            lbIngredientes.DataSource = todosIngredientes;
+            lbIngredientes.DisplayMember = "NombreProducto";
 
         }
         private List<Ingrediente> ALista(DataTable dt)
@@ -135,22 +113,13 @@ namespace ProyectoLab3
                     }
                 }
                 if (!exist){
-                    if (i.Plato == null)
-                    {
-                        PanelPlato pnlPlato = new PanelPlato(i.NombreProducto);
-                        pnlPlato.Location = new Point(x, y);
-                        pnlPlato.Tag = i.IdIngrediente;
-                        
-                        i.Plato = pnlPlato;
-                        
-                    }
-                    //tenemos que "reiniciar" la posición
-                    else {
-                        i.Plato.Location = new Point(x, y);
-                    }
-                    pnlIngredientes.Controls.Add(i.Plato);
-                    y += yvar;
+                    PanelPlato pnlPlato = new PanelPlato(i.NombreProducto);
+                    pnlPlato.Location = new Point(x, y);
+                    pnlPlato.Tag = i.IdIngrediente;
                     
+                    pnlIngredientes.Controls.Add(pnlPlato);
+                    y += yvar;
+                    i.Plato = pnlPlato;
                 }
             }
         }
@@ -240,11 +209,7 @@ namespace ProyectoLab3
             if (ingredientesParaElPlato.Count > 0)
             {
                 ofrmCrearPlatoConfirmar = new frmCrearPlatoConfirmar(ingredientesParaElPlato);
-                ofrmCrearPlatoConfirmar.Plato = this.plato;
-                DialogResult res=ofrmCrearPlatoConfirmar.ShowDialog();
-                if (res == DialogResult.OK) {
-                    this.Close();
-                }
+                ofrmCrearPlatoConfirmar.ShowDialog();
             }
             else
             {

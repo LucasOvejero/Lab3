@@ -23,3 +23,13 @@ C:\ProyectoLab3\Clases\bin\Debug\Modelo.pdb
 C:\ProyectoLab3\Clases\obj\Debug\Clases.csprojResolveAssemblyReference.cache
 C:\ProyectoLab3\Clases\obj\Debug\Clases.dll
 C:\ProyectoLab3\Clases\obj\Debug\Clases.pdb
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\bin\Debug\Clases.dll
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\bin\Debug\Clases.pdb
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\bin\Debug\Componentes.dll
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\bin\Debug\Modelo.dll
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\bin\Debug\Componentes.pdb
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\bin\Debug\Modelo.pdb
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\obj\Debug\Clases.csprojResolveAssemblyReference.cache
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\obj\Debug\Clases.dll
+C:\Users\Lucas.DESKTOP-KD066QT\Downloads\Lab3-master\Lab3-master\Clases\obj\Debug\Clases.pdb

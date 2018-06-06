@@ -110,17 +110,6 @@ namespace Clases
             finally { clsConexion.closeCon(); }
             return dt;
         }
-        public static DataTable seleccionarBebidasxStock(int idSucursal) {
-            DataTable bebidas = new DataTable("Bebidas");
-            try {
-                SqlCommand comando=new SqlCommand(string.Format("select b.IdBebida,b.NombreBebida as Nombre,Costo,b.Alcohol,b.Precio,b.Litros,c.Nombre as Categoria,Stock from Deposito d inner join Bebida b on(d.IdBebida=b.IdBebida) inner join CategoriaBebidas c on (b.IdCategoria=c.IdCategoria) where IdSucursal={0} and d.IdBebida is not null and Estado=1;",idSucursal),clsConexion.getCon());
-                SqlDataAdapter adapter=new SqlDataAdapter(comando);
-                adapter.Fill(bebidas);
-            }
-            catch(SqlException e){throw e;}
-            finally{ clsConexion.closeCon();}
-            return bebidas;
-        }
         public void UpdateEstadoBebida(int IdBebida,bool EstadoActual)
         {
             int estado= EstadoActual?0:1;   
@@ -212,32 +201,6 @@ namespace Clases
             }
             return categorias;
         }
-        public static DataTable getCategorias()
-        {
-            DataTable categorias = new DataTable();
-            SqlDataAdapter adaptadorCategorias = new SqlDataAdapter();
-            try
-            {
-                SqlCommand comando = new SqlCommand();
-                comando.CommandText = "select * from CategoriaBebidas";
-                comando.Connection = clsConexion.getCon();
-                adaptadorCategorias.SelectCommand = comando;
-                adaptadorCategorias.Fill(categorias);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            finally
-            {
-                clsConexion.closeCon();
-            }
-            return categorias;
-        }
         #endregion
-        public static DataTable getBebidasStock() {
-            DataTable bebidas = null;
-            return bebidas;
-        }
     }
 }

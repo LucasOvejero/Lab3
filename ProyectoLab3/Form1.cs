@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
-using Modelo;
+
 namespace ProyectoLab3
 {
     public partial class Form1 : Form
@@ -17,8 +17,6 @@ namespace ProyectoLab3
             InitializeComponent();
             
         }
-       
-
         #region Formularios
         frmProductos ofrmBebidas;
         frmSucursales ofrmSuc;
@@ -27,17 +25,12 @@ namespace ProyectoLab3
         frmSolicitudes ofrmSolicitudes;
         frmLogin ofrmLogin;
         frmCrearPlatoSeleccionIng ofrmPlato;
-        frmMiDeposito ofrMiDepo;
-        frmEditPlato ofrmEditPlato;
-        frmVenta ofrmVenta;
-        frmGraficosVenta ofrmGraficos;
+        frmNuevaSolicitud ofrmNuevaSolicitud;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
         {            
           //  verificarLogeo();
-          
-          
         }
 
         private void btnBebidas_Click(object sender, EventArgs e)
@@ -102,29 +95,10 @@ namespace ProyectoLab3
             ofrmPlato.ShowDialog();
         }
 
-        private void btnDeposito_Click(object sender, EventArgs e)
+        private void btnNewSolicitud_Click(object sender, EventArgs e)
         {
-            ofrMiDepo = new frmMiDeposito(2);//TODO:asignarle el deposito del usuario actual
-            ofrMiDepo.ShowDialog();
+            ofrmNuevaSolicitud = new frmNuevaSolicitud();
+            ofrmNuevaSolicitud.ShowDialog();
         }
-
-        private void btnEditPlato_Click(object sender, EventArgs e)
-        {
-            ofrmEditPlato = new frmEditPlato();
-            ofrmEditPlato.ShowDialog();
-        }
-
-        private void btnVenta_Click(object sender, EventArgs e)
-        {
-            ofrmVenta = new frmVenta(2);//TODO:asignarle el deposito del usuario actual
-            ofrmVenta.ShowDialog();
-        }
-
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            ofrmGraficos = new frmGraficosVenta(2);//TODO asignarle el id de la sucursal actual
-            ofrmGraficos.ShowDialog();
-        }
-
     }
 }

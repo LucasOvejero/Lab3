@@ -111,9 +111,7 @@ namespace ProyectoLab3
             string direccion=lbSucursales.SelectedItem.ToString();
             ds=clsDeposito.getDepositoPorDireccion(direccion);
             dgvBebidas.DataSource = ds.Tables["Bebidas"];
-            dgvBebidas.Columns["Agregar U."].Visible = false;
             dgvIngredientes.DataSource = ds.Tables["Ingredientes"];
-            dgvIngredientes.Columns["Agregar gr."].Visible = false;
 
         }
     }
