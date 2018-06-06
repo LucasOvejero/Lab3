@@ -31,6 +31,7 @@ namespace ProyectoLab3
         frmEditPlato ofrmEditPlato;
         frmVenta ofrmVenta;
         frmGraficosVenta ofrmGraficos;
+        frmNuevaSolicitud ofrmNSolicitud;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -126,5 +127,10 @@ namespace ProyectoLab3
             ofrmGraficos.ShowDialog();
         }
 
+        private void btnNewSolicitudes_Click(object sender, EventArgs e)
+        {
+            ofrmNSolicitud = new frmNuevaSolicitud();
+            ofrmNSolicitud.ShowDialog();
+        }
     }
 }
