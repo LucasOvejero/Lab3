@@ -67,3 +67,4 @@ C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.csproj.GenerateResource.
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.exe
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.pdb
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmGraficosVenta.resources
+C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmSolicitudes.resources

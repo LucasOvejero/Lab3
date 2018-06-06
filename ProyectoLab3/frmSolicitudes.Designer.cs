@@ -31,11 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvSolicitudes = new Clases.GrillaFormatead();
-            this.dgvPeticiones = new Clases.GrillaFormatead();
+            this.dgvSolicitudes = new Componentes.GrillaFormatead();
+            this.dgvPeticiones = new Componentes.GrillaFormatead();
             this.lblPeticiones = new System.Windows.Forms.Label();
             this.lblSolicitudes = new System.Windows.Forms.Label();
-            this.grillaFormatead1 = new Clases.GrillaFormatead();
+            this.grillaFormatead1 = new Componentes.GrillaFormatead();
             this.lblDetalles = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
@@ -190,11 +190,11 @@
 
         #endregion
 
-        private Clases.GrillaFormatead dgvSolicitudes;
-        private Clases.GrillaFormatead dgvPeticiones;
+        private Componentes.GrillaFormatead dgvSolicitudes;
+        private Componentes.GrillaFormatead dgvPeticiones;
         private System.Windows.Forms.Label lblPeticiones;
         private System.Windows.Forms.Label lblSolicitudes;
-        private Clases.GrillaFormatead grillaFormatead1;
+        private Componentes.GrillaFormatead grillaFormatead1;
         private System.Windows.Forms.Label lblDetalles;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
