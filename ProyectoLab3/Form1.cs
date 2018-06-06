@@ -30,6 +30,7 @@ namespace ProyectoLab3
         frmMiDeposito ofrMiDepo;
         frmEditPlato ofrmEditPlato;
         frmVenta ofrmVenta;
+        frmGraficosVenta ofrmGraficos;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -117,6 +118,12 @@ namespace ProyectoLab3
         {
             ofrmVenta = new frmVenta(2);//TODO:asignarle el deposito del usuario actual
             ofrmVenta.ShowDialog();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            ofrmGraficos = new frmGraficosVenta(2);//TODO asignarle el id de la sucursal actual
+            ofrmGraficos.ShowDialog();
         }
 
     }

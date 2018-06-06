@@ -46,6 +46,7 @@
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsDeposito.cs" />
     <Compile Include="clsEmpleado.cs" />
+    <Compile Include="clsEstadisticas.cs" />
     <Compile Include="clsIngrediente.cs" />
     <Compile Include="clsLocalidad.cs" />
     <Compile Include="clsPlato.cs" />

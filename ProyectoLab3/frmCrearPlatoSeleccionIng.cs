@@ -140,7 +140,9 @@ namespace ProyectoLab3
                         PanelPlato pnlPlato = new PanelPlato(i.NombreProducto);
                         pnlPlato.Location = new Point(x, y);
                         pnlPlato.Tag = i.IdIngrediente;
+                        
                         i.Plato = pnlPlato;
+                        
                     }
                     //tenemos que "reiniciar" la posición
                     else {
@@ -238,6 +240,7 @@ namespace ProyectoLab3
             if (ingredientesParaElPlato.Count > 0)
             {
                 ofrmCrearPlatoConfirmar = new frmCrearPlatoConfirmar(ingredientesParaElPlato);
+                ofrmCrearPlatoConfirmar.Plato = this.plato;
                 DialogResult res=ofrmCrearPlatoConfirmar.ShowDialog();
                 if (res == DialogResult.OK) {
                     this.Close();

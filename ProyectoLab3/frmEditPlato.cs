@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+using Componentes;
 using Modelo;
 namespace ProyectoLab3
 {
@@ -23,36 +24,42 @@ namespace ProyectoLab3
         {
             try
             {
-                platos=clsPlato.seleccionarPlato();
-                ingredientes = clsIngrediente.obtenerIngredientesxReceta();
-                ds = new DataSet();
-                ds.Tables.Add(platos);
-                ds.Tables.Add(ingredientes);
-                ds.Relations.Add(new DataRelation("RelPlatoIng", ds.Tables["Platos"].Columns["IdPlato"], ds.Tables["Ingredientes"].Columns["IdPlato"]));
-                bsPlato.DataSource = ds;
-                bsPlato.DataMember = "Platos";
-                bsIng.DataSource = bsPlato;
-                bsIng.DataMember = "RelPlatoIng";
-                dgvPlatos.DataSource = bsPlato;
-                dgvIngredientes.DataSource = bsIng;
-                
-                
+                setear();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private void setear() {
+            dgvIngredientes.DataSource = null;
+            dgvPlatos.DataSource = null;
+            platos = clsPlato.seleccionarPlato();
+            ingredientes = clsIngrediente.obtenerIngredientesxReceta();
+            ds = new DataSet();
+            ds.Tables.Add(platos);
+            ds.Tables.Add(ingredientes);
+            ds.Relations.Add(new DataRelation("RelPlatoIng", ds.Tables["Platos"].Columns["IdPlato"], ds.Tables["Ingredientes"].Columns["IdPlato"]));
+            bsPlato.DataSource = ds;
+            bsPlato.DataMember = "Platos";
+            bsIng.DataSource = bsPlato;
+            bsIng.DataMember = "RelPlatoIng";
+            dgvPlatos.DataSource = bsPlato;
+            dgvIngredientes.DataSource = bsIng;
+        
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             List<Ingrediente> ingredientes = new List<Ingrediente>();
             foreach (DataGridViewRow r in dgvIngredientes.Rows) {
                 Ingrediente ing=new Ingrediente();
                 ing.IdIngrediente=int.Parse(r.Cells["IdIngrediente"].Value.ToString());
-
+                int cantidad = int.Parse(r.Cells["Cantidad"].Value.ToString());
                 ing.NombreProducto = r.Cells["NombreProducto"].Value.ToString();
                 ing.CostoxKg = double.Parse(r.Cells["CostoxKg"].Value.ToString());
                 ing.IdCategoria = int.Parse(r.Cells["IdCategoria"].Value.ToString());
+                ing.Plato = new PanelPlato(ing.NombreProducto);
+                ing.Plato.Tag = ing.IdIngrediente;
+                ing.Plato.NudGramos.Value = cantidad;
                 ingredientes.Add(ing);
             }
             DataGridViewRow plato= dgvPlatos.SelectedRows[0];
@@ -67,6 +74,7 @@ namespace ProyectoLab3
             };
             frmCrearPlatoSeleccionIng ofrmSelIng = new frmCrearPlatoSeleccionIng(ingredientes, p);
             ofrmSelIng.ShowDialog();
+            setear();
         }
 
        

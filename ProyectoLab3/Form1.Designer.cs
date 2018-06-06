@@ -37,6 +37,7 @@
             this.btnDeposito = new System.Windows.Forms.Button();
             this.btnEditPlato = new System.Windows.Forms.Button();
             this.btnVenta = new System.Windows.Forms.Button();
+            this.btnVentas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBebidas
@@ -129,11 +130,22 @@
             this.btnVenta.UseVisualStyleBackColor = true;
             this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
             // 
+            // btnVentas
+            // 
+            this.btnVentas.Location = new System.Drawing.Point(381, 153);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(75, 23);
+            this.btnVentas.TabIndex = 9;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 414);
+            this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnVenta);
             this.Controls.Add(this.btnEditPlato);
             this.Controls.Add(this.btnDeposito);
@@ -165,6 +177,7 @@
         private System.Windows.Forms.Button btnDeposito;
         private System.Windows.Forms.Button btnEditPlato;
         private System.Windows.Forms.Button btnVenta;
+        private System.Windows.Forms.Button btnVentas;
     }
 }
 

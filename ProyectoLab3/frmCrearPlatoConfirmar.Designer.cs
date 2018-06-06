@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
@@ -48,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.errpPlatos = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnEditarPlato = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
@@ -188,14 +189,14 @@
             this.dgvIngredientes.AllowUserToAddRows = false;
             this.dgvIngredientes.AllowUserToResizeColumns = false;
             this.dgvIngredientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngredientes.Location = new System.Drawing.Point(37, 38);
             this.dgvIngredientes.MultiSelect = false;
@@ -249,11 +250,23 @@
             // 
             this.errpPlatos.ContainerControl = this;
             // 
+            // btnEditarPlato
+            // 
+            this.btnEditarPlato.Location = new System.Drawing.Point(733, 437);
+            this.btnEditarPlato.Name = "btnEditarPlato";
+            this.btnEditarPlato.Size = new System.Drawing.Size(100, 48);
+            this.btnEditarPlato.TabIndex = 12;
+            this.btnEditarPlato.Text = "Editar Plato";
+            this.btnEditarPlato.UseVisualStyleBackColor = true;
+            this.btnEditarPlato.Visible = false;
+            this.btnEditarPlato.Click += new System.EventHandler(this.btnEditarPlato_Click);
+            // 
             // frmCrearPlatoConfirmar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 679);
+            this.Controls.Add(this.btnEditarPlato);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCrearPlatoConfirmar";
@@ -291,5 +304,6 @@
         private System.Windows.Forms.ComboBox cboCategorias;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbTACC;
+        private System.Windows.Forms.Button btnEditarPlato;
     }
 }

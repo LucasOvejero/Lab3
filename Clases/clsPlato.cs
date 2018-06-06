@@ -159,6 +159,45 @@ namespace Clases
                 clsConexion.closeCon();
             }
             return resp;
+        }
+        public static string actualizarPlato(Plato plato, List<Ingrediente> ingredientes) {
+            string resp = "";
+            comando = clsConexion.getCon().CreateCommand();
+            SqlTransaction transaction = clsConexion.getCon().BeginTransaction("Crear un plato");
+
+            try
+            {
+                comando.Connection = clsConexion.getCon();
+                comando.Transaction = transaction;
+                comando.CommandText = "Delete From Receta where IdPlato=" + plato.IdPlato + ";";
+                comando.ExecuteNonQuery();
+                int tacc = plato.TACC ? 1 : 0;
+                comando.CommandText = "UPDATE Plato SET Nombre='" + plato.Nombre + "', Precio=" + plato.Precio.ToString().Replace(',', '.') + ", TACC=" + tacc + ", Costo=" + plato.Costo.ToString().Replace(',', '.') + ", IdCategoria=" + plato.IdCategoria + " WHERE IdPlato=" + plato.IdPlato + ";";
+                comando.ExecuteNonQuery();
+                foreach (Ingrediente i in ingredientes)
+                {
+                    comando.CommandText = "Insert into Receta values (" + plato.IdPlato + "," + i.IdIngrediente + "," + i.Plato.NudGramos.Value.ToString() + ");";
+                    comando.ExecuteNonQuery();
+                }
+                transaction.Commit();
+
+            }
+            catch (SqlException ex)
+            {
+                try
+                {
+                    resp += ex.Message;
+                    transaction.Rollback();
+                }
+                catch (SqlException e) { 
+                resp += ex.Message;
+                }
+            }
+            finally {
+                clsConexion.closeCon();
+            }
+            return resp;
+        
         
         }
     }
