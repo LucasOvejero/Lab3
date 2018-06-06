@@ -199,6 +199,9 @@
     <EmbeddedResource Include="frmNuevaSolicitud.resx">
       <DependentUpon>frmNuevaSolicitud.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSolicitudes.resx">
+      <DependentUpon>frmSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSucursales.resx">
       <DependentUpon>frmSucursales.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +259,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
