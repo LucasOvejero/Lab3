@@ -1,6 +1,6 @@
 ﻿namespace ProyectoLab3
 {
-    partial class frmGraficosVenta
+    partial class frmGraficos
     {
         /// <summary>
         /// Required designer variable.
@@ -40,9 +40,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nudAnio = new System.Windows.Forms.NumericUpDown();
             this.chartCantidad = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbSucursal = new System.Windows.Forms.ListBox();
+            this.tbDirSuc = new System.Windows.Forms.TextBox();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.chartVntas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAnio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCantidad)).BeginInit();
+            this.pnlAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // chartVntas
@@ -53,29 +58,29 @@
             this.chartVntas.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartVntas.Legends.Add(legend1);
-            this.chartVntas.Location = new System.Drawing.Point(23, 94);
+            this.chartVntas.Location = new System.Drawing.Point(23, 159);
             this.chartVntas.Name = "chartVntas";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartVntas.Series.Add(series1);
-            this.chartVntas.Size = new System.Drawing.Size(634, 528);
-            this.chartVntas.TabIndex = 0;
+            this.chartVntas.Size = new System.Drawing.Size(634, 463);
+            this.chartVntas.TabIndex = 5;
             this.chartVntas.Text = "chart1";
             // 
             // cboMeses
             // 
             this.cboMeses.FormattingEnabled = true;
-            this.cboMeses.Location = new System.Drawing.Point(212, 42);
+            this.cboMeses.Location = new System.Drawing.Point(692, 110);
             this.cboMeses.Name = "cboMeses";
             this.cboMeses.Size = new System.Drawing.Size(121, 21);
-            this.cboMeses.TabIndex = 1;
+            this.cboMeses.TabIndex = 4;
             this.cboMeses.SelectedIndexChanged += new System.EventHandler(this.cboMeses_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 26);
+            this.label1.Location = new System.Drawing.Point(732, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 2;
@@ -84,7 +89,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(118, 26);
+            this.label2.Location = new System.Drawing.Point(598, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 3;
@@ -92,10 +97,10 @@
             // 
             // nudAnio
             // 
-            this.nudAnio.Location = new System.Drawing.Point(101, 43);
+            this.nudAnio.Location = new System.Drawing.Point(581, 111);
             this.nudAnio.Name = "nudAnio";
             this.nudAnio.Size = new System.Drawing.Size(60, 20);
-            this.nudAnio.TabIndex = 4;
+            this.nudAnio.TabIndex = 3;
             // 
             // chartCantidad
             // 
@@ -105,34 +110,71 @@
             this.chartCantidad.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartCantidad.Legends.Add(legend2);
-            this.chartCantidad.Location = new System.Drawing.Point(692, 94);
+            this.chartCantidad.Location = new System.Drawing.Point(692, 159);
             this.chartCantidad.Name = "chartCantidad";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartCantidad.Series.Add(series2);
-            this.chartCantidad.Size = new System.Drawing.Size(645, 528);
-            this.chartCantidad.TabIndex = 5;
+            this.chartCantidad.Size = new System.Drawing.Size(645, 463);
+            this.chartCantidad.TabIndex = 6;
             this.chartCantidad.Text = "chart1";
             // 
-            // frmGraficosVenta
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(142, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Sucursal";
+            // 
+            // lbSucursal
+            // 
+            this.lbSucursal.FormattingEnabled = true;
+            this.lbSucursal.Location = new System.Drawing.Point(35, 54);
+            this.lbSucursal.Name = "lbSucursal";
+            this.lbSucursal.Size = new System.Drawing.Size(313, 95);
+            this.lbSucursal.TabIndex = 2;
+            // 
+            // tbDirSuc
+            // 
+            this.tbDirSuc.Location = new System.Drawing.Point(90, 28);
+            this.tbDirSuc.Name = "tbDirSuc";
+            this.tbDirSuc.Size = new System.Drawing.Size(172, 20);
+            this.tbDirSuc.TabIndex = 1;
+            // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.Controls.Add(this.tbDirSuc);
+            this.pnlAdmin.Controls.Add(this.lbSucursal);
+            this.pnlAdmin.Controls.Add(this.label3);
+            this.pnlAdmin.Location = new System.Drawing.Point(25, 4);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(422, 155);
+            this.pnlAdmin.TabIndex = 10;
+            // 
+            // frmGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 653);
+            this.Controls.Add(this.pnlAdmin);
             this.Controls.Add(this.chartCantidad);
             this.Controls.Add(this.nudAnio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboMeses);
             this.Controls.Add(this.chartVntas);
-            this.Name = "frmGraficosVenta";
+            this.Name = "frmGraficos";
             this.Text = "Graficos de ventas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmGraficosVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartVntas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAnio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCantidad)).EndInit();
+            this.pnlAdmin.ResumeLayout(false);
+            this.pnlAdmin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,6 +188,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nudAnio;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartCantidad;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox lbSucursal;
+        private System.Windows.Forms.TextBox tbDirSuc;
+        private System.Windows.Forms.Panel pnlAdmin;
 
     }
 }

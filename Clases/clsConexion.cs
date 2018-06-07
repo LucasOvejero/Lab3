@@ -16,7 +16,6 @@ namespace Clases
 
         public static int SucursalSession = -1;
         public static string Tipo = "cajero";
-
         static SqlConnection cnn = new SqlConnection(conexion);
 
         public static string IdEmpleado { get; internal set; }

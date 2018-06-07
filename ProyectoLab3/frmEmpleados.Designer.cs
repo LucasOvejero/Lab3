@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCargar = new System.Windows.Forms.Button();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -39,21 +39,21 @@
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.pnlNuevo = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbPass = new System.Windows.Forms.TextBox();
+            this.tbUser = new System.Windows.Forms.TextBox();
+            this.dgvSucursales = new Componentes.GrillaFormatead();
             this.tbBusqueda = new System.Windows.Forms.TextBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.lblSucursal = new System.Windows.Forms.Label();
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.tbDni = new System.Windows.Forms.TextBox();
             this.tbApellido = new System.Windows.Forms.TextBox();
-            this.tbUser = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbPass = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dgvEmpleados = new Componentes.GrillaFormatead();
-            this.dgvSucursales = new Componentes.GrillaFormatead();
             this.pnlNuevo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCargar
@@ -61,7 +61,7 @@
             this.btnCargar.Location = new System.Drawing.Point(113, 357);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
-            this.btnCargar.TabIndex = 5;
+            this.btnCargar.TabIndex = 7;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
@@ -156,12 +156,72 @@
             this.pnlNuevo.Size = new System.Drawing.Size(311, 383);
             this.pnlNuevo.TabIndex = 5;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(197, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Password";
+            this.label2.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 302);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "User";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // tbPass
+            // 
+            this.tbPass.Location = new System.Drawing.Point(149, 318);
+            this.tbPass.MaxLength = 10;
+            this.tbPass.Name = "tbPass";
+            this.tbPass.PasswordChar = '*';
+            this.tbPass.Size = new System.Drawing.Size(141, 20);
+            this.tbPass.TabIndex = 6;
+            // 
+            // tbUser
+            // 
+            this.tbUser.Location = new System.Drawing.Point(21, 318);
+            this.tbUser.MaxLength = 10;
+            this.tbUser.Name = "tbUser";
+            this.tbUser.Size = new System.Drawing.Size(121, 20);
+            this.tbUser.TabIndex = 5;
+            // 
+            // dgvSucursales
+            // 
+            this.dgvSucursales.AllowUserToAddRows = false;
+            this.dgvSucursales.AllowUserToResizeColumns = false;
+            this.dgvSucursales.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSucursales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSucursales.Location = new System.Drawing.Point(149, 87);
+            this.dgvSucursales.MultiSelect = false;
+            this.dgvSucursales.Name = "dgvSucursales";
+            this.dgvSucursales.ReadOnly = true;
+            this.dgvSucursales.RowHeadersVisible = false;
+            this.dgvSucursales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSucursales.Size = new System.Drawing.Size(141, 191);
+            this.dgvSucursales.TabIndex = 9;
+            // 
             // tbBusqueda
             // 
             this.tbBusqueda.Location = new System.Drawing.Point(149, 60);
             this.tbBusqueda.Name = "tbBusqueda";
             this.tbBusqueda.Size = new System.Drawing.Size(141, 20);
-            this.tbBusqueda.TabIndex = 6;
+            this.tbBusqueda.TabIndex = 8;
             // 
             // lblBusqueda
             // 
@@ -203,43 +263,6 @@
             this.tbApellido.Size = new System.Drawing.Size(121, 20);
             this.tbApellido.TabIndex = 1;
             // 
-            // tbUser
-            // 
-            this.tbUser.Location = new System.Drawing.Point(21, 318);
-            this.tbUser.MaxLength = 10;
-            this.tbUser.Name = "tbUser";
-            this.tbUser.Size = new System.Drawing.Size(121, 20);
-            this.tbUser.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 302);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "User";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // tbPass
-            // 
-            this.tbPass.Location = new System.Drawing.Point(149, 318);
-            this.tbPass.MaxLength = 10;
-            this.tbPass.Name = "tbPass";
-            this.tbPass.PasswordChar = '*';
-            this.tbPass.Size = new System.Drawing.Size(141, 20);
-            this.tbPass.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 302);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Password";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
-            // 
             // dgvEmpleados
             // 
             this.dgvEmpleados.AllowUserToAddRows = false;
@@ -264,29 +287,6 @@
             this.dgvEmpleados.TabIndex = 0;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             // 
-            // dgvSucursales
-            // 
-            this.dgvSucursales.AllowUserToAddRows = false;
-            this.dgvSucursales.AllowUserToResizeColumns = false;
-            this.dgvSucursales.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSucursales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSucursales.Location = new System.Drawing.Point(149, 87);
-            this.dgvSucursales.MultiSelect = false;
-            this.dgvSucursales.Name = "dgvSucursales";
-            this.dgvSucursales.ReadOnly = true;
-            this.dgvSucursales.RowHeadersVisible = false;
-            this.dgvSucursales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSucursales.Size = new System.Drawing.Size(141, 191);
-            this.dgvSucursales.TabIndex = 7;
-            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,8 +300,8 @@
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             this.pnlNuevo.ResumeLayout(false);
             this.pnlNuevo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);
 
         }

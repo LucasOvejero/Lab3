@@ -48,6 +48,8 @@
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.btnAddSucursal = new System.Windows.Forms.Button();
             this.pnlConfig = new System.Windows.Forms.Panel();
+            this.lblManagerActual = new System.Windows.Forms.Label();
+            this.dgvManagers = new Componentes.GrillaFormatead();
             this.lblTel = new System.Windows.Forms.Label();
             this.lblDir = new System.Windows.Forms.Label();
             this.tbDir = new System.Windows.Forms.TextBox();
@@ -56,8 +58,6 @@
             this.btnEstado = new System.Windows.Forms.Button();
             this.tbBusquedaManager = new System.Windows.Forms.TextBox();
             this.lblManager = new System.Windows.Forms.Label();
-            this.dgvManagers = new Componentes.GrillaFormatead();
-            this.lblManagerActual = new System.Windows.Forms.Label();
             this.gpProv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincia)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -73,14 +73,14 @@
             this.tbProvincia.Location = new System.Drawing.Point(17, 17);
             this.tbProvincia.Name = "tbProvincia";
             this.tbProvincia.Size = new System.Drawing.Size(100, 20);
-            this.tbProvincia.TabIndex = 8;
+            this.tbProvincia.TabIndex = 1;
             // 
             // btnAddProv
             // 
             this.btnAddProv.Location = new System.Drawing.Point(30, 46);
             this.btnAddProv.Name = "btnAddProv";
             this.btnAddProv.Size = new System.Drawing.Size(75, 23);
-            this.btnAddProv.TabIndex = 9;
+            this.btnAddProv.TabIndex = 2;
             this.btnAddProv.Text = "Agregar";
             this.btnAddProv.UseVisualStyleBackColor = true;
             this.btnAddProv.Click += new System.EventHandler(this.btnAddProv_Click);
@@ -122,7 +122,8 @@
             this.dgvProvincia.RowHeadersVisible = false;
             this.dgvProvincia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProvincia.Size = new System.Drawing.Size(120, 422);
-            this.dgvProvincia.TabIndex = 0;
+            this.dgvProvincia.TabIndex = 3;
+            this.dgvProvincia.TabStop = false;
             // 
             // groupBox1
             // 
@@ -143,7 +144,7 @@
             this.btnAddLocalidad.Location = new System.Drawing.Point(32, 46);
             this.btnAddLocalidad.Name = "btnAddLocalidad";
             this.btnAddLocalidad.Size = new System.Drawing.Size(75, 23);
-            this.btnAddLocalidad.TabIndex = 1;
+            this.btnAddLocalidad.TabIndex = 5;
             this.btnAddLocalidad.Text = "Agregar";
             this.btnAddLocalidad.UseVisualStyleBackColor = true;
             this.btnAddLocalidad.Click += new System.EventHandler(this.btnAddLocalidad_Click);
@@ -153,7 +154,7 @@
             this.tbLocalidad.Location = new System.Drawing.Point(20, 17);
             this.tbLocalidad.Name = "tbLocalidad";
             this.tbLocalidad.Size = new System.Drawing.Size(100, 20);
-            this.tbLocalidad.TabIndex = 0;
+            this.tbLocalidad.TabIndex = 4;
             // 
             // dgvLocalidad
             // 
@@ -178,7 +179,8 @@
             this.dgvLocalidad.RowHeadersVisible = false;
             this.dgvLocalidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLocalidad.Size = new System.Drawing.Size(124, 422);
-            this.dgvLocalidad.TabIndex = 1;
+            this.dgvLocalidad.TabIndex = 6;
+            this.dgvLocalidad.TabStop = false;
             this.dgvLocalidad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalidad_CellContentClick);
             // 
             // groupBox2
@@ -203,7 +205,7 @@
             this.rtbDir.Location = new System.Drawing.Point(64, 14);
             this.rtbDir.Name = "rtbDir";
             this.rtbDir.Size = new System.Drawing.Size(162, 60);
-            this.rtbDir.TabIndex = 4;
+            this.rtbDir.TabIndex = 7;
             this.rtbDir.Text = "";
             // 
             // label5
@@ -247,7 +249,8 @@
             this.dgvSucursal.RowHeadersVisible = false;
             this.dgvSucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSucursal.Size = new System.Drawing.Size(472, 422);
-            this.dgvSucursal.TabIndex = 2;
+            this.dgvSucursal.TabIndex = 10;
+            this.dgvSucursal.TabStop = false;
             this.dgvSucursal.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSucursal_RowEnter);
             this.dgvSucursal.SelectionChanged += new System.EventHandler(this.dgvSucursal_SelectionChanged);
             // 
@@ -256,7 +259,7 @@
             this.tbTelefono.Location = new System.Drawing.Point(287, 14);
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(100, 20);
-            this.tbTelefono.TabIndex = 1;
+            this.tbTelefono.TabIndex = 8;
             this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
             // 
             // btnAddSucursal
@@ -264,7 +267,7 @@
             this.btnAddSucursal.Location = new System.Drawing.Point(407, 51);
             this.btnAddSucursal.Name = "btnAddSucursal";
             this.btnAddSucursal.Size = new System.Drawing.Size(75, 23);
-            this.btnAddSucursal.TabIndex = 0;
+            this.btnAddSucursal.TabIndex = 9;
             this.btnAddSucursal.Text = "Agregar";
             this.btnAddSucursal.UseVisualStyleBackColor = true;
             this.btnAddSucursal.Click += new System.EventHandler(this.btnAddSucursal_Click);
@@ -286,6 +289,41 @@
             this.pnlConfig.Size = new System.Drawing.Size(431, 506);
             this.pnlConfig.TabIndex = 13;
             this.pnlConfig.Visible = false;
+            // 
+            // lblManagerActual
+            // 
+            this.lblManagerActual.AutoSize = true;
+            this.lblManagerActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerActual.Location = new System.Drawing.Point(169, 43);
+            this.lblManagerActual.Name = "lblManagerActual";
+            this.lblManagerActual.Size = new System.Drawing.Size(93, 20);
+            this.lblManagerActual.TabIndex = 11;
+            this.lblManagerActual.Text = "Sin Definir";
+            // 
+            // dgvManagers
+            // 
+            this.dgvManagers.AllowUserToAddRows = false;
+            this.dgvManagers.AllowUserToResizeColumns = false;
+            this.dgvManagers.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvManagers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvManagers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvManagers.Location = new System.Drawing.Point(18, 123);
+            this.dgvManagers.MultiSelect = false;
+            this.dgvManagers.Name = "dgvManagers";
+            this.dgvManagers.ReadOnly = true;
+            this.dgvManagers.RowHeadersVisible = false;
+            this.dgvManagers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvManagers.Size = new System.Drawing.Size(397, 151);
+            this.dgvManagers.TabIndex = 12;
+            this.dgvManagers.TabStop = false;
+            this.dgvManagers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManagers_CellContentClick);
             // 
             // lblTel
             // 
@@ -310,21 +348,21 @@
             this.tbDir.Location = new System.Drawing.Point(84, 305);
             this.tbDir.Name = "tbDir";
             this.tbDir.Size = new System.Drawing.Size(268, 20);
-            this.tbDir.TabIndex = 7;
+            this.tbDir.TabIndex = 13;
             // 
             // tbTel
             // 
             this.tbTel.Location = new System.Drawing.Point(84, 354);
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(268, 20);
-            this.tbTel.TabIndex = 6;
+            this.tbTel.TabIndex = 14;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(134, 380);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(169, 37);
-            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar Cambios";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -334,7 +372,7 @@
             this.btnEstado.Location = new System.Drawing.Point(134, 468);
             this.btnEstado.Name = "btnEstado";
             this.btnEstado.Size = new System.Drawing.Size(169, 34);
-            this.btnEstado.TabIndex = 4;
+            this.btnEstado.TabIndex = 16;
             this.btnEstado.Text = "????";
             this.btnEstado.UseVisualStyleBackColor = true;
             this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
@@ -344,7 +382,7 @@
             this.tbBusquedaManager.Location = new System.Drawing.Point(82, 84);
             this.tbBusquedaManager.Name = "tbBusquedaManager";
             this.tbBusquedaManager.Size = new System.Drawing.Size(268, 20);
-            this.tbBusquedaManager.TabIndex = 3;
+            this.tbBusquedaManager.TabIndex = 11;
             // 
             // lblManager
             // 
@@ -355,40 +393,6 @@
             this.lblManager.Size = new System.Drawing.Size(84, 20);
             this.lblManager.TabIndex = 1;
             this.lblManager.Text = "Manager:";
-            // 
-            // dgvManagers
-            // 
-            this.dgvManagers.AllowUserToAddRows = false;
-            this.dgvManagers.AllowUserToResizeColumns = false;
-            this.dgvManagers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvManagers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvManagers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManagers.Location = new System.Drawing.Point(18, 123);
-            this.dgvManagers.MultiSelect = false;
-            this.dgvManagers.Name = "dgvManagers";
-            this.dgvManagers.ReadOnly = true;
-            this.dgvManagers.RowHeadersVisible = false;
-            this.dgvManagers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvManagers.Size = new System.Drawing.Size(397, 151);
-            this.dgvManagers.TabIndex = 10;
-            this.dgvManagers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManagers_CellContentClick);
-            // 
-            // lblManagerActual
-            // 
-            this.lblManagerActual.AutoSize = true;
-            this.lblManagerActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManagerActual.Location = new System.Drawing.Point(169, 43);
-            this.lblManagerActual.Name = "lblManagerActual";
-            this.lblManagerActual.Size = new System.Drawing.Size(93, 20);
-            this.lblManagerActual.TabIndex = 11;
-            this.lblManagerActual.Text = "Sin Definir";
             // 
             // frmSucursales
             // 

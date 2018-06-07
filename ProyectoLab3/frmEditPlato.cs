@@ -77,6 +77,14 @@ namespace ProyectoLab3
             setear();
         }
 
+        private void tbNombre_TextChanged(object sender, EventArgs e)
+        {
+            //platos.DefaultView.RowFilter=string.Format("Nombre like '%{0}%'",tbNombre.Text);
+            //(bsPlato.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre like '%{0}%'", tbNombre.Text);
+            bsPlato.Filter = string.Format("Nombre like '%{0}%'", tbNombre.Text);
+            dgvPlatos.Refresh();
+        }
+
        
 
 

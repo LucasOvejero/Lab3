@@ -83,9 +83,10 @@ namespace Clases
             finally { clsConexion.closeCon(); }
             return solicitudes;
         }
-        public static DataTable MisSolcitudesRealizadasRecibidas(int miId)
+
+        public static DataTable MisSolcitudesRecibidasVigentes(int miId)
         {
-            comando = new SqlCommand("select * from Solicitudes WHERE IdSolicitado = " + miId);
+            comando = new SqlCommand("select * from Solicitudes WHERE IdSolicitado = " + miId + " AND estado is NULL");
             try
             {
                 solicitudes = new DataTable("Solicitudes");
@@ -98,9 +99,10 @@ namespace Clases
             finally { clsConexion.closeCon(); }
             return solicitudes;
         }
-        public static DataTable MisSolcitudesRealizadas(int miId)
+
+        public static DataTable MisSolcitudesRealizadasVigentes(int miId)
         {
-            comando = new SqlCommand("select * from Solicitudes WHERE IdSolicitante = " + miId);
+            comando = new SqlCommand("select * from Solicitudes WHERE IdSolicitante = " + miId + " AND estado is NULL");
             try
             {
                 solicitudes = new DataTable("Solicitudes");
@@ -113,23 +115,20 @@ namespace Clases
             finally { clsConexion.closeCon(); }
             return solicitudes;
         }
-        public static string nuevaSolicitud(int idSolicitante, int idSolicitado, int idIngrediente, double cantGramos, string estado)
+
+        public static int nuevaSolicitud(int idSolicitante, int idSolicitado, double costoTotal)
         {
-
-
-            string resp = "";
             comando = new SqlCommand();
-            comando.CommandText = "INSERT INTO Solicitudes (idSolicitante,idSolicitado,idIngrediente,cantGramos,estado,fechaInicio)" +
-                "values (@idSolicitante,@idSolicitado,@idIngrediente,@cantGramos,@estado,@fechaInicio)" +
+            comando.CommandText = "INSERT INTO Solicitudes (idSolicitante,idSolicitado,fechaInicio,costoTotal)" +
+                "values (@idSolicitante,@idSolicitado,@fechaInicio,@costoTotal)" +
                 "; select SCOPE_IDENTITY(); ";
 
-            SqlParameter[] parametros = new SqlParameter[7];
+            SqlParameter[] parametros = new SqlParameter[4];
             parametros[0] = new SqlParameter("@idSolicitante", idSolicitante);
             parametros[1] = new SqlParameter("@idSolicitado", idSolicitado);
-            parametros[2] = new SqlParameter("@idIngrediente", idIngrediente);
-            parametros[3] = new SqlParameter("@cantGramos", cantGramos);
-            parametros[4] = new SqlParameter("@estado", estado);
-            parametros[5] = new SqlParameter("@fechaInicio", DateTime.Today.ToShortDateString());
+            parametros[2] = new SqlParameter("@fechaInicio", DateTime.Now.ToString("yyyy-MM-dd"));
+            parametros[3] = new SqlParameter("@costoTotal", costoTotal);
+
             try
             {
                 comando.Parameters.AddRange(parametros);
@@ -138,29 +137,30 @@ namespace Clases
                 id = Convert.ToInt32(comando.ExecuteScalar());
                 if (id >= 0)
                 {
-                    resp = " Se inicio la solicitud correctamente, por la cantidad de " + cantGramos + " gramos.";
+                    return id;
                 }
+                return -1;
             }
             catch (SqlException e)
             {
-                resp = e.Message;
+                return -1;
             }
             finally
             {
                 clsConexion.closeCon();
             }
-
-            return resp;
         }
 
         public static void rechazarSolicitud(int id)
         {
 
+            //UPDATE Solicitudes SET Estado = 0 , fechaFin = '2018-6-5' WHERE IdSolicitud = 1;
+            string query = "UPDATE Solicitudes SET Estado = 0 , fechaFin = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE IdSolicitud = " + id;
+            comando = new SqlCommand(query);
 
-            comando = new SqlCommand("UPDATE Solicitudes SET Estado = 1, fechaFin = " + DateTime.Today.ToShortDateString() + " WHERE IdSolicitud = " + id);
             try
             {
-                solicitudes = new DataTable("Empleados");
+
                 comando.Connection = clsConexion.getCon();
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
@@ -176,7 +176,6 @@ namespace Clases
             comando = new SqlCommand("UPDATE Empleado SET Estado = 2, fechaFin = " + DateTime.Today.ToShortDateString() + " WHERE IdSolicitud = " + id);
             try
             {
-                solicitudes = new DataTable("Empleados");
                 comando.Connection = clsConexion.getCon();
                 adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
@@ -184,6 +183,57 @@ namespace Clases
             }
             catch (SqlException x) { Console.WriteLine(x.Message); }
             finally { clsConexion.closeCon(); }
+        }
+
+        public static void nuevoDetalleSolicitud(int IdSolicitud, int IdIngrediente, double cantidad)
+        {
+
+            string resp = "";
+            comando = new SqlCommand();
+            comando.CommandText = "INSERT INTO DetalleSolicitud (IdSolicitud,IdIngrediente,cantidad)" +
+                "values (@IdSolicitud,@IdIngrediente,@cantidad)" +
+                "; select SCOPE_IDENTITY(); ";
+
+            SqlParameter[] parametros = new SqlParameter[3];
+            parametros[0] = new SqlParameter("@IdSolicitud", IdSolicitud);
+            parametros[1] = new SqlParameter("@IdIngrediente", IdIngrediente);
+            parametros[2] = new SqlParameter("@cantidad", cantidad);
+
+            try
+            {
+                comando.Parameters.AddRange(parametros);
+                comando.Connection = clsConexion.getCon();
+
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                resp = e.Message;
+            }
+            finally
+            {
+                clsConexion.closeCon();
+            }
+
+
+        }
+
+        public static DataTable obtenerIngredientesDeSolicitud(int SolicitudId)
+        {
+
+            comando = new SqlCommand("SELECT * FROM Ingrediente INNER JOIN DetalleSolicitud ON Ingrediente.IdIngrediente = DetalleSolicitud.IdIngrediente INNER JOIN Solicitudes ON Solicitudes.IdSolicitud = DetalleSolicitud.IdSolicitud WHERE Solicitudes.IdSolicitud = " + SolicitudId);
+            try
+            {
+                solicitudes = new DataTable("DetalleSolicitud");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(solicitudes);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return solicitudes;
+
         }
 
         /*

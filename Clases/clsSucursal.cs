@@ -132,6 +132,27 @@ namespace Clases
             catch (SqlException e) { throw e; }
             return LSucursales.ToArray();
         }
+        public static DataTable getTodasSuc()
+        {
+          
+            DataTable sc = new DataTable();
+            try
+            {
+
+                adaptador = new SqlDataAdapter();
+                comando = new SqlCommand("Select IdSucursal,Direccion from Sucursal");
+                comando.Connection = clsConexion.getCon();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(sc);
+
+
+            }
+            catch (SqlException e) { throw e; }
+            finally {
+                clsConexion.closeCon();
+            }
+            return sc;
+        }
         public static string[] getPerProv(string provincia)
         {
             List<string> lSuc = new List<string>();

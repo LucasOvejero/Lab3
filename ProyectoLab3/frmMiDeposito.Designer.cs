@@ -70,7 +70,7 @@
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBebidas.Size = new System.Drawing.Size(373, 438);
-            this.dgvBebidas.TabIndex = 0;
+            this.dgvBebidas.TabIndex = 1;
             // 
             // dgvIngredientes
             // 
@@ -94,7 +94,7 @@
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIngredientes.Size = new System.Drawing.Size(394, 438);
-            this.dgvIngredientes.TabIndex = 1;
+            this.dgvIngredientes.TabIndex = 4;
             this.dgvIngredientes.DataSourceChanged += new System.EventHandler(this.dgvIngredientes_DataSourceChanged);
             // 
             // tbBebidas
@@ -103,7 +103,7 @@
             this.tbBebidas.Location = new System.Drawing.Point(262, 49);
             this.tbBebidas.Name = "tbBebidas";
             this.tbBebidas.Size = new System.Drawing.Size(100, 20);
-            this.tbBebidas.TabIndex = 2;
+            this.tbBebidas.TabIndex = 0;
             this.tbBebidas.TextChanged += new System.EventHandler(this.tbBebidas_TextChanged);
             // 
             // tbIngredientes
@@ -151,7 +151,7 @@
             this.btnActB.Location = new System.Drawing.Point(3, 5);
             this.btnActB.Name = "btnActB";
             this.btnActB.Size = new System.Drawing.Size(234, 91);
-            this.btnActB.TabIndex = 0;
+            this.btnActB.TabIndex = 2;
             this.btnActB.Text = "Actualizar depositos de bebidas";
             this.btnActB.UseVisualStyleBackColor = true;
             this.btnActB.Click += new System.EventHandler(this.btnActB_Click);
@@ -173,7 +173,7 @@
             this.btnActI.Location = new System.Drawing.Point(3, 3);
             this.btnActI.Name = "btnActI";
             this.btnActI.Size = new System.Drawing.Size(234, 94);
-            this.btnActI.TabIndex = 1;
+            this.btnActI.TabIndex = 5;
             this.btnActI.Text = "Actualizar depositos de ingredientes";
             this.btnActI.UseVisualStyleBackColor = true;
             this.btnActI.Click += new System.EventHandler(this.btnActI_Click);

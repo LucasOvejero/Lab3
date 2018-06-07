@@ -69,7 +69,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.00452F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 421F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 422F));
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarPlato, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.pnlDescripcion, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarBebida, 3, 6);
@@ -109,10 +109,10 @@
             // btnAgregarPlato
             // 
             this.btnAgregarPlato.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarPlato.Location = new System.Drawing.Point(337, 295);
+            this.btnAgregarPlato.Location = new System.Drawing.Point(336, 295);
             this.btnAgregarPlato.Name = "btnAgregarPlato";
             this.btnAgregarPlato.Size = new System.Drawing.Size(72, 45);
-            this.btnAgregarPlato.TabIndex = 3;
+            this.btnAgregarPlato.TabIndex = 5;
             this.btnAgregarPlato.Text = "Agregar platos --->";
             this.btnAgregarPlato.UseVisualStyleBackColor = true;
             this.btnAgregarPlato.Click += new System.EventHandler(this.btnAgregarPlato_Click);
@@ -121,15 +121,15 @@
             // 
             this.pnlDescripcion.AutoScroll = true;
             this.pnlDescripcion.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlDescripcion.Location = new System.Drawing.Point(415, 134);
+            this.pnlDescripcion.Location = new System.Drawing.Point(414, 134);
             this.pnlDescripcion.Name = "pnlDescripcion";
             this.pnlDescripcion.Size = new System.Drawing.Size(310, 333);
-            this.pnlDescripcion.TabIndex = 4;
+            this.pnlDescripcion.TabIndex = 6;
             // 
             // btnAgregarBebida
             // 
             this.btnAgregarBebida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarBebida.Location = new System.Drawing.Point(731, 295);
+            this.btnAgregarBebida.Location = new System.Drawing.Point(730, 295);
             this.btnAgregarBebida.Name = "btnAgregarBebida";
             this.btnAgregarBebida.Size = new System.Drawing.Size(91, 45);
             this.btnAgregarBebida.TabIndex = 5;
@@ -141,7 +141,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(516, 118);
+            this.label1.Location = new System.Drawing.Point(515, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 1;
@@ -151,10 +151,10 @@
             // tbNombrePlato
             // 
             this.tbNombrePlato.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbNombrePlato.Location = new System.Drawing.Point(117, 22);
+            this.tbNombrePlato.Location = new System.Drawing.Point(116, 22);
             this.tbNombrePlato.Name = "tbNombrePlato";
             this.tbNombrePlato.Size = new System.Drawing.Size(100, 20);
-            this.tbNombrePlato.TabIndex = 8;
+            this.tbNombrePlato.TabIndex = 0;
             this.tbNombrePlato.TextChanged += new System.EventHandler(this.tbNombreBebida_TextChanged);
             // 
             // label2
@@ -163,7 +163,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label2.Location = new System.Drawing.Point(3, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(328, 13);
+            this.label2.Size = new System.Drawing.Size(327, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Nombre plato";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,7 +174,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label3.Location = new System.Drawing.Point(3, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(328, 13);
+            this.label3.Size = new System.Drawing.Size(327, 13);
             this.label3.TabIndex = 10;
             this.label3.Text = "Categoria plato";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,10 +183,10 @@
             // 
             this.cbTACC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbTACC.AutoSize = true;
-            this.cbTACC.Location = new System.Drawing.Point(140, 99);
+            this.cbTACC.Location = new System.Drawing.Point(139, 99);
             this.cbTACC.Name = "cbTACC";
             this.cbTACC.Size = new System.Drawing.Size(54, 16);
-            this.cbTACC.TabIndex = 12;
+            this.cbTACC.TabIndex = 3;
             this.cbTACC.Text = "TACC";
             this.cbTACC.UseVisualStyleBackColor = true;
             this.cbTACC.CheckedChanged += new System.EventHandler(this.tbNombreBebida_TextChanged);
@@ -198,7 +198,7 @@
             this.cboCategoriaPlato.Location = new System.Drawing.Point(106, 68);
             this.cboCategoriaPlato.Name = "cboCategoriaPlato";
             this.cboCategoriaPlato.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoriaPlato.TabIndex = 13;
+            this.cboCategoriaPlato.TabIndex = 1;
             this.cboCategoriaPlato.SelectedIndexChanged += new System.EventHandler(this.tbNombreBebida_TextChanged);
             // 
             // dgvPlatos
@@ -222,8 +222,8 @@
             this.dgvPlatos.ReadOnly = true;
             this.dgvPlatos.RowHeadersVisible = false;
             this.dgvPlatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlatos.Size = new System.Drawing.Size(328, 368);
-            this.dgvPlatos.TabIndex = 7;
+            this.dgvPlatos.Size = new System.Drawing.Size(327, 368);
+            this.dgvPlatos.TabIndex = 4;
             this.dgvPlatos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPlatos_CellFormatting);
             this.dgvPlatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlatos_RowEnter);
             // 
@@ -242,14 +242,14 @@
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBebidas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBebidas.Location = new System.Drawing.Point(828, 134);
+            this.dgvBebidas.Location = new System.Drawing.Point(827, 134);
             this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBebidas.Size = new System.Drawing.Size(416, 368);
-            this.dgvBebidas.TabIndex = 14;
+            this.dgvBebidas.Size = new System.Drawing.Size(417, 368);
+            this.dgvBebidas.TabIndex = 10;
             this.dgvBebidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBebidas_CellFormatting);
             this.dgvBebidas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBebidas_RowEnter);
             // 
@@ -257,9 +257,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.Location = new System.Drawing.Point(828, 5);
+            this.label4.Location = new System.Drawing.Point(827, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(416, 13);
+            this.label4.Size = new System.Drawing.Size(417, 13);
             this.label4.TabIndex = 15;
             this.label4.Text = "Nombre bebida";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -267,10 +267,10 @@
             // tbNombreBebida
             // 
             this.tbNombreBebida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbNombreBebida.Location = new System.Drawing.Point(986, 22);
+            this.tbNombreBebida.Location = new System.Drawing.Point(985, 22);
             this.tbNombreBebida.Name = "tbNombreBebida";
             this.tbNombreBebida.Size = new System.Drawing.Size(100, 20);
-            this.tbNombreBebida.TabIndex = 16;
+            this.tbNombreBebida.TabIndex = 7;
             this.tbNombreBebida.TextChanged += new System.EventHandler(this.tbNombreBebida_TextChanged_1);
             // 
             // label5
@@ -291,7 +291,7 @@
             this.cboCategoriaBebida.Location = new System.Drawing.Point(975, 68);
             this.cboCategoriaBebida.Name = "cboCategoriaBebida";
             this.cboCategoriaBebida.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoriaBebida.TabIndex = 18;
+            this.cboCategoriaBebida.TabIndex = 8;
             this.cboCategoriaBebida.SelectedIndexChanged += new System.EventHandler(this.tbNombreBebida_TextChanged_1);
             // 
             // cbAlcohol
@@ -301,7 +301,7 @@
             this.cbAlcohol.Location = new System.Drawing.Point(1005, 99);
             this.cbAlcohol.Name = "cbAlcohol";
             this.cbAlcohol.Size = new System.Drawing.Size(61, 16);
-            this.cbAlcohol.TabIndex = 19;
+            this.cbAlcohol.TabIndex = 9;
             this.cbAlcohol.Text = "Alcohol";
             this.cbAlcohol.UseVisualStyleBackColor = true;
             this.cbAlcohol.CheckedChanged += new System.EventHandler(this.tbNombreBebida_TextChanged_1);
@@ -309,10 +309,10 @@
             // btnVender
             // 
             this.btnVender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnVender.Location = new System.Drawing.Point(415, 574);
+            this.btnVender.Location = new System.Drawing.Point(414, 574);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(310, 22);
-            this.btnVender.TabIndex = 20;
+            this.btnVender.TabIndex = 12;
             this.btnVender.Text = "Realizar Venta";
             this.btnVender.UseVisualStyleBackColor = true;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
@@ -322,7 +322,7 @@
             this.pnlTotal.Controls.Add(this.lblTotal);
             this.pnlTotal.Controls.Add(this.label6);
             this.pnlTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTotal.Location = new System.Drawing.Point(415, 508);
+            this.pnlTotal.Location = new System.Drawing.Point(414, 508);
             this.pnlTotal.Name = "pnlTotal";
             this.pnlTotal.Size = new System.Drawing.Size(310, 30);
             this.pnlTotal.TabIndex = 21;
@@ -356,7 +356,7 @@
             this.panel1.Controls.Add(this.nudPago);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(415, 544);
+            this.panel1.Location = new System.Drawing.Point(414, 544);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 24);
             this.panel1.TabIndex = 22;
@@ -372,9 +372,8 @@
             0});
             this.nudPago.Name = "nudPago";
             this.nudPago.Size = new System.Drawing.Size(87, 20);
-            this.nudPago.TabIndex = 1;
+            this.nudPago.TabIndex = 11;
             this.nudPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            
             // 
             // label7
             // 

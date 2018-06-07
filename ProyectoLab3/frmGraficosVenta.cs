@@ -10,13 +10,28 @@ using Clases;
 using System.Data.SqlClient;
 namespace ProyectoLab3
 {
-    public partial class frmGraficosVenta : Form
+    public partial class frmGraficos : Form
     {
         int IdSucursal;
-        public frmGraficosVenta(int IdSucursal)
+        DataTable sucursales;
+        public frmGraficos(int IdSucursal)
         {
             InitializeComponent();
             this.IdSucursal = IdSucursal;
+            pnlAdmin.Visible = false;
+        }
+        public frmGraficos()
+        {
+            InitializeComponent();
+            lbSucursal.SelectedIndexChanged += lbSucursal_SelectedIndexChanged;
+            tbDirSuc.TextChanged += tbDirSuc_TextChanged;
+            sucursales=clsSucursal.getTodasSuc();
+            lbSucursal.DataSource = sucursales;
+            lbSucursal.DisplayMember = "Direccion";
+            lbSucursal.ValueMember = "IdSucursal";
+            
+            lbSucursal.SelectedIndex = 0;
+            
         }
         String[] meses = new String[13] {"Todos", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre" };
         private void frmGraficosVenta_Load(object sender, EventArgs e)
@@ -40,14 +55,13 @@ namespace ProyectoLab3
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
             }
+            
             cboMeses.SelectedIndex = 0;
         }
 
         private void cboMeses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            chartVntas.DataSource = null;
-            int anio=(int)nudAnio.Value;
-            int mes=cboMeses.SelectedIndex;
+          
             chartVntas.Series["Costo"].XValueMember = "Mes";
             chartVntas.Series["Costo"].YValueMembers = "Costo";
             chartCantidad.Series["Cantidad de ventas"].XValueMember = "Mes";
@@ -58,12 +72,33 @@ namespace ProyectoLab3
             chartVntas.Series["Venta neta"].YValueMembers = "Precio";
             chartVntas.Series["Ganancia total"].XValueMember = "Mes";
             chartVntas.Series["Ganancia total"].YValueMembers = "Ganancia";
-        
+            setearDatasource();
+            
+        }
+
+        private void lbSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.IdSucursal=int.Parse(((DataRowView)lbSucursal.SelectedItem)["IdSucursal"].ToString());
+            setearDatasource();
+        }
+
+        private void tbDirSuc_TextChanged(object sender, EventArgs e)
+        {
+            sucursales.DefaultView.RowFilter = string.Format("Direccion like '%{0}%'", tbDirSuc.Text);
+            lbSucursal.Refresh();
+        }
+
+        private void setearDatasource() {
+            chartVntas.DataSource = null;
+            chartCantidad.DataSource = null;
+            int anio = (int)nudAnio.Value;
+            int mes = cboMeses.SelectedIndex;
             DataTable source = clsEstadisticas.getVentas(anio, mes, IdSucursal);
             chartVntas.DataSource = source;
             chartCantidad.DataSource = source;
             chartVntas.DataBind();
             chartCantidad.DataBind();
+        
         }
     }
 }

@@ -30,7 +30,8 @@ namespace ProyectoLab3
         frmMiDeposito ofrMiDepo;
         frmEditPlato ofrmEditPlato;
         frmVenta ofrmVenta;
-        frmGraficosVenta ofrmGraficos;
+        frmGraficos ofrmGraficos;
+        frmNuevaSolicitud ofrmNSolicitud;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -122,9 +123,20 @@ namespace ProyectoLab3
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            ofrmGraficos = new frmGraficosVenta(2);//TODO asignarle el id de la sucursal actual
+            ofrmGraficos = new frmGraficos(2);//TODO asignarle el id de la sucursal actual
             ofrmGraficos.ShowDialog();
         }
 
+        private void btnNewSolicitudes_Click(object sender, EventArgs e)
+        {
+            ofrmNSolicitud = new frmNuevaSolicitud();
+            ofrmNSolicitud.ShowDialog();
+        }
+
+        private void btnGraficosVentaGeneral_Click(object sender, EventArgs e)
+        {
+            ofrmGraficos = new frmGraficos();
+            ofrmGraficos.ShowDialog();
+        }
     }
 }
