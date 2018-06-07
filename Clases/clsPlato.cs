@@ -42,7 +42,7 @@ namespace Clases
             {
                 platos = new DataTable("Platos");
                 //SqlCommand select = new SqlCommand(string.Format("Select p.Nombre,IdPlato,dbo.suficientes_ingredientes(p.IdPlato,{0}) Suficiente,Precio,Costo,c.Nombre Categoria,TACC from Plato p inner join CategoriaPlatos c on (c.IdCategoria=p.IdCategoria);",idSucursal), clsConexion.getCon());
-                SqlCommand select = new SqlCommand(string.Format("Select p.Nombre,p.IdPlato,g.[Posible Cantidad],dbo.suficientes_ingredientes(p.IdPlato,{0}) Suficiente,Precio,Costo,c.Nombre Categoria,TACC from Plato p inner join CategoriaPlatos c on (c.IdCategoria=p.IdCategoria) inner join (select CAST(MIN(Stock/Cantidad) as decimal(5,0)) as 'Posible Cantidad', IdPlato  from Receta r inner join Deposito d on(r.IdIngrediente=d.IdIngrediente) where  d.IdSucursal={0} group by IdPlato ) g on(g.IdPlato=p.IdPlato);", idSucursal), clsConexion.getCon());
+                SqlCommand select = new SqlCommand(string.Format("Select p.Nombre,p.IdPlato,g.[Posible Cantidad],dbo.suficientes_ingredientes(p.IdPlato,{0}) Suficiente,Precio,Costo,c.Nombre Categoria,TACC from Plato p inner join CategoriaPlatos c on (c.IdCategoria=p.IdCategoria) inner join (select CAST(MIN(Stock/Cantidad) as int) as 'Posible Cantidad', IdPlato  from Receta r inner join Deposito d on(r.IdIngrediente=d.IdIngrediente) where  d.IdSucursal={0} group by IdPlato ) g on(g.IdPlato=p.IdPlato);", idSucursal), clsConexion.getCon());
                 SqlDataAdapter adaptador = new SqlDataAdapter(select);
                 adaptador.Fill(platos);
             }

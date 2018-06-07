@@ -36,8 +36,24 @@ namespace ProyectoLab3
 
         private void Form1_Load(object sender, EventArgs e)
         {            
-          //  verificarLogeo();
-          
+           verificarLogeo();
+           switch (clsConexion.Tipo) {
+               case "Administrador":
+                   pnlVendedor.Visible = false;
+                   break;
+
+               case "Vendedor":
+                   ofrmVenta = new frmVenta(clsConexion.SucursalSession);//TODO:asignarle el deposito del usuario actual
+                    ofrmVenta.ShowDialog();
+                    clsConexion.SucursalSession = -1;
+                    verificarLogeo();
+                   break;
+               case "Manager":
+                   pnlAdmin.Visible = false;
+                   break;
+               
+               default: break;
+           }
           
         }
 
@@ -83,12 +99,11 @@ namespace ProyectoLab3
 
 
         private void verificarLogeo() {
-/*
             if (clsConexion.SucursalSession == -1)
             {
                 ofrmLogin = new frmLogin();
                 ofrmLogin.ShowDialog();
-            }*/
+            }
 
         }
 
@@ -105,7 +120,7 @@ namespace ProyectoLab3
 
         private void btnDeposito_Click(object sender, EventArgs e)
         {
-            ofrMiDepo = new frmMiDeposito(2);//TODO:asignarle el deposito del usuario actual
+            ofrMiDepo = new frmMiDeposito(clsConexion.SucursalSession);//TODO:asignarle el deposito del usuario actual
             ofrMiDepo.ShowDialog();
         }
 
@@ -117,13 +132,13 @@ namespace ProyectoLab3
 
         private void btnVenta_Click(object sender, EventArgs e)
         {
-            ofrmVenta = new frmVenta(2);//TODO:asignarle el deposito del usuario actual
+            ofrmVenta = new frmVenta(clsConexion.SucursalSession);//TODO:asignarle el deposito del usuario actual
             ofrmVenta.ShowDialog();
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            ofrmGraficos = new frmGraficos(2);//TODO asignarle el id de la sucursal actual
+            ofrmGraficos = new frmGraficos(clsConexion.SucursalSession);//TODO asignarle el id de la sucursal actual
             ofrmGraficos.ShowDialog();
         }
 

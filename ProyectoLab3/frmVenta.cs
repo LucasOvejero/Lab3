@@ -130,9 +130,10 @@ namespace ProyectoLab3
             bool existe = false;
             foreach (PanelPlato p in listaProductosVenta)
             {
-                if (p.Id == id && !p.EsBebida)
+                if (p.Id == id && !p.EsBebida )
                 { 
-                    p.NudGramos.Value = p.NudGramos.Value + 1;
+                    if(p.NudGramos.Value<maxCantidad)
+                        p.NudGramos.Value = p.NudGramos.Value + 1;
                     existe = true;
                     break;
                 }
@@ -281,7 +282,8 @@ namespace ProyectoLab3
             {
                 if (p.Id == id && p.EsBebida)
                 {
-                    p.NudGramos.Value = p.NudGramos.Value + 1;
+                    if(p.NudGramos.Value < maxCantidad)
+                         p.NudGramos.Value = p.NudGramos.Value + 1;
                     existe = true;
                     break;
                 }

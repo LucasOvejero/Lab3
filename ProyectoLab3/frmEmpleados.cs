@@ -126,6 +126,8 @@ namespace ProyectoLab3
             tbDni.Clear();
             cbTipo.SelectedItem = 0;
             tbNombre.Focus();
+            tbUser.Clear();
+            tbPass.Clear();
         }
 
         private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
