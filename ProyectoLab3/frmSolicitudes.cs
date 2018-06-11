@@ -13,7 +13,7 @@ namespace ProyectoLab3
     public partial class frmSolicitudes : Form
     {
         //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-        
+        int IdSession = clsConexion.SucursalSession;
 
         public frmSolicitudes()
         {
@@ -23,36 +23,73 @@ namespace ProyectoLab3
 
             if (IdSession <= 0) { IdSession = 1; }
 
+
+            refrezcarVista();
+
+        }
+
+        private void refrezcarVista()
+        {
             dgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesRecibidasVigentes(IdSession);
             dgvPeticiones.DataSource = clsSolicitud.MisSolcitudesRealizadasVigentes(IdSession);
-
             dgvDetalle.Columns.Add("cantidadFormateada", "Cantidad");
-
-
-            DataTable vigente = clsSolicitud.MisSolcitudesRealizadasVigentes(IdSession);
-
-
-            /*
-            for (int i = 0; i< vigente.Rows.Count ; i++ )
-            {
-                dgvSolicitudes.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud((int)vigente.Rows[i][0]);            
-            }*/
-
-            //fechaFin ,estado, fechaInicio
-
-
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
             try
             {
+                string res = VerificarStocks();
 
-                clsSolicitud.aceptarSolicitud((int)dgvSolicitudes.SelectedRows[0].Cells[0].Value);
+                if (res.Length > 0)
+                {
+                    MessageBox.Show(res);
+                }
+                else
+                {
+                    migrarStock();
+                    clsSolicitud.aceptarSolicitud((int)dgvSolicitudes.SelectedRows[0].Cells[0].Value);
+                    MessageBox.Show("Transaccion Completa");
+                    refrezcarVista();
+                }
+
+                //
             }
 
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        private string VerificarStocks()
+        {
+            string respuesta = "";
+            foreach (DataGridViewRow r in dgvDetalle.Rows)
+            {
+                int IdIngrediente = (int)r.Cells["IdIngrediente"].Value;
+                string nombre = r.Cells["NombreProducto"].Value.ToString();
+                int cantidad = (int)r.Cells["cantidad"].Value;
+                bool haySuficiente = clsDeposito.ObtenerStockIngrediente(IdIngrediente, cantidad);
+
+                if (!haySuficiente)
+                {
+                    respuesta = "No posee la cantidad de " + cantidad + " del ingrediente:" + nombre + '\n';
+                }
+            }
+            return respuesta;
+        }
+
+        private void migrarStock()
+        {
+            foreach (DataGridViewRow r in dgvDetalle.Rows)
+            {
+                int IdIngrediente = (int)r.Cells["IdIngrediente"].Value;
+                string nombre = r.Cells["NombreProducto"].Value.ToString();
+                int cantidad = (int)r.Cells["IdIngrediente"].Value;
+                int sucursalDestino = (int)r.Cells["IdIngrediente"].Value;
+
+                clsDeposito.migrar(sucursalDestino, IdIngrediente, cantidad);
+            }
+        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -64,6 +101,7 @@ namespace ProyectoLab3
                 if (dialogResult == DialogResult.Yes)
                 {
                     clsSolicitud.rechazarSolicitud((int)dgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value);
+                    refrezcarVista();
                 }
             }
             catch (Exception ex) { Console.Write(ex.Message); }

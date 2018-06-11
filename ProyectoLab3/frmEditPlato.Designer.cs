@@ -57,7 +57,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(580, 11);
+            this.label2.Location = new System.Drawing.Point(579, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 1;
@@ -84,7 +84,7 @@
             this.dgvPlatos.ReadOnly = true;
             this.dgvPlatos.RowHeadersVisible = false;
             this.dgvPlatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlatos.Size = new System.Drawing.Size(399, 459);
+            this.dgvPlatos.Size = new System.Drawing.Size(398, 459);
             this.dgvPlatos.TabIndex = 2;
             // 
             // dgvIngredientes
@@ -102,7 +102,7 @@
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngredientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvIngredientes.Location = new System.Drawing.Point(408, 84);
+            this.dgvIngredientes.Location = new System.Drawing.Point(407, 84);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
@@ -113,13 +113,13 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.30362F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.69638F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 252F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvIngredientes, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
@@ -140,7 +140,7 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEditar.Location = new System.Drawing.Point(876, 273);
+            this.btnEditar.Location = new System.Drawing.Point(875, 273);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(143, 81);
             this.btnEditar.TabIndex = 4;

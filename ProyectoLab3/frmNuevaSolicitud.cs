@@ -123,6 +123,7 @@ namespace ProyectoLab3
 
                         clsSolicitud.nuevoDetalleSolicitud(nuevaSolicitudId, Convert.ToInt32(r.Cells["IdIngrediente"].Value), cantidad);
                     }
+                    dgvSeleccion.Rows.Clear();
                 }
                 catch (Exception ex) { Console.WriteLine(ex.Message); }
             }

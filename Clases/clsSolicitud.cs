@@ -32,6 +32,7 @@ namespace Clases
         }
 
 
+
         int idIngrediente;
 
         public int IdIngrediente
@@ -65,6 +66,7 @@ namespace Clases
             this.CantGramos = cantGramos;
             this.Estado = estado;
         }
+
 
         public clsSolicitud() { }
 
@@ -173,7 +175,9 @@ namespace Clases
 
         public static void aceptarSolicitud(int id)
         {
-            comando = new SqlCommand("UPDATE Empleado SET Estado = 2, fechaFin = " + DateTime.Today.ToShortDateString() + " WHERE IdSolicitud = " + id);
+            string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+            string query = "UPDATE Solicitudes SET Estado = 1, fechaFin = '" + fecha + "' WHERE IdSolicitud = " + id;
+            comando = new SqlCommand(query);
             try
             {
                 comando.Connection = clsConexion.getCon();
@@ -235,6 +239,56 @@ namespace Clases
             return solicitudes;
 
         }
+
+        public static DataTable GetHistorial()
+        {
+            comando = new SqlCommand("SELECT * FROM Solicitudes WHERE fechaFin IS NOT NULL AND (IdSolicitante = " + clsConexion.SucursalSession + " OR IdSolicitado = " + clsConexion.SucursalSession + ")");
+            try
+            {
+                solicitudes = new DataTable("Solicitud");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(solicitudes);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return solicitudes;
+        }
+
+        public static object Enviadas()
+        {
+            comando = new SqlCommand("SELECT * FROM Solicitudes WHERE fechaFin IS NOT NULL AND IdSolicitante = " + clsConexion.SucursalSession);
+            try
+            {
+                solicitudes = new DataTable("Solicitud");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(solicitudes);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return solicitudes;
+        }
+
+        public static object Recibidas()
+        {
+            comando = new SqlCommand("SELECT * FROM Solicitudes WHERE fechaFin IS NOT NULL AND IdSolicitado = " + clsConexion.SucursalSession);
+            try
+            {
+                solicitudes = new DataTable("Solicitud");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(solicitudes);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return solicitudes;
+        }
+
+
 
         /*
         public static DataTable joinSucursales()

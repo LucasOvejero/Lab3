@@ -70,6 +70,12 @@
     <Compile Include="frmGraficosVenta.Designer.cs">
       <DependentUpon>frmGraficosVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorial.Designer.cs">
+      <DependentUpon>frmHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTicketVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmGraficosVenta.resx">
       <DependentUpon>frmGraficosVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorial.resx">
+      <DependentUpon>frmHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTicketVenta.resx">
       <DependentUpon>frmTicketVenta.cs</DependentUpon>

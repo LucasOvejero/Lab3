@@ -8,7 +8,7 @@ namespace Clases
 {
     public static class clsDeposito
     {
-        private static DataTable Bebidas,Ingredientes;
+        private static DataTable Bebidas,Ingredientes, StockDeposito;
         private static SqlCommand comando;
         private static DataSet ds;
         private static SqlDataAdapter adapter;
@@ -148,5 +148,42 @@ namespace Clases
             }
             return resp;
         }
+
+
+        public static bool ObtenerStockIngrediente(int IdIngrediente, int cantidad)
+        {
+            comando = new SqlCommand("Select * From Deposito where IdIngrediente = " + IdIngrediente + " AND IdSucursal = " + clsConexion.SucursalSession + " AND Stock >" + cantidad + ";");
+            try
+            {
+                StockDeposito = new DataTable("Deposito");
+                comando.Connection = clsConexion.getCon();
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = comando;
+                adapter.Fill(StockDeposito);
+                return StockDeposito.Rows.Count > 0;
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return false;
+
+        }
+
+        public static void migrar(int idDestino, int idIngrediente, int cantidad)
+        {
+            string query = "UPDATE Deposito SET Stock = Stock - " + cantidad + " WHERE IdIngrediente = " + idIngrediente + " AND IdSucursal = " + clsConexion.SucursalSession + ";";
+            query += "UPDATE Deposito SET Stock = Stock + " + cantidad + " WHERE IdIngrediente = " + idIngrediente + " AND IdSucursal = " + idDestino + ";";
+            comando = new SqlCommand(query);
+            try
+            {
+                StockDeposito = new DataTable("Deposito");
+                comando.Connection = clsConexion.getCon();
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = comando;
+                adapter.Fill(StockDeposito);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+        }
+
     }
 }

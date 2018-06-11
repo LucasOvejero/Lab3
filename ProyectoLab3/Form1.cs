@@ -32,11 +32,13 @@ namespace ProyectoLab3
         frmVenta ofrmVenta;
         frmGraficos ofrmGraficos;
         frmNuevaSolicitud ofrmNSolicitud;
+        frmHistorial ofrmHistorial;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
         {            
            verificarLogeo();
+
            switch (clsConexion.Tipo) {
                case "Administrador":
                    pnlVendedor.Visible = false;
@@ -152,6 +154,12 @@ namespace ProyectoLab3
         {
             ofrmGraficos = new frmGraficos();
             ofrmGraficos.ShowDialog();
+        }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            ofrmHistorial = new frmHistorial();
+            ofrmHistorial.ShowDialog();
         }
     }
 }
