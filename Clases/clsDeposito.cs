@@ -8,14 +8,15 @@ namespace Clases
 {
     public static class clsDeposito
     {
-        private static DataTable Bebidas,Ingredientes, StockDeposito;
+        private static DataTable Bebidas, Ingredientes, StockDeposito;
         private static SqlCommand comando;
         private static DataSet ds;
         private static SqlDataAdapter adapter;
-        public static DataSet getDepositoPorDireccion(string Direccion) {
+        public static DataSet getDepositoPorDireccion(string Direccion)
+        {
             Ingredientes = new DataTable("Ingredientes");
-            adapter=new SqlDataAdapter();
-            Bebidas = new DataTable("Bebidas") ;
+            adapter = new SqlDataAdapter();
+            Bebidas = new DataTable("Bebidas");
             try
             {
                 //recuperamos los ingredientes
@@ -38,12 +39,34 @@ namespace Clases
 
                 throw e;
             }
-            finally {
+            finally
+            {
                 clsConexion.closeCon();
             }
             return ds;
         }
-        public static string actualizarBebidas(DataTable bebidas,string direccion,out DataTable nuevaTablaBebidas) {
+
+        public static DataTable ObtenerCriticos()
+        {
+            comando = new SqlCommand("Select  NombreProducto, Stock, stockCritico  From Ingrediente i JOIN Deposito d ON i.IdIngrediente = d.IdIngrediente WHERE stockCritico >= Stock AND IdSucursal = " + clsConexion.SucursalSession + ";");
+            try
+            {
+                StockDeposito = new DataTable("Deposito");
+                comando.Connection = clsConexion.getCon();
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = comando;
+                adapter.Fill(StockDeposito);
+
+                return StockDeposito;
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return null;
+
+        }
+
+        public static string actualizarBebidas(DataTable bebidas, string direccion, out DataTable nuevaTablaBebidas)
+        {
             string resp = "";
             nuevaTablaBebidas = null;
             SqlTransaction transaction = clsConexion.getCon().BeginTransaction("ActualizarDeposito");
@@ -57,9 +80,9 @@ namespace Clases
                 {
                     if (row.RowState == DataRowState.Modified)
                     {
-                       
+
                         int agregar = Int32.Parse(row["Agregar U."].ToString());
-                        
+
                         int idSucursal = Int32.Parse(row["IdSucursal"].ToString());
                         int idBebida = Int32.Parse(row["IdBebida"].ToString());
                         comando.CommandText = string.Format("Update Deposito set Stock=Stock+{0} where IdSucursal={1} and IdBebida={2};", agregar, idSucursal, idBebida);
@@ -74,7 +97,7 @@ namespace Clases
                 adapter.SelectCommand = comando;
                 nuevaTablaBebidas = new DataTable("Bebidas");
                 adapter.Fill(nuevaTablaBebidas);
-               
+
             }
             catch (SqlException ex)
             {
@@ -89,7 +112,8 @@ namespace Clases
                 }
 
             }
-            finally {
+            finally
+            {
                 clsConexion.closeCon();
             }
             return resp;
@@ -110,9 +134,9 @@ namespace Clases
                 {
                     if (row.RowState == DataRowState.Modified)
                     {
-                        
+
                         int agregar = Int32.Parse(row["Agregar gr."].ToString());
-                       
+
                         int idSucursal = Int32.Parse(row["IdSucursal"].ToString());
                         int idIngrediente = Int32.Parse(row["IdIngrediente"].ToString());
                         comando.CommandText = string.Format("Update Deposito set Stock=Stock+{0} where IdSucursal={1} and IdIngrediente={2};", agregar, idSucursal, idIngrediente);

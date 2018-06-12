@@ -1,6 +1,6 @@
 ﻿namespace ProyectoLab3
 {
-    partial class frmEditPlato
+    partial class FrmEditPlato
     {
         /// <summary>
         /// Required designer variable.
@@ -146,7 +146,7 @@
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar seleccionado";
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // label3
             // 
@@ -165,7 +165,7 @@
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
             this.tbNombre.TabIndex = 6;
-            this.tbNombre.TextChanged += new System.EventHandler(this.tbNombre_TextChanged);
+            this.tbNombre.TextChanged += new System.EventHandler(this.TbNombre_TextChanged);
             // 
             // frmEditPlato
             // 
@@ -176,7 +176,7 @@
             this.Name = "frmEditPlato";
             this.Text = "Ver Platos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmEditPlato_Load);
+            this.Load += new System.EventHandler(this.FrmEditPlato_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

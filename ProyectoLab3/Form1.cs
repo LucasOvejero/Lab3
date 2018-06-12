@@ -28,7 +28,7 @@ namespace ProyectoLab3
         frmLogin ofrmLogin;
         frmCrearPlatoSeleccionIng ofrmPlato;
         frmMiDeposito ofrMiDepo;
-        frmEditPlato ofrmEditPlato;
+        FrmEditPlato ofrmEditPlato;
         frmVenta ofrmVenta;
         frmGraficos ofrmGraficos;
         frmNuevaSolicitud ofrmNSolicitud;
@@ -56,6 +56,13 @@ namespace ProyectoLab3
                
                default: break;
            }
+
+            dgvCritico.DataSource = clsDeposito.ObtenerCriticos();
+
+            if (dgvCritico.Rows.Count <= 0)
+            {
+                pnlCritico.Visible = false;
+            }
           
         }
 
@@ -128,7 +135,7 @@ namespace ProyectoLab3
 
         private void BtnEditPlato_Click(object sender, EventArgs e)
         {
-            ofrmEditPlato = new frmEditPlato();
+            ofrmEditPlato = new FrmEditPlato();
             ofrmEditPlato.ShowDialog();
         }
 
@@ -160,6 +167,11 @@ namespace ProyectoLab3
         {
             ofrmHistorial = new frmHistorial();
             ofrmHistorial.ShowDialog();
+        }
+
+        private void pnlVendedor_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

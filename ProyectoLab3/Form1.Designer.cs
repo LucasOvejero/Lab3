@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnDeposito = new System.Windows.Forms.Button();
             this.btnVenta = new System.Windows.Forms.Button();
@@ -48,6 +49,10 @@
             this.btnEditPlato = new System.Windows.Forms.Button();
             this.btnPlato = new System.Windows.Forms.Button();
             this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.dgvCritico = new Componentes.GrillaFormatead();
+            this.pnlCritico = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlVendedor.SuspendLayout();
             this.gbVentas.SuspendLayout();
             this.gbDeposito.SuspendLayout();
@@ -55,6 +60,8 @@
             this.gbProductos.SuspendLayout();
             this.gbPlatos.SuspendLayout();
             this.pnlAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).BeginInit();
+            this.pnlCritico.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSolicitudes
@@ -111,12 +118,15 @@
             // 
             this.pnlVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlVendedor.Controls.Add(this.pnlCritico);
+            this.pnlVendedor.Controls.Add(this.label1);
             this.pnlVendedor.Controls.Add(this.gbVentas);
             this.pnlVendedor.Controls.Add(this.gbDeposito);
             this.pnlVendedor.Location = new System.Drawing.Point(1, 115);
             this.pnlVendedor.Name = "pnlVendedor";
-            this.pnlVendedor.Size = new System.Drawing.Size(1217, 172);
+            this.pnlVendedor.Size = new System.Drawing.Size(1217, 527);
             this.pnlVendedor.TabIndex = 12;
+            this.pnlVendedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlVendedor_Paint);
             // 
             // gbVentas
             // 
@@ -275,6 +285,59 @@
             this.pnlAdmin.Size = new System.Drawing.Size(1219, 110);
             this.pnlAdmin.TabIndex = 11;
             // 
+            // dgvCritico
+            // 
+            this.dgvCritico.AllowUserToAddRows = false;
+            this.dgvCritico.AllowUserToResizeColumns = false;
+            this.dgvCritico.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCritico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCritico.Location = new System.Drawing.Point(27, 42);
+            this.dgvCritico.MultiSelect = false;
+            this.dgvCritico.Name = "dgvCritico";
+            this.dgvCritico.ReadOnly = true;
+            this.dgvCritico.RowHeadersVisible = false;
+            this.dgvCritico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCritico.Size = new System.Drawing.Size(342, 300);
+            this.dgvCritico.TabIndex = 13;
+            // 
+            // pnlCritico
+            // 
+            this.pnlCritico.Controls.Add(this.label2);
+            this.pnlCritico.Controls.Add(this.dgvCritico);
+            this.pnlCritico.Location = new System.Drawing.Point(11, 157);
+            this.pnlCritico.Name = "pnlCritico";
+            this.pnlCritico.Size = new System.Drawing.Size(412, 345);
+            this.pnlCritico.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(405, 25);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Sin Ningun Stock en cantidad Critica.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
+            this.label2.Location = new System.Drawing.Point(24, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(333, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Atencion, los siguientes productos estan en stock critico:\r\n";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,12 +353,16 @@
             this.Enter += new System.EventHandler(this.Form1_Enter);
             this.MouseEnter += new System.EventHandler(this.Form1_MouseEnter);
             this.pnlVendedor.ResumeLayout(false);
+            this.pnlVendedor.PerformLayout();
             this.gbVentas.ResumeLayout(false);
             this.gbDeposito.ResumeLayout(false);
             this.gbSucursal.ResumeLayout(false);
             this.gbProductos.ResumeLayout(false);
             this.gbPlatos.ResumeLayout(false);
             this.pnlAdmin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).EndInit();
+            this.pnlCritico.ResumeLayout(false);
+            this.pnlCritico.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -323,6 +390,10 @@
         private System.Windows.Forms.Button btnPlato;
         private System.Windows.Forms.Panel pnlAdmin;
         private System.Windows.Forms.Button btnHistorial;
+        private System.Windows.Forms.Panel pnlCritico;
+        private Componentes.GrillaFormatead dgvCritico;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

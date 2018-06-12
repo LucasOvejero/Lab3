@@ -11,26 +11,26 @@ using Componentes;
 using Modelo;
 namespace ProyectoLab3
 {
-    public partial class frmEditPlato : Form
+    public partial class FrmEditPlato : Form
     {
-        public frmEditPlato()
+        public FrmEditPlato()
         {
             InitializeComponent();
         }
         DataTable platos,ingredientes;
         DataSet ds;
         BindingSource bsPlato = new BindingSource(), bsIng = new BindingSource();
-        private void frmEditPlato_Load(object sender, EventArgs e)
+        private void FrmEditPlato_Load(object sender, EventArgs e)
         {
             try
             {
-                setear();
+                Setear();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void setear() {
+        private void Setear() {
             dgvIngredientes.DataSource = null;
             dgvPlatos.DataSource = null;
             platos = clsPlato.seleccionarPlato();
@@ -47,18 +47,22 @@ namespace ProyectoLab3
             dgvIngredientes.DataSource = bsIng;
         
         }
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
             List<Ingrediente> ingredientes = new List<Ingrediente>();
             foreach (DataGridViewRow r in dgvIngredientes.Rows) {
-                Ingrediente ing=new Ingrediente();
-                ing.IdIngrediente=int.Parse(r.Cells["IdIngrediente"].Value.ToString());
+                Ingrediente ing = new Ingrediente
+                {
+                    IdIngrediente = int.Parse(r.Cells["IdIngrediente"].Value.ToString())
+                };
                 int cantidad = int.Parse(r.Cells["Cantidad"].Value.ToString());
                 ing.NombreProducto = r.Cells["NombreProducto"].Value.ToString();
                 ing.CostoxKg = double.Parse(r.Cells["CostoxKg"].Value.ToString());
                 ing.IdCategoria = int.Parse(r.Cells["IdCategoria"].Value.ToString());
-                ing.Plato = new PanelPlato(ing.NombreProducto);
-                ing.Plato.Tag = ing.IdIngrediente;
+                ing.Plato = new PanelPlato(ing.NombreProducto)
+                {
+                    Tag = ing.IdIngrediente
+                };
                 ing.Plato.NudGramos.Value = cantidad;
                 ingredientes.Add(ing);
             }
@@ -74,10 +78,10 @@ namespace ProyectoLab3
             };
             frmCrearPlatoSeleccionIng ofrmSelIng = new frmCrearPlatoSeleccionIng(ingredientes, p);
             ofrmSelIng.ShowDialog();
-            setear();
+            Setear();
         }
 
-        private void tbNombre_TextChanged(object sender, EventArgs e)
+        private void TbNombre_TextChanged(object sender, EventArgs e)
         {
             //platos.DefaultView.RowFilter=string.Format("Nombre like '%{0}%'",tbNombre.Text);
             //(bsPlato.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre like '%{0}%'", tbNombre.Text);

@@ -82,6 +82,7 @@
     <Compile Include="frmTicketVenta.Designer.cs">
       <DependentUpon>frmTicketVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="TicketVenta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
