@@ -1,6 +1,6 @@
 ﻿namespace ProyectoLab3
 {
-    partial class frmSolicitudes
+    partial class FrmSolicitudes
     {
         /// <summary>
         /// Required designer variable.
@@ -72,8 +72,8 @@
             this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSolicitudes.Size = new System.Drawing.Size(399, 216);
             this.dgvSolicitudes.TabIndex = 0;
-            this.dgvSolicitudes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellContentClick);
-            this.dgvSolicitudes.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_RowEnter);
+            this.dgvSolicitudes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_CellContentClick);
+            this.dgvSolicitudes.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_RowEnter);
             // 
             // dgvPeticiones
             // 
@@ -98,7 +98,7 @@
             this.dgvPeticiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPeticiones.Size = new System.Drawing.Size(399, 216);
             this.dgvPeticiones.TabIndex = 1;
-            this.dgvPeticiones.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeticiones_RowEnter);
+            this.dgvPeticiones.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPeticiones_RowEnter);
             // 
             // lblPeticiones
             // 
@@ -185,7 +185,7 @@
             this.btnAccept.TabIndex = 6;
             this.btnAccept.Text = "ACEPTAR";
             this.btnAccept.UseVisualStyleBackColor = true;
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            this.btnAccept.Click += new System.EventHandler(this.BtnAccept_Click);
             // 
             // btnCancel
             // 
@@ -196,7 +196,7 @@
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "RECHAZAR";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // pnlAceptarRechazar
             // 
@@ -222,7 +222,7 @@
             this.Name = "frmSolicitudes";
             this.Text = "Solicitudes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmSolicitudes_Load);
+            this.Load += new System.EventHandler(this.FrmSolicitudes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticiones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaFormatead1)).EndInit();

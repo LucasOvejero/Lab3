@@ -36,6 +36,7 @@
             this.pnlVendedor = new System.Windows.Forms.Panel();
             this.gbVentas = new System.Windows.Forms.GroupBox();
             this.gbDeposito = new System.Windows.Forms.GroupBox();
+            this.btnHistorial = new System.Windows.Forms.Button();
             this.gbSucursal = new System.Windows.Forms.GroupBox();
             this.btnGraficosVentaGeneral = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.btnEditPlato = new System.Windows.Forms.Button();
             this.btnPlato = new System.Windows.Forms.Button();
             this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.btnHistorial = new System.Windows.Forms.Button();
             this.pnlVendedor.SuspendLayout();
             this.gbVentas.SuspendLayout();
             this.gbDeposito.SuspendLayout();
@@ -65,7 +65,7 @@
             this.btnSolicitudes.TabIndex = 9;
             this.btnSolicitudes.Text = "Administrar \r\nSolicitudes";
             this.btnSolicitudes.UseVisualStyleBackColor = true;
-            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
+            this.btnSolicitudes.Click += new System.EventHandler(this.BtnSolicitudes_Click);
             // 
             // btnDeposito
             // 
@@ -75,7 +75,7 @@
             this.btnDeposito.TabIndex = 8;
             this.btnDeposito.Text = "Deposito";
             this.btnDeposito.UseVisualStyleBackColor = true;
-            this.btnDeposito.Click += new System.EventHandler(this.btnDeposito_Click);
+            this.btnDeposito.Click += new System.EventHandler(this.BtnDeposito_Click);
             // 
             // btnVenta
             // 
@@ -85,7 +85,7 @@
             this.btnVenta.TabIndex = 11;
             this.btnVenta.Text = "Vender";
             this.btnVenta.UseVisualStyleBackColor = true;
-            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
+            this.btnVenta.Click += new System.EventHandler(this.BtnVenta_Click);
             // 
             // btnVentas
             // 
@@ -95,7 +95,7 @@
             this.btnVentas.TabIndex = 12;
             this.btnVentas.Text = "Graficos Ventas";
             this.btnVentas.UseVisualStyleBackColor = true;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            this.btnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
             // 
             // btnNewSolicitudes
             // 
@@ -105,7 +105,7 @@
             this.btnNewSolicitudes.TabIndex = 10;
             this.btnNewSolicitudes.Text = "Nueva Solicitud";
             this.btnNewSolicitudes.UseVisualStyleBackColor = true;
-            this.btnNewSolicitudes.Click += new System.EventHandler(this.btnNewSolicitudes_Click);
+            this.btnNewSolicitudes.Click += new System.EventHandler(this.BtnNewSolicitudes_Click);
             // 
             // pnlVendedor
             // 
@@ -115,7 +115,7 @@
             this.pnlVendedor.Controls.Add(this.gbDeposito);
             this.pnlVendedor.Location = new System.Drawing.Point(1, 115);
             this.pnlVendedor.Name = "pnlVendedor";
-            this.pnlVendedor.Size = new System.Drawing.Size(1217, 192);
+            this.pnlVendedor.Size = new System.Drawing.Size(1217, 172);
             this.pnlVendedor.TabIndex = 12;
             // 
             // gbVentas
@@ -145,6 +145,16 @@
             this.gbDeposito.TabStop = false;
             this.gbDeposito.Text = "Deposito";
             // 
+            // btnHistorial
+            // 
+            this.btnHistorial.Location = new System.Drawing.Point(294, 27);
+            this.btnHistorial.Name = "btnHistorial";
+            this.btnHistorial.Size = new System.Drawing.Size(75, 42);
+            this.btnHistorial.TabIndex = 10;
+            this.btnHistorial.Text = "Historial de Solicitudes";
+            this.btnHistorial.UseVisualStyleBackColor = true;
+            this.btnHistorial.Click += new System.EventHandler(this.BtnHistorial_Click);
+            // 
             // gbSucursal
             // 
             this.gbSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
@@ -166,7 +176,7 @@
             this.btnGraficosVentaGeneral.TabIndex = 3;
             this.btnGraficosVentaGeneral.Text = "Graficos Ventas";
             this.btnGraficosVentaGeneral.UseVisualStyleBackColor = true;
-            this.btnGraficosVentaGeneral.Click += new System.EventHandler(this.btnGraficosVentaGeneral_Click);
+            this.btnGraficosVentaGeneral.Click += new System.EventHandler(this.BtnGraficosVentaGeneral_Click);
             // 
             // btnEmpleados
             // 
@@ -176,7 +186,7 @@
             this.btnEmpleados.TabIndex = 2;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            this.btnEmpleados.Click += new System.EventHandler(this.BtnEmpleados_Click);
             // 
             // btnSuc
             // 
@@ -186,7 +196,7 @@
             this.btnSuc.TabIndex = 1;
             this.btnSuc.Text = "Sucursales";
             this.btnSuc.UseVisualStyleBackColor = true;
-            this.btnSuc.Click += new System.EventHandler(this.btnSuc_Click);
+            this.btnSuc.Click += new System.EventHandler(this.BtnSuc_Click);
             // 
             // gbProductos
             // 
@@ -209,7 +219,7 @@
             this.btnDepositos.TabIndex = 4;
             this.btnDepositos.Text = "Depositos";
             this.btnDepositos.UseVisualStyleBackColor = true;
-            this.btnDepositos.Click += new System.EventHandler(this.btnIngredientes_Click);
+            this.btnDepositos.Click += new System.EventHandler(this.BtnIngredientes_Click);
             // 
             // btnBebidas
             // 
@@ -219,7 +229,7 @@
             this.btnBebidas.TabIndex = 5;
             this.btnBebidas.Text = "Productos";
             this.btnBebidas.UseVisualStyleBackColor = true;
-            this.btnBebidas.Click += new System.EventHandler(this.btnBebidas_Click);
+            this.btnBebidas.Click += new System.EventHandler(this.BtnBebidas_Click);
             // 
             // gbPlatos
             // 
@@ -242,7 +252,7 @@
             this.btnEditPlato.TabIndex = 7;
             this.btnEditPlato.Text = "Ver Platos";
             this.btnEditPlato.UseVisualStyleBackColor = true;
-            this.btnEditPlato.Click += new System.EventHandler(this.btnEditPlato_Click);
+            this.btnEditPlato.Click += new System.EventHandler(this.BtnEditPlato_Click);
             // 
             // btnPlato
             // 
@@ -252,7 +262,7 @@
             this.btnPlato.TabIndex = 6;
             this.btnPlato.Text = "Agregar Platos";
             this.btnPlato.UseVisualStyleBackColor = true;
-            this.btnPlato.Click += new System.EventHandler(this.btnPlato_Click);
+            this.btnPlato.Click += new System.EventHandler(this.BtnPlato_Click);
             // 
             // pnlAdmin
             // 
@@ -264,16 +274,6 @@
             this.pnlAdmin.Name = "pnlAdmin";
             this.pnlAdmin.Size = new System.Drawing.Size(1219, 110);
             this.pnlAdmin.TabIndex = 11;
-            // 
-            // btnHistorial
-            // 
-            this.btnHistorial.Location = new System.Drawing.Point(294, 27);
-            this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(75, 42);
-            this.btnHistorial.TabIndex = 10;
-            this.btnHistorial.Text = "Historial de Solicitudes";
-            this.btnHistorial.UseVisualStyleBackColor = true;
-            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // Form1
             // 

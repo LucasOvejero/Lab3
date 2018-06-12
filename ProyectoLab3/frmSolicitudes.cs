@@ -10,12 +10,12 @@ using Clases;
 using System.Data.SqlClient;
 namespace ProyectoLab3
 {
-    public partial class frmSolicitudes : Form
+    public partial class FrmSolicitudes : Form
     {
         //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
         int IdSession = clsConexion.SucursalSession;
 
-        public frmSolicitudes()
+        public FrmSolicitudes()
         {
             InitializeComponent();
 
@@ -24,11 +24,11 @@ namespace ProyectoLab3
             if (IdSession <= 0) { IdSession = 1; }
 
 
-            refrezcarVista();
+            RefrezcarVista();
 
         }
 
-        private void refrezcarVista()
+        private void RefrezcarVista()
         {
             dgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesRecibidasVigentes(IdSession);
             dgvPeticiones.DataSource = clsSolicitud.MisSolcitudesRealizadasVigentes(IdSession);
@@ -36,7 +36,7 @@ namespace ProyectoLab3
             dgvDetalle.Rows.Clear();
         }
 
-        private void btnAccept_Click(object sender, EventArgs e)
+        private void BtnAccept_Click(object sender, EventArgs e)
         {
             try
             {
@@ -48,10 +48,10 @@ namespace ProyectoLab3
                 }
                 else
                 {
-                    migrarStock();
+                    MigrarStock();
                     clsSolicitud.aceptarSolicitud((int)dgvSolicitudes.SelectedRows[0].Cells[0].Value);
                     MessageBox.Show("Transaccion Completa");
-                    refrezcarVista();
+                    RefrezcarVista();
                 }
 
                 //
@@ -78,7 +78,7 @@ namespace ProyectoLab3
             return respuesta;
         }
 
-        private void migrarStock()
+        private void MigrarStock()
         {
             foreach (DataGridViewRow r in dgvDetalle.Rows)
             {
@@ -92,7 +92,7 @@ namespace ProyectoLab3
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             try
             {
@@ -102,37 +102,37 @@ namespace ProyectoLab3
                 if (dialogResult == DialogResult.Yes)
                 {
                     clsSolicitud.rechazarSolicitud((int)dgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value);
-                    refrezcarVista();
+                    RefrezcarVista();
                 }
             }
             catch (Exception ex) { Console.Write(ex.Message); }
         }
 
-        private void dgvPeticiones_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void DgvPeticiones_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int IdPeticion = (int)dgvPeticiones.SelectedRows[0].Cells[0].Value;
 
                 dgvDetalle.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(IdPeticion);
-                formatearDetalle();
+                FormatearDetalle();
                 pnlAceptarRechazar.Visible = false;
             }
             catch (Exception ex) { Console.Write(ex); }
 
         }
 
-        private void dgvSolicitudes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvSolicitudes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void frmSolicitudes_Load(object sender, EventArgs e)
+        private void FrmSolicitudes_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void dgvSolicitudes_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void DgvSolicitudes_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -142,7 +142,7 @@ namespace ProyectoLab3
 
                 dgvDetalle.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(IdSolicitud);
 
-                formatearDetalle();
+                FormatearDetalle();
 
 
                 pnlAceptarRechazar.Visible = true;
@@ -150,7 +150,7 @@ namespace ProyectoLab3
             catch (Exception ex) { Console.Write(ex.Message); }
         }
 
-        private void formatearDetalle()
+        private void FormatearDetalle()
         {
             dgvDetalle.Columns["cantidad"].Visible = false;
 

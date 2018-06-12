@@ -17,86 +17,86 @@ namespace ProyectoLab3
             InitializeComponent();
         }
 
-        private void frmHistorial_Load(object sender, EventArgs e)
+        private void FrmHistorial_Load(object sender, EventArgs e)
         {
-            dgvHistorial.DataSource = clsSolicitud.GetHistorial(); formatoGrillaHistorial();
+            dgvHistorial.DataSource = clsSolicitud.GetHistorial(); FormatoGrillaHistorial();
             rbAmbas.Checked = true;
-            formatoGrillaHistorial();
+            FormatoGrillaHistorial();
         }
 
-        private void grillaFormatead1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void GrillaFormatead1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void tbFiltro_TextChanged(object sender, EventArgs e)
+        private void TbFiltro_TextChanged(object sender, EventArgs e)
         {
             /*DataTable dt = (DataTable)dgvHistorial.DataSource;
             dt.DefaultView.RowFilter.ToString = 
             dgvHistorial.Refresh();*/
         }
 
-        private void rbAmbas_CheckedChanged(object sender, EventArgs e)
+        private void RbAmbas_CheckedChanged(object sender, EventArgs e)
         {
             if (rbAmbas.Checked)
             {
                 dgvHistorial.DataSource = clsSolicitud.GetHistorial();
-                formatoGrillaHistorial();
+                FormatoGrillaHistorial();
             }
         }
 
-        private void rbEnviadas_CheckedChanged(object sender, EventArgs e)
+        private void RbEnviadas_CheckedChanged(object sender, EventArgs e)
         {
             if (rbEnviadas.Checked)
             {
                 dgvHistorial.DataSource = clsSolicitud.Enviadas();
-                formatoGrillaHistorial();
+                FormatoGrillaHistorial();
             }
         }
 
-        private void rbRecibidas_CheckedChanged(object sender, EventArgs e)
+        private void RbRecibidas_CheckedChanged(object sender, EventArgs e)
         {
             if (rbRecibidas.Checked)
             {
                 dgvHistorial.DataSource = clsSolicitud.Recibidas();
-                formatoGrillaHistorial();
+                FormatoGrillaHistorial();
             }
         }
 
-        private void rbAceptadas_CheckedChanged(object sender, EventArgs e)
+        private void RbAceptadas_CheckedChanged(object sender, EventArgs e)
         {
             if (rbAceptadas.Checked)
             {
                 DataTable dt = (DataTable)dgvHistorial.DataSource;
                 dt.DefaultView.RowFilter = "Estado = 1";
                 dgvHistorial.Refresh();
-                formatoGrillaHistorial();
+                FormatoGrillaHistorial();
             }
         }
 
-        private void rbRechazadas_CheckedChanged(object sender, EventArgs e)
+        private void RbRechazadas_CheckedChanged(object sender, EventArgs e)
         {
             if (rbRechazadas.Checked)
             {
                 DataTable dt = (DataTable)dgvHistorial.DataSource;
                 dt.DefaultView.RowFilter = "Estado = 0";
                 dgvHistorial.Refresh();
-                formatoGrillaHistorial();
+                FormatoGrillaHistorial();
             }
         }
 
-        private void rbTodoEstado_CheckedChanged(object sender, EventArgs e)
+        private void RbTodoEstado_CheckedChanged(object sender, EventArgs e)
         {
             if (rbTodoEstado.Checked)
             {
                 DataTable dt = (DataTable)dgvHistorial.DataSource;
                 dt.DefaultView.RowFilter = "";
                 dgvHistorial.Refresh();
-                formatoGrillaHistorial();
+                FormatoGrillaHistorial();
             }
         }
 
-        private void formatoGrillaHistorial()
+        private void FormatoGrillaHistorial()
         {
             dgvHistorial.Columns["estado"].Visible = false;
 
@@ -119,7 +119,7 @@ namespace ProyectoLab3
 
         }
 
-        private void dgvHistorial_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void DgvHistorial_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -143,9 +143,9 @@ namespace ProyectoLab3
             catch (Exception ex) { Console.WriteLine(ex.Message); }
         }
 
-        private void dgvHistorial_Sorted(object sender, EventArgs e)
+        private void DgvHistorial_Sorted(object sender, EventArgs e)
         {
-            formatoGrillaHistorial();
+            FormatoGrillaHistorial();
         }
     }
 }

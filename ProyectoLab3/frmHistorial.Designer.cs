@@ -75,7 +75,7 @@
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalle.Size = new System.Drawing.Size(303, 534);
             this.dgvDetalle.TabIndex = 0;
-            this.dgvDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaFormatead1_CellContentClick);
+            this.dgvDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaFormatead1_CellContentClick);
             // 
             // lblHistorial
             // 
@@ -110,9 +110,9 @@
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.Size = new System.Drawing.Size(302, 534);
             this.dgvHistorial.TabIndex = 0;
-            this.dgvHistorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaFormatead1_CellContentClick);
-            this.dgvHistorial.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorial_RowEnter);
-            this.dgvHistorial.Sorted += new System.EventHandler(this.dgvHistorial_Sorted);
+            this.dgvHistorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaFormatead1_CellContentClick);
+            this.dgvHistorial.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHistorial_RowEnter);
+            this.dgvHistorial.Sorted += new System.EventHandler(this.DgvHistorial_Sorted);
             // 
             // label1
             // 
@@ -146,7 +146,7 @@
             this.rbAmbas.TabStop = true;
             this.rbAmbas.Text = "Ambas";
             this.rbAmbas.UseVisualStyleBackColor = true;
-            this.rbAmbas.CheckedChanged += new System.EventHandler(this.rbAmbas_CheckedChanged);
+            this.rbAmbas.CheckedChanged += new System.EventHandler(this.RbAmbas_CheckedChanged);
             // 
             // rbEnviadas
             // 
@@ -158,7 +158,7 @@
             this.rbEnviadas.TabStop = true;
             this.rbEnviadas.Text = "Enviadas";
             this.rbEnviadas.UseVisualStyleBackColor = true;
-            this.rbEnviadas.CheckedChanged += new System.EventHandler(this.rbEnviadas_CheckedChanged);
+            this.rbEnviadas.CheckedChanged += new System.EventHandler(this.RbEnviadas_CheckedChanged);
             // 
             // rbRecibidas
             // 
@@ -170,7 +170,7 @@
             this.rbRecibidas.TabStop = true;
             this.rbRecibidas.Text = "Recibidas";
             this.rbRecibidas.UseVisualStyleBackColor = true;
-            this.rbRecibidas.CheckedChanged += new System.EventHandler(this.rbRecibidas_CheckedChanged);
+            this.rbRecibidas.CheckedChanged += new System.EventHandler(this.RbRecibidas_CheckedChanged);
             // 
             // label2
             // 
@@ -189,7 +189,7 @@
             this.tbFiltro.Size = new System.Drawing.Size(119, 20);
             this.tbFiltro.TabIndex = 3;
             this.tbFiltro.Visible = false;
-            this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
+            this.tbFiltro.TextChanged += new System.EventHandler(this.TbFiltro_TextChanged);
             // 
             // panel2
             // 
@@ -213,7 +213,7 @@
             this.rbTodoEstado.TabStop = true;
             this.rbTodoEstado.Text = "Ambas";
             this.rbTodoEstado.UseVisualStyleBackColor = true;
-            this.rbTodoEstado.CheckedChanged += new System.EventHandler(this.rbTodoEstado_CheckedChanged);
+            this.rbTodoEstado.CheckedChanged += new System.EventHandler(this.RbTodoEstado_CheckedChanged);
             // 
             // rbRechazadas
             // 
@@ -225,7 +225,7 @@
             this.rbRechazadas.TabStop = true;
             this.rbRechazadas.Text = "Rechazadas";
             this.rbRechazadas.UseVisualStyleBackColor = true;
-            this.rbRechazadas.CheckedChanged += new System.EventHandler(this.rbRechazadas_CheckedChanged);
+            this.rbRechazadas.CheckedChanged += new System.EventHandler(this.RbRechazadas_CheckedChanged);
             // 
             // rbAceptadas
             // 
@@ -237,7 +237,7 @@
             this.rbAceptadas.TabStop = true;
             this.rbAceptadas.Text = "Aceptadas";
             this.rbAceptadas.UseVisualStyleBackColor = true;
-            this.rbAceptadas.CheckedChanged += new System.EventHandler(this.rbAceptadas_CheckedChanged);
+            this.rbAceptadas.CheckedChanged += new System.EventHandler(this.RbAceptadas_CheckedChanged);
             // 
             // label3
             // 
@@ -277,7 +277,7 @@
             this.Name = "frmHistorial";
             this.Text = "frmHistorial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmHistorial_Load);
+            this.Load += new System.EventHandler(this.FrmHistorial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
             this.panel1.ResumeLayout(false);
