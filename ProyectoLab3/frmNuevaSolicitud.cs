@@ -72,7 +72,7 @@ namespace ProyectoLab3
 
         private void tbCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsNumber(e.KeyChar))
+            if (!(char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar)))
                 e.Handled = true;
         }
 
@@ -136,5 +136,25 @@ namespace ProyectoLab3
             return valor;
         }
 
+        private void tbBusquedaIngrediente_TextChanged(object sender, EventArgs e)
+        {
+            //NombreProducto
+            DataTable dt = (DataTable)dgvIngredientes.DataSource;
+            dt.DefaultView.RowFilter = string.Format("NombreProducto like '%{0}%'", tbBusquedaIngrediente.Text);
+            dgvIngredientes.Refresh();
+        }
+
+        private void tbBusquedaSucursal_TextChanged(object sender, EventArgs e)
+        {
+            //Direccion
+            DataTable dt = (DataTable)dgvSucursales.DataSource;
+            dt.DefaultView.RowFilter = string.Format("Direccion like '%{0}%'", tbBusquedaSucursal.Text);
+            dgvSucursales.Refresh();
+        }
+
+        private void tbCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

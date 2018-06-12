@@ -31,21 +31,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSolicitudes = new Componentes.GrillaFormatead();
             this.dgvPeticiones = new Componentes.GrillaFormatead();
             this.lblPeticiones = new System.Windows.Forms.Label();
             this.lblSolicitudes = new System.Windows.Forms.Label();
-
             this.grillaFormatead1 = new Componentes.GrillaFormatead();
-
             this.dgvDetalle = new Componentes.GrillaFormatead();
-
             this.lblDetalles = new System.Windows.Forms.Label();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.pnlAceptarRechazar = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaFormatead1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
+            this.pnlAceptarRechazar.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSolicitudes
@@ -88,7 +89,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPeticiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPeticiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPeticiones.Location = new System.Drawing.Point(12, 307);
+            this.dgvPeticiones.Location = new System.Drawing.Point(12, 312);
             this.dgvPeticiones.MultiSelect = false;
             this.dgvPeticiones.Name = "dgvPeticiones";
             this.dgvPeticiones.ReadOnly = true;
@@ -119,11 +120,11 @@
             this.lblSolicitudes.TabIndex = 3;
             this.lblSolicitudes.Text = "Mis Solicitudes Recibidas";
             // 
-            // dgvDetalle
+            // grillaFormatead1
             // 
-            this.dgvDetalle.AllowUserToAddRows = false;
-            this.dgvDetalle.AllowUserToResizeColumns = false;
-            this.dgvDetalle.AllowUserToResizeRows = false;
+            this.grillaFormatead1.AllowUserToAddRows = false;
+            this.grillaFormatead1.AllowUserToResizeColumns = false;
+            this.grillaFormatead1.AllowUserToResizeRows = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,7 +132,29 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.grillaFormatead1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.grillaFormatead1.Location = new System.Drawing.Point(0, 0);
+            this.grillaFormatead1.MultiSelect = false;
+            this.grillaFormatead1.Name = "grillaFormatead1";
+            this.grillaFormatead1.ReadOnly = true;
+            this.grillaFormatead1.RowHeadersVisible = false;
+            this.grillaFormatead1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grillaFormatead1.Size = new System.Drawing.Size(240, 150);
+            this.grillaFormatead1.TabIndex = 0;
+            // 
+            // dgvDetalle
+            // 
+            this.dgvDetalle.AllowUserToAddRows = false;
+            this.dgvDetalle.AllowUserToResizeColumns = false;
+            this.dgvDetalle.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalle.Location = new System.Drawing.Point(481, 43);
             this.dgvDetalle.MultiSelect = false;
@@ -156,7 +179,7 @@
             // btnAccept
             // 
             this.btnAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAccept.Location = new System.Drawing.Point(536, 446);
+            this.btnAccept.Location = new System.Drawing.Point(27, 3);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(90, 48);
             this.btnAccept.TabIndex = 6;
@@ -167,7 +190,7 @@
             // btnCancel
             // 
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Location = new System.Drawing.Point(653, 446);
+            this.btnCancel.Location = new System.Drawing.Point(177, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(82, 48);
             this.btnCancel.TabIndex = 7;
@@ -175,13 +198,21 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // pnlAceptarRechazar
+            // 
+            this.pnlAceptarRechazar.Controls.Add(this.btnAccept);
+            this.pnlAceptarRechazar.Controls.Add(this.btnCancel);
+            this.pnlAceptarRechazar.Location = new System.Drawing.Point(481, 456);
+            this.pnlAceptarRechazar.Name = "pnlAceptarRechazar";
+            this.pnlAceptarRechazar.Size = new System.Drawing.Size(287, 72);
+            this.pnlAceptarRechazar.TabIndex = 8;
+            // 
             // frmSolicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 540);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAccept);
+            this.Controls.Add(this.pnlAceptarRechazar);
             this.Controls.Add(this.lblDetalles);
             this.Controls.Add(this.dgvDetalle);
             this.Controls.Add(this.lblSolicitudes);
@@ -194,7 +225,9 @@
             this.Load += new System.EventHandler(this.frmSolicitudes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaFormatead1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
+            this.pnlAceptarRechazar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +247,6 @@
         private System.Windows.Forms.Label lblDetalles;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Panel pnlAceptarRechazar;
     }
 }

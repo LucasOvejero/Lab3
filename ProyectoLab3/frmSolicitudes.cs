@@ -33,6 +33,7 @@ namespace ProyectoLab3
             dgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesRecibidasVigentes(IdSession);
             dgvPeticiones.DataSource = clsSolicitud.MisSolcitudesRealizadasVigentes(IdSession);
             dgvDetalle.Columns.Add("cantidadFormateada", "Cantidad");
+            dgvDetalle.Rows.Clear();
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -114,6 +115,8 @@ namespace ProyectoLab3
                 int IdPeticion = (int)dgvPeticiones.SelectedRows[0].Cells[0].Value;
 
                 dgvDetalle.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(IdPeticion);
+                formatearDetalle();
+                pnlAceptarRechazar.Visible = false;
             }
             catch (Exception ex) { Console.Write(ex); }
 
@@ -140,6 +143,9 @@ namespace ProyectoLab3
                 dgvDetalle.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(IdSolicitud);
 
                 formatearDetalle();
+
+
+                pnlAceptarRechazar.Visible = true;
             }
             catch (Exception ex) { Console.Write(ex.Message); }
         }

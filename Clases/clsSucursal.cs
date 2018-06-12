@@ -53,7 +53,7 @@ namespace Clases
 
         public static DataTable seleccionarSucursales()
         {
-            comando = new SqlCommand("select IdManager,s.IdSucursal, s.Direccion,s.Telefono,  Nombre +' '+ Apellido AS Manager, s.Estado , IdLocalidad from Sucursal s  left outer join Empleado ON IdManager = IdEmpleado");
+            comando = new SqlCommand("select IdManager,s.IdSucursal, s.Direccion,s.Telefono,  Nombre +' '+ Apellido AS Manager, s.Estado , IdLocalidad from Sucursal s  left outer join Empleado ON IdManager = IdEmpleado  WHERE s.IdSucursal != " + clsConexion.SucursalSession);
             try
             {
                 sucursales = new DataTable("Sucursales");

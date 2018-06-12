@@ -152,7 +152,7 @@ namespace Clases
 
         public static bool ObtenerStockIngrediente(int IdIngrediente, int cantidad)
         {
-            comando = new SqlCommand("Select * From Deposito where IdIngrediente = " + IdIngrediente + " AND IdSucursal = " + clsConexion.SucursalSession + " AND Stock >" + cantidad + ";");
+            comando = new SqlCommand("Select * From Deposito where IdIngrediente = " + IdIngrediente + " AND IdSucursal = " + clsConexion.SucursalSession + " AND Stock >=" + cantidad + ";");
             try
             {
                 StockDeposito = new DataTable("Deposito");
