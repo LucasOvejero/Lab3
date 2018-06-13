@@ -85,7 +85,7 @@ namespace ProyectoLab3
                 int IdIngrediente = (int)r.Cells["IdIngrediente"].Value;
                 string nombre = r.Cells["NombreProducto"].Value.ToString();
                 int cantidad = (int)r.Cells["IdIngrediente"].Value;
-                int sucursalDestino = (int)r.Cells["IdIngrediente"].Value;
+                int sucursalDestino = (int)r.Cells["IdSolicitado"].Value;
 
                 clsDeposito.migrar(sucursalDestino, IdIngrediente, cantidad);
             }
