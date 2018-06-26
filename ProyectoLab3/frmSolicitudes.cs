@@ -50,7 +50,7 @@ namespace ProyectoLab3
                 {
                     MigrarStock();
                     clsSolicitud.aceptarSolicitud((int)dgvSolicitudes.SelectedRows[0].Cells[0].Value);
-                    MessageBox.Show("Transaccion Completa");
+                    MessageBox.Show("Productos Enviados. Debera esperar confirmacion de llegada.");
                     RefrezcarVista();
                 }
 
@@ -76,19 +76,6 @@ namespace ProyectoLab3
                 }
             }
             return respuesta;
-        }
-
-        private void MigrarStock()
-        {
-            foreach (DataGridViewRow r in dgvDetalle.Rows)
-            {
-                int IdIngrediente = (int)r.Cells["IdIngrediente"].Value;
-                string nombre = r.Cells["NombreProducto"].Value.ToString();
-                int cantidad = (int)r.Cells["IdIngrediente"].Value;
-                int sucursalDestino = (int)r.Cells["IdSolicitado"].Value;
-
-                clsDeposito.migrar(sucursalDestino, IdIngrediente, cantidad);
-            }
         }
 
 
@@ -170,6 +157,19 @@ namespace ProyectoLab3
 
             }
 
+        }
+
+        private void MigrarStock()
+        {
+            foreach (DataGridViewRow r in dgvDetalle.Rows)
+            {
+                int IdIngrediente = (int)r.Cells["IdIngrediente"].Value;
+                string nombre = r.Cells["NombreProducto"].Value.ToString();
+                int cantidad = (int)r.Cells["cantidad"].Value;
+                int sucursalDestino = (int)r.Cells["IdSolicitado"].Value;
+
+                clsDeposito.hacerEnvio(sucursalDestino, IdIngrediente, cantidad);
+            }
         }
 
     }

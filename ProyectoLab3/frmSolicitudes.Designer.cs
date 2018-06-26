@@ -183,7 +183,7 @@
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(90, 48);
             this.btnAccept.TabIndex = 6;
-            this.btnAccept.Text = "ACEPTAR";
+            this.btnAccept.Text = "ENVIAR";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.BtnAccept_Click);
             // 
@@ -207,7 +207,7 @@
             this.pnlAceptarRechazar.Size = new System.Drawing.Size(287, 72);
             this.pnlAceptarRechazar.TabIndex = 8;
             // 
-            // frmSolicitudes
+            // FrmSolicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,7 +219,7 @@
             this.Controls.Add(this.lblPeticiones);
             this.Controls.Add(this.dgvPeticiones);
             this.Controls.Add(this.dgvSolicitudes);
-            this.Name = "frmSolicitudes";
+            this.Name = "FrmSolicitudes";
             this.Text = "Solicitudes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmSolicitudes_Load);

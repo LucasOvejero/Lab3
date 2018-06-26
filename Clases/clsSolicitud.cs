@@ -102,6 +102,22 @@ namespace Clases
             return solicitudes;
         }
 
+        public static DataTable MisSolcitudesPorRecibir(int miId)
+        {
+            comando = new SqlCommand("select * from Solicitudes WHERE IdSolicitado = " + miId + " AND estado = 1 AND recibido is NULL");
+            try
+            {
+                solicitudes = new DataTable("Solicitudes");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(solicitudes);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return solicitudes;
+        }
+
         public static DataTable MisSolcitudesRealizadasVigentes(int miId)
         {
             comando = new SqlCommand("select * from Solicitudes WHERE IdSolicitante = " + miId + " AND estado is NULL");

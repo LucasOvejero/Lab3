@@ -201,7 +201,7 @@ namespace ProyectoLab3
                     DataRowView fila = cboCategorias.SelectedItem as DataRowView;
                     int idCategoria;
                     idCategoria = int.TryParse(fila[0].ToString(), out idCategoria) ? idCategoria : 0;
-                    r = clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text, (double)nudCostoPorKilo.Value, idCategoria);
+                    r = clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text, (double)nudCostoPorKilo.Value,  Convert.ToInt32(tbStockCritico.Text) , idCategoria);
                     MessageBox.Show(r, "Mensaje", MessageBoxButtons.OK);
                     configurarIngredientes();
                 }
@@ -216,6 +216,8 @@ namespace ProyectoLab3
 
             }
         }
+
+
 
         private void configurarIngredientes()
         {
@@ -355,8 +357,10 @@ namespace ProyectoLab3
             }
         }
 
-
-
-
+        private void tbStockCritico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

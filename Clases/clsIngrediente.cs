@@ -35,17 +35,19 @@ namespace Clases
                 clsConexion.closeCon();
             }
             return ingredientes;
-        }
+        } 
 
-        public static string insertarIngrediente(string nombre, double CostoXKilo, int IdCategoria)
+        public static string insertarIngrediente(string nombre, double CostoXKilo, int stockCritico, int IdCategoria)
         {
             string resp = "";
             comando = new SqlCommand();
-            comando.CommandText = "INSERT INTO Ingrediente (NombreProducto,CostoxKG,IdCategoria) values (@NombreProducto,@Costo,@IdCategoria);Select SCOPE_IDENTITY();";
-            SqlParameter[] parametros = new SqlParameter[3];
+            comando.CommandText = "INSERT INTO Ingrediente (NombreProducto,CostoxKG, stockCritico, IdCategoria) values (@NombreProducto,@Costo, @stockCritico,@IdCategoria);Select SCOPE_IDENTITY();";
+            SqlParameter[] parametros = new SqlParameter[4];
+
             parametros[0] = new SqlParameter("@NombreProducto", nombre);
             parametros[1] = new SqlParameter("@Costo", CostoXKilo);
-            parametros[2] = new SqlParameter("@IdCategoria", IdCategoria);
+            parametros[2] = new SqlParameter("@stockCritico", stockCritico);
+            parametros[3] = new SqlParameter("@IdCategoria", IdCategoria);
             try
             {
                 comando.Parameters.AddRange(parametros);

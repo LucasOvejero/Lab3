@@ -192,10 +192,26 @@ namespace Clases
 
         }
 
-        public static void migrar(int idDestino, int idIngrediente, int cantidad)
+        public static void hacerEnvio(int idDestino, int idIngrediente, int cantidad)
         {
             string query = "UPDATE Deposito SET Stock = Stock - " + cantidad + " WHERE IdIngrediente = " + idIngrediente + " AND IdSucursal = " + clsConexion.SucursalSession + ";";
-            query += "UPDATE Deposito SET Stock = Stock + " + cantidad + " WHERE IdIngrediente = " + idIngrediente + " AND IdSucursal = " + idDestino + ";";
+            comando = new SqlCommand(query);
+            try
+            {
+                StockDeposito = new DataTable("Deposito");
+                comando.Connection = clsConexion.getCon();
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = comando;
+                adapter.Fill(StockDeposito);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+        }
+
+
+        public static void recibirEnvio(int idDestino, int idIngrediente, int cantidad)
+        {
+            string query = "UPDATE Deposito SET Stock = Stock + " + cantidad + " WHERE IdIngrediente = " + idIngrediente + " AND IdSucursal = " + idDestino + ";";
             comando = new SqlCommand(query);
             try
             {

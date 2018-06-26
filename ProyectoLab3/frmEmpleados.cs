@@ -139,5 +139,15 @@ namespace ProyectoLab3
         {
 
         }
+
+        private void tbDni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

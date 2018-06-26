@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.nudLitros = new System.Windows.Forms.NumericUpDown();
@@ -83,9 +83,11 @@
             this.tbEditNombreIngrediente = new System.Windows.Forms.TextBox();
             this.btnActualizarIngrediente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cboCategorias = new System.Windows.Forms.ComboBox();
             this.dgvIngredientes = new Componentes.GrillaFormatead();
+            this.tbStockCritico = new System.Windows.Forms.TextBox();
             this.errpNBebida = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
@@ -397,14 +399,14 @@
             this.dgvBebidas.AllowUserToAddRows = false;
             this.dgvBebidas.AllowUserToResizeColumns = false;
             this.dgvBebidas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBebidas.Location = new System.Drawing.Point(6, 105);
             this.dgvBebidas.MultiSelect = false;
@@ -420,10 +422,10 @@
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(183, 15);
+            this.label9.Location = new System.Drawing.Point(124, 16);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 13);
             this.label9.TabIndex = 18;
@@ -431,26 +433,26 @@
             // 
             // nudCostoPorKilo
             // 
-            this.nudCostoPorKilo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudCostoPorKilo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nudCostoPorKilo.DecimalPlaces = 2;
-            this.nudCostoPorKilo.Location = new System.Drawing.Point(176, 31);
+            this.nudCostoPorKilo.Location = new System.Drawing.Point(121, 30);
             this.nudCostoPorKilo.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.nudCostoPorKilo.Name = "nudCostoPorKilo";
-            this.nudCostoPorKilo.Size = new System.Drawing.Size(94, 20);
+            this.nudCostoPorKilo.Size = new System.Drawing.Size(75, 20);
             this.nudCostoPorKilo.TabIndex = 17;
             this.nudCostoPorKilo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(66, 15);
+            this.label10.Location = new System.Drawing.Point(26, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 13);
             this.label10.TabIndex = 16;
@@ -458,9 +460,9 @@
             // 
             // tbNombreIngrediente
             // 
-            this.tbNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNombreIngrediente.Location = new System.Drawing.Point(40, 31);
+            this.tbNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNombreIngrediente.Location = new System.Drawing.Point(6, 30);
             this.tbNombreIngrediente.Name = "tbNombreIngrediente";
             this.tbNombreIngrediente.Size = new System.Drawing.Size(100, 20);
             this.tbNombreIngrediente.TabIndex = 16;
@@ -468,7 +470,7 @@
             // btnAddIngrediente
             // 
             this.btnAddIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddIngrediente.Location = new System.Drawing.Point(426, 27);
+            this.btnAddIngrediente.Location = new System.Drawing.Point(443, 27);
             this.btnAddIngrediente.Name = "btnAddIngrediente";
             this.btnAddIngrediente.Size = new System.Drawing.Size(75, 23);
             this.btnAddIngrediente.TabIndex = 19;
@@ -478,8 +480,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.groupBox5);
             this.panel1.Controls.Add(this.groupBox1);
@@ -503,8 +505,8 @@
             // 
             // label16
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(88, 16);
             this.label16.Name = "label16";
@@ -514,8 +516,8 @@
             // 
             // tbCatBeb
             // 
-            this.tbCatBeb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCatBeb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbCatBeb.Location = new System.Drawing.Point(63, 35);
             this.tbCatBeb.Name = "tbCatBeb";
             this.tbCatBeb.Size = new System.Drawing.Size(100, 20);
@@ -534,9 +536,9 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel2.Controls.Add(this.groupBox4);
             this.panel2.Controls.Add(this.groupBox3);
@@ -560,8 +562,8 @@
             // 
             // label15
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(100, 16);
             this.label15.Name = "label15";
@@ -571,8 +573,8 @@
             // 
             // tbNombreCategoria
             // 
-            this.tbNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNombreCategoria.Location = new System.Drawing.Point(75, 35);
             this.tbNombreCategoria.Name = "tbNombreCategoria";
             this.tbNombreCategoria.Size = new System.Drawing.Size(100, 20);
@@ -616,8 +618,8 @@
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(143, 16);
             this.label11.Name = "label11";
@@ -635,8 +637,8 @@
             // 
             // nudEditCostoIngrediente
             // 
-            this.nudEditCostoIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudEditCostoIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nudEditCostoIngrediente.DecimalPlaces = 2;
             this.nudEditCostoIngrediente.Location = new System.Drawing.Point(137, 32);
             this.nudEditCostoIngrediente.Maximum = new decimal(new int[] {
@@ -651,8 +653,8 @@
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(46, 16);
             this.label12.Name = "label12";
@@ -662,8 +664,8 @@
             // 
             // tbEditNombreIngrediente
             // 
-            this.tbEditNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEditNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEditNombreIngrediente.Location = new System.Drawing.Point(20, 32);
             this.tbEditNombreIngrediente.Name = "tbEditNombreIngrediente";
             this.tbEditNombreIngrediente.Size = new System.Drawing.Size(100, 20);
@@ -682,25 +684,36 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.cboCategorias);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.dgvIngredientes);
             this.groupBox2.Controls.Add(this.nudCostoPorKilo);
             this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.tbStockCritico);
             this.groupBox2.Controls.Add(this.tbNombreIngrediente);
             this.groupBox2.Controls.Add(this.btnAddIngrediente);
-            this.groupBox2.Location = new System.Drawing.Point(18, 79);
+            this.groupBox2.Location = new System.Drawing.Point(18, 62);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(518, 383);
+            this.groupBox2.Size = new System.Drawing.Size(524, 400);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Ingrediente";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(227, 16);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 13);
+            this.label19.TabIndex = 20;
+            this.label19.Text = "Stock Critico";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(318, 14);
+            this.label13.Location = new System.Drawing.Point(340, 16);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 13);
             this.label13.TabIndex = 20;
@@ -709,7 +722,7 @@
             // cboCategorias
             // 
             this.cboCategorias.FormattingEnabled = true;
-            this.cboCategorias.Location = new System.Drawing.Point(287, 31);
+            this.cboCategorias.Location = new System.Drawing.Point(316, 30);
             this.cboCategorias.Name = "cboCategorias";
             this.cboCategorias.Size = new System.Drawing.Size(121, 21);
             this.cboCategorias.TabIndex = 18;
@@ -719,27 +732,36 @@
             this.dgvIngredientes.AllowUserToAddRows = false;
             this.dgvIngredientes.AllowUserToResizeColumns = false;
             this.dgvIngredientes.AllowUserToResizeRows = false;
-            this.dgvIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(69, 58);
+            this.dgvIngredientes.Location = new System.Drawing.Point(75, 56);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngredientes.Size = new System.Drawing.Size(378, 292);
+            this.dgvIngredientes.Size = new System.Drawing.Size(378, 311);
             this.dgvIngredientes.StandardTab = true;
             this.dgvIngredientes.TabIndex = 20;
             this.dgvIngredientes.SelectionChanged += new System.EventHandler(this.dgvIngredientes_SelectionChanged);
+            // 
+            // tbStockCritico
+            // 
+            this.tbStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbStockCritico.Location = new System.Drawing.Point(214, 30);
+            this.tbStockCritico.Name = "tbStockCritico";
+            this.tbStockCritico.Size = new System.Drawing.Size(96, 20);
+            this.tbStockCritico.TabIndex = 16;
             // 
             // errpNBebida
             // 
@@ -843,5 +865,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cboEditCatBebida;
         private System.Windows.Forms.ErrorProvider errpNBebida;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox tbStockCritico;
     }
 }

@@ -208,6 +208,11 @@ namespace ProyectoLab3
             configurar();
         }
 
+        private void tbTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (lblDir.Text.Length < 5)
