@@ -113,6 +113,23 @@ namespace Clases
         }
 
 
+        public static DataTable empleadosDeSucrursal(int id)
+        {
+            comando = new SqlCommand("select * from Empleado where IdSucursal = " + id);
+            try
+            {
+                empleados = new DataTable("Empleados");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(empleados);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return empleados;
+        }
+
+
         public static bool logeo(string usuario,string clave) {
             bool valid = false;
             comando = new SqlCommand("select * from Empleado where Usuario = '" + usuario + "' AND Clave = '" + clave + "'" );
@@ -139,7 +156,7 @@ namespace Clases
             return valid;
         }
 
-        public static string insertarEmpleado(string nombre,
+        public static int insertarEmpleado(string nombre,
             string apellido,
             string dni,
             string telefono,
@@ -175,21 +192,17 @@ namespace Clases
                 comando.Connection = clsConexion.getCon();
                 int id = -1;
                 id = Convert.ToInt32(comando.ExecuteScalar());
-                if (id >= 0)
-                {
-                    resp = "El empleado " + nombre + ", " + apellido + ", DNI N° :" + dni + " fue insertado correctamente";
-                }
+                return id;
             }
             catch (SqlException e)
             {
-                resp = e.Message;
+                return -1;
             }
             finally
             {
                 clsConexion.closeCon();
             }
-
-            return resp;
+            
         }
 
 

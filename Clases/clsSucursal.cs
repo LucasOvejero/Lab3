@@ -53,7 +53,7 @@ namespace Clases
 
         public static DataTable seleccionarSucursales()
         {
-            comando = new SqlCommand("select IdManager,s.IdSucursal, s.Direccion,s.Telefono,  Nombre +' '+ Apellido AS Manager, s.Estado , IdLocalidad from Sucursal s  left outer join Empleado ON IdManager = IdEmpleado  WHERE s.IdSucursal != " + clsConexion.SucursalSession);
+            comando = new SqlCommand("select IdManager,s.IdSucursal, s.NombreInterno as \"Nombre Sucursal\" , s.Direccion,s.Telefono,  Nombre +' '+ Apellido AS Manager, s.Estado , IdLocalidad from Sucursal s  left outer join Empleado ON IdManager = IdEmpleado  WHERE s.IdSucursal != " + clsConexion.SucursalSession);
             try
             {
                 sucursales = new DataTable("Sucursales");
@@ -178,15 +178,16 @@ namespace Clases
             }
             return lSuc.ToArray();
         }
-        public static string insertarSucursal(string DireccionSucursal, string telefonoSucursal, int idLocalidad)
+        public static string insertarSucursal(string DireccionSucursal,string NombreInterno, string telefonoSucursal, int idLocalidad)
         {
             string resp = "";
             comando = new SqlCommand();
-            comando.CommandText = "INSERT INTO Sucursal (Direccion,Telefono,IdLocalidad) values (@DireccionSucursal,@TelefonoSucursal,@IdLocalidad); select SCOPE_IDENTITY(); ";
-            SqlParameter[] parametros = new SqlParameter[3];
+            comando.CommandText = "INSERT INTO Sucursal (Direccion,NombreInterno,Telefono,IdLocalidad) values (@DireccionSucursal,@NombreInterno,@TelefonoSucursal,@IdLocalidad); select SCOPE_IDENTITY(); ";
+            SqlParameter[] parametros = new SqlParameter[4];
             parametros[0] = new SqlParameter("@DireccionSucursal", DireccionSucursal);
-            parametros[1] = new SqlParameter("@TelefonoSucursal", telefonoSucursal);
-            parametros[2] = new SqlParameter("@IdLocalidad", idLocalidad);
+            parametros[1] = new SqlParameter("@NombreInterno", NombreInterno);
+            parametros[2] = new SqlParameter("@TelefonoSucursal", telefonoSucursal);
+            parametros[3] = new SqlParameter("@IdLocalidad", idLocalidad);
             try
             {
                 comando.Parameters.AddRange(parametros);
@@ -195,7 +196,7 @@ namespace Clases
                 id = Convert.ToInt32(comando.ExecuteScalar());
                 if (id >= 0)
                 {
-                    resp = "La Sucursal con la direccion " + DireccionSucursal + " con el telefono " + telefonoSucursal + " insertada correctamente";
+                    resp = "La Sucursal '"+ NombreInterno + "' con la direccion " + DireccionSucursal + " con el telefono " + telefonoSucursal + " insertada correctamente";
                     comando.CommandText = "insert into Deposito (IdSucursal,Stock,IdBebida) select " + id + ",0,IdBebida from Bebida;";//agrega el "deposito" de bebidas de esa sucursal inicializada en 0
                     comando.ExecuteNonQuery();
                     comando.CommandText = "insert into Deposito (IdSucursal,Stock,IdIngrediente) select " + id + ",0,IdIngrediente from Ingrediente";//Agrega al deposito los ingredientes inicializados en 0

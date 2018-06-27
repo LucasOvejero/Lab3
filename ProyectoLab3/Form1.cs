@@ -15,9 +15,9 @@ namespace ProyectoLab3
         public Form1()
         {
             InitializeComponent();
-            
+
         }
-       
+
 
         #region Formularios
         frmProductos ofrmBebidas;
@@ -36,34 +36,40 @@ namespace ProyectoLab3
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
-        {            
-           VerificarLogeo();
+        {
+            VerificarLogeo();
 
-           switch (clsConexion.Tipo) {
-               case "Administrador":
-                   pnlVendedor.Visible = false;
-                   break;
+            switch (clsConexion.Tipo)
+            {
+                case "Administrador":
+                    pnlVendedor.Visible = false;
+                    break;
 
-               case "Vendedor":
-                   ofrmVenta = new frmVenta(clsConexion.SucursalSession);//TODO:asignarle el deposito del usuario actual
+                case "Vendedor":
+                    ofrmVenta = new frmVenta(clsConexion.SucursalSession);//TODO:asignarle el deposito del usuario actual
                     ofrmVenta.ShowDialog();
                     clsConexion.SucursalSession = -1;
                     VerificarLogeo();
-                   break;
-               case "Manager":
-                   pnlAdmin.Visible = false;
-                   break;
-               
-               default: break;
-           }
+                    break;
+                case "Manager":
+                    pnlAdmin.Visible = false;
+                    break;
 
+                default: break;
+            }
+
+            updateCritico();
+
+        }
+
+        private void updateCritico()
+        {
             dgvCritico.DataSource = clsDeposito.ObtenerCriticos();
 
             if (dgvCritico.Rows.Count <= 0)
             {
                 pnlCritico.Visible = false;
             }
-          
         }
 
         private void BtnBebidas_Click(object sender, EventArgs e)
@@ -104,10 +110,12 @@ namespace ProyectoLab3
         private void Form1_Enter(object sender, EventArgs e)
         {
             VerificarLogeo();
+            updateCritico();
         }
 
 
-        private void VerificarLogeo() {
+        private void VerificarLogeo()
+        {
             if (clsConexion.SucursalSession == -1)
             {
                 ofrmLogin = new frmLogin();
@@ -119,6 +127,7 @@ namespace ProyectoLab3
         private void Form1_MouseEnter(object sender, EventArgs e)
         {
             VerificarLogeo();
+            updateCritico();
         }
 
         private void BtnPlato_Click(object sender, EventArgs e)
