@@ -277,6 +277,23 @@ namespace Clases
             catch (SqlException x) { Console.WriteLine(x.Message); }
             finally { clsConexion.closeCon(); }
         }
+
+        public static void updateManager(int id, int idManager)
+        {
+            comando = new SqlCommand("UPDATE Sucursal SET IdManager= " + idManager + " WHERE IdSucursal = " + id);
+            try
+            {
+                sucursales = new DataTable("Sucursales");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+        }
+
+
         public static string getDirecciónSucursal(int IdSucursal) { 
             comando=new SqlCommand("Select Direccion from Sucursal where IdSucursal="+IdSucursal);
             string direccion="";

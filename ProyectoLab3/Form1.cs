@@ -33,6 +33,7 @@ namespace ProyectoLab3
         frmGraficos ofrmGraficos;
         frmNuevaSolicitud ofrmNSolicitud;
         frmHistorial ofrmHistorial;
+        frmTransferencias ofrmTransferencias;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -182,5 +183,6 @@ namespace ProyectoLab3
         {
 
         }
+
     }
 }
