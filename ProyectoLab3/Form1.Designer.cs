@@ -69,7 +69,7 @@
             this.btnSolicitudes.Location = new System.Drawing.Point(105, 27);
             this.btnSolicitudes.Name = "btnSolicitudes";
             this.btnSolicitudes.Size = new System.Drawing.Size(75, 42);
-            this.btnSolicitudes.TabIndex = 9;
+            this.btnSolicitudes.TabIndex = 1;
             this.btnSolicitudes.Text = "Administrar \r\nSolicitudes";
             this.btnSolicitudes.UseVisualStyleBackColor = true;
             this.btnSolicitudes.Click += new System.EventHandler(this.BtnSolicitudes_Click);
@@ -79,7 +79,7 @@
             this.btnDeposito.Location = new System.Drawing.Point(12, 27);
             this.btnDeposito.Name = "btnDeposito";
             this.btnDeposito.Size = new System.Drawing.Size(75, 42);
-            this.btnDeposito.TabIndex = 8;
+            this.btnDeposito.TabIndex = 0;
             this.btnDeposito.Text = "Deposito";
             this.btnDeposito.UseVisualStyleBackColor = true;
             this.btnDeposito.Click += new System.EventHandler(this.BtnDeposito_Click);
@@ -89,7 +89,7 @@
             this.btnVenta.Location = new System.Drawing.Point(87, 27);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(75, 42);
-            this.btnVenta.TabIndex = 11;
+            this.btnVenta.TabIndex = 0;
             this.btnVenta.Text = "Vender";
             this.btnVenta.UseVisualStyleBackColor = true;
             this.btnVenta.Click += new System.EventHandler(this.BtnVenta_Click);
@@ -99,7 +99,7 @@
             this.btnVentas.Location = new System.Drawing.Point(218, 27);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(75, 42);
-            this.btnVentas.TabIndex = 12;
+            this.btnVentas.TabIndex = 1;
             this.btnVentas.Text = "Graficos Ventas";
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
@@ -109,7 +109,7 @@
             this.btnNewSolicitudes.Location = new System.Drawing.Point(196, 27);
             this.btnNewSolicitudes.Name = "btnNewSolicitudes";
             this.btnNewSolicitudes.Size = new System.Drawing.Size(75, 42);
-            this.btnNewSolicitudes.TabIndex = 10;
+            this.btnNewSolicitudes.TabIndex = 2;
             this.btnNewSolicitudes.Text = "Nueva Solicitud";
             this.btnNewSolicitudes.UseVisualStyleBackColor = true;
             this.btnNewSolicitudes.Click += new System.EventHandler(this.BtnNewSolicitudes_Click);
@@ -125,7 +125,7 @@
             this.pnlVendedor.Location = new System.Drawing.Point(1, 115);
             this.pnlVendedor.Name = "pnlVendedor";
             this.pnlVendedor.Size = new System.Drawing.Size(1217, 527);
-            this.pnlVendedor.TabIndex = 12;
+            this.pnlVendedor.TabIndex = 1;
             this.pnlVendedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlVendedor_Paint);
             // 
             // pnlCritico
@@ -135,7 +135,7 @@
             this.pnlCritico.Location = new System.Drawing.Point(11, 157);
             this.pnlCritico.Name = "pnlCritico";
             this.pnlCritico.Size = new System.Drawing.Size(412, 345);
-            this.pnlCritico.TabIndex = 14;
+            this.pnlCritico.TabIndex = 2;
             // 
             // label2
             // 
@@ -169,7 +169,7 @@
             this.dgvCritico.RowHeadersVisible = false;
             this.dgvCritico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCritico.Size = new System.Drawing.Size(342, 300);
-            this.dgvCritico.TabIndex = 13;
+            this.dgvCritico.TabIndex = 0;
             // 
             // label1
             // 
@@ -190,7 +190,7 @@
             this.gbVentas.Location = new System.Drawing.Point(410, 39);
             this.gbVentas.Name = "gbVentas";
             this.gbVentas.Size = new System.Drawing.Size(381, 97);
-            this.gbVentas.TabIndex = 12;
+            this.gbVentas.TabIndex = 1;
             this.gbVentas.TabStop = false;
             this.gbVentas.Text = "Ventas";
             // 
@@ -204,7 +204,7 @@
             this.gbDeposito.Location = new System.Drawing.Point(11, 39);
             this.gbDeposito.Name = "gbDeposito";
             this.gbDeposito.Size = new System.Drawing.Size(381, 97);
-            this.gbDeposito.TabIndex = 11;
+            this.gbDeposito.TabIndex = 0;
             this.gbDeposito.TabStop = false;
             this.gbDeposito.Text = "Deposito";
             // 
@@ -213,7 +213,7 @@
             this.btnHistorial.Location = new System.Drawing.Point(287, 27);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(88, 42);
-            this.btnHistorial.TabIndex = 10;
+            this.btnHistorial.TabIndex = 3;
             this.btnHistorial.Text = "Historial de Solicitudes";
             this.btnHistorial.UseVisualStyleBackColor = true;
             this.btnHistorial.Click += new System.EventHandler(this.BtnHistorial_Click);
@@ -227,7 +227,7 @@
             this.gbSucursal.Location = new System.Drawing.Point(12, 7);
             this.gbSucursal.Name = "gbSucursal";
             this.gbSucursal.Size = new System.Drawing.Size(381, 97);
-            this.gbSucursal.TabIndex = 8;
+            this.gbSucursal.TabIndex = 0;
             this.gbSucursal.TabStop = false;
             this.gbSucursal.Text = "Sucursales";
             // 
@@ -236,7 +236,7 @@
             this.btnGraficosVentaGeneral.Location = new System.Drawing.Point(149, 27);
             this.btnGraficosVentaGeneral.Name = "btnGraficosVentaGeneral";
             this.btnGraficosVentaGeneral.Size = new System.Drawing.Size(75, 42);
-            this.btnGraficosVentaGeneral.TabIndex = 3;
+            this.btnGraficosVentaGeneral.TabIndex = 1;
             this.btnGraficosVentaGeneral.Text = "Graficos Ventas";
             this.btnGraficosVentaGeneral.UseVisualStyleBackColor = true;
             this.btnGraficosVentaGeneral.Click += new System.EventHandler(this.BtnGraficosVentaGeneral_Click);
@@ -256,7 +256,7 @@
             this.btnSuc.Location = new System.Drawing.Point(12, 27);
             this.btnSuc.Name = "btnSuc";
             this.btnSuc.Size = new System.Drawing.Size(75, 42);
-            this.btnSuc.TabIndex = 1;
+            this.btnSuc.TabIndex = 0;
             this.btnSuc.Text = "Sucursales";
             this.btnSuc.UseVisualStyleBackColor = true;
             this.btnSuc.Click += new System.EventHandler(this.BtnSuc_Click);
@@ -270,7 +270,7 @@
             this.gbProductos.Location = new System.Drawing.Point(411, 7);
             this.gbProductos.Name = "gbProductos";
             this.gbProductos.Size = new System.Drawing.Size(381, 97);
-            this.gbProductos.TabIndex = 9;
+            this.gbProductos.TabIndex = 1;
             this.gbProductos.TabStop = false;
             this.gbProductos.Text = "Productos";
             // 
@@ -279,7 +279,7 @@
             this.btnDepositos.Location = new System.Drawing.Point(84, 27);
             this.btnDepositos.Name = "btnDepositos";
             this.btnDepositos.Size = new System.Drawing.Size(75, 42);
-            this.btnDepositos.TabIndex = 4;
+            this.btnDepositos.TabIndex = 0;
             this.btnDepositos.Text = "Depositos";
             this.btnDepositos.UseVisualStyleBackColor = true;
             this.btnDepositos.Click += new System.EventHandler(this.BtnIngredientes_Click);
@@ -289,7 +289,7 @@
             this.btnBebidas.Location = new System.Drawing.Point(221, 27);
             this.btnBebidas.Name = "btnBebidas";
             this.btnBebidas.Size = new System.Drawing.Size(75, 42);
-            this.btnBebidas.TabIndex = 5;
+            this.btnBebidas.TabIndex = 1;
             this.btnBebidas.Text = "Productos";
             this.btnBebidas.UseVisualStyleBackColor = true;
             this.btnBebidas.Click += new System.EventHandler(this.BtnBebidas_Click);
@@ -303,7 +303,7 @@
             this.gbPlatos.Location = new System.Drawing.Point(824, 7);
             this.gbPlatos.Name = "gbPlatos";
             this.gbPlatos.Size = new System.Drawing.Size(381, 97);
-            this.gbPlatos.TabIndex = 10;
+            this.gbPlatos.TabIndex = 2;
             this.gbPlatos.TabStop = false;
             this.gbPlatos.Text = "Platos";
             // 
@@ -312,7 +312,7 @@
             this.btnEditPlato.Location = new System.Drawing.Point(210, 27);
             this.btnEditPlato.Name = "btnEditPlato";
             this.btnEditPlato.Size = new System.Drawing.Size(75, 42);
-            this.btnEditPlato.TabIndex = 7;
+            this.btnEditPlato.TabIndex = 1;
             this.btnEditPlato.Text = "Ver Platos";
             this.btnEditPlato.UseVisualStyleBackColor = true;
             this.btnEditPlato.Click += new System.EventHandler(this.BtnEditPlato_Click);
@@ -322,7 +322,7 @@
             this.btnPlato.Location = new System.Drawing.Point(96, 27);
             this.btnPlato.Name = "btnPlato";
             this.btnPlato.Size = new System.Drawing.Size(75, 42);
-            this.btnPlato.TabIndex = 6;
+            this.btnPlato.TabIndex = 0;
             this.btnPlato.Text = "Agregar Platos";
             this.btnPlato.UseVisualStyleBackColor = true;
             this.btnPlato.Click += new System.EventHandler(this.BtnPlato_Click);
@@ -336,7 +336,7 @@
             this.pnlAdmin.Location = new System.Drawing.Point(0, 0);
             this.pnlAdmin.Name = "pnlAdmin";
             this.pnlAdmin.Size = new System.Drawing.Size(1219, 110);
-            this.pnlAdmin.TabIndex = 11;
+            this.pnlAdmin.TabIndex = 0;
             // 
             // Form1
             // 

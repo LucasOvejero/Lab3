@@ -47,7 +47,6 @@ namespace ProyectoLab3
 
 
             //  dgvEmpleados.Columns["IdSucursal"].Visible = false; //columna del Id
-            tbNombre.Focus();
         }
 
         private void configurar()
@@ -129,7 +128,6 @@ namespace ProyectoLab3
             tbTelefono.Clear();
             tbDni.Clear();
             cbTipo.SelectedItem = 0;
-            tbNombre.Focus();
             tbUser.Clear();
             tbPass.Clear();
         }

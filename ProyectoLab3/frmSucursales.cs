@@ -31,7 +31,7 @@ namespace ProyectoLab3
         {
 
             configurar();
-
+            tbProvincia.Focus();
         }
 
 
@@ -106,7 +106,7 @@ namespace ProyectoLab3
                 dgvSucursal.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvManagers.Columns["Dni"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvManagers.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                
+
                 dgvSucursal.Columns["Estado"].Visible = false;
                 dgvManagers.Columns["Estado"].Visible = false;
                 dgvManagers.Columns["Usuario"].Visible = false;
@@ -208,29 +208,36 @@ namespace ProyectoLab3
         {
             if (dgvSucursal.SelectedRows.Count > 0)
             {
-                pnlConfig.Visible = true;
 
-                DataGridViewRow row = dgvSucursal.SelectedRows[0];
-                string dir = row.Cells["Direccion"].Value.ToString();
-                string tel = row.Cells["Telefono"].Value.ToString();
-                bool activo = (bool)row.Cells["Estado"].Value;
-
-
-
-                tbDir.Text = dir;
-                tbTel.Text = tel;
-
-
-                btnEstado.Tag = row.Cells["IdSucursal"].Value.ToString();
-
-                if (activo)
+                try
                 {
-                    btnEstado.Text = "Dar de Baja Sucursal";
+                    pnlConfig.Visible = true;
+
+                    DataGridViewRow row = dgvSucursal.SelectedRows[0];
+                    string nombre = row.Cells["Nombre Sucursal"].Value.ToString();
+                    string dir = row.Cells["Direccion"].Value.ToString();
+                    string tel = row.Cells["Telefono"].Value.ToString();
+                    bool activo = (bool)row.Cells["Estado"].Value;
+
+
+
+                    tbDir.Text = dir;
+                    tbTel.Text = tel;
+                    tbNombreEdit.Text = nombre;
+
+
+                    btnEstado.Tag = row.Cells["IdSucursal"].Value.ToString();
+
+                    if (activo)
+                    {
+                        btnEstado.Text = "Dar de Baja Sucursal";
+                    }
+                    else
+                    {
+                        btnEstado.Text = "Dar de Alta Sucursal";
+                    }
                 }
-                else
-                {
-                    btnEstado.Text = "Dar de Alta Sucursal";
-                }
+                catch (Exception ex) { Console.WriteLine(ex.Message); }
 
             }
         }
@@ -259,7 +266,7 @@ namespace ProyectoLab3
 
             configurar();
 
-           // formatearGrillas();
+            // formatearGrillas();
         }
 
         private void tbTelefono_TextChanged(object sender, EventArgs e)
@@ -310,27 +317,41 @@ namespace ProyectoLab3
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (lblDir.Text.Length < 5)
+            try
             {
-                MessageBox.Show("Ingrese una Direccion Valida");
+
+                if (tbNombreEdit.Text.Length < 5)
+                {
+                    MessageBox.Show("Ingrese un nombre valido");
+                }
+                if (lblDir.Text.Length < 5)
+                {
+                    MessageBox.Show("Ingrese una Direccion Valida");
+                }
+                else if (tbTel.Text.Length < 10)
+                {
+                    MessageBox.Show("Ingrese un telefono valido");
+                }
+                else
+                {
+                    int idSucursal = (int)dgvSucursal.SelectedRows[0].Cells["IdSucursal"].Value;
+                    int idManager;
+                    try
+                    {
+                        idManager = (int)dgvManagers.SelectedRows[0].Cells["IdEmpleado"].Value;
+                    }
+                    catch (Exception ex) { idManager = -1; }
+
+                    clsSucursal.actualizar(idSucursal, tbDir.Text, idManager, tbTel.Text, tbNombreEdit.Text);
+                    configurar();
+
+                    clsEmpleado.ascenderAManager(idSucursal, idManager);
+                }
             }
-            else if (tbTel.Text.Length < 10)
-            {
-                MessageBox.Show("Ingrese un telefono valido");
-            }
-            else
-            {
-                int idSucursal = (int)dgvSucursal.SelectedRows[0].Cells["IdSucursal"].Value;
-                int idManager = (int)dgvManagers.SelectedRows[0].Cells["IdEmpleado"].Value;
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
 
-                clsSucursal.actualizar(idSucursal, tbDir.Text, idManager, tbTel.Text);
-                configurar();
-
-                clsEmpleado.ascenderAManager(idSucursal, idManager);
-
-
-            }
         }
+
 
         private void dgvManagers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

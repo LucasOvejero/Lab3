@@ -81,7 +81,7 @@
             this.btnCargar.Location = new System.Drawing.Point(330, 411);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(122, 87);
-            this.btnCargar.TabIndex = 7;
+            this.btnCargar.TabIndex = 9;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
@@ -91,7 +91,7 @@
             this.tbNombre.Location = new System.Drawing.Point(41, 375);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(121, 20);
-            this.tbNombre.TabIndex = 0;
+            this.tbNombre.TabIndex = 2;
             // 
             // lblApellido
             // 
@@ -145,7 +145,7 @@
             this.cbTipo.Location = new System.Drawing.Point(183, 423);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(141, 21);
-            this.cbTipo.TabIndex = 4;
+            this.cbTipo.TabIndex = 6;
             // 
             // lblTipo
             // 
@@ -180,7 +180,7 @@
             this.pnlNuevo.Location = new System.Drawing.Point(12, 12);
             this.pnlNuevo.Name = "pnlNuevo";
             this.pnlNuevo.Size = new System.Drawing.Size(492, 518);
-            this.pnlNuevo.TabIndex = 5;
+            this.pnlNuevo.TabIndex = 0;
             // 
             // label2
             // 
@@ -207,7 +207,7 @@
             this.tbPass.Name = "tbPass";
             this.tbPass.PasswordChar = '*';
             this.tbPass.Size = new System.Drawing.Size(141, 20);
-            this.tbPass.TabIndex = 6;
+            this.tbPass.TabIndex = 8;
             // 
             // tbUser
             // 
@@ -215,7 +215,7 @@
             this.tbUser.MaxLength = 10;
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(121, 20);
-            this.tbUser.TabIndex = 5;
+            this.tbUser.TabIndex = 7;
             // 
             // dgvSucursales
             // 
@@ -238,7 +238,7 @@
             this.dgvSucursales.RowHeadersVisible = false;
             this.dgvSucursales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSucursales.Size = new System.Drawing.Size(482, 289);
-            this.dgvSucursales.TabIndex = 9;
+            this.dgvSucursales.TabIndex = 1;
             this.dgvSucursales.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSucursales_RowEnter);
             // 
             // tbFiltroSucursal
@@ -246,7 +246,7 @@
             this.tbFiltroSucursal.Location = new System.Drawing.Point(147, 33);
             this.tbFiltroSucursal.Name = "tbFiltroSucursal";
             this.tbFiltroSucursal.Size = new System.Drawing.Size(141, 20);
-            this.tbFiltroSucursal.TabIndex = 8;
+            this.tbFiltroSucursal.TabIndex = 0;
             this.tbFiltroSucursal.TextChanged += new System.EventHandler(this.tbFiltroSucursal_TextChanged);
             // 
             // lblBusqueda
@@ -274,7 +274,7 @@
             this.tbTelefono.MaxLength = 10;
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(121, 20);
-            this.tbTelefono.TabIndex = 3;
+            this.tbTelefono.TabIndex = 5;
             this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
             // 
             // tbDni
@@ -283,7 +283,7 @@
             this.tbDni.MaxLength = 8;
             this.tbDni.Name = "tbDni";
             this.tbDni.Size = new System.Drawing.Size(122, 20);
-            this.tbDni.TabIndex = 2;
+            this.tbDni.TabIndex = 4;
             this.tbDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
             // 
             // tbApellido
@@ -291,7 +291,7 @@
             this.tbApellido.Location = new System.Drawing.Point(183, 375);
             this.tbApellido.Name = "tbApellido";
             this.tbApellido.Size = new System.Drawing.Size(141, 20);
-            this.tbApellido.TabIndex = 1;
+            this.tbApellido.TabIndex = 3;
             // 
             // dgvEmpleados
             // 
@@ -315,7 +315,7 @@
             this.dgvEmpleados.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.Size = new System.Drawing.Size(502, 289);
-            this.dgvEmpleados.TabIndex = 0;
+            this.dgvEmpleados.TabIndex = 3;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             this.dgvEmpleados.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_RowEnter);
             // 
@@ -324,7 +324,7 @@
             this.tbFiltroEmpleado.Location = new System.Drawing.Point(620, 47);
             this.tbFiltroEmpleado.Name = "tbFiltroEmpleado";
             this.tbFiltroEmpleado.Size = new System.Drawing.Size(141, 20);
-            this.tbFiltroEmpleado.TabIndex = 9;
+            this.tbFiltroEmpleado.TabIndex = 1;
             this.tbFiltroEmpleado.TextChanged += new System.EventHandler(this.tbFiltroEmpleado_TextChanged);
             // 
             // label3
@@ -344,7 +344,7 @@
             this.cbTodasSucursales.Location = new System.Drawing.Point(780, 47);
             this.cbTodasSucursales.Name = "cbTodasSucursales";
             this.cbTodasSucursales.Size = new System.Drawing.Size(125, 17);
-            this.cbTodasSucursales.TabIndex = 11;
+            this.cbTodasSucursales.TabIndex = 2;
             this.cbTodasSucursales.Text = "Todas las sucursales";
             this.cbTodasSucursales.UseVisualStyleBackColor = true;
             this.cbTodasSucursales.CheckedChanged += new System.EventHandler(this.cbTodasSucursales_CheckedChanged);
@@ -354,7 +354,7 @@
             this.btnModificar.Location = new System.Drawing.Point(824, 434);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(122, 21);
-            this.btnModificar.TabIndex = 22;
+            this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -383,7 +383,7 @@
             this.cbTipoEdit.Location = new System.Drawing.Point(677, 434);
             this.cbTipoEdit.Name = "cbTipoEdit";
             this.cbTipoEdit.Size = new System.Drawing.Size(141, 21);
-            this.cbTipoEdit.TabIndex = 21;
+            this.cbTipoEdit.TabIndex = 8;
             this.cbTipoEdit.SelectedIndexChanged += new System.EventHandler(this.cbTipoEdit_SelectedIndexChanged);
             // 
             // tbTelefonoEdit
@@ -392,7 +392,7 @@
             this.tbTelefonoEdit.MaxLength = 10;
             this.tbTelefonoEdit.Name = "tbTelefonoEdit";
             this.tbTelefonoEdit.Size = new System.Drawing.Size(121, 20);
-            this.tbTelefonoEdit.TabIndex = 19;
+            this.tbTelefonoEdit.TabIndex = 7;
             // 
             // tbDNIEdit
             // 
@@ -400,21 +400,21 @@
             this.tbDNIEdit.MaxLength = 8;
             this.tbDNIEdit.Name = "tbDNIEdit";
             this.tbDNIEdit.Size = new System.Drawing.Size(122, 20);
-            this.tbDNIEdit.TabIndex = 14;
+            this.tbDNIEdit.TabIndex = 6;
             // 
             // tbApellidoEdit
             // 
             this.tbApellidoEdit.Location = new System.Drawing.Point(677, 392);
             this.tbApellidoEdit.Name = "tbApellidoEdit";
             this.tbApellidoEdit.Size = new System.Drawing.Size(141, 20);
-            this.tbApellidoEdit.TabIndex = 13;
+            this.tbApellidoEdit.TabIndex = 5;
             // 
             // tbNombreEdit
             // 
             this.tbNombreEdit.Location = new System.Drawing.Point(550, 392);
             this.tbNombreEdit.Name = "tbNombreEdit";
             this.tbNombreEdit.Size = new System.Drawing.Size(121, 20);
-            this.tbNombreEdit.TabIndex = 12;
+            this.tbNombreEdit.TabIndex = 4;
             // 
             // label6
             // 
@@ -454,10 +454,10 @@
             // 
             // btnTransferir
             // 
-            this.btnTransferir.Location = new System.Drawing.Point(17, 24);
+            this.btnTransferir.Location = new System.Drawing.Point(277, 24);
             this.btnTransferir.Name = "btnTransferir";
             this.btnTransferir.Size = new System.Drawing.Size(107, 34);
-            this.btnTransferir.TabIndex = 23;
+            this.btnTransferir.TabIndex = 1;
             this.btnTransferir.Text = "Transferir";
             this.btnTransferir.UseVisualStyleBackColor = true;
             this.btnTransferir.Click += new System.EventHandler(this.btnTransferir_Click);
@@ -471,13 +471,13 @@
             this.panel1.Location = new System.Drawing.Point(550, 466);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(440, 64);
-            this.panel1.TabIndex = 24;
+            this.panel1.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(203, 1);
+            this.label10.Location = new System.Drawing.Point(56, 3);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(152, 20);
             this.label10.TabIndex = 25;
@@ -485,20 +485,20 @@
             // 
             // tbMotivo
             // 
-            this.tbMotivo.Location = new System.Drawing.Point(156, 24);
+            this.tbMotivo.Location = new System.Drawing.Point(20, 24);
             this.tbMotivo.MaxLength = 255;
             this.tbMotivo.Multiline = true;
             this.tbMotivo.Name = "tbMotivo";
             this.tbMotivo.Size = new System.Drawing.Size(240, 34);
-            this.tbMotivo.TabIndex = 24;
+            this.tbMotivo.TabIndex = 0;
             // 
             // btnTransferencias
             // 
             this.btnTransferencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransferencias.Location = new System.Drawing.Point(706, 536);
+            this.btnTransferencias.Location = new System.Drawing.Point(695, 536);
             this.btnTransferencias.Name = "btnTransferencias";
             this.btnTransferencias.Size = new System.Drawing.Size(104, 44);
-            this.btnTransferencias.TabIndex = 25;
+            this.btnTransferencias.TabIndex = 11;
             this.btnTransferencias.Text = "Historial de \r\nTransferencias";
             this.btnTransferencias.UseVisualStyleBackColor = true;
             this.btnTransferencias.Click += new System.EventHandler(this.btnTransferencias_Click);
