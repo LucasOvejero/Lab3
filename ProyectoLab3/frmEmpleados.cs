@@ -17,6 +17,12 @@ namespace ProyectoLab3
 
         DataSet ds;
         SqlDataAdapter adapter;
+        string tipoEdit;
+        frmTransferirEmpleado ofrm;
+        public int idSucursalTransferencia;
+
+        frmTransferencias ofrmTransferencias;
+
 
         public frmEmpleados()
         {
@@ -41,7 +47,6 @@ namespace ProyectoLab3
 
 
             //  dgvEmpleados.Columns["IdSucursal"].Visible = false; //columna del Id
-            tbNombre.Focus();
         }
 
         private void configurar()
@@ -50,7 +55,7 @@ namespace ProyectoLab3
             ds = new DataSet();
             try
             {
-                dgvEmpleados.DataSource = clsEmpleado.joinSucursales();
+                //  dgvEmpleados.DataSource = clsEmpleado.joinSucursales();
                 dgvSucursales.DataSource = clsSucursal.seleccionarSucursales();
                 formatear();
             }
@@ -71,13 +76,6 @@ namespace ProyectoLab3
                 {
                     int idSucursal = Convert.ToInt32(dgvSucursales.SelectedRows[0].Cells["IdSucursal"].Value);
 
-
-                    /// Tipo Manager = ascender manager.
-                    /// 
-
-
-
-
                     int empId = clsEmpleado.insertarEmpleado(tbNombre.Text,
                         tbApellido.Text,
                         tbDni.Text,
@@ -89,11 +87,13 @@ namespace ProyectoLab3
                         tbPass.Text
                         );
 
-                    if (cbTipo.SelectedItem.ToString() == "Manager") {
+                    if (cbTipo.SelectedItem.ToString() == "Manager")
+                    {
                         clsEmpleado.ascenderAManager(idSucursal, empId);
+                        clsSucursal.updateManager(idSucursal, empId);
                     }
 
-                                        
+
                     limpiarCampos();
                     configurar();
 
@@ -128,7 +128,6 @@ namespace ProyectoLab3
             tbTelefono.Clear();
             tbDni.Clear();
             cbTipo.SelectedItem = 0;
-            tbNombre.Focus();
             tbUser.Clear();
             tbPass.Clear();
         }
@@ -137,7 +136,7 @@ namespace ProyectoLab3
         {
 
         }
-        
+
 
         private void formatearGrillas()
         {
@@ -197,7 +196,8 @@ namespace ProyectoLab3
         private void tbFiltroSucursal_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = (DataTable)dgvSucursales.DataSource;
-            dt.DefaultView.RowFilter = string.Format("Nombre Sucursal like '%{0}%' OR Direccion like '%{0}%' OR Telefono like '%{0}%' OR Manager like '%{0}%'", tbFiltroSucursal.Text);
+
+            dt.DefaultView.RowFilter = string.Format("[Nombre Sucursal] like '%{0}%' OR Direccion like '%{0}%' OR Telefono like '%{0}%' OR Manager like '%{0}%'", tbFiltroSucursal.Text);
             dgvSucursales.Refresh();
         }
 
@@ -206,6 +206,79 @@ namespace ProyectoLab3
             DataTable dt = (DataTable)dgvEmpleados.DataSource;
             dt.DefaultView.RowFilter = string.Format("Nombre like '%{0}%' OR Apellido like '%{0}%' OR DNI like '%{0}%' OR Tipo like '%{0}%' OR Telefono like '%{0}%' OR Tipo like '%{0}%'", tbFiltroEmpleado.Text);
             dgvEmpleados.Refresh();
+        }
+
+        private void dgvEmpleados_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                DataGridViewRow r = dgvEmpleados.SelectedRows[0];
+
+                tbNombreEdit.Text = r.Cells["Nombre"].Value.ToString();
+                tbApellidoEdit.Text = r.Cells["Apellido"].Value.ToString();
+                tbDNIEdit.Text = r.Cells["DNI"].Value.ToString();
+                tbTelefonoEdit.Text = r.Cells["Telefono"].Value.ToString();
+                tipoEdit = r.Cells["Tipo"].Value.ToString();
+                cbTipoEdit.SelectedIndex = cbTipoEdit.Items.IndexOf(tipoEdit);
+            }
+            catch (Exception ex) { Console.Write(ex.Message); }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = (int)dgvEmpleados.SelectedRows[0].Cells["IdEmpleado"].Value;
+                clsEmpleado.updateEmpleado(id, tbNombreEdit.Text, tbApellidoEdit.Text, tbTelefonoEdit.Text, tbDNIEdit.Text, cbTipoEdit.SelectedItem.ToString());
+                dgvEmpleados.DataSource = clsEmpleado.seleccionarEmpleados();
+                dgvSucursales.ClearSelection();
+                formatearGrillas();
+            }
+            catch (Exception ex) { Console.Write(ex.Message); }
+        }
+
+        private void btnTransferir_Click(object sender, EventArgs e)
+        {
+            if (cbTipoEdit.SelectedIndex > -1)
+            {
+                ofrm = new frmTransferirEmpleado(this);
+                ofrm.ShowDialog();
+                try
+                {
+                    int idEmpleado = (int)dgvEmpleados.SelectedRows[0].Cells["IdEmpleado"].Value;
+
+                    int idSucursalAntigua = (int)dgvEmpleados.SelectedRows[0].Cells["IdEmpleado"].Value;
+
+                    clsEmpleado.transferir(idEmpleado, this.idSucursalTransferencia);
+                    clsEmpleado.registrarTransferencia(idEmpleado, this.idSucursalTransferencia, idSucursalAntigua, tbMotivo.Text);
+                    dgvEmpleados.ClearSelection();
+                    dgvSucursales.ClearSelection();
+                    tbApellidoEdit.Clear();
+                    tbNombreEdit.Clear();
+                    tbApellidoEdit.Clear();
+                    tbDni.Clear();
+                    tbTelefonoEdit.Clear();
+                    cbTipoEdit.SelectedIndex = -1;
+                    tbMotivo.Clear();
+                }
+                catch (Exception ex) { Console.Write(ex.Message); }
+            }
+            else
+            {
+                MessageBox.Show("No puede cambiar un Manager de sucursal, debe desasignarlo primero.", "No Valido");
+            }
+        }
+
+        private void cbTipoEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("INDICE: " + cbTipoEdit.SelectedIndex);
+        }
+
+        private void btnTransferencias_Click(object sender, EventArgs e)
+        {
+            ofrmTransferencias = new frmTransferencias();
+            ofrmTransferencias.ShowDialog();
         }
     }
 }

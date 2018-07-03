@@ -134,7 +134,7 @@ namespace Clases
         }
         public static DataTable getTodasSuc()
         {
-          
+
             DataTable sc = new DataTable();
             try
             {
@@ -148,7 +148,8 @@ namespace Clases
 
             }
             catch (SqlException e) { throw e; }
-            finally {
+            finally
+            {
                 clsConexion.closeCon();
             }
             return sc;
@@ -178,7 +179,7 @@ namespace Clases
             }
             return lSuc.ToArray();
         }
-        public static string insertarSucursal(string DireccionSucursal,string NombreInterno, string telefonoSucursal, int idLocalidad)
+        public static string insertarSucursal(string DireccionSucursal, string NombreInterno, string telefonoSucursal, int idLocalidad)
         {
             string resp = "";
             comando = new SqlCommand();
@@ -196,7 +197,7 @@ namespace Clases
                 id = Convert.ToInt32(comando.ExecuteScalar());
                 if (id >= 0)
                 {
-                    resp = "La Sucursal '"+ NombreInterno + "' con la direccion " + DireccionSucursal + " con el telefono " + telefonoSucursal + " insertada correctamente";
+                    resp = "La Sucursal '" + NombreInterno + "' con la direccion " + DireccionSucursal + " con el telefono " + telefonoSucursal + " insertada correctamente";
                     comando.CommandText = "insert into Deposito (IdSucursal,Stock,IdBebida) select " + id + ",0,IdBebida from Bebida;";//agrega el "deposito" de bebidas de esa sucursal inicializada en 0
                     comando.ExecuteNonQuery();
                     comando.CommandText = "insert into Deposito (IdSucursal,Stock,IdIngrediente) select " + id + ",0,IdIngrediente from Ingrediente";//Agrega al deposito los ingredientes inicializados en 0
@@ -263,9 +264,12 @@ namespace Clases
             finally { clsConexion.closeCon(); }
         }
 
-        public static void actualizar(int id, string dir, int idManager, string tel)
+        public static void actualizar(int id, string dir, int idManager, string tel, string NombreInterno)
         {
-            comando = new SqlCommand("UPDATE Sucursal SET Direccion = '" + dir + "' , IdManager= " + idManager + ", Telefono = '" + tel + "' WHERE IdSucursal = " + id);
+            if (idManager > -1)            
+                comando = new SqlCommand("UPDATE Sucursal SET Direccion = '" + dir + "' , IdManager= " + idManager + ", Telefono = '" + tel + "' , NombreInterno = '" + NombreInterno + "' WHERE IdSucursal = " + id);
+            else
+                comando = new SqlCommand("UPDATE Sucursal SET Direccion = '" + dir + "', Telefono = '" + tel + "' , NombreInterno = '" + NombreInterno + "' WHERE IdSucursal = " + id);
             try
             {
                 sucursales = new DataTable("Sucursales");
@@ -277,9 +281,27 @@ namespace Clases
             catch (SqlException x) { Console.WriteLine(x.Message); }
             finally { clsConexion.closeCon(); }
         }
-        public static string getDirecciónSucursal(int IdSucursal) { 
-            comando=new SqlCommand("Select Direccion from Sucursal where IdSucursal="+IdSucursal);
-            string direccion="";
+
+        public static void updateManager(int id, int idManager)
+        {
+            comando = new SqlCommand("UPDATE Sucursal SET IdManager= " + idManager + " WHERE IdSucursal = " + id);
+            try
+            {
+                sucursales = new DataTable("Sucursales");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+        }
+
+
+        public static string getDirecciónSucursal(int IdSucursal)
+        {
+            comando = new SqlCommand("Select Direccion from Sucursal where IdSucursal=" + IdSucursal);
+            string direccion = "";
             try
             {
                 comando.Connection = clsConexion.getCon();
@@ -287,9 +309,10 @@ namespace Clases
             }
             catch (SqlException e)
             {
-                direccion = "Error:" + e.Message ;
+                direccion = "Error:" + e.Message;
             }
-            finally {
+            finally
+            {
                 clsConexion.closeCon();
             }
             return direccion;
