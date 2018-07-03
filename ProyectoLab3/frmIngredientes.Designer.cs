@@ -155,18 +155,18 @@
             this.Bebidas.AutoSize = true;
             this.Bebidas.Location = new System.Drawing.Point(417, 45);
             this.Bebidas.Name = "Bebidas";
-            this.Bebidas.Size = new System.Drawing.Size(51, 13);
+            this.Bebidas.Size = new System.Drawing.Size(45, 13);
             this.Bebidas.TabIndex = 8;
-            this.Bebidas.Text = "Provincia";
+            this.Bebidas.Text = "Bebidas";
             // 
             // Ingredientes
             // 
             this.Ingredientes.AutoSize = true;
             this.Ingredientes.Location = new System.Drawing.Point(748, 45);
             this.Ingredientes.Name = "Ingredientes";
-            this.Ingredientes.Size = new System.Drawing.Size(51, 13);
+            this.Ingredientes.Size = new System.Drawing.Size(65, 13);
             this.Ingredientes.TabIndex = 9;
-            this.Ingredientes.Text = "Provincia";
+            this.Ingredientes.Text = "Ingredientes";
             // 
             // frmDepositos
             // 

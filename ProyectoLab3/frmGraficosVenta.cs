@@ -93,12 +93,35 @@ namespace ProyectoLab3
             chartCantidad.DataSource = null;
             int anio = (int)nudAnio.Value;
             int mes = cboMeses.SelectedIndex;
-            DataTable source = clsEstadisticas.getVentas(anio, mes, IdSucursal);
+            DataTable source = clsEstadisticas.getVentas(anio, mes, IdSucursal,null);
             chartVntas.DataSource = source;
             chartCantidad.DataSource = source;
             chartVntas.DataBind();
             chartCantidad.DataBind();
         
+        }
+
+        private void cboHoy_CheckedChanged(object sender, EventArgs e)
+        {
+            bool hoy=cbHoy.Checked;
+            cboMeses.Enabled = !hoy;
+            nudAnio.Enabled = !hoy;
+            if (hoy)
+            {
+                chartVntas.DataSource = null;
+                chartCantidad.DataSource = null;
+                int dia = int.Parse(DateTime.Now.Date.Day.ToString());
+                int mes = int.Parse(DateTime.Now.Date.Month.ToString());
+                int anio = int.Parse(DateTime.Now.Date.Year.ToString());
+                DataTable source = clsEstadisticas.getVentas(anio, mes, IdSucursal, dia);
+                chartVntas.DataSource = source;
+                chartCantidad.DataSource = source;
+                chartVntas.DataBind();
+                chartCantidad.DataBind();
+            }
+            else {
+                setearDatasource();
+            }
         }
     }
 }

@@ -209,7 +209,7 @@
             this.ClientSize = new System.Drawing.Size(1248, 661);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmMiDeposito";
-            this.Text = "frmMiDeposito";
+            this.Text = "Deposito";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMiDeposito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();

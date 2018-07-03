@@ -66,9 +66,10 @@ namespace ProyectoLab3
                                  select new Ingrediente()
                                  {
                                      IdIngrediente = Convert.ToInt32(rw["IdIngrediente"]),
-                                     NombreProducto = Convert.ToString(rw["NombreProducto"]),
-                                     CostoxKg = Convert.ToDouble(rw["CostoxKg"]),
-                                     Categoria = Convert.ToString(rw["Nombre"])
+                                     NombreProducto = Convert.ToString(rw["Nombre"]),
+                                     CostoxKg = Convert.ToDouble(rw["Costo"]),
+                                     Categoria = Convert.ToString(rw["Categoria"]),
+                                     Unidad=Convert.ToString(rw["Unidad"])
                                  }).ToList();
 
             return convertedList;
@@ -137,7 +138,8 @@ namespace ProyectoLab3
                 if (!exist){
                     if (i.Plato == null)
                     {
-                        PanelPlato pnlPlato = new PanelPlato(i.NombreProducto);
+                        string unidad = i.Unidad.Trim() == "g" ? "gramos" : i.Unidad.Trim() == "u" ? "unidades" : "milimetros";
+                        PanelPlato pnlPlato = new PanelPlato(i.NombreProducto,unidad);
                         pnlPlato.Location = new Point(x, y);
                         pnlPlato.Tag = i.IdIngrediente;
                         
@@ -157,32 +159,11 @@ namespace ProyectoLab3
         private void quitarControles()
         {
 
-           // Control.ControlCollection controles = pnlIngredientes.Controls;
             int lenght = pnlIngredientes.Controls.Count;
             for (int i = 0; i < lenght; i++) {
                 pnlIngredientes.Controls.RemoveAt(0);
             }
-            /*foreach (Control c in controles)
-            {
-                pnlIngredientes.Controls.Remove(c);
-               /* bool noExist = false;
-                Ingrediente r= null;
-                foreach (Ingrediente i in lista)
-                {
-                    r = i;
-                    if (c.GetType() == typeof(PanelPlato))
-                    {
-                        if (c.Tag.ToString() == i.IdIngrediente.ToString())
-                            noExist = true;
-                    }
-                }
-                if (!noExist && r!=null)
-                {
-                    int desde = pnlIngredientes.Controls.IndexOf(r.Plato);
-                    pnlIngredientes.Controls.Remove(r.Plato);
-                    //TODO: arreglar reordenarConstroles(desde, controles);
-                }   
-            }*/
+          
             y = 0;
 
         }

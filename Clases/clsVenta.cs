@@ -27,16 +27,15 @@ namespace Clases
                 foreach (PanelPlato p in productos)
                 {
                     
-                    //comando.CommandText = "Insert into Receta values (" + idPlato + "," + i.IdIngrediente + "," + i.Plato.NudGramos.Value.ToString() + ");";
+                    
                     int cantidad = int.Parse(p.NudGramos.Value.ToString());
-                    comando.CommandText = string.Format("INSERT INTO DescripcionVenta(NroVenta,IdPlato,Costo,Precio)VALUES({0},{1},'{2}','{3}')", nroVenta, p.Id, p.Costo.ToString().Replace(',', '.'), p.Precio.ToString().Replace(',', '.'));
+                    decimal totalCosto = cantidad * p.Costo;
+                    decimal totalPrecio = cantidad * p.Precio;
+                    comando.CommandText = string.Format("INSERT INTO DescripcionVenta(NroVenta,IdPlato,Costo,Precio,Cantidad)VALUES({0},{1},'{2}','{3}',{4})", nroVenta, p.Id, totalCosto.ToString().Replace(',', '.'), totalPrecio.ToString().Replace(',', '.'),cantidad);
                     if (p.EsBebida)
-                        comando.CommandText = string.Format("INSERT INTO DescripcionVenta(NroVenta,IdBebida,Costo,Precio)VALUES({0},{1},'{2}','{3}')", nroVenta, p.Id, p.Costo.ToString().Replace(',', '.'), p.Precio.ToString().Replace(',', '.'));
+                        comando.CommandText = string.Format("INSERT INTO DescripcionVenta(NroVenta,IdBebida,Costo,Precio,Cantidad)VALUES({0},{1},'{2}','{3}',{4})", nroVenta, p.Id, totalCosto.ToString().Replace(',', '.'), totalPrecio.ToString().Replace(',', '.'), cantidad);
                     listaProductos.Add(new Producto() {Nombre=p.Nombre,Cantidad=cantidad,Precio=p.Precio });
-                    for (int i = 0; i < cantidad; i++)
-                    {
-                        comando.ExecuteNonQuery();
-                    }
+                    comando.ExecuteNonQuery();  
                 }
                 transaction.Commit();
             }
@@ -57,6 +56,19 @@ namespace Clases
                 clsConexion.closeCon();
             }
          
+            return resp;
+        }
+
+        public static int numeroVenta() {
+            int resp = 0;
+            SqlCommand comando = new SqlCommand("SELECT NumeroTransaccion From Sucursal where IdSucursal=" + clsConexion.SucursalSession, clsConexion.getCon()) ;
+            try
+            {
+                resp=int.Parse(comando.ExecuteScalar().ToString());
+            }
+            catch (SqlException e) {
+                throw e;
+            }
             return resp;
         }
     }

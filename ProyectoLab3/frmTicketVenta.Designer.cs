@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(977, 452);
             this.Controls.Add(this.crTicket);
             this.Name = "frmTicketVenta";
-            this.Text = "frmTicketVenta";
+            this.Text = "Ticket";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTicketVenta_Load);
             this.ResumeLayout(false);

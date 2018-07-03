@@ -131,8 +131,8 @@ namespace Clases
 
 
         public static bool logeo(string usuario,string clave) {
-            bool valid = false;
-            comando = new SqlCommand("select * from Empleado where Usuario = '" + usuario + "' AND Clave = '" + clave + "'" );
+            bool valid = false;//select Tipo,Nombre,Apellido,Empleado.IdSucursal,Empleado.IdEmpleado,NombreInterno from Empleado inner join Sucursal on (Empleado.IdSucursal=Sucursal.IdSucursal);
+            comando = new SqlCommand("select Tipo,Nombre,Apellido,Empleado.IdSucursal,Empleado.IdEmpleado,NombreInterno from Empleado inner join Sucursal on (Empleado.IdSucursal=Sucursal.IdSucursal) where Usuario = '" + usuario + "' AND Clave = '" + clave + "'");
             try
             {
                 empleados = new DataTable("Empleados");
@@ -148,7 +148,7 @@ namespace Clases
                 clsConexion.IdEmpleado = empleados.Rows[0]["IdEmpleado"].ToString();
                 clsConexion.NombreCompleto =  empleados.Rows[0]["Nombre"].ToString() + " " +  empleados.Rows[0]["Apellido"].ToString(); ;
                 clsConexion.SucursalSession = Convert.ToInt32(empleados.Rows[0]["IdSucursal"].ToString());
-
+                clsConexion.NombreSucursal = empleados.Rows[0]["NombreInterno"].ToString();
             }
             catch (SqlException x) { Console.WriteLine(x.Message); }
             finally { clsConexion.closeCon(); }

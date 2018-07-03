@@ -31,7 +31,7 @@ namespace Componentes
 
             InitializeComponent();
         }
-        public PanelPlato(string NombreIngrediente)
+        public PanelPlato(string NombreIngrediente,string unidad)
         {
             InitializeComponent();
             Label lblIng = new Label();
@@ -40,7 +40,7 @@ namespace Componentes
             lblIng.Size = new System.Drawing.Size(150, 25);
             this.Controls.Add(lblIng);
             Label lblTag = new Label();
-            lblTag.Text = "Cantidad(en gramos):";
+            lblTag.Text = string.Format("Cantidad(en {0}):",unidad);
             lblTag.Location = new System.Drawing.Point(5, 35);
             lblTag.Size = new System.Drawing.Size(150,25);
             this.Controls.Add(lblTag);

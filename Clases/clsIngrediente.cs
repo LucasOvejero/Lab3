@@ -17,7 +17,7 @@ namespace Clases
 
         public static DataTable seleccionarIngredientes()
         {
-            selectIngre = new SqlCommand("select * from Ingrediente i left outer  join CategoriaIngredientes c on(i.IdCategoria=c.IdCategoria)");
+            selectIngre = new SqlCommand("select i.IdIngrediente,i.IdCategoria,i.NombreProducto as Nombre,i.CostoxKg as Costo,Unidad,i.stockCritico,c.Nombre as Categoria from Ingrediente i left outer  join CategoriaIngredientes c on(i.IdCategoria=c.IdCategoria)");
             try
             {
                 ingredientes = new DataTable("Ingredientes");
@@ -37,17 +37,18 @@ namespace Clases
             return ingredientes;
         } 
 
-        public static string insertarIngrediente(string nombre, double CostoXKilo, int stockCritico, int IdCategoria)
+        public static string insertarIngrediente(string nombre, double CostoXKilo, int stockCritico, int IdCategoria,string unidad)
         {
             string resp = "";
             comando = new SqlCommand();
-            comando.CommandText = "INSERT INTO Ingrediente (NombreProducto,CostoxKG, stockCritico, IdCategoria) values (@NombreProducto,@Costo, @stockCritico,@IdCategoria);Select SCOPE_IDENTITY();";
-            SqlParameter[] parametros = new SqlParameter[4];
+            comando.CommandText = "INSERT INTO Ingrediente (NombreProducto,CostoxKG, stockCritico, IdCategoria,Unidad) values (@NombreProducto,@Costo, @stockCritico,@IdCategoria,@Unidad);Select SCOPE_IDENTITY();";
+            SqlParameter[] parametros = new SqlParameter[5];
 
             parametros[0] = new SqlParameter("@NombreProducto", nombre);
             parametros[1] = new SqlParameter("@Costo", CostoXKilo);
             parametros[2] = new SqlParameter("@stockCritico", stockCritico);
             parametros[3] = new SqlParameter("@IdCategoria", IdCategoria);
+            parametros[4] = new SqlParameter("@Unidad", unidad);
             try
             {
                 comando.Parameters.AddRange(parametros);
@@ -87,15 +88,17 @@ namespace Clases
                 throw e;
             }
         }
-        public static string actualizar(int id, string nombre, decimal precio,int idCategoria)
+        public static string actualizar(int id, string nombre, decimal precio,int idCategoria,int stockCritico,string unidad)
         {
             string resp = "";
-            comando = new SqlCommand("UPDATE Ingrediente set NombreProducto=@Nombre, CostoxKg=@Precio, IdCategoria=@IdCategoria where IdIngrediente=@IdIngrediente");
-            SqlParameter[] parametros = new SqlParameter[4];
-            parametros[0] = new SqlParameter("Nombre", nombre);
-            parametros[1] = new SqlParameter("Precio", precio);
-            parametros[2] = new SqlParameter("IdIngrediente", id);
-            parametros[3] = new SqlParameter("IdCategoria", idCategoria);
+            comando = new SqlCommand("UPDATE Ingrediente set NombreProducto=@Nombre, CostoxKg=@Precio, IdCategoria=@IdCategoria,stockCritico=@stockCritico,Unidad=@Unidad where IdIngrediente=@IdIngrediente");
+            SqlParameter[] parametros = new SqlParameter[6];
+            parametros[0] = new SqlParameter("@Nombre", nombre);
+            parametros[1] = new SqlParameter("@Precio", precio);
+            parametros[2] = new SqlParameter("@IdIngrediente", id);
+            parametros[3] = new SqlParameter("@IdCategoria", idCategoria);
+            parametros[4] = new SqlParameter("@stockCritico", stockCritico);
+            parametros[5] = new SqlParameter("@Unidad", unidad);
             try
             {
                 comando.Connection = clsConexion.getCon();

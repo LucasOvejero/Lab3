@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="dsTicket.cs">
       <DependentUpon>dsTicket.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="dsTicket.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -102,9 +102,10 @@ namespace ProyectoLab3
             }
             if (dgvIngredientes.DataSource != null)
             {
-                dgvIngredientes.Columns["CostoxKg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvIngredientes.Columns["CostoxKg"].DefaultCellStyle.Format = "c";
-                dgvIngredientes.Columns["NombreProducto"].HeaderText = "Nombre";
+                dgvIngredientes.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvIngredientes.Columns["stockCritico"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvIngredientes.Columns["Costo"].DefaultCellStyle.Format = "c";
+               
             }
         }
 
@@ -201,7 +202,8 @@ namespace ProyectoLab3
                     DataRowView fila = cboCategorias.SelectedItem as DataRowView;
                     int idCategoria;
                     idCategoria = int.TryParse(fila[0].ToString(), out idCategoria) ? idCategoria : 0;
-                    r = clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text, (double)nudCostoPorKilo.Value,  Convert.ToInt32(tbStockCritico.Text) , idCategoria);
+                    string unidad = cboMedida.SelectedItem.ToString().Trim();
+                    r = clsIngrediente.insertarIngrediente(tbNombreIngrediente.Text, (double)nudCostoPorKilo.Value,  Convert.ToInt32(tbStockCritico.Text) , idCategoria,unidad);
                     MessageBox.Show(r, "Mensaje", MessageBoxButtons.OK);
                     configurarIngredientes();
                 }
@@ -226,6 +228,7 @@ namespace ProyectoLab3
             {
                 //dgvIngredientes.DataSource = null;
                 //dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
+                cboMedida.SelectedIndex = 0;
                 actualizarCategoriasIngredientes();
             }
             catch (SqlException e)
@@ -256,7 +259,10 @@ namespace ProyectoLab3
                     DataRowView cat = cboEditCateg.SelectedItem as DataRowView;
                     int idCategoria;
                     idCategoria = int.TryParse(cat[0].ToString(), out idCategoria) ? idCategoria : 0;
-                    string resp = clsIngrediente.actualizar(getIntValue(fila.Cells["IdIngrediente"]), tbEditNombreIngrediente.Text, nudEditCostoIngrediente.Value, idCategoria);
+                    int stockCritico =tbEditStockCritico.Text!=string.Empty? int.Parse(tbEditStockCritico.Text):0;
+
+                    string unidad = cboEditUnidad.SelectedItem.ToString().Trim();
+                    string resp = clsIngrediente.actualizar(getIntValue(fila.Cells["IdIngrediente"]), tbEditNombreIngrediente.Text, nudEditCostoIngrediente.Value, idCategoria,stockCritico,unidad);
                     MessageBox.Show(resp, "Exito!", MessageBoxButtons.OK);
                 }
                 catch (SqlException sqlEx)
@@ -277,9 +283,12 @@ namespace ProyectoLab3
             if (c > 0)
             {
                 DataGridViewRow fila = dgvIngredientes.SelectedRows[0];
-                nudEditCostoIngrediente.Value = getDecimalValue(fila.Cells["CostoxKg"]);
-                tbEditNombreIngrediente.Text = fila.Cells["NombreProducto"].Value.ToString();
+                nudEditCostoIngrediente.Value = getDecimalValue(fila.Cells["Costo"]);
+                tbEditNombreIngrediente.Text = fila.Cells["Nombre"].Value.ToString();
                 string categoria = fila.Cells["IdCategoria"].Value.ToString();
+                tbEditStockCritico.Text = fila.Cells["stockCritico"].Value.ToString();
+                string unidad = fila.Cells["Unidad"].Value.ToString().Trim();
+
                 int indice = -1;
 
                 foreach (DataRowView item in cboEditCateg.Items)
@@ -289,6 +298,12 @@ namespace ProyectoLab3
                         break;
                 }
                 cboEditCateg.SelectedIndex = indice;
+                indice = -1;
+                foreach (String i in cboEditUnidad.Items) {
+                    indice++;
+                    if(i==unidad)break;
+                }
+                cboEditUnidad.SelectedIndex = indice;
             }
         }
         #region getValues
@@ -361,6 +376,23 @@ namespace ProyectoLab3
         {
             if (!char.IsNumber(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void cboMedida_SelectedValueChanged(object sender, EventArgs e)
+        {
+            switch(cboMedida.SelectedItem.ToString()){
+                case "u": lblCosto.Text = "Costo por unidad"; break;
+                case "g": lblCosto.Text = "Costo por kg"; break;
+                case "ml": lblCosto.Text = "Costo por litro"; break;
+            }
+        }
+
+        private void tbStockCritico_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

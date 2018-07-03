@@ -171,7 +171,7 @@
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.label1);
             this.Name = "frmCrearPlatoSeleccionIng";
-            this.Text = "frmCrearPlatoSeleccionIng";
+            this.Text = "Plato";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmCrearPlatoSeleccionIng_Load);
             this.ResumeLayout(false);

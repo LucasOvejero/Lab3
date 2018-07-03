@@ -140,7 +140,7 @@ namespace ProyectoLab3
         {
             //NombreProducto
             DataTable dt = (DataTable)dgvIngredientes.DataSource;
-            dt.DefaultView.RowFilter = string.Format("NombreProducto like '%{0}%'", tbBusquedaIngrediente.Text);
+            dt.DefaultView.RowFilter = string.Format("Nombre like '%{0}%'", tbBusquedaIngrediente.Text);
             dgvIngredientes.Refresh();
         }
 

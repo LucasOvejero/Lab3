@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
@@ -46,7 +47,7 @@ namespace ProyectoLab3
                     break;
 
                 case "Vendedor":
-                    ofrmVenta = new frmVenta(clsConexion.SucursalSession);//TODO:asignarle el deposito del usuario actual
+                    ofrmVenta = new frmVenta(clsConexion.SucursalSession);
                     ofrmVenta.ShowDialog();
                     clsConexion.SucursalSession = -1;
                     VerificarLogeo();
@@ -138,7 +139,7 @@ namespace ProyectoLab3
 
         private void BtnDeposito_Click(object sender, EventArgs e)
         {
-            ofrMiDepo = new frmMiDeposito(clsConexion.SucursalSession);//TODO:asignarle el deposito del usuario actual
+            ofrMiDepo = new frmMiDeposito(clsConexion.SucursalSession);
             ofrMiDepo.ShowDialog();
         }
 
@@ -150,13 +151,13 @@ namespace ProyectoLab3
 
         private void BtnVenta_Click(object sender, EventArgs e)
         {
-            ofrmVenta = new frmVenta(clsConexion.SucursalSession);//TODO:asignarle el deposito del usuario actual
+            ofrmVenta = new frmVenta(clsConexion.SucursalSession);
             ofrmVenta.ShowDialog();
         }
 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
-            ofrmGraficos = new frmGraficos(clsConexion.SucursalSession);//TODO asignarle el id de la sucursal actual
+            ofrmGraficos = new frmGraficos(clsConexion.SucursalSession);
             ofrmGraficos.ShowDialog();
         }
 
