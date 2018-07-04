@@ -32,6 +32,7 @@ namespace ProyectoLab3
 
             configurar();
             tbProvincia.Focus();
+            formatearGrillas();
         }
 
 
@@ -44,7 +45,7 @@ namespace ProyectoLab3
             {
                 ds.Tables.Add(clsLocalidad.seleccionarLocalidad());
                 ds.Tables.Add(clsProvincia.seleccionarProvincias());
-                ds.Tables.Add(clsSucursal.seleccionarSucursales());
+                ds.Tables.Add(clsSucursal.seleccionarTodasLasSucursales());
                 ds.Tables.Add(clsEmpleado.selectActivos());
                 relacion = new DataRelation("RelProvLoc", ds.Tables["Provincias"].Columns["IdProvincia"], ds.Tables["Localidades"].Columns["IdProvincia"]);
                 ds.Relations.Add(relacion);
@@ -68,12 +69,10 @@ namespace ProyectoLab3
             bsSuc.DataSource = bsLoc;
             bsSuc.DataMember = "RelLocSuc";
             dgvSucursal.DataSource = bsSuc;
-
-
             dgvManagers.DataSource = null;
-
-            formatearGrillas();
+            
         }
+
         private void formatearGrillas()
         {
             // dgvLocalidad.Columns["IdLocalidad"].Visible = false;
@@ -95,8 +94,7 @@ namespace ProyectoLab3
                 }
 
 
-                dgvSucursal.Columns["Nombre Sucursal"].Width = 120;
-                dgvSucursal.Columns["Direccion"].Width = 200;
+                //dgvSucursal.Columns["Nombre Sucursal"].Width = 120;
                 dgvProvincia.Columns["NombreProvincia"].Width = 120;
                 dgvProvincia.Columns["NombreProvincia"].HeaderText = "Nombre de provincia";
                 dgvLocalidad.Columns["NombreLocalidad"].Width = 122;
@@ -104,9 +102,11 @@ namespace ProyectoLab3
 
 
                 dgvSucursal.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+                dgvSucursal.Columns["Direccion"].Width = 200;
                 dgvManagers.Columns["Dni"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvManagers.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
+                dgvSucursal.Columns["Nombre Sucursal"].Width = 120;
                 dgvSucursal.Columns["Estado"].Visible = false;
                 dgvManagers.Columns["Estado"].Visible = false;
                 dgvManagers.Columns["Usuario"].Visible = false;
@@ -167,6 +167,9 @@ namespace ProyectoLab3
                 rtbDir.Clear();
                 tbTelefono.Clear();
                 formatearGrillas();
+                tbNombreSucursal.Clear();
+                dgvLocalidad_RowEnter_1(null,null);
+                dgvSucursal.Refresh();
             }
             else if (rtbDir.Text == string.Empty)
             {

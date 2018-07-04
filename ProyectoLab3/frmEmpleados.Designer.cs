@@ -458,7 +458,7 @@
             this.btnTransferir.Name = "btnTransferir";
             this.btnTransferir.Size = new System.Drawing.Size(107, 34);
             this.btnTransferir.TabIndex = 1;
-            this.btnTransferir.Text = "Transferir";
+            this.btnTransferir.Text = "Transferir a...";
             this.btnTransferir.UseVisualStyleBackColor = true;
             this.btnTransferir.Click += new System.EventHandler(this.btnTransferir_Click);
             // 

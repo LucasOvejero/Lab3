@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSolicitudes = new Componentes.GrillaFormatead();
             this.dgvDetalle = new Componentes.GrillaFormatead();
             this.lblDetalles = new System.Windows.Forms.Label();
@@ -46,23 +46,22 @@
             this.dgvSolicitudes.AllowUserToAddRows = false;
             this.dgvSolicitudes.AllowUserToResizeColumns = false;
             this.dgvSolicitudes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSolicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Location = new System.Drawing.Point(12, 45);
             this.dgvSolicitudes.MultiSelect = false;
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.RowHeadersVisible = false;
-            this.dgvSolicitudes.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(281, 312);
+            this.dgvSolicitudes.Size = new System.Drawing.Size(309, 360);
             this.dgvSolicitudes.TabIndex = 1;
             // 
             // dgvDetalle
@@ -70,30 +69,29 @@
             this.dgvDetalle.AllowUserToAddRows = false;
             this.dgvDetalle.AllowUserToResizeColumns = false;
             this.dgvDetalle.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalle.Location = new System.Drawing.Point(336, 45);
+            this.dgvDetalle.Location = new System.Drawing.Point(376, 45);
             this.dgvDetalle.MultiSelect = false;
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.ReadOnly = true;
             this.dgvDetalle.RowHeadersVisible = false;
-            this.dgvDetalle.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalle.Size = new System.Drawing.Size(273, 312);
+            this.dgvDetalle.Size = new System.Drawing.Size(273, 360);
             this.dgvDetalle.TabIndex = 5;
             // 
             // lblDetalles
             // 
             this.lblDetalles.AutoSize = true;
             this.lblDetalles.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalles.Location = new System.Drawing.Point(438, 11);
+            this.lblDetalles.Location = new System.Drawing.Point(481, 11);
             this.lblDetalles.Name = "lblDetalles";
             this.lblDetalles.Size = new System.Drawing.Size(66, 22);
             this.lblDetalles.TabIndex = 7;
@@ -103,7 +101,7 @@
             // 
             this.lblSolicitudes.AutoSize = true;
             this.lblSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolicitudes.Location = new System.Drawing.Point(58, 11);
+            this.lblSolicitudes.Location = new System.Drawing.Point(71, 11);
             this.lblSolicitudes.Name = "lblSolicitudes";
             this.lblSolicitudes.Size = new System.Drawing.Size(190, 22);
             this.lblSolicitudes.TabIndex = 6;
@@ -111,7 +109,7 @@
             // 
             // btnRecibir
             // 
-            this.btnRecibir.Location = new System.Drawing.Point(187, 399);
+            this.btnRecibir.Location = new System.Drawing.Point(101, 432);
             this.btnRecibir.Name = "btnRecibir";
             this.btnRecibir.Size = new System.Drawing.Size(106, 67);
             this.btnRecibir.TabIndex = 8;
@@ -121,7 +119,7 @@
             // 
             // btnInconveniente
             // 
-            this.btnInconveniente.Location = new System.Drawing.Point(319, 399);
+            this.btnInconveniente.Location = new System.Drawing.Point(373, 432);
             this.btnInconveniente.Name = "btnInconveniente";
             this.btnInconveniente.Size = new System.Drawing.Size(93, 67);
             this.btnInconveniente.TabIndex = 8;
@@ -131,7 +129,7 @@
             // 
             // tbInconveniente
             // 
-            this.tbInconveniente.Location = new System.Drawing.Point(432, 399);
+            this.tbInconveniente.Location = new System.Drawing.Point(472, 432);
             this.tbInconveniente.Multiline = true;
             this.tbInconveniente.Name = "tbInconveniente";
             this.tbInconveniente.Size = new System.Drawing.Size(177, 67);

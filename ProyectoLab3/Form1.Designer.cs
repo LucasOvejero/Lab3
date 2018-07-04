@@ -37,7 +37,6 @@
             this.pnlVendedor = new System.Windows.Forms.Panel();
             this.pnlCritico = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvCritico = new Componentes.GrillaFormatead();
             this.label1 = new System.Windows.Forms.Label();
             this.gbVentas = new System.Windows.Forms.GroupBox();
             this.gbDeposito = new System.Windows.Forms.GroupBox();
@@ -53,15 +52,17 @@
             this.btnEditPlato = new System.Windows.Forms.Button();
             this.btnPlato = new System.Windows.Forms.Button();
             this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.dgvCritico = new Componentes.GrillaFormatead();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlVendedor.SuspendLayout();
             this.pnlCritico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).BeginInit();
             this.gbVentas.SuspendLayout();
             this.gbDeposito.SuspendLayout();
             this.gbSucursal.SuspendLayout();
             this.gbProductos.SuspendLayout();
             this.gbPlatos.SuspendLayout();
             this.pnlAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSolicitudes
@@ -118,6 +119,7 @@
             // 
             this.pnlVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlVendedor.Controls.Add(this.btnLogout);
             this.pnlVendedor.Controls.Add(this.pnlCritico);
             this.pnlVendedor.Controls.Add(this.label1);
             this.pnlVendedor.Controls.Add(this.gbVentas);
@@ -147,29 +149,6 @@
             this.label2.Size = new System.Drawing.Size(333, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "Atencion, los siguientes productos estan en stock critico:\r\n";
-            // 
-            // dgvCritico
-            // 
-            this.dgvCritico.AllowUserToAddRows = false;
-            this.dgvCritico.AllowUserToResizeColumns = false;
-            this.dgvCritico.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCritico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCritico.Location = new System.Drawing.Point(27, 42);
-            this.dgvCritico.MultiSelect = false;
-            this.dgvCritico.Name = "dgvCritico";
-            this.dgvCritico.ReadOnly = true;
-            this.dgvCritico.RowHeadersVisible = false;
-            this.dgvCritico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCritico.Size = new System.Drawing.Size(342, 300);
-            this.dgvCritico.TabIndex = 0;
             // 
             // label1
             // 
@@ -338,6 +317,40 @@
             this.pnlAdmin.Size = new System.Drawing.Size(1219, 110);
             this.pnlAdmin.TabIndex = 0;
             // 
+            // dgvCritico
+            // 
+            this.dgvCritico.AllowUserToAddRows = false;
+            this.dgvCritico.AllowUserToResizeColumns = false;
+            this.dgvCritico.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCritico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCritico.Location = new System.Drawing.Point(27, 42);
+            this.dgvCritico.MultiSelect = false;
+            this.dgvCritico.Name = "dgvCritico";
+            this.dgvCritico.ReadOnly = true;
+            this.dgvCritico.RowHeadersVisible = false;
+            this.dgvCritico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCritico.Size = new System.Drawing.Size(342, 300);
+            this.dgvCritico.TabIndex = 0;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnLogout.Location = new System.Drawing.Point(572, 465);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(89, 37);
+            this.btnLogout.TabIndex = 16;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,13 +369,13 @@
             this.pnlVendedor.PerformLayout();
             this.pnlCritico.ResumeLayout(false);
             this.pnlCritico.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).EndInit();
             this.gbVentas.ResumeLayout(false);
             this.gbDeposito.ResumeLayout(false);
             this.gbSucursal.ResumeLayout(false);
             this.gbProductos.ResumeLayout(false);
             this.gbPlatos.ResumeLayout(false);
             this.pnlAdmin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -394,6 +407,7 @@
         private Componentes.GrillaFormatead dgvCritico;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

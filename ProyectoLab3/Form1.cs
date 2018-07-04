@@ -71,6 +71,10 @@ namespace ProyectoLab3
             {
                 pnlCritico.Visible = false;
             }
+            else
+            {
+                pnlCritico.Visible = true;
+            }
         }
 
         private void BtnBebidas_Click(object sender, EventArgs e)
@@ -184,5 +188,11 @@ namespace ProyectoLab3
 
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            clsConexion.SucursalSession = -1;
+            dgvCritico.DataSource = null;
+            VerificarLogeo();
+        }
     }
 }

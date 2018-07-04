@@ -12,7 +12,8 @@ namespace ProyectoLab3
 {
     public partial class FrmSolicitudes : Form
     {
-        //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+        frmEnvios ofrmEnvios;
+
         int IdSession = clsConexion.SucursalSession;
 
         public FrmSolicitudes()
@@ -172,5 +173,15 @@ namespace ProyectoLab3
             }
         }
 
+        private void dgvPeticiones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnEnvios_Click(object sender, EventArgs e)
+        {
+            ofrmEnvios = new frmEnvios();
+            ofrmEnvios.ShowDialog();
+        }
     }
 }

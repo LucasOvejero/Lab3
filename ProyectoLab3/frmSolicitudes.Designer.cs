@@ -42,6 +42,7 @@
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlAceptarRechazar = new System.Windows.Forms.Panel();
+            this.btnEnvios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaFormatead1)).BeginInit();
@@ -63,14 +64,14 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSolicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSolicitudes.Location = new System.Drawing.Point(12, 43);
+            this.dgvSolicitudes.Location = new System.Drawing.Point(12, 42);
             this.dgvSolicitudes.MultiSelect = false;
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.RowHeadersVisible = false;
-            this.dgvSolicitudes.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvSolicitudes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(399, 216);
+            this.dgvSolicitudes.Size = new System.Drawing.Size(397, 233);
             this.dgvSolicitudes.TabIndex = 0;
             this.dgvSolicitudes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_CellContentClick);
             this.dgvSolicitudes.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_RowEnter);
@@ -94,27 +95,28 @@
             this.dgvPeticiones.Name = "dgvPeticiones";
             this.dgvPeticiones.ReadOnly = true;
             this.dgvPeticiones.RowHeadersVisible = false;
-            this.dgvPeticiones.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvPeticiones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPeticiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPeticiones.Size = new System.Drawing.Size(399, 216);
+            this.dgvPeticiones.Size = new System.Drawing.Size(397, 158);
             this.dgvPeticiones.TabIndex = 1;
+            this.dgvPeticiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeticiones_CellContentClick);
             this.dgvPeticiones.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPeticiones_RowEnter);
             // 
             // lblPeticiones
             // 
             this.lblPeticiones.AutoSize = true;
             this.lblPeticiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeticiones.Location = new System.Drawing.Point(95, 273);
+            this.lblPeticiones.Location = new System.Drawing.Point(39, 287);
             this.lblPeticiones.Name = "lblPeticiones";
-            this.lblPeticiones.Size = new System.Drawing.Size(218, 22);
+            this.lblPeticiones.Size = new System.Drawing.Size(313, 22);
             this.lblPeticiones.TabIndex = 2;
-            this.lblPeticiones.Text = "Mis Solicitudes Envidadas";
+            this.lblPeticiones.Text = "Mis Solicitudes Envidadas Pendientes";
             // 
             // lblSolicitudes
             // 
             this.lblSolicitudes.AutoSize = true;
             this.lblSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolicitudes.Location = new System.Drawing.Point(100, 9);
+            this.lblSolicitudes.Location = new System.Drawing.Point(84, 17);
             this.lblSolicitudes.Name = "lblSolicitudes";
             this.lblSolicitudes.Size = new System.Drawing.Size(213, 22);
             this.lblSolicitudes.TabIndex = 3;
@@ -156,21 +158,21 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalle.Location = new System.Drawing.Point(481, 43);
+            this.dgvDetalle.Location = new System.Drawing.Point(488, 42);
             this.dgvDetalle.MultiSelect = false;
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.ReadOnly = true;
             this.dgvDetalle.RowHeadersVisible = false;
             this.dgvDetalle.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalle.Size = new System.Drawing.Size(287, 397);
+            this.dgvDetalle.Size = new System.Drawing.Size(287, 428);
             this.dgvDetalle.TabIndex = 4;
             // 
             // lblDetalles
             // 
             this.lblDetalles.AutoSize = true;
             this.lblDetalles.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalles.Location = new System.Drawing.Point(600, 18);
+            this.lblDetalles.Location = new System.Drawing.Point(599, 17);
             this.lblDetalles.Name = "lblDetalles";
             this.lblDetalles.Size = new System.Drawing.Size(75, 22);
             this.lblDetalles.TabIndex = 5;
@@ -202,16 +204,28 @@
             // 
             this.pnlAceptarRechazar.Controls.Add(this.btnAccept);
             this.pnlAceptarRechazar.Controls.Add(this.btnCancel);
-            this.pnlAceptarRechazar.Location = new System.Drawing.Point(481, 456);
+            this.pnlAceptarRechazar.Location = new System.Drawing.Point(488, 492);
             this.pnlAceptarRechazar.Name = "pnlAceptarRechazar";
             this.pnlAceptarRechazar.Size = new System.Drawing.Size(287, 72);
             this.pnlAceptarRechazar.TabIndex = 8;
+            // 
+            // btnEnvios
+            // 
+            this.btnEnvios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEnvios.Location = new System.Drawing.Point(125, 492);
+            this.btnEnvios.Name = "btnEnvios";
+            this.btnEnvios.Size = new System.Drawing.Size(118, 48);
+            this.btnEnvios.TabIndex = 6;
+            this.btnEnvios.Text = "Reportar Solicitud";
+            this.btnEnvios.UseVisualStyleBackColor = true;
+            this.btnEnvios.Click += new System.EventHandler(this.btnEnvios_Click);
             // 
             // FrmSolicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 540);
+            this.ClientSize = new System.Drawing.Size(815, 602);
+            this.Controls.Add(this.btnEnvios);
             this.Controls.Add(this.pnlAceptarRechazar);
             this.Controls.Add(this.lblDetalles);
             this.Controls.Add(this.dgvDetalle);
@@ -248,5 +262,6 @@
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel pnlAceptarRechazar;
+        private System.Windows.Forms.Button btnEnvios;
     }
 }

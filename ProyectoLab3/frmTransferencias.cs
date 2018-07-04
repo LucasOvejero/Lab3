@@ -30,7 +30,7 @@ namespace ProyectoLab3
         {
             //TODO : filtro
             DataTable dt = (DataTable)dgvTransferencia.DataSource;
-            dt.DefaultView.RowFilter = string.Format("[Nombre Destino] like '%{0}%' OR [Direccion Destino] like '%{0}%' OR [Nombre Desde] like '%{0}%' OR [Nombre] like '%{0}%' OR [Apellido] like '%{0}%' OR  [Motivo] like '%{0}%'", tbFiltroTransferencia.Text);
+            dt.DefaultView.RowFilter = string.Format("[Nombre Destino] like '%{0}%' OR [Direccion Destino] like '%{0}%' OR [Direccion Desde] like '%{0}%' OR [Nombre Desde] like '%{0}%' OR [Nombre] like '%{0}%' OR [Apellido] like '%{0}%' OR  [Motivo] like '%{0}%'", tbFiltroTransferencia.Text);
             //dt.DefaultView.RowFilter = string.Format("[Nombre Sucursal] like '%{0}%' OR Direccion like '%{0}%' OR Telefono like '%{0}%' OR Manager like '%{0}%'", tbFiltroSucursal.Text);
             dgvTransferencia.Refresh();
         }

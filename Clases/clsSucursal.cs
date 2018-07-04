@@ -69,6 +69,29 @@ namespace Clases
             finally { clsConexion.closeCon(); }
             return sucursales;
         }
+
+
+
+        public static DataTable seleccionarTodasLasSucursales()
+        {
+            comando = new SqlCommand("select IdManager,s.IdSucursal, s.NombreInterno as \"Nombre Sucursal\" , s.Direccion,s.Telefono,  Nombre +' '+ Apellido AS Manager, s.Estado , IdLocalidad from Sucursal s  left outer join Empleado ON IdManager = IdEmpleado");
+            try
+            {
+                sucursales = new DataTable("Sucursales");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(sucursales);
+            }
+            catch (SqlException x)
+            {
+                throw x;
+            }
+            finally { clsConexion.closeCon(); }
+            return sucursales;
+        }
+
+
         public static string[] getPerLocProv(string localidad, string provincia)
         {
             List<string> LSucursales = new List<string>();
@@ -222,9 +245,19 @@ namespace Clases
         {
             try
             {
-                comando.CommandText = "select * from Sucursal where IdSucursal=" + id;
-                adaptador.SelectCommand = comando;
-                adaptador.Fill(sucursales);
+
+                comando = new SqlCommand("select * from Sucursal where IdSucursal=" + id);
+                try
+                {
+                    sucursales = new DataTable("Sucursales");
+                    comando.Connection = clsConexion.getCon();
+                    adaptador = new SqlDataAdapter();
+                    adaptador.SelectCommand = comando;
+                    adaptador.Fill(sucursales);
+                    comando.ExecuteNonQuery();
+                }
+                catch (SqlException x) { Console.WriteLine(x.Message); }
+                finally { clsConexion.closeCon(); }
             }
             catch (SqlException e)
             {
@@ -266,7 +299,7 @@ namespace Clases
 
         public static void actualizar(int id, string dir, int idManager, string tel, string NombreInterno)
         {
-            if (idManager > -1)            
+            if (idManager > -1)
                 comando = new SqlCommand("UPDATE Sucursal SET Direccion = '" + dir + "' , IdManager= " + idManager + ", Telefono = '" + tel + "' , NombreInterno = '" + NombreInterno + "' WHERE IdSucursal = " + id);
             else
                 comando = new SqlCommand("UPDATE Sucursal SET Direccion = '" + dir + "', Telefono = '" + tel + "' , NombreInterno = '" + NombreInterno + "' WHERE IdSucursal = " + id);

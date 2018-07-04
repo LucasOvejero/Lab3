@@ -88,7 +88,9 @@ namespace Clases
 
         public static DataTable MisSolcitudesRecibidasVigentes(int miId)
         {
-            comando = new SqlCommand("select * from Solicitudes WHERE IdSolicitado = " + miId + " AND estado is NULL");
+            //select so.fechaInicio,so.fechaFin, so.costoTotal,su.NombreInterno as "Desde", su.Telefono from Solicitudes so JOIN Sucursal su on so.IdSolicitante = su.IdSucursal  WHERE IdSolicitado = 1  AND so.estado is NULL
+            string consulta = "select so.fechaInicio, so.costoTotal,su.NombreInterno as \"Desde\", su.Telefono from Solicitudes so JOIN Sucursal su on so.IdSolicitante = su.IdSucursal  WHERE IdSolicitado = "+ miId +"  AND so.estado is NULL";
+            comando = new SqlCommand(consulta);
             try
             {
                 solicitudes = new DataTable("Solicitudes");
@@ -120,7 +122,9 @@ namespace Clases
 
         public static DataTable MisSolcitudesRealizadasVigentes(int miId)
         {
-            comando = new SqlCommand("select * from Solicitudes WHERE IdSolicitante = " + miId + " AND estado is NULL");
+            //comando = new SqlCommand("select * from Solicitudes WHERE IdSolicitante = " + miId + " AND estado is NULL AND recibido is null");          
+            string consulta = "select so.fechaInicio, so.costoTotal,su.NombreInterno as \"Para\", su.Telefono from Solicitudes so JOIN Sucursal su on so.IdSolicitante = su.IdSucursal  WHERE IdSolicitante = " + miId + "  AND so.estado is NULL";
+            comando = new SqlCommand(consulta);
             try
             {
                 solicitudes = new DataTable("Solicitudes");

@@ -23,7 +23,7 @@ namespace ProyectoLab3
 
         private void frmTransferirEmpleado_Load(object sender, EventArgs e)
         {
-            dgvSucursales.DataSource = clsSucursal.seleccionarSucursales();
+            dgvSucursales.DataSource = clsSucursal.seleccionarTodasLasSucursales();
             formatear();
         }
 
@@ -33,7 +33,16 @@ namespace ProyectoLab3
             try
             {
                 padre.idSucursalTransferencia = (int)dgvSucursales.SelectedRows[0].Cells["IdSucursal"].Value;
-                this.Close();
+                if (padre.idSucursalTransferencia != padre.idSucursalAntigua)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No puede transferir a la misma sucursal. Por favor, seleccion otra","Atentcion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                    
+               
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
         }

@@ -18,6 +18,7 @@ namespace ProyectoLab3
         DataSet ds;
         SqlDataAdapter adapter;
         string tipoEdit;
+        public int idSucursalAntigua;
         frmTransferirEmpleado ofrm;
         public int idSucursalTransferencia;
 
@@ -56,7 +57,7 @@ namespace ProyectoLab3
             try
             {
                 //  dgvEmpleados.DataSource = clsEmpleado.joinSucursales();
-                dgvSucursales.DataSource = clsSucursal.seleccionarSucursales();
+                dgvSucursales.DataSource = clsSucursal.seleccionarTodasLasSucursales();
                 formatear();
             }
             catch (SqlException e)
@@ -230,7 +231,17 @@ namespace ProyectoLab3
             try
             {
                 int id = (int)dgvEmpleados.SelectedRows[0].Cells["IdEmpleado"].Value;
-                clsEmpleado.updateEmpleado(id, tbNombreEdit.Text, tbApellidoEdit.Text, tbTelefonoEdit.Text, tbDNIEdit.Text, cbTipoEdit.SelectedItem.ToString());
+                string tipo;
+                if (cbTipoEdit.SelectedIndex < 0)
+                {
+                    tipo = "Manager";
+                }
+                else
+                {
+                    tipo = cbTipoEdit.SelectedItem.ToString();
+                }
+
+                clsEmpleado.updateEmpleado(id, tbNombreEdit.Text, tbApellidoEdit.Text, tbTelefonoEdit.Text, tbDNIEdit.Text, tipo);
                 dgvEmpleados.DataSource = clsEmpleado.seleccionarEmpleados();
                 dgvSucursales.ClearSelection();
                 formatearGrillas();
@@ -242,13 +253,14 @@ namespace ProyectoLab3
         {
             if (cbTipoEdit.SelectedIndex > -1)
             {
+                this.idSucursalAntigua = (int)dgvEmpleados.SelectedRows[0].Cells["IdSucursal"].Value;
+
                 ofrm = new frmTransferirEmpleado(this);
                 ofrm.ShowDialog();
                 try
                 {
                     int idEmpleado = (int)dgvEmpleados.SelectedRows[0].Cells["IdEmpleado"].Value;
-
-                    int idSucursalAntigua = (int)dgvEmpleados.SelectedRows[0].Cells["IdEmpleado"].Value;
+                    
 
                     clsEmpleado.transferir(idEmpleado, this.idSucursalTransferencia);
                     clsEmpleado.registrarTransferencia(idEmpleado, this.idSucursalTransferencia, idSucursalAntigua, tbMotivo.Text);
