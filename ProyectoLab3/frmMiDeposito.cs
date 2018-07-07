@@ -75,7 +75,9 @@ namespace ProyectoLab3
             {
                 dgvBebidas.Columns["Stock"].ReadOnly = true;
                 dgvBebidas.Columns["NombreBebida"].ReadOnly = true;
+                dgvBebidas.Columns["NombreBebida"].HeaderText = "Nombre";
                 dgvIngredientes.Columns["Stock"].ReadOnly = true;
+                dgvIngredientes.Columns["NombreProducto"].HeaderText = "Nombre";
                 dgvIngredientes.Columns["NombreProducto"].ReadOnly = true;
                 dgvBebidas.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvBebidas.Columns["Agregar U."].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

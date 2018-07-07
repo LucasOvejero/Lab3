@@ -28,26 +28,26 @@ namespace ProyectoLab3
         {
             int index;
             dgvIngredientes.Columns.Add("Ingrediente", "Ingrediente");
-            dgvIngredientes.Columns.Add("Costo x Kg", "Costo x Kg");
-            dgvIngredientes.Columns.Add("Gramos", "Gramos");
+            dgvIngredientes.Columns.Add("Costo", "Costo");
+            dgvIngredientes.Columns.Add("Cantidad", "Cantidad");
             dgvIngredientes.Columns.Add("Costo Total", "Costo Total");
-            dgvIngredientes.Columns["Costo x Kg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvIngredientes.Columns["Gramos"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvIngredientes.Columns["Costo x Kg"].DefaultCellStyle.Format = "c";
+            dgvIngredientes.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvIngredientes.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvIngredientes.Columns["Costo"].DefaultCellStyle.Format = "c";
             dgvIngredientes.Columns["Costo Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvIngredientes.Columns["Costo Total"].DefaultCellStyle.Format = "c";
             
             foreach (Ingrediente i in ingredientes) {
                 index=dgvIngredientes.Rows.Add();
                 dgvIngredientes.Rows[index].Cells["Ingrediente"].Value = i.NombreProducto;
-                dgvIngredientes.Rows[index].Cells["Costo x Kg"].Value=i.CostoxKg;
-                dgvIngredientes.Rows[index].Cells["Gramos"].Value = i.Plato.NudGramos.Value+"g";
-                double coste = (i.CostoxKg * Convert.ToInt32(i.Plato.NudGramos.Value)) / 1000;
+                dgvIngredientes.Rows[index].Cells["Costo"].Value=i.CostoxKg;
+                dgvIngredientes.Rows[index].Cells["Cantidad"].Value = i.Plato.NudGramos.Value+" "+i.Unidad.Trim();
+                double coste = i.Unidad.Trim() == "u" ? (i.CostoxKg * Convert.ToInt32(i.Plato.NudGramos.Value)) : (i.CostoxKg * Convert.ToInt32(i.Plato.NudGramos.Value)) / 1000;
                 dgvIngredientes.Rows[index].Cells["Costo Total"].Value = coste;
                 total += coste;
             }
             index = dgvIngredientes.Rows.Add();
-            dgvIngredientes.Rows[index].Cells["Gramos"].Value = "Total:";
+            dgvIngredientes.Rows[index].Cells["Cantidad"].Value = "Total:";
             dgvIngredientes.Rows[index].Cells["Costo Total"].Value = total;
             cboCategorias.DataSource= clsPlato.seleccionarCategorias();
             cboCategorias.DisplayMember = "Nombre";

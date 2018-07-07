@@ -59,7 +59,9 @@ namespace ProyectoLab3
                 ing.NombreProducto = r.Cells["NombreProducto"].Value.ToString();
                 ing.CostoxKg = double.Parse(r.Cells["CostoxKg"].Value.ToString());
                 ing.IdCategoria = int.Parse(r.Cells["IdCategoria"].Value.ToString());
-                ing.Plato = new PanelPlato(ing.NombreProducto)
+                ing.Unidad = r.Cells["Unidad"].Value.ToString();
+                string unidad = ing.Unidad.Trim() == "g" ? "gramos" : ing.Unidad.Trim() == "u" ? "unidades" : "milimetros";
+                ing.Plato = new PanelPlato(ing.NombreProducto,unidad)
                 {
                     Tag = ing.IdIngrediente
                 };

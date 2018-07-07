@@ -44,6 +44,7 @@
             this.lbSucursal = new System.Windows.Forms.ListBox();
             this.tbDirSuc = new System.Windows.Forms.TextBox();
             this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.cbHoy = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartVntas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAnio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCantidad)).BeginInit();
@@ -154,11 +155,23 @@
             this.pnlAdmin.Size = new System.Drawing.Size(422, 155);
             this.pnlAdmin.TabIndex = 10;
             // 
+            // cbHoy
+            // 
+            this.cbHoy.AutoSize = true;
+            this.cbHoy.Location = new System.Drawing.Point(838, 112);
+            this.cbHoy.Name = "cbHoy";
+            this.cbHoy.Size = new System.Drawing.Size(67, 17);
+            this.cbHoy.TabIndex = 11;
+            this.cbHoy.Text = "Sólo hoy";
+            this.cbHoy.UseVisualStyleBackColor = true;
+            this.cbHoy.CheckedChanged += new System.EventHandler(this.cboHoy_CheckedChanged);
+            // 
             // frmGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 653);
+            this.Controls.Add(this.cbHoy);
             this.Controls.Add(this.pnlAdmin);
             this.Controls.Add(this.chartCantidad);
             this.Controls.Add(this.nudAnio);
@@ -192,6 +205,7 @@
         private System.Windows.Forms.ListBox lbSucursal;
         private System.Windows.Forms.TextBox tbDirSuc;
         private System.Windows.Forms.Panel pnlAdmin;
+        private System.Windows.Forms.CheckBox cbHoy;
 
     }
 }

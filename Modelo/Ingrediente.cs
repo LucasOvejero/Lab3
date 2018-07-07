@@ -13,6 +13,6 @@ namespace Modelo
         public string Categoria { get; set; }
         public int IdCategoria { get;set; }
         public PanelPlato Plato { get; set; }
-        
+        public string Unidad { get; set; }
     }
 }

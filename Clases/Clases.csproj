@@ -49,6 +49,7 @@
     <Compile Include="clsEstadisticas.cs" />
     <Compile Include="clsIngrediente.cs" />
     <Compile Include="clsLocalidad.cs" />
+    <Compile Include="clsMerma.cs" />
     <Compile Include="clsPlato.cs" />
     <Compile Include="clsProvincia.cs" />
     <Compile Include="clsSolicitud.cs" />

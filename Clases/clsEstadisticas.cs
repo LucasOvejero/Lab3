@@ -32,7 +32,7 @@ namespace Clases
 
             return MinMax;
         }
-        public static DataTable getVentas(int anio, int mes,int IdSucursal)
+        public static DataTable getVentas(int anio, int mes,int IdSucursal,Nullable<int>hoy)
         {
             DataTable ventas = new DataTable("Ventas");
             try
@@ -40,7 +40,8 @@ namespace Clases
                 string sqlText="select COUNT(*) Cantidad,sum(Costo) Costo,sum(Precio) Precio,sum(Precio)-sum(Costo) Ganancia,MONTH(Fecha) Mes from DescripcionVenta d inner join EncabezadoVenta e on (d.NroVenta=e.NroVenta) where e.IdSucursal="+IdSucursal+" and YEAR(Fecha)="+anio;
                 if (mes != 0)
                     sqlText += " and MONTH(Fecha)=" + mes;
-                
+                if (hoy != null)
+                    sqlText += " and DAY(Fecha)=" + hoy;
                     sqlText += " group by MONTH(Fecha)";
 
                 SqlCommand comando = new SqlCommand(sqlText, clsConexion.getCon());

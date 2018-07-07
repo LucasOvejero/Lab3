@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="dsTicket.cs">
       <DependentUpon>dsTicket.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="dsTicket.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -80,6 +81,12 @@
     </Compile>
     <Compile Include="frmHistorial.Designer.cs">
       <DependentUpon>frmHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMerma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMerma.Designer.cs">
+      <DependentUpon>frmMerma.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTicketVenta.cs">
       <SubType>Form</SubType>
@@ -193,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistorial.resx">
       <DependentUpon>frmHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMerma.resx">
+      <DependentUpon>frmMerma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTicketVenta.resx">
       <DependentUpon>frmTicketVenta.cs</DependentUpon>

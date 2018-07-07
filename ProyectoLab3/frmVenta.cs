@@ -13,17 +13,19 @@ namespace ProyectoLab3
 {
     public partial class frmVenta : Form
     {
-        int idSucursal;
+        int idSucursal,nroVenta;
         DataTable platos,bebidas;
         List<PanelPlato> listaProductosVenta;
         int x = 20, y = 20;
         int yvar = 80;
         decimal total = 0;
+        
         public frmVenta(int idSucursal)
         {
             InitializeComponent();
             this.idSucursal = idSucursal;
             listaProductosVenta = new List<PanelPlato>();
+            nroVenta = clsVenta.numeroVenta();
         }
         
         private void frmVenta_Load(object sender, EventArgs e)
@@ -351,7 +353,7 @@ namespace ProyectoLab3
             List<Producto> listaProductos;
             if (this.listaProductosVenta.Count > 0)
             {
-                string resp = clsVenta.vender(this.listaProductosVenta, this.idSucursal, 1,out listaProductos);//TODO: agregar el id del empleado
+                string resp = clsVenta.vender(this.listaProductosVenta, this.idSucursal, int.Parse(clsConexion.IdEmpleado),out listaProductos);
                 if (resp != "")
                 {
                     MessageBox.Show(resp, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -360,6 +362,10 @@ namespace ProyectoLab3
                     TicketVenta ticket = new TicketVenta();
                     ticket.SetDataSource(listaProductos);
                     ticket.SetParameterValue("Pago",nudPago.Value);
+                    ticket.SetParameterValue("IdSucursal", this.idSucursal.ToString());
+                    ticket.SetParameterValue("NumeroVenta", this.nroVenta.ToString());
+                    ticket.SetParameterValue("NombreSucursal", clsConexion.NombreSucursal);
+                    ticket.SetParameterValue("CUIT", "20-3434343-0");
                     frmTicketVenta frmTicket = new frmTicketVenta(ticket);
                     frmTicket.ShowDialog();
                     limpiar();
@@ -395,6 +401,7 @@ namespace ProyectoLab3
             lblTotal.Text = total.ToString("c");
             nudPago.Minimum = total;
             y = 20;
+            nroVenta = clsVenta.numeroVenta();
         }
 
 

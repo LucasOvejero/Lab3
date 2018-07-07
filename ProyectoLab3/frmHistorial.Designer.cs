@@ -273,7 +273,7 @@
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.dgvDetalle);
             this.Name = "frmHistorial";
-            this.Text = "frmHistorial";
+            this.Text = "Historial envios";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmHistorial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
