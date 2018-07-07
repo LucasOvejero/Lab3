@@ -103,7 +103,7 @@ namespace ProyectoLab3
             }
             catch (Exception ex)
             {
-                detalle = "";
+                detalle = "Desea confirmar envio de solicitud?";
                 Console.WriteLine(ex.Message);
             }
 

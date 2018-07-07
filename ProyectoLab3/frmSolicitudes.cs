@@ -31,10 +31,25 @@ namespace ProyectoLab3
 
         private void RefrezcarVista()
         {
-            dgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesRecibidasVigentes(IdSession);
-            dgvPeticiones.DataSource = clsSolicitud.MisSolcitudesRealizadasVigentes(IdSession);
-            dgvDetalle.Columns.Add("cantidadFormateada", "Cantidad");
-            dgvDetalle.Rows.Clear();
+            try
+            {
+                dgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesRecibidasVigentes(IdSession);
+                dgvPeticiones.DataSource = clsSolicitud.MisSolcitudesRealizadasVigentes(IdSession);
+
+                dgvPeticiones.Columns["fechaInicio"].HeaderText = "Inicio";
+                dgvPeticiones.Columns["costoTotal"].HeaderText = "Costo Total";
+
+
+                dgvSolicitudes.Columns["fechaInicio"].HeaderText = "Inicio";
+                dgvSolicitudes.Columns["costoTotal"].HeaderText = "Costo Total";
+
+
+
+                dgvDetalle.Columns.Add("cantidadFormateada", "Cantidad");
+                dgvDetalle.Rows.Clear();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
         }
 
         private void BtnAccept_Click(object sender, EventArgs e)
@@ -50,7 +65,7 @@ namespace ProyectoLab3
                 else
                 {
                     MigrarStock();
-                    clsSolicitud.aceptarSolicitud((int)dgvSolicitudes.SelectedRows[0].Cells[0].Value);
+                    clsSolicitud.aceptarSolicitud((int)dgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value);
                     MessageBox.Show("Productos Enviados. Debera esperar confirmacion de llegada.");
                     RefrezcarVista();
                 }
@@ -100,7 +115,7 @@ namespace ProyectoLab3
         {
             try
             {
-                int IdPeticion = (int)dgvPeticiones.SelectedRows[0].Cells[0].Value;
+                int IdPeticion = (int)dgvPeticiones.SelectedRows[0].Cells["IdSolicitud"].Value;
 
                 dgvDetalle.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(IdPeticion);
                 FormatearDetalle();
@@ -117,7 +132,7 @@ namespace ProyectoLab3
 
         private void FrmSolicitudes_Load(object sender, EventArgs e)
         {
-
+            lblEnViaje.Text = clsSolicitud.CountEnCamino();
         }
 
         private void DgvSolicitudes_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -126,7 +141,7 @@ namespace ProyectoLab3
             {
                 dgvDetalle.DataSource = null;
 
-                int IdSolicitud = (int)dgvSolicitudes.SelectedRows[0].Cells[0].Value;
+                int IdSolicitud = (int)dgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value;
 
                 dgvDetalle.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(IdSolicitud);
 

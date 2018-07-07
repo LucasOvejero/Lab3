@@ -39,13 +39,13 @@
             this.rbEnviadas = new System.Windows.Forms.RadioButton();
             this.rbRecibidas = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbFiltro = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rbTodoEstado = new System.Windows.Forms.RadioButton();
             this.rbRechazadas = new System.Windows.Forms.RadioButton();
             this.rbAceptadas = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbFiltro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.panel1.SuspendLayout();
@@ -66,7 +66,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalle.Location = new System.Drawing.Point(494, 49);
+            this.dgvDetalle.Location = new System.Drawing.Point(584, 49);
             this.dgvDetalle.MultiSelect = false;
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.ReadOnly = true;
@@ -106,9 +106,8 @@
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.ReadOnly = true;
             this.dgvHistorial.RowHeadersVisible = false;
-            this.dgvHistorial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistorial.Size = new System.Drawing.Size(302, 534);
+            this.dgvHistorial.Size = new System.Drawing.Size(438, 534);
             this.dgvHistorial.TabIndex = 0;
             this.dgvHistorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaFormatead1_CellContentClick);
             this.dgvHistorial.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHistorial_RowEnter);
@@ -118,7 +117,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(592, 9);
+            this.label1.Location = new System.Drawing.Point(690, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 1;
@@ -181,15 +180,6 @@
             this.label2.Size = new System.Drawing.Size(71, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Filtros";
-            // 
-            // tbFiltro
-            // 
-            this.tbFiltro.Location = new System.Drawing.Point(12, 94);
-            this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Size = new System.Drawing.Size(119, 20);
-            this.tbFiltro.TabIndex = 3;
-            this.tbFiltro.Visible = false;
-            this.tbFiltro.TextChanged += new System.EventHandler(this.TbFiltro_TextChanged);
             // 
             // panel2
             // 
@@ -259,6 +249,14 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Estado";
             // 
+            // tbFiltro
+            // 
+            this.tbFiltro.Location = new System.Drawing.Point(12, 95);
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Size = new System.Drawing.Size(122, 20);
+            this.tbFiltro.TabIndex = 3;
+            this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged_1);
+            // 
             // frmHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,12 +298,12 @@
         private System.Windows.Forms.RadioButton rbEnviadas;
         private System.Windows.Forms.RadioButton rbRecibidas;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbFiltro;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton rbTodoEstado;
         private System.Windows.Forms.RadioButton rbRechazadas;
         private System.Windows.Forms.RadioButton rbAceptadas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbFiltro;
     }
 }

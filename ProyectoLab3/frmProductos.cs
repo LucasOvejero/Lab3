@@ -45,6 +45,7 @@ namespace ProyectoLab3
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
+            catch (Exception ex) { Console.Write(ex.Message); }
 
         }
         private void actualizarCboCatBebida()
@@ -105,6 +106,7 @@ namespace ProyectoLab3
                 dgvIngredientes.Columns["CostoxKg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvIngredientes.Columns["CostoxKg"].DefaultCellStyle.Format = "c";
                 dgvIngredientes.Columns["NombreProducto"].HeaderText = "Nombre";
+                dgvIngredientes.Columns["stockCritico"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
         }
 

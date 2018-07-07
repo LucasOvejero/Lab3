@@ -43,6 +43,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlAceptarRechazar = new System.Windows.Forms.Panel();
             this.btnEnvios = new System.Windows.Forms.Button();
+            this.lblEnViaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaFormatead1)).BeginInit();
@@ -116,11 +117,11 @@
             // 
             this.lblSolicitudes.AutoSize = true;
             this.lblSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolicitudes.Location = new System.Drawing.Point(84, 17);
+            this.lblSolicitudes.Location = new System.Drawing.Point(44, 17);
             this.lblSolicitudes.Name = "lblSolicitudes";
-            this.lblSolicitudes.Size = new System.Drawing.Size(213, 22);
+            this.lblSolicitudes.Size = new System.Drawing.Size(308, 22);
             this.lblSolicitudes.TabIndex = 3;
-            this.lblSolicitudes.Text = "Mis Solicitudes Recibidas";
+            this.lblSolicitudes.Text = "Mis Solicitudes Recibidas Pendientes";
             // 
             // grillaFormatead1
             // 
@@ -212,7 +213,7 @@
             // btnEnvios
             // 
             this.btnEnvios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEnvios.Location = new System.Drawing.Point(125, 492);
+            this.btnEnvios.Location = new System.Drawing.Point(116, 516);
             this.btnEnvios.Name = "btnEnvios";
             this.btnEnvios.Size = new System.Drawing.Size(118, 48);
             this.btnEnvios.TabIndex = 6;
@@ -220,11 +221,22 @@
             this.btnEnvios.UseVisualStyleBackColor = true;
             this.btnEnvios.Click += new System.EventHandler(this.btnEnvios_Click);
             // 
+            // lblEnViaje
+            // 
+            this.lblEnViaje.AutoSize = true;
+            this.lblEnViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnViaje.Location = new System.Drawing.Point(113, 492);
+            this.lblEnViaje.Name = "lblEnViaje";
+            this.lblEnViaje.Size = new System.Drawing.Size(206, 18);
+            this.lblEnViaje.TabIndex = 9;
+            this.lblEnViaje.Text = "No hay solicitudes en camino.";
+            // 
             // FrmSolicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 602);
+            this.Controls.Add(this.lblEnViaje);
             this.Controls.Add(this.btnEnvios);
             this.Controls.Add(this.pnlAceptarRechazar);
             this.Controls.Add(this.lblDetalles);
@@ -263,5 +275,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel pnlAceptarRechazar;
         private System.Windows.Forms.Button btnEnvios;
+        private System.Windows.Forms.Label lblEnViaje;
     }
 }

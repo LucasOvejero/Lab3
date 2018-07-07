@@ -19,7 +19,8 @@ namespace ProyectoLab3
 
         private void frmEnvios_Load(object sender, EventArgs e)
         {
-            dgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesPorRecibir(clsConexion.SucursalSession);
+            DgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesPorRecibir();
+            rbAceptar.Checked = true;
 
         }
 
@@ -28,7 +29,7 @@ namespace ProyectoLab3
             try
             {
                 dgvDetalle.DataSource = null;
-                int IdSolicitud = (int)dgvSolicitudes.SelectedRows[0].Cells[0].Value;
+                int IdSolicitud = (int)DgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value;
                 dgvDetalle.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(IdSolicitud);
             }
             catch (Exception ex) { Console.Write(ex.Message); }
@@ -42,13 +43,24 @@ namespace ProyectoLab3
             }
             else
             {
-
+                if (rbAceptar.Checked)
+                {
+                    MigrarStock();
+                 
+                    
+                }
+                else
+                {
+                    //clsSolicitud.marcarError();
+                }
             }
         }
 
         private void btnRecibir_Click(object sender, EventArgs e)
         {
+            int IdSolicitud = (int)DgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value;
             MigrarStock();
+            clsSolicitud.marcarRecibida(IdSolicitud);
         }
 
 

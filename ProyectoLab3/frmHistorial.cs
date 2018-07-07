@@ -19,7 +19,8 @@ namespace ProyectoLab3
 
         private void FrmHistorial_Load(object sender, EventArgs e)
         {
-            dgvHistorial.DataSource = clsSolicitud.GetHistorial(); FormatoGrillaHistorial();
+            dgvHistorial.DataSource = clsSolicitud.GetHistorial();
+            FormatoGrillaHistorial();
             rbAmbas.Checked = true;
             FormatoGrillaHistorial();
         }
@@ -29,15 +30,10 @@ namespace ProyectoLab3
 
         }
 
-        private void TbFiltro_TextChanged(object sender, EventArgs e)
-        {
-            /*DataTable dt = (DataTable)dgvHistorial.DataSource;
-            dt.DefaultView.RowFilter.ToString = 
-            dgvHistorial.Refresh();*/
-        }
 
         private void RbAmbas_CheckedChanged(object sender, EventArgs e)
         {
+
             if (rbAmbas.Checked)
             {
                 dgvHistorial.DataSource = clsSolicitud.GetHistorial();
@@ -49,7 +45,21 @@ namespace ProyectoLab3
         {
             if (rbEnviadas.Checked)
             {
-                dgvHistorial.DataSource = clsSolicitud.Enviadas();
+                try
+                {
+                    dgvHistorial.DataSource = clsSolicitud.Enviadas();
+                    dgvHistorial.Columns["Estado1"].Visible = false;
+
+                    dgvHistorial.Columns["NombreInterno"].DisplayIndex = 0;
+                    dgvHistorial.Columns["NombreInterno"].HeaderText = "Sucursal";
+                    dgvHistorial.Columns["Telefono"].DisplayIndex = 1;
+                    dgvHistorial.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgvHistorial.Columns["Direccion"].DisplayIndex = 2;
+
+
+
+                }
+                catch (Exception ex) { Console.WriteLine(ex.Message); }
                 FormatoGrillaHistorial();
             }
         }
@@ -58,6 +68,20 @@ namespace ProyectoLab3
         {
             if (rbRecibidas.Checked)
             {
+
+                try
+                {
+                    dgvHistorial.DataSource = clsSolicitud.Enviadas();
+                    dgvHistorial.Columns["Estado1"].Visible = false;
+
+                    dgvHistorial.Columns["NombreInterno"].DisplayIndex = 0;
+                    dgvHistorial.Columns["NombreInterno"].HeaderText = "Sucursal";
+                    dgvHistorial.Columns["Telefono"].DisplayIndex = 1;
+                    dgvHistorial.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgvHistorial.Columns["Direccion"].DisplayIndex = 2;
+
+                }
+                catch (Exception ex) { Console.WriteLine(ex.Message); }
                 dgvHistorial.DataSource = clsSolicitud.Recibidas();
                 FormatoGrillaHistorial();
             }
@@ -65,6 +89,7 @@ namespace ProyectoLab3
 
         private void RbAceptadas_CheckedChanged(object sender, EventArgs e)
         {
+
             if (rbAceptadas.Checked)
             {
                 DataTable dt = (DataTable)dgvHistorial.DataSource;
@@ -72,6 +97,7 @@ namespace ProyectoLab3
                 dgvHistorial.Refresh();
                 FormatoGrillaHistorial();
             }
+
         }
 
         private void RbRechazadas_CheckedChanged(object sender, EventArgs e)
@@ -98,24 +124,82 @@ namespace ProyectoLab3
 
         private void FormatoGrillaHistorial()
         {
-            dgvHistorial.Columns["estado"].Visible = false;
+            //colores de fondo
 
-            foreach (DataGridViewRow r in dgvHistorial.Rows)
+            try
             {
-                if (r.Cells["estado"].Value.ToString() == "1")
+                if (!rbAmbas.Checked)
                 {
-                    r.DefaultCellStyle.BackColor = Color.Green;
+                    dgvHistorial.Columns["estado"].Visible = false;
+                    dgvHistorial.Columns["recibido"].Visible = false;
+
+
+                    foreach (DataGridViewRow r in dgvHistorial.Rows)
+                    {
+                        if (r.Cells["fechaFin"].Value.ToString().Length > 0)
+                        {
+                            r.DefaultCellStyle.BackColor = Color.Green;
+                        }
+                        else
+                        {
+                            if (r.Cells["recibido"].Value.ToString() == "")
+                            {
+                                r.DefaultCellStyle.BackColor = Color.Orange;
+                            }
+                            else
+                                r.DefaultCellStyle.BackColor = Color.Red;
+                        }
+
+                    }
+
+
+                    dgvHistorial.Columns["fechaInicio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgvHistorial.Columns["fechaFin"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgvHistorial.Columns["fechaEnvio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    dgvHistorial.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+                    dgvHistorial.Columns["fechaInicio"].DisplayIndex = 3;
+                    dgvHistorial.Columns["fechaInicio"].HeaderText = "Inicio";
+
+                    dgvHistorial.Columns["fechaEnvio"].DisplayIndex = 4;
+                    dgvHistorial.Columns["fechaEnvio"].HeaderText = "Enviado";
+
+                    dgvHistorial.Columns["costoTotal"].DisplayIndex = 5;
+                    dgvHistorial.Columns["costoTotal"].HeaderText = "Monto";
+
+                    dgvHistorial.Columns["fechaFin"].DisplayIndex = 6;
+                    dgvHistorial.Columns["fechaFin"].HeaderText = "Recibido";
+
+                    dgvHistorial.Columns["observacion"].DisplayIndex = 7;
+                    dgvHistorial.Columns["observacion"].HeaderText = "Observaciones";
                 }
                 else
                 {
-                    r.DefaultCellStyle.BackColor = Color.Red;
+                    dgvHistorial.Columns["estado"].Visible = false;
+                    dgvHistorial.Columns["recibido"].Visible = false;
+                    dgvHistorial.Columns["Fin"].HeaderText = "Recibido";
+
+
+                    foreach (DataGridViewRow r in dgvHistorial.Rows)
+                    {
+                        if (r.Cells["Fin"].Value.ToString().Length > 0)
+                        {
+                            r.DefaultCellStyle.BackColor = Color.Green;
+                        }
+                        else
+                        {
+                            if (r.Cells["recibido"].Value.ToString() == "")
+                            {
+                                r.DefaultCellStyle.BackColor = Color.Orange;
+                            }
+                            else
+                                r.DefaultCellStyle.BackColor = Color.Red;
+                        }
+
+                    }
                 }
             }
-
-            dgvHistorial.Columns["fechaInicio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvHistorial.Columns["fechaFin"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvHistorial.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
 
         }
 
@@ -125,7 +209,7 @@ namespace ProyectoLab3
             {
                 dgvDetalle.DataSource = null;
 
-                int IdSolicitud = (int)dgvHistorial.SelectedRows[0].Cells[0].Value;
+                int IdSolicitud = (int)dgvHistorial.SelectedRows[0].Cells["IdSolicitud"].Value;
 
                 dgvDetalle.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(IdSolicitud);
 
@@ -134,6 +218,12 @@ namespace ProyectoLab3
                 dgvDetalle.Columns["estado"].Visible = false;
                 dgvDetalle.Columns["fechaInicio"].Visible = false;
                 dgvDetalle.Columns["fechaFin"].Visible = false;
+
+                dgvDetalle.Columns["NombreProducto"].HeaderText = "Producto";
+                dgvDetalle.Columns["cantidad"].HeaderText = "Cantidad";
+                dgvDetalle.Columns["costoTotal"].HeaderText = "Costo";
+
+
 
                 dgvDetalle.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvDetalle.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -146,6 +236,37 @@ namespace ProyectoLab3
         private void DgvHistorial_Sorted(object sender, EventArgs e)
         {
             FormatoGrillaHistorial();
+        }
+
+
+        private void tbFiltro_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = (DataTable)dgvHistorial.DataSource;
+
+                if (rbAmbas.Checked)
+                {
+                    dt.DefaultView.RowFilter = string.Format("Solicitante like '%{0}%' OR Solicitado like '%{0}%' OR Observaciones like '%{0}%'", tbFiltro.Text);
+                }
+                else if (rbEnviadas.Checked)
+                {
+                    dt.DefaultView.RowFilter = string.Format("NombreInterno like '%{0}%' OR Direccion like '%{0}%' OR Telefono like '%{0}%' OR observacion like '%{0}%'", tbFiltro.Text);
+                }
+                else
+                {
+                    dt.DefaultView.RowFilter = string.Format("NombreInterno like '%{0}%' OR Direccion like '%{0}%' OR Telefono like '%{0}%' OR observacion like '%{0}%'", tbFiltro.Text);
+                }
+
+                dgvHistorial.Refresh();
+                FormatoGrillaHistorial();
+            }
+            catch (Exception ex) { Console.Write(ex.Message); }
+
+
+
+
+
         }
     }
 }
