@@ -47,7 +47,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(184, 11);
+            this.label1.Location = new System.Drawing.Point(183, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(579, 11);
+            this.label2.Location = new System.Drawing.Point(578, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 1;
@@ -84,7 +84,7 @@
             this.dgvPlatos.ReadOnly = true;
             this.dgvPlatos.RowHeadersVisible = false;
             this.dgvPlatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlatos.Size = new System.Drawing.Size(398, 459);
+            this.dgvPlatos.Size = new System.Drawing.Size(397, 459);
             this.dgvPlatos.TabIndex = 2;
             // 
             // dgvIngredientes
@@ -102,7 +102,7 @@
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngredientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvIngredientes.Location = new System.Drawing.Point(407, 84);
+            this.dgvIngredientes.Location = new System.Drawing.Point(406, 84);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
@@ -119,7 +119,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.30362F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.69638F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 254F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 255F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvIngredientes, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
@@ -140,7 +140,7 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEditar.Location = new System.Drawing.Point(875, 273);
+            this.btnEditar.Location = new System.Drawing.Point(874, 273);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(143, 81);
             this.btnEditar.TabIndex = 4;
@@ -152,7 +152,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(158, 39);
+            this.label3.Location = new System.Drawing.Point(157, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 5;
@@ -161,7 +161,7 @@
             // tbNombre
             // 
             this.tbNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbNombre.Location = new System.Drawing.Point(152, 59);
+            this.tbNombre.Location = new System.Drawing.Point(151, 59);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
             this.tbNombre.TabIndex = 6;

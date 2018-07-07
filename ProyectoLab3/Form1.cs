@@ -35,6 +35,7 @@ namespace ProyectoLab3
         frmNuevaSolicitud ofrmNSolicitud;
         frmHistorial ofrmHistorial;
         frmTransferencias ofrmTransferencias;
+        frmMerma ofrmMerma;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -180,10 +181,13 @@ namespace ProyectoLab3
             ofrmHistorial.ShowDialog();
         }
 
-        private void pnlVendedor_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void btnMerma_Click(object sender, EventArgs e)
+        {
+            ofrmMerma = new frmMerma();
+            ofrmMerma.ShowDialog();
         }
+
 
     }
 }

@@ -47,6 +47,7 @@
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnSuc = new System.Windows.Forms.Button();
             this.gbProductos = new System.Windows.Forms.GroupBox();
+            this.btnMerma = new System.Windows.Forms.Button();
             this.btnDepositos = new System.Windows.Forms.Button();
             this.btnBebidas = new System.Windows.Forms.Button();
             this.gbPlatos = new System.Windows.Forms.GroupBox();
@@ -66,7 +67,7 @@
             // 
             // btnSolicitudes
             // 
-            this.btnSolicitudes.Location = new System.Drawing.Point(105, 27);
+            this.btnSolicitudes.Location = new System.Drawing.Point(95, 27);
             this.btnSolicitudes.Name = "btnSolicitudes";
             this.btnSolicitudes.Size = new System.Drawing.Size(75, 42);
             this.btnSolicitudes.TabIndex = 1;
@@ -86,7 +87,7 @@
             // 
             // btnVenta
             // 
-            this.btnVenta.Location = new System.Drawing.Point(87, 27);
+            this.btnVenta.Location = new System.Drawing.Point(68, 27);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(75, 42);
             this.btnVenta.TabIndex = 0;
@@ -96,7 +97,7 @@
             // 
             // btnVentas
             // 
-            this.btnVentas.Location = new System.Drawing.Point(218, 27);
+            this.btnVentas.Location = new System.Drawing.Point(199, 27);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(75, 42);
             this.btnVentas.TabIndex = 1;
@@ -106,7 +107,7 @@
             // 
             // btnNewSolicitudes
             // 
-            this.btnNewSolicitudes.Location = new System.Drawing.Point(196, 27);
+            this.btnNewSolicitudes.Location = new System.Drawing.Point(178, 27);
             this.btnNewSolicitudes.Name = "btnNewSolicitudes";
             this.btnNewSolicitudes.Size = new System.Drawing.Size(75, 42);
             this.btnNewSolicitudes.TabIndex = 2;
@@ -116,8 +117,8 @@
             // 
             // pnlVendedor
             // 
-            this.pnlVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlVendedor.Controls.Add(this.pnlCritico);
             this.pnlVendedor.Controls.Add(this.label1);
             this.pnlVendedor.Controls.Add(this.gbVentas);
@@ -126,7 +127,6 @@
             this.pnlVendedor.Name = "pnlVendedor";
             this.pnlVendedor.Size = new System.Drawing.Size(1217, 527);
             this.pnlVendedor.TabIndex = 1;
-            this.pnlVendedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlVendedor_Paint);
             // 
             // pnlCritico
             // 
@@ -187,9 +187,9 @@
             this.gbVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
             this.gbVentas.Controls.Add(this.btnVentas);
             this.gbVentas.Controls.Add(this.btnVenta);
-            this.gbVentas.Location = new System.Drawing.Point(410, 39);
+            this.gbVentas.Location = new System.Drawing.Point(449, 39);
             this.gbVentas.Name = "gbVentas";
-            this.gbVentas.Size = new System.Drawing.Size(381, 97);
+            this.gbVentas.Size = new System.Drawing.Size(342, 97);
             this.gbVentas.TabIndex = 1;
             this.gbVentas.TabStop = false;
             this.gbVentas.Text = "Ventas";
@@ -203,14 +203,14 @@
             this.gbDeposito.Controls.Add(this.btnSolicitudes);
             this.gbDeposito.Location = new System.Drawing.Point(11, 39);
             this.gbDeposito.Name = "gbDeposito";
-            this.gbDeposito.Size = new System.Drawing.Size(381, 97);
+            this.gbDeposito.Size = new System.Drawing.Size(357, 97);
             this.gbDeposito.TabIndex = 0;
             this.gbDeposito.TabStop = false;
             this.gbDeposito.Text = "Deposito";
             // 
             // btnHistorial
             // 
-            this.btnHistorial.Location = new System.Drawing.Point(287, 27);
+            this.btnHistorial.Location = new System.Drawing.Point(261, 27);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(88, 42);
             this.btnHistorial.TabIndex = 3;
@@ -220,20 +220,21 @@
             // 
             // gbSucursal
             // 
+            this.gbSucursal.AutoSize = true;
             this.gbSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
             this.gbSucursal.Controls.Add(this.btnGraficosVentaGeneral);
             this.gbSucursal.Controls.Add(this.btnEmpleados);
             this.gbSucursal.Controls.Add(this.btnSuc);
             this.gbSucursal.Location = new System.Drawing.Point(12, 7);
             this.gbSucursal.Name = "gbSucursal";
-            this.gbSucursal.Size = new System.Drawing.Size(381, 97);
+            this.gbSucursal.Size = new System.Drawing.Size(357, 97);
             this.gbSucursal.TabIndex = 0;
             this.gbSucursal.TabStop = false;
             this.gbSucursal.Text = "Sucursales";
             // 
             // btnGraficosVentaGeneral
             // 
-            this.btnGraficosVentaGeneral.Location = new System.Drawing.Point(149, 27);
+            this.btnGraficosVentaGeneral.Location = new System.Drawing.Point(143, 27);
             this.btnGraficosVentaGeneral.Name = "btnGraficosVentaGeneral";
             this.btnGraficosVentaGeneral.Size = new System.Drawing.Size(75, 42);
             this.btnGraficosVentaGeneral.TabIndex = 1;
@@ -243,7 +244,8 @@
             // 
             // btnEmpleados
             // 
-            this.btnEmpleados.Location = new System.Drawing.Point(282, 27);
+            this.btnEmpleados.AutoSize = true;
+            this.btnEmpleados.Location = new System.Drawing.Point(252, 27);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(75, 42);
             this.btnEmpleados.TabIndex = 2;
@@ -253,7 +255,7 @@
             // 
             // btnSuc
             // 
-            this.btnSuc.Location = new System.Drawing.Point(12, 27);
+            this.btnSuc.Location = new System.Drawing.Point(30, 27);
             this.btnSuc.Name = "btnSuc";
             this.btnSuc.Size = new System.Drawing.Size(75, 42);
             this.btnSuc.TabIndex = 0;
@@ -265,18 +267,29 @@
             // 
             this.gbProductos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            this.gbProductos.Controls.Add(this.btnMerma);
             this.gbProductos.Controls.Add(this.btnDepositos);
             this.gbProductos.Controls.Add(this.btnBebidas);
-            this.gbProductos.Location = new System.Drawing.Point(411, 7);
+            this.gbProductos.Location = new System.Drawing.Point(450, 7);
             this.gbProductos.Name = "gbProductos";
-            this.gbProductos.Size = new System.Drawing.Size(381, 97);
+            this.gbProductos.Size = new System.Drawing.Size(342, 97);
             this.gbProductos.TabIndex = 1;
             this.gbProductos.TabStop = false;
             this.gbProductos.Text = "Productos";
             // 
+            // btnMerma
+            // 
+            this.btnMerma.Location = new System.Drawing.Point(237, 27);
+            this.btnMerma.Name = "btnMerma";
+            this.btnMerma.Size = new System.Drawing.Size(75, 42);
+            this.btnMerma.TabIndex = 2;
+            this.btnMerma.Text = "Merma";
+            this.btnMerma.UseVisualStyleBackColor = true;
+            this.btnMerma.Click += new System.EventHandler(this.btnMerma_Click);
+            // 
             // btnDepositos
             // 
-            this.btnDepositos.Location = new System.Drawing.Point(84, 27);
+            this.btnDepositos.Location = new System.Drawing.Point(31, 27);
             this.btnDepositos.Name = "btnDepositos";
             this.btnDepositos.Size = new System.Drawing.Size(75, 42);
             this.btnDepositos.TabIndex = 0;
@@ -286,7 +299,7 @@
             // 
             // btnBebidas
             // 
-            this.btnBebidas.Location = new System.Drawing.Point(221, 27);
+            this.btnBebidas.Location = new System.Drawing.Point(131, 27);
             this.btnBebidas.Name = "btnBebidas";
             this.btnBebidas.Size = new System.Drawing.Size(75, 42);
             this.btnBebidas.TabIndex = 1;
@@ -300,16 +313,16 @@
             this.gbPlatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.gbPlatos.Controls.Add(this.btnEditPlato);
             this.gbPlatos.Controls.Add(this.btnPlato);
-            this.gbPlatos.Location = new System.Drawing.Point(824, 7);
+            this.gbPlatos.Location = new System.Drawing.Point(897, 7);
             this.gbPlatos.Name = "gbPlatos";
-            this.gbPlatos.Size = new System.Drawing.Size(381, 97);
+            this.gbPlatos.Size = new System.Drawing.Size(308, 97);
             this.gbPlatos.TabIndex = 2;
             this.gbPlatos.TabStop = false;
             this.gbPlatos.Text = "Platos";
             // 
             // btnEditPlato
             // 
-            this.btnEditPlato.Location = new System.Drawing.Point(210, 27);
+            this.btnEditPlato.Location = new System.Drawing.Point(174, 27);
             this.btnEditPlato.Name = "btnEditPlato";
             this.btnEditPlato.Size = new System.Drawing.Size(75, 42);
             this.btnEditPlato.TabIndex = 1;
@@ -319,7 +332,7 @@
             // 
             // btnPlato
             // 
-            this.btnPlato.Location = new System.Drawing.Point(96, 27);
+            this.btnPlato.Location = new System.Drawing.Point(60, 27);
             this.btnPlato.Name = "btnPlato";
             this.btnPlato.Size = new System.Drawing.Size(75, 42);
             this.btnPlato.TabIndex = 0;
@@ -360,9 +373,11 @@
             this.gbVentas.ResumeLayout(false);
             this.gbDeposito.ResumeLayout(false);
             this.gbSucursal.ResumeLayout(false);
+            this.gbSucursal.PerformLayout();
             this.gbProductos.ResumeLayout(false);
             this.gbPlatos.ResumeLayout(false);
             this.pnlAdmin.ResumeLayout(false);
+            this.pnlAdmin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -394,6 +409,7 @@
         private Componentes.GrillaFormatead dgvCritico;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnMerma;
     }
 }
 

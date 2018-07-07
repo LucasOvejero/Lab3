@@ -201,5 +201,26 @@ namespace Clases
             }
             return tablaRec;
         }
+
+        public static DataTable getIngredientes(int IdSucursal) {
+            DataTable ingredientes = new DataTable("Ingredientes");
+            string sql = "select i.IdIngrediente,NombreProducto as Nombre,Unidad,Stock from Ingrediente i inner join Deposito d on (i.IdIngrediente=d.IdIngrediente) where Stock>0 AND IdSucursal=" + IdSucursal;
+            SqlCommand comando;
+            try
+            {
+                comando = new SqlCommand(sql, clsConexion.getCon());
+                SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                adapter.Fill(ingredientes);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally {
+                clsConexion.closeCon();
+            }
+            return ingredientes;
+        
+        }
     }
 }

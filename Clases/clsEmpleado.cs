@@ -152,7 +152,21 @@ namespace Clases
             return empleados;
         }
 
-
+        public static DataTable empleadosDeSucrursalMerma(int id)
+        {
+            comando = new SqlCommand("Select Nombre+' '+Apellido as Nombre, IdEmpleado from Empleado where IdSucursal=" + id);
+            try
+            {
+                empleados = new DataTable("Empleados");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(empleados);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return empleados;
+        }
 
         public static bool logeo(string usuario,string clave) {
             bool valid = false;//select Tipo,Nombre,Apellido,Empleado.IdSucursal,Empleado.IdEmpleado,NombreInterno from Empleado inner join Sucursal on (Empleado.IdSucursal=Sucursal.IdSucursal);

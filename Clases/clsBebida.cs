@@ -239,5 +239,25 @@ namespace Clases
             DataTable bebidas = null;
             return bebidas;
         }
+
+        public static DataTable getBebidas(int IdSucursal) {
+            DataTable bebidas=new DataTable("Bebidas");
+            string sql="select b.IdBebida,NombreBebida as Nombre,Stock from Bebida b inner join Deposito d on (b.IdBebida=d.IdBebida) where Stock>0 and IdSucursal="+IdSucursal;
+            SqlCommand comando;
+            try
+            {
+                comando = new SqlCommand(sql, clsConexion.getCon());
+                SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                adapter.Fill(bebidas);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally {
+                clsConexion.closeCon();
+            }
+            return bebidas;
+        }
     }
 }
