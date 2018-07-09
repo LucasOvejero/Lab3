@@ -44,7 +44,7 @@ namespace ProyectoLab3
             dgvBebidas.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvBebidas.Columns["Litros"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvBebidas.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvBebidas.Columns["Alcohol"].Width = 50;
+            //dgvBebidas.Columns["Alcohol"].Width = 50;
             dgvBebidas.Columns["Precio"].Width = 50;
             dgvBebidas.Columns["Litros"].Width = 50;
             dgvBebidas.Columns["Stock"].Width = 50;
@@ -335,7 +335,7 @@ namespace ProyectoLab3
             DataTable dt = (DataTable)dgvBebidas.DataSource;
 
             string nombre = tbNombreBebida.Text.Trim().Replace("'", "''");
-            bool tacc = cbAlcohol.Checked;
+            //bool tacc = cbAlcohol.Checked;
 
             System.Data.DataRowView cat = (System.Data.DataRowView)cboCategoriaBebida.SelectedValue;
             string categoria = cat["Nombre"].ToString();
@@ -343,7 +343,7 @@ namespace ProyectoLab3
                 categoria = "NOT LIKE 'Todas'";
             else
                 categoria = string.Format("like '{0}'", categoria);
-            dt.DefaultView.RowFilter = string.Format("Nombre like '%{0}%' AND Alcohol= '{1}' AND Categoria {2} ", nombre, tacc, categoria);
+            dt.DefaultView.RowFilter = string.Format("Nombre like '%{0}%' AND Categoria {1} ", nombre, categoria);
             dgvBebidas.Refresh();
         
         }

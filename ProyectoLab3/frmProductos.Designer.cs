@@ -34,7 +34,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.nudLitros = new System.Windows.Forms.NumericUpDown();
-            this.cbAlcohol = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,7 +49,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbEditAlcohol = new System.Windows.Forms.CheckBox();
             this.nudEditLitros = new System.Windows.Forms.NumericUpDown();
             this.tbEditName = new System.Windows.Forms.TextBox();
             this.btnBorrar = new System.Windows.Forms.Button();
@@ -141,18 +139,6 @@
             this.nudLitros.Size = new System.Drawing.Size(61, 20);
             this.nudLitros.TabIndex = 3;
             // 
-            // cbAlcohol
-            // 
-            this.cbAlcohol.AutoSize = true;
-            this.cbAlcohol.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbAlcohol.Location = new System.Drawing.Point(476, 30);
-            this.cbAlcohol.Name = "cbAlcohol";
-            this.cbAlcohol.Size = new System.Drawing.Size(61, 17);
-            this.cbAlcohol.TabIndex = 4;
-            this.cbAlcohol.Text = "Alcohol";
-            this.cbAlcohol.UseVisualStyleBackColor = true;
-            this.cbAlcohol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbAlcohol_KeyPress);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -225,7 +211,6 @@
             this.gpEdicion.Controls.Add(this.label6);
             this.gpEdicion.Controls.Add(this.label7);
             this.gpEdicion.Controls.Add(this.label8);
-            this.gpEdicion.Controls.Add(this.cbEditAlcohol);
             this.gpEdicion.Controls.Add(this.nudEditLitros);
             this.gpEdicion.Controls.Add(this.tbEditName);
             this.gpEdicion.Controls.Add(this.btnBorrar);
@@ -240,7 +225,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(592, 24);
+            this.label18.Location = new System.Drawing.Point(505, 27);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(57, 13);
             this.label18.TabIndex = 23;
@@ -249,7 +234,7 @@
             // cboEditCatBebida
             // 
             this.cboEditCatBebida.FormattingEnabled = true;
-            this.cboEditCatBebida.Location = new System.Drawing.Point(564, 38);
+            this.cboEditCatBebida.Location = new System.Drawing.Point(477, 41);
             this.cboEditCatBebida.Name = "cboEditCatBebida";
             this.cboEditCatBebida.Size = new System.Drawing.Size(121, 21);
             this.cboEditCatBebida.TabIndex = 12;
@@ -316,16 +301,6 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Nombre";
             // 
-            // cbEditAlcohol
-            // 
-            this.cbEditAlcohol.AutoSize = true;
-            this.cbEditAlcohol.Location = new System.Drawing.Point(476, 42);
-            this.cbEditAlcohol.Name = "cbEditAlcohol";
-            this.cbEditAlcohol.Size = new System.Drawing.Size(61, 17);
-            this.cbEditAlcohol.TabIndex = 11;
-            this.cbEditAlcohol.Text = "Alcohol";
-            this.cbEditAlcohol.UseVisualStyleBackColor = true;
-            // 
             // nudEditLitros
             // 
             this.nudEditLitros.DecimalPlaces = 1;
@@ -372,7 +347,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cbAlcohol);
             this.groupBox1.Controls.Add(this.nudLitros);
             this.groupBox1.Controls.Add(this.tbNombre);
             this.groupBox1.Controls.Add(this.btnAgregar);
@@ -386,7 +360,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(592, 16);
+            this.label17.Location = new System.Drawing.Point(490, 16);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(57, 13);
             this.label17.TabIndex = 21;
@@ -395,7 +369,7 @@
             // cboCatAddBebida
             // 
             this.cboCatAddBebida.FormattingEnabled = true;
-            this.cboCatAddBebida.Location = new System.Drawing.Point(564, 30);
+            this.cboCatAddBebida.Location = new System.Drawing.Point(462, 30);
             this.cboCatAddBebida.Name = "cboCatAddBebida";
             this.cboCatAddBebida.Size = new System.Drawing.Size(121, 21);
             this.cboCatAddBebida.TabIndex = 5;
@@ -415,13 +389,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(75, 105);
+            this.dgvBebidas.Location = new System.Drawing.Point(107, 105);
             this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBebidas.Size = new System.Drawing.Size(573, 297);
+            this.dgvBebidas.Size = new System.Drawing.Size(508, 297);
             this.dgvBebidas.StandardTab = true;
             this.dgvBebidas.TabIndex = 6;
             this.dgvBebidas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBebidas_RowEnter);
@@ -890,7 +864,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.NumericUpDown nudLitros;
-        private System.Windows.Forms.CheckBox cbAlcohol;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -908,7 +881,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox cbEditAlcohol;
         private System.Windows.Forms.NumericUpDown nudEditLitros;
         private System.Windows.Forms.TextBox tbEditName;
         private Componentes.GrillaFormatead dgvIngredientes;

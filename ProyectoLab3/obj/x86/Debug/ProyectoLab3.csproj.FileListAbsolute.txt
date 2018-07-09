@@ -68,4 +68,3 @@ C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.exe
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.pdb
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmSolicitudes.resources
 C:\ProyectoLab3\ProyectoLab3\obj\x86\Debug\ProyectoLab3.frmGraficos.resources
-C:\ProyectoLab3\Lab3\ProyectoLab3\bin\Debug\ProyectoLab3.exe.config

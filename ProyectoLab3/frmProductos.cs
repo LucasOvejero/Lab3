@@ -71,7 +71,7 @@ namespace ProyectoLab3
             else
             {
                 bebida.NombreBebida = tbNombre.Text;
-                bebida.Alcohol = cbAlcohol.Checked;
+                bebida.Alcohol = false;
                 bebida.Costo = nudCosto.Value;
                 bebida.Precio = nudPrecio.Value;
                 bebida.Litros = nudLitros.Value;
@@ -130,7 +130,7 @@ namespace ProyectoLab3
                 bebida.NombreBebida = tbEditName.Text;
                 bebida.Precio = nudEditPrecio.Value;
                 bebida.Costo = nudEditCosto.Value;
-                bebida.Alcohol = cbEditAlcohol.Checked;
+                bebida.Alcohol = false;
                 bebida.Litros = nudEditLitros.Value;
                 DataRowView cat = cboEditCatBebida.SelectedItem as DataRowView;
                 int idCategoria;
@@ -171,7 +171,6 @@ namespace ProyectoLab3
                 nudEditPrecio.Value = getDecimalValue(fila.Cells["Precio"]);
                 nudEditCosto.Value = getDecimalValue(fila.Cells["Costo"]);
                 nudEditLitros.Value = getDecimalValue(fila.Cells["Litros"]);
-                cbEditAlcohol.Checked = getBoolValue(fila.Cells["Alcohol"]);
                 btnBorrar.Text = getBoolValue(fila.Cells["Estado"]) ? "Baja" : "Alta";
                 string categoria = fila.Cells["Categoria"].Value.ToString();//IdCategoria no tiene nada, ver TODO
                 int indice = -1;
@@ -344,14 +343,7 @@ namespace ProyectoLab3
             }
         }
 
-        private void cbAlcohol_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                cbAlcohol.Checked = !cbAlcohol.Checked;   // Enter key pressed
-            }
-        
-        }
+      
 
         private void btnAgregarCatBebida_Click(object sender, EventArgs e)
         {

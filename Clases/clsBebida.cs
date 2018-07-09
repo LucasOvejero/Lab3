@@ -98,7 +98,7 @@ namespace Clases
 
             dt.Clear();
            
-           comando = new SqlCommand("select IdBebida,NombreBebida,Costo,Precio,Litros,Alcohol,Estado"+
+           comando = new SqlCommand("select IdBebida,NombreBebida,Costo,Precio,Litros,Estado"+
                ",b.IdCategoria,Nombre as Categoria from Bebida b left outer join CategoriaBebidas c on (b.IdCategoria=c.IdCategoria)");
             try
             {
@@ -113,7 +113,7 @@ namespace Clases
         public static DataTable seleccionarBebidasxStock(int idSucursal) {
             DataTable bebidas = new DataTable("Bebidas");
             try {
-                SqlCommand comando=new SqlCommand(string.Format("select b.IdBebida,b.NombreBebida as Nombre,Costo,b.Alcohol,b.Precio,b.Litros,c.Nombre as Categoria,Stock from Deposito d inner join Bebida b on(d.IdBebida=b.IdBebida) inner join CategoriaBebidas c on (b.IdCategoria=c.IdCategoria) where IdSucursal={0} and d.IdBebida is not null and Estado=1;",idSucursal),clsConexion.getCon());
+                SqlCommand comando=new SqlCommand(string.Format("select b.IdBebida,b.NombreBebida as Nombre,Costo,b.Precio,b.Litros,c.Nombre as Categoria,Stock from Deposito d inner join Bebida b on(d.IdBebida=b.IdBebida) inner join CategoriaBebidas c on (b.IdCategoria=c.IdCategoria) where IdSucursal={0} and d.IdBebida is not null and Estado=1;",idSucursal),clsConexion.getCon());
                 SqlDataAdapter adapter=new SqlDataAdapter(comando);
                 adapter.Fill(bebidas);
             }
