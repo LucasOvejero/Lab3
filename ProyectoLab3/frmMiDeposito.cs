@@ -82,9 +82,9 @@ namespace ProyectoLab3
                 dgvBebidas.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvBebidas.Columns["Agregar U."].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvIngredientes.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvIngredientes.Columns["Agregar gr."].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvIngredientes.Columns["Agregar"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvBebidas.Columns["Agregar U."].ValueType = typeof(uint);
-                dgvIngredientes.Columns["Agregar gr."].ValueType = typeof(uint);
+                dgvIngredientes.Columns["Agregar"].ValueType = typeof(uint);
             }
         }
 

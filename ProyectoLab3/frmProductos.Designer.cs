@@ -75,6 +75,10 @@
             this.tbNombreCategoria = new System.Windows.Forms.TextBox();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tbEditStockCritico = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cboEditUnidad = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cboEditCateg = new System.Windows.Forms.ComboBox();
@@ -83,18 +87,14 @@
             this.tbEditNombreIngrediente = new System.Windows.Forms.TextBox();
             this.btnActualizarIngrediente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboMedida = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cboCategorias = new System.Windows.Forms.ComboBox();
             this.dgvIngredientes = new Componentes.GrillaFormatead();
             this.tbStockCritico = new System.Windows.Forms.TextBox();
             this.errpNBebida = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cboMedida = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cboEditUnidad = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.tbEditStockCritico = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -405,6 +405,7 @@
             this.dgvBebidas.AllowUserToAddRows = false;
             this.dgvBebidas.AllowUserToResizeColumns = false;
             this.dgvBebidas.AllowUserToResizeRows = false;
+            this.dgvBebidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -414,13 +415,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(6, 105);
+            this.dgvBebidas.Location = new System.Drawing.Point(75, 105);
             this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBebidas.Size = new System.Drawing.Size(711, 297);
+            this.dgvBebidas.Size = new System.Drawing.Size(573, 297);
             this.dgvBebidas.StandardTab = true;
             this.dgvBebidas.TabIndex = 6;
             this.dgvBebidas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBebidas_RowEnter);
@@ -617,6 +618,46 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Modificar Ingrediente";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(234, 16);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(67, 13);
+            this.label21.TabIndex = 27;
+            this.label21.Text = "Stock Critico";
+            // 
+            // tbEditStockCritico
+            // 
+            this.tbEditStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEditStockCritico.Location = new System.Drawing.Point(221, 30);
+            this.tbEditStockCritico.Name = "tbEditStockCritico";
+            this.tbEditStockCritico.Size = new System.Drawing.Size(96, 20);
+            this.tbEditStockCritico.TabIndex = 26;
+            this.tbEditStockCritico.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(464, 16);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(41, 13);
+            this.label20.TabIndex = 25;
+            this.label20.Text = "Unidad";
+            // 
+            // cboEditUnidad
+            // 
+            this.cboEditUnidad.FormattingEnabled = true;
+            this.cboEditUnidad.Items.AddRange(new object[] {
+            "g",
+            "u",
+            "ml"});
+            this.cboEditUnidad.Location = new System.Drawing.Point(461, 29);
+            this.cboEditUnidad.Name = "cboEditUnidad";
+            this.cboEditUnidad.Size = new System.Drawing.Size(48, 21);
+            this.cboEditUnidad.TabIndex = 24;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -640,7 +681,7 @@
             // cboEditCateg
             // 
             this.cboEditCateg.FormattingEnabled = true;
-            this.cboEditCateg.Location = new System.Drawing.Point(323, 29);
+            this.cboEditCateg.Location = new System.Drawing.Point(358, -12);
             this.cboEditCateg.Name = "cboEditCateg";
             this.cboEditCateg.Size = new System.Drawing.Size(121, 21);
             this.cboEditCateg.TabIndex = 22;
@@ -713,6 +754,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Ingrediente";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(494, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Unidad";
+            // 
+            // cboMedida
+            // 
+            this.cboMedida.FormattingEnabled = true;
+            this.cboMedida.Items.AddRange(new object[] {
+            "g",
+            "u",
+            "ml"});
+            this.cboMedida.Location = new System.Drawing.Point(487, 30);
+            this.cboMedida.Name = "cboMedida";
+            this.cboMedida.Size = new System.Drawing.Size(48, 21);
+            this.cboMedida.TabIndex = 18;
+            this.cboMedida.SelectedValueChanged += new System.EventHandler(this.cboMedida_SelectedValueChanged);
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -746,6 +809,7 @@
             this.dgvIngredientes.AllowUserToResizeRows = false;
             this.dgvIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvIngredientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -755,13 +819,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(11, 105);
+            this.dgvIngredientes.Location = new System.Drawing.Point(31, 105);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngredientes.Size = new System.Drawing.Size(524, 292);
+            this.dgvIngredientes.Size = new System.Drawing.Size(485, 292);
             this.dgvIngredientes.StandardTab = true;
             this.dgvIngredientes.TabIndex = 20;
             this.dgvIngredientes.SelectionChanged += new System.EventHandler(this.dgvIngredientes_SelectionChanged);
@@ -780,68 +844,6 @@
             // errpNBebida
             // 
             this.errpNBebida.ContainerControl = this;
-            // 
-            // cboMedida
-            // 
-            this.cboMedida.FormattingEnabled = true;
-            this.cboMedida.Items.AddRange(new object[] {
-            "g",
-            "u",
-            "ml"});
-            this.cboMedida.Location = new System.Drawing.Point(487, 30);
-            this.cboMedida.Name = "cboMedida";
-            this.cboMedida.Size = new System.Drawing.Size(48, 21);
-            this.cboMedida.TabIndex = 18;
-            this.cboMedida.SelectedValueChanged += new System.EventHandler(this.cboMedida_SelectedValueChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(494, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Unidad";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(464, 16);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
-            this.label20.TabIndex = 25;
-            this.label20.Text = "Unidad";
-            // 
-            // cboEditUnidad
-            // 
-            this.cboEditUnidad.FormattingEnabled = true;
-            this.cboEditUnidad.Items.AddRange(new object[] {
-            "g",
-            "u",
-            "ml"});
-            this.cboEditUnidad.Location = new System.Drawing.Point(461, 29);
-            this.cboEditUnidad.Name = "cboEditUnidad";
-            this.cboEditUnidad.Size = new System.Drawing.Size(48, 21);
-            this.cboEditUnidad.TabIndex = 24;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(234, 16);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(67, 13);
-            this.label21.TabIndex = 27;
-            this.label21.Text = "Stock Critico";
-            // 
-            // tbEditStockCritico
-            // 
-            this.tbEditStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEditStockCritico.Location = new System.Drawing.Point(221, 30);
-            this.tbEditStockCritico.Name = "tbEditStockCritico";
-            this.tbEditStockCritico.Size = new System.Drawing.Size(96, 20);
-            this.tbEditStockCritico.TabIndex = 26;
-            this.tbEditStockCritico.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frmProductos
             // 

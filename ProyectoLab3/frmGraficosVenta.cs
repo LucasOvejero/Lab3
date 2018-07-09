@@ -44,6 +44,11 @@ namespace ProyectoLab3
             cboMeses.Items.AddRange(meses);
             chartVntas.Series.RemoveAt(0);
             chartCantidad.Series.RemoveAt(0);
+
+            cPMV.Series.RemoveAt(0);
+            cPMV.Series.Add("Plato mas vendido");
+            cBMV.Series.RemoveAt(0);
+            cBMV.Series.Add("Bebidas mas vendidas");
             try
             {
                 int[] MinMax = clsEstadisticas.getMaxMinYear();
@@ -72,6 +77,10 @@ namespace ProyectoLab3
             chartVntas.Series["Venta neta"].YValueMembers = "Precio";
             chartVntas.Series["Ganancia total"].XValueMember = "Mes";
             chartVntas.Series["Ganancia total"].YValueMembers = "Ganancia";
+            cBMV.Series["Bebidas mas vendidas"].XValueMember = "Nombre";
+            cBMV.Series["Bebidas mas vendidas"].YValueMembers = "Cantidad";
+            cPMV.Series["Plato mas vendido"].XValueMember = "Nombre";
+            cPMV.Series["Plato mas vendido"].YValueMembers = "Cantidad";
             setearDatasource();
             
         }
@@ -91,13 +100,21 @@ namespace ProyectoLab3
         private void setearDatasource() {
             chartVntas.DataSource = null;
             chartCantidad.DataSource = null;
+            cBMV.DataSource = null;
             int anio = (int)nudAnio.Value;
             int mes = cboMeses.SelectedIndex;
             DataTable source = clsEstadisticas.getVentas(anio, mes, IdSucursal,null);
             chartVntas.DataSource = source;
             chartCantidad.DataSource = source;
+            DataTable BMV = clsEstadisticas.BebidasMasVendidasSuc(anio, mes, IdSucursal, null);
+            DataTable PMV = clsEstadisticas.PlatosMasVendidosSuc(anio, mes, IdSucursal, null);
+            cPMV.DataSource = PMV;
+            cPMV.DataBind();
             chartVntas.DataBind();
             chartCantidad.DataBind();
+            cBMV.DataSource = BMV;
+            cBMV.DataBind();
+
         
         }
 
@@ -110,14 +127,21 @@ namespace ProyectoLab3
             {
                 chartVntas.DataSource = null;
                 chartCantidad.DataSource = null;
+                cBMV.DataSource = null;
                 int dia = int.Parse(DateTime.Now.Date.Day.ToString());
                 int mes = int.Parse(DateTime.Now.Date.Month.ToString());
                 int anio = int.Parse(DateTime.Now.Date.Year.ToString());
                 DataTable source = clsEstadisticas.getVentas(anio, mes, IdSucursal, dia);
+                DataTable BMV = clsEstadisticas.BebidasMasVendidasSuc(anio, mes, IdSucursal, dia);
+                DataTable PMV = clsEstadisticas.PlatosMasVendidosSuc(anio, mes, IdSucursal, dia);
+                cPMV.DataSource = PMV;
+                cPMV.DataBind();
                 chartVntas.DataSource = source;
                 chartCantidad.DataSource = source;
+                cBMV.DataSource = BMV;
                 chartVntas.DataBind();
                 chartCantidad.DataBind();
+                cBMV.DataBind();
             }
             else {
                 setearDatasource();

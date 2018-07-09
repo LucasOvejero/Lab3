@@ -76,6 +76,8 @@ namespace ProyectoLab3
             else
             {
                 pnlCritico.Visible = true;
+                dgvCritico.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvCritico.Columns["stockCritico"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
         }
 
