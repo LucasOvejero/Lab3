@@ -8,10 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace ProyectoLab3
 {
     public partial class frmEnvios : Form
     {
+        frmMerma ofrmMerma;
+
         public frmEnvios()
         {
             InitializeComponent();
@@ -19,9 +22,19 @@ namespace ProyectoLab3
 
         private void frmEnvios_Load(object sender, EventArgs e)
         {
-            DgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesPorRecibir();
-            rbAceptar.Checked = true;
+            formatearGrilla();
+        }
 
+        private void formatearGrilla()
+        {
+            try
+            {
+                DgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesPorRecibir();
+                dgvDetalle.Columns["costoTotal"].HeaderText = "Costo Total";
+                dgvDetalle.Columns["fechaInicio"].HeaderText = "Inicio";
+
+            }
+            catch (Exception ex) { Console.Write(ex.Message); }
         }
 
         private void DgvSolicitudes_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -31,29 +44,47 @@ namespace ProyectoLab3
                 dgvDetalle.DataSource = null;
                 int IdSolicitud = (int)DgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value;
                 dgvDetalle.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(IdSolicitud);
+
+                dgvDetalle.Columns["stockCritico"].Visible = false;
+                dgvDetalle.Columns["estado"].Visible = false;
+                dgvDetalle.Columns["fechaFin"].Visible = false;
+                dgvDetalle.Columns["recibido"].Visible = false;
+                dgvDetalle.Columns["Observacion"].Visible = false;
+                dgvDetalle.Columns["fechaEnvio"].Visible = false;
+                dgvDetalle.Columns["fechaInicio"].Visible = false;
+                dgvDetalle.Columns["stockCritico"].Visible = false;
+
+                dgvDetalle.Columns["NombreProducto"].HeaderText = "Producto";
+                dgvDetalle.Columns["CostoxKg"].HeaderText = "Costo Producto";
+                dgvDetalle.Columns["cantidad"].HeaderText = "Cantidad";
+                dgvDetalle.Columns["costoTotal"].HeaderText = "Costo Total";
+
+
             }
             catch (Exception ex) { Console.Write(ex.Message); }
         }
 
         private void btnInconveniente_Click(object sender, EventArgs e)
         {
-            if (tbInconveniente.Text.Length < 0)
+            try
             {
-                MessageBox.Show("Especifique el inconveniente");
-            }
-            else
-            {
-                if (rbAceptar.Checked)
+                if (tbInconveniente.Text.Length < 0)
                 {
-                    MigrarStock();
-                 
-                    
+                    MessageBox.Show("Especifique el inconveniente");
                 }
                 else
                 {
-                    //clsSolicitud.marcarError();
+                    MigrarStock();
+
+                    int IdSolicitud = (int)DgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value;
+
+                    clsSolicitud.marcarInconveniente(IdSolicitud);
+                    MessageBox.Show("Se ha cargado la solicitud, por favor, especifique la merma si la hubiese.");
+                    ofrmMerma = new frmMerma();
+                    ofrmMerma.ShowDialog();
                 }
             }
+            catch (Exception ex) { Console.Write(ex.Message); }
         }
 
         private void btnRecibir_Click(object sender, EventArgs e)

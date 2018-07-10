@@ -134,23 +134,7 @@ namespace ProyectoLab3
                     dgvHistorial.Columns["recibido"].Visible = false;
 
 
-                    foreach (DataGridViewRow r in dgvHistorial.Rows)
-                    {
-                        if (r.Cells["fechaFin"].Value.ToString().Length > 0)
-                        {
-                            r.DefaultCellStyle.BackColor = Color.Green;
-                        }
-                        else
-                        {
-                            if (r.Cells["recibido"].Value.ToString() == "")
-                            {
-                                r.DefaultCellStyle.BackColor = Color.Orange;
-                            }
-                            else
-                                r.DefaultCellStyle.BackColor = Color.Red;
-                        }
-
-                    }
+                    colorearGrillas();
 
 
                     dgvHistorial.Columns["fechaInicio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -180,25 +164,47 @@ namespace ProyectoLab3
                     dgvHistorial.Columns["Fin"].HeaderText = "Recibido";
 
 
-                    foreach (DataGridViewRow r in dgvHistorial.Rows)
-                    {
-                        if (r.Cells["Fin"].Value.ToString().Length > 0)
-                        {
-                            r.DefaultCellStyle.BackColor = Color.Green;
-                        }
-                        else
-                        {
-                            if (r.Cells["recibido"].Value.ToString() == "")
-                            {
-                                r.DefaultCellStyle.BackColor = Color.Orange;
-                            }
-                            else
-                                r.DefaultCellStyle.BackColor = Color.Red;
-                        }
-
-                    }
+                    colorearGrillas();
                 }
             }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+        }
+
+        private void colorearGrillas()
+        {
+            try
+            {
+                foreach (DataGridViewRow r in dgvHistorial.Rows)
+                {
+
+
+                    string recibido = r.Cells["recibido"].Value.ToString();
+
+
+                    if (r.Cells["Fin"].Value.ToString().Length > 0 && recibido == "True")
+                    {
+                        //Si todo correcto = VERDE
+                        r.DefaultCellStyle.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        if (r.Cells["Fin"].Value.ToString().Length > 0 && r.Cells["Envio"].Value.ToString().Length == 0)
+                        {
+                            // Si termino y no fue enviada (rechazada) : rojo
+                            r.DefaultCellStyle.BackColor = Color.Red;
+                        }
+                        //Si esta en camino
+                        else if (r.Cells["Fin"].Value.ToString().Length == 0 && r.Cells["Envio"].Value.ToString().Length > 0)
+                            r.DefaultCellStyle.BackColor = Color.Yellow;
+                        //Si llego con dificultad
+                        else if (r.Cells["Observaciones"].Value.ToString().Length > 0)
+                            r.DefaultCellStyle.BackColor = Color.Orange;
+                    }
+
+                }
+            }
+
             catch (Exception ex) { Console.WriteLine(ex.Message); }
 
         }

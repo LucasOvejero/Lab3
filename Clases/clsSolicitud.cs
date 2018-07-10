@@ -122,6 +122,24 @@ namespace Clases
             return solicitudes;
         }
 
+        public static void marcarInconveniente(int idSolicitud)
+        {
+            string query = "UPDATE Solicitudes SET recibido = 0  WHERE IdSolicitud = " + idSolicitud;
+            comando = new SqlCommand(query);
+
+            try
+            {
+
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(solicitudes);
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+        }
+
         public static DataTable MisSolcitudesPorRecibir()
         {
 
@@ -313,17 +331,17 @@ namespace Clases
             if (clsConexion.SucursalSession == -1)
             {
 
-                 query = "SELECT  t2.IdSolicitud , t2.estado t1.k Solicitante, t2.k Solicitado, t2.fechaInicio Inicio,t2.fechaEnvio Envio, t2.fechaFin \"Fin\", t2.costoTotal Monto,t2.recibido Recibido,t2.observacion Observaciones FROM "
-                        + " (SELECT su.NombreInterno as k, so.IdSolicitud, so.IdSolicitante FROM Solicitudes so JOIN Sucursal su on so.IdSolicitante = su.IdSucursal) t1"
-                        + " JOIN (SELECT su.NombreInterno as k, so.estado , so.IdSolicitud, so.IdSolicitante, so.fechaInicio, so.fechaEnvio, so.costoTotal, so.fechaFin, so.observacion, so.recibido FROM Solicitudes so JOIN Sucursal su on so.IdSolicitado = su.IdSucursal) t2"
-                        + " on t1.IdSolicitud = t2.IdSolicitud";
+                query = "SELECT  t2.IdSolicitud , t2.estado t1.k Solicitante, t2.k Solicitado, t2.fechaInicio Inicio,t2.fechaEnvio Envio, t2.fechaFin \"Fin\", t2.costoTotal Monto,t2.recibido Recibido,t2.observacion Observaciones FROM "
+                       + " (SELECT su.NombreInterno as k, so.IdSolicitud, so.IdSolicitante FROM Solicitudes so JOIN Sucursal su on so.IdSolicitante = su.IdSucursal) t1"
+                       + " JOIN (SELECT su.NombreInterno as k, so.estado , so.IdSolicitud, so.IdSolicitante, so.fechaInicio, so.fechaEnvio, so.costoTotal, so.fechaFin, so.observacion, so.recibido FROM Solicitudes so JOIN Sucursal su on so.IdSolicitado = su.IdSucursal) t2"
+                       + " on t1.IdSolicitud = t2.IdSolicitud";
             }
             else
             {
-                 query = "SELECT  t2.IdSolicitud , t2.estado, t1.k Solicitante, t2.k Solicitado, t2.fechaInicio Inicio,t2.fechaEnvio Envio, t2.fechaFin \"Fin\", t2.costoTotal Monto,t2.recibido Recibido,t2.observacion Observaciones FROM "
-             + " (SELECT su.NombreInterno as k, so.IdSolicitud, so.IdSolicitante FROM Solicitudes so JOIN Sucursal su on so.IdSolicitante = su.IdSucursal) t1"
-             + " JOIN (SELECT su.NombreInterno as k,so.estado, so.IdSolicitud, so.IdSolicitante, so.fechaInicio, so.fechaEnvio, so.costoTotal, so.fechaFin, so.observacion, so.recibido FROM Solicitudes so JOIN Sucursal su on so.IdSolicitado = su.IdSucursal) t2"
-             + " on t1.IdSolicitud = t2.IdSolicitud WHERE t2.IdSolicitante = "+clsConexion.SucursalSession+" OR t1.IdSolicitante = "+clsConexion.SucursalSession+"; ";
+                query = "SELECT  t2.IdSolicitud , t2.estado, t1.k Solicitante, t2.k Solicitado, t2.fechaInicio Inicio,t2.fechaEnvio Envio, t2.fechaFin \"Fin\", t2.costoTotal Monto,t2.recibido Recibido,t2.observacion Observaciones FROM "
+            + " (SELECT su.NombreInterno as k, so.IdSolicitud, so.IdSolicitante FROM Solicitudes so JOIN Sucursal su on so.IdSolicitante = su.IdSucursal) t1"
+            + " JOIN (SELECT su.NombreInterno as k,so.estado, so.IdSolicitud, so.IdSolicitante, so.fechaInicio, so.fechaEnvio, so.costoTotal, so.fechaFin, so.observacion, so.recibido FROM Solicitudes so JOIN Sucursal su on so.IdSolicitado = su.IdSucursal) t2"
+            + " on t1.IdSolicitud = t2.IdSolicitud WHERE t2.IdSolicitante = " + clsConexion.SucursalSession + " OR t1.IdSolicitante = " + clsConexion.SucursalSession + "; ";
 
             }
             comando = new SqlCommand(query);
