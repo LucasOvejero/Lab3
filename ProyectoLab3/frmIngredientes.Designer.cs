@@ -96,6 +96,7 @@
             this.dgvIngredientes.Size = new System.Drawing.Size(240, 433);
             this.dgvIngredientes.TabIndex = 4;
             this.dgvIngredientes.TabStop = false;
+            this.dgvIngredientes.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvIngredientes_CellBeginEdit);
             // 
             // dgvBebidas
             // 

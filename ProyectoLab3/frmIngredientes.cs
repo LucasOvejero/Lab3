@@ -112,9 +112,16 @@ namespace ProyectoLab3
             ds=clsDeposito.getDepositoPorDireccion(direccion);
             dgvBebidas.DataSource = ds.Tables["Bebidas"];
             dgvBebidas.Columns["Agregar U."].Visible = false;
+            dgvBebidas.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvIngredientes.DataSource = ds.Tables["Ingredientes"];
-            dgvIngredientes.Columns["Agregar gr."].Visible = false;
+            dgvIngredientes.Columns["Agregar"].Visible = false;
+            dgvIngredientes.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+        }
+
+        private void dgvIngredientes_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            int i = 2;
         }
     }
 }

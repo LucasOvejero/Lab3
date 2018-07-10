@@ -58,5 +58,60 @@ namespace Clases
             }
             return ventas;
         }
+        public static DataTable BebidasMasVendidasSuc(int anio, int mes, int IdSucursal, Nullable<int> hoy)
+        {
+            DataTable BMVS = new DataTable("BMVS");
+            string mesSQL="";
+            string anioSQL=" and YEAR(Fecha)="+anio;
+            string diaSQL="";
+            string idSQL = " and IdSucursal=" + IdSucursal;
+            if (mes != 0)
+                mesSQL = " and MONTH(Fecha)=" + mes;
+            if(hoy!=null)
+                diaSQL=" and DAY(Fecha)=" + hoy;
+            string sql =string.Format( "Select NombreBebida as Nombre, Cantidad, b.IdBebida from Bebida b inner join " +
+                 "(select SUM(Cantidad) Cantidad, IdBebida from DescripcionVenta inner join EncabezadoVenta e on (DescripcionVenta.NroVenta=e.NroVenta) where IdBebida is not null {0} {1} {2} {3} group by IdBebida ) " +
+                "g on (b.IdBebida=g.IdBebida)  order by Cantidad desc;",idSQL,mesSQL,anioSQL,diaSQL);
+            try
+            {
+                SqlCommand comando = new SqlCommand(sql, clsConexion.getCon());
+                SqlDataAdapter adap = new SqlDataAdapter(comando);
+                adap.Fill(BMVS);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally { clsConexion.closeCon(); }
+            return BMVS;
+        }
+        public static DataTable PlatosMasVendidosSuc(int anio, int mes, int IdSucursal, Nullable<int> hoy)
+        {
+            DataTable PMV = new DataTable("PMV");
+            string mesSQL = "";
+            string anioSQL = " and YEAR(Fecha)=" + anio;
+            string diaSQL = "";
+            string idSQL = " and IdSucursal=" + IdSucursal;
+            if (mes != 0)
+                mesSQL = " and MONTH(Fecha)=" + mes;
+            if (hoy != null)
+                diaSQL = " and DAY(Fecha)=" + hoy;
+            string sql = string.Format("select  Nombre, Cantidad, p.IdPlato from Plato p inner join "+
+                "(select SUM(Cantidad) Cantidad,IdPlato from DescripcionVenta inner join EncabezadoVenta e on (DescripcionVenta.NroVenta=e.NroVenta) where IdPlato is not null {0} {1} {2} {3} group by IdPlato ) "+
+                "g on(p.IdPlato=g.IdPlato) order by Cantidad Desc;", idSQL, mesSQL, anioSQL, diaSQL);
+            try
+            {
+                SqlCommand comando = new SqlCommand(sql, clsConexion.getCon());
+                SqlDataAdapter adap = new SqlDataAdapter(comando);
+                adap.Fill(PMV);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally { clsConexion.closeCon(); }
+            return PMV;
+        }
+
     }
 }

@@ -20,7 +20,7 @@ namespace Clases
             try
             {
                 //recuperamos los ingredientes
-                comando = new SqlCommand("Select i.IdIngrediente,d.IdSucursal,NombreProducto,Stock,0 as 'Agregar gr.' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion; ");
+                comando = new SqlCommand("Select i.IdIngrediente,d.IdSucursal,NombreProducto,CAST(Stock as nvarchar)+RTRIM(Unidad) Stock,0 as 'Agregar' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion; ");
                 comando.Connection = clsConexion.getCon();
                 SqlParameter dir = new SqlParameter("@Direccion", Direccion);
                 comando.Parameters.Add(dir);
@@ -135,7 +135,7 @@ namespace Clases
                     if (row.RowState == DataRowState.Modified)
                     {
 
-                        int agregar = Int32.Parse(row["Agregar gr."].ToString());
+                        int agregar = Int32.Parse(row["Agregar"].ToString());
 
                         int idSucursal = Int32.Parse(row["IdSucursal"].ToString());
                         int idIngrediente = Int32.Parse(row["IdIngrediente"].ToString());
@@ -147,7 +147,7 @@ namespace Clases
                 comando = new SqlCommand();
                 comando.Connection = clsConexion.getCon();
                 comando.Parameters.Add(new SqlParameter("@Direccion", direccion));
-                comando.CommandText = "Select i.IdIngrediente,d.IdSucursal,NombreProducto,Stock,0 as 'Agregar gr.' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion;";
+                comando.CommandText = "Select i.IdIngrediente,d.IdSucursal,NombreProducto,CAST(Stock as nvarchar)+RTRIM(Unidad) Stock,0 as 'Agregar' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion;";
                 adapter.SelectCommand = comando;
                 nuevaTablaIngredientes = new DataTable("Ingredientes");
                 adapter.Fill(nuevaTablaIngredientes);
