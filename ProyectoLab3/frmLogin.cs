@@ -20,10 +20,15 @@ namespace ProyectoLab3
 
         private void btnLogear_Click(object sender, EventArgs e)
         {
+            lblerr.Visible = false;
             if (clsConexion.SucursalSession == -1)
             {
-                clsEmpleado.logeo(tbUser.Text, tbPass.Text);
-                this.Dispose();
+                bool valid=clsEmpleado.logeo(tbUser.Text, tbPass.Text);
+                if (valid)
+                    this.Dispose();
+                else {
+                    lblerr.Visible = true;
+                }
             }
             else
                 this.Dispose();

@@ -65,7 +65,7 @@ namespace ProyectoLab3
         {
             
             DataTable dt = (DataTable)dgvIngredientes.DataSource;
-            dt.DefaultView.RowFilter = string.Format("NombreProducto like '%{0}%'", tbIngredientes.Text.Trim().Replace("'", "''"));
+            dt.DefaultView.RowFilter = string.Format("Nombre like '%{0}%'", tbIngredientes.Text.Trim().Replace("'", "''"));
             dgvIngredientes.Refresh();
         }
 
@@ -77,8 +77,8 @@ namespace ProyectoLab3
                 dgvBebidas.Columns["NombreBebida"].ReadOnly = true;
                 dgvBebidas.Columns["NombreBebida"].HeaderText = "Nombre";
                 dgvIngredientes.Columns["Stock"].ReadOnly = true;
-                dgvIngredientes.Columns["NombreProducto"].HeaderText = "Nombre";
-                dgvIngredientes.Columns["NombreProducto"].ReadOnly = true;
+                dgvIngredientes.Columns["Nombre"].HeaderText = "Nombre";
+                dgvIngredientes.Columns["Nombre"].ReadOnly = true;
                 dgvBebidas.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvBebidas.Columns["Agregar U."].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 dgvIngredientes.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

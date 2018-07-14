@@ -54,7 +54,7 @@ namespace ProyectoLab3
                 dgvDetalle.Columns["fechaInicio"].Visible = false;
                 dgvDetalle.Columns["stockCritico"].Visible = false;
 
-                dgvDetalle.Columns["NombreProducto"].HeaderText = "Producto";
+                dgvDetalle.Columns["Nombre"].HeaderText = "Producto";
                 dgvDetalle.Columns["CostoxKg"].HeaderText = "Costo Producto";
                 dgvDetalle.Columns["cantidad"].HeaderText = "Cantidad";
                 dgvDetalle.Columns["costoTotal"].HeaderText = "Costo Total";
@@ -102,9 +102,8 @@ namespace ProyectoLab3
                 int IdIngrediente = (int)r.Cells["IdIngrediente"].Value;
                 string nombre = r.Cells["NombreProducto"].Value.ToString();
                 int cantidad = (int)r.Cells["cantidad"].Value;
-                int sucursalDestino = (int)r.Cells["IdSolicitado"].Value;
 
-                clsDeposito.recibirEnvio(sucursalDestino, IdIngrediente, cantidad);
+                clsDeposito.recibirEnvio(IdIngrediente, cantidad);
             }
         }
 

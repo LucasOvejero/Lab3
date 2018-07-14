@@ -278,7 +278,7 @@ namespace ProyectoLab3
 
         private void dgvIngredientes_SelectionChanged(object sender, EventArgs e)
         {
-            int c = dgvIngredientes.Rows.Count;
+            int c = dgvIngredientes.SelectedRows.Count;
             if (c > 0)
             {
                 DataGridViewRow fila = dgvIngredientes.SelectedRows[0];

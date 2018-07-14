@@ -33,11 +33,12 @@
             this.tbPass = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblerr = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogear
             // 
-            this.btnLogear.Location = new System.Drawing.Point(40, 140);
+            this.btnLogear.Location = new System.Drawing.Point(40, 154);
             this.btnLogear.Name = "btnLogear";
             this.btnLogear.Size = new System.Drawing.Size(87, 23);
             this.btnLogear.TabIndex = 2;
@@ -78,11 +79,23 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Contraseña";
             // 
+            // lblerr
+            // 
+            this.lblerr.AutoSize = true;
+            this.lblerr.ForeColor = System.Drawing.Color.Red;
+            this.lblerr.Location = new System.Drawing.Point(12, 122);
+            this.lblerr.Name = "lblerr";
+            this.lblerr.Size = new System.Drawing.Size(148, 13);
+            this.lblerr.TabIndex = 3;
+            this.lblerr.Text = "Usuario o Contraseña invalido";
+            this.lblerr.Visible = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(170, 179);
+            this.Controls.Add(this.lblerr);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.tbPass);
@@ -105,5 +118,6 @@
         private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblerr;
     }
 }

@@ -225,7 +225,7 @@ namespace ProyectoLab3
                 dgvDetalle.Columns["fechaInicio"].Visible = false;
                 dgvDetalle.Columns["fechaFin"].Visible = false;
 
-                dgvDetalle.Columns["NombreProducto"].HeaderText = "Producto";
+                dgvDetalle.Columns["Nombre"].HeaderText = "Producto";
                 dgvDetalle.Columns["cantidad"].HeaderText = "Cantidad";
                 dgvDetalle.Columns["costoTotal"].HeaderText = "Costo";
 

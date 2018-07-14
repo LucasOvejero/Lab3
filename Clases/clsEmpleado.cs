@@ -180,14 +180,16 @@ namespace Clases
                 adaptador.SelectCommand = comando;
                 adaptador.Fill(empleados);
 
-                valid = empleados.Columns.Count > 0;
+                valid = empleados.Rows.Count > 0;
                 //
-
-                clsConexion.Tipo = empleados.Rows[0]["Tipo"].ToString();
-                clsConexion.IdEmpleado = empleados.Rows[0]["IdEmpleado"].ToString();
-                clsConexion.NombreCompleto = empleados.Rows[0]["Nombre"].ToString() + " " + empleados.Rows[0]["Apellido"].ToString(); ;
-                clsConexion.SucursalSession = Convert.ToInt32(empleados.Rows[0]["IdSucursal"].ToString());
-                clsConexion.NombreSucursal = empleados.Rows[0]["NombreInterno"].ToString();
+                if (valid)
+                {
+                    clsConexion.Tipo = empleados.Rows[0]["Tipo"].ToString();
+                    clsConexion.IdEmpleado = empleados.Rows[0]["IdEmpleado"].ToString();
+                    clsConexion.NombreCompleto = empleados.Rows[0]["Nombre"].ToString() + " " + empleados.Rows[0]["Apellido"].ToString(); ;
+                    clsConexion.SucursalSession = Convert.ToInt32(empleados.Rows[0]["IdSucursal"].ToString());
+                    clsConexion.NombreSucursal = empleados.Rows[0]["NombreInterno"].ToString();
+                }
             }
             catch (SqlException x) { Console.WriteLine(x.Message); }
             finally { clsConexion.closeCon(); }

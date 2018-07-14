@@ -32,8 +32,11 @@ namespace ProyectoLab3
 
 
             dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
-            dgvIngredientes.Columns["Nombre"].Visible = false;
-
+            dgvIngredientes.Columns["Categoria"].Visible = false;
+            dgvIngredientes.Columns["StockCritico"].Visible = false;
+            dgvIngredientes.Columns["Unidad"].Visible = false;
+            dgvIngredientes.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvIngredientes.Columns["Costo"].DefaultCellStyle.Format = "c";
             dgvSeleccion.Columns.Add("IdIngrediente", "IdIngrediente");
             dgvSeleccion.Columns["IdIngrediente"].Visible = false;
 
@@ -48,9 +51,9 @@ namespace ProyectoLab3
         {
             try
             {
-                string nombre = dgvIngredientes.SelectedRows[0].Cells["NombreProducto"].Value.ToString();
+                string nombre = dgvIngredientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
                 int IdIngrediente = Convert.ToInt32(dgvIngredientes.SelectedRows[0].Cells["IdIngrediente"].Value);
-                double costoxKg = Convert.ToDouble(dgvIngredientes.SelectedRows[0].Cells["CostoxKg"].Value.ToString());
+                double costoxKg = Convert.ToDouble(dgvIngredientes.SelectedRows[0].Cells["Costo"].Value.ToString());
                 double cantidadGramos = Convert.ToDouble(this.tbCantidad.Text);
                 string gramosString;
                 double valor;

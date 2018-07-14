@@ -20,7 +20,7 @@ namespace Clases
             try
             {
                 //recuperamos los ingredientes
-                comando = new SqlCommand("Select i.IdIngrediente,d.IdSucursal,NombreProducto,CAST(Stock as nvarchar)+RTRIM(Unidad) Stock,0 as 'Agregar' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion; ");
+                comando = new SqlCommand("Select i.IdIngrediente,d.IdSucursal,NombreProducto as Nombre,CAST(Stock as nvarchar)+RTRIM(Unidad) Stock,0 as 'Agregar' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion; ");
                 comando.Connection = clsConexion.getCon();
                 SqlParameter dir = new SqlParameter("@Direccion", Direccion);
                 comando.Parameters.Add(dir);
@@ -48,7 +48,7 @@ namespace Clases
 
         public static DataTable ObtenerCriticos()
         {
-            comando = new SqlCommand("Select  NombreProducto, Stock, stockCritico  From Ingrediente i JOIN Deposito d ON i.IdIngrediente = d.IdIngrediente WHERE stockCritico >= Stock AND IdSucursal = " + clsConexion.SucursalSession + ";");
+            comando = new SqlCommand("Select  NombreProducto as Nombre, Stock, stockCritico  From Ingrediente i JOIN Deposito d ON i.IdIngrediente = d.IdIngrediente WHERE stockCritico >= Stock AND IdSucursal = " + clsConexion.SucursalSession + ";");
             try
             {
                 StockDeposito = new DataTable("Deposito");
@@ -147,7 +147,7 @@ namespace Clases
                 comando = new SqlCommand();
                 comando.Connection = clsConexion.getCon();
                 comando.Parameters.Add(new SqlParameter("@Direccion", direccion));
-                comando.CommandText = "Select i.IdIngrediente,d.IdSucursal,NombreProducto,CAST(Stock as nvarchar)+RTRIM(Unidad) Stock,0 as 'Agregar' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion;";
+                comando.CommandText = "Select i.IdIngrediente,d.IdSucursal,NombreProducto as Nombre,CAST(Stock as nvarchar)+RTRIM(Unidad) Stock,0 as 'Agregar' from Deposito d join Sucursal s on(d.IdSucursal=s.IdSucursal) join Ingrediente i on (d.IdIngrediente=i.IdIngrediente) where Direccion=@Direccion;";
                 adapter.SelectCommand = comando;
                 nuevaTablaIngredientes = new DataTable("Ingredientes");
                 adapter.Fill(nuevaTablaIngredientes);
@@ -209,9 +209,9 @@ namespace Clases
         }
 
 
-        public static void recibirEnvio(int idDestino, int idIngrediente, int cantidad)
+        public static void recibirEnvio(int idIngrediente, int cantidad)
         {
-            string query = "UPDATE Deposito SET Stock = Stock + " + cantidad + " WHERE IdIngrediente = " + idIngrediente + " AND IdSucursal = " + idDestino + ";";
+            string query = "UPDATE Deposito SET Stock = Stock + " + cantidad + " WHERE IdIngrediente = " + idIngrediente + " AND IdSucursal = " + clsConexion.SucursalSession + ";";
             comando = new SqlCommand(query);
             try
             {

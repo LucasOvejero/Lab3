@@ -42,25 +42,7 @@ namespace ProyectoLab3
         {
             VerificarLogeo();
 
-            switch (clsConexion.Tipo)
-            {
-                case "Administrador":
-                    pnlVendedor.Visible = false;
-                    break;
-
-                case "Vendedor":
-                    ofrmVenta = new frmVenta(clsConexion.SucursalSession);
-                    ofrmVenta.ShowDialog();
-                    clsConexion.SucursalSession = -1;
-                    VerificarLogeo();
-                    break;
-                case "Manager":
-                    pnlAdmin.Visible = false;
-                    break;
-
-                default: break;
-            }
-
+            
             updateCritico();
 
         }
@@ -130,6 +112,27 @@ namespace ProyectoLab3
                 ofrmLogin = new frmLogin();
                 ofrmLogin.ShowDialog();
             }
+            pnlVendedor.Visible = true;
+            pnlAdmin.Visible = true;
+            switch (clsConexion.Tipo)
+            {
+                case "Administrador":
+                    pnlVendedor.Visible = false;
+                    break;
+
+                case "Vendedor":
+                    ofrmVenta = new frmVenta(clsConexion.SucursalSession);
+                    ofrmVenta.ShowDialog();
+                    clsConexion.SucursalSession = -1;
+                    VerificarLogeo();
+                    break;
+                case "Manager":
+                    pnlAdmin.Visible = false;
+                    break;
+
+                default: break;
+            }
+
 
         }
 
