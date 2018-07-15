@@ -16,6 +16,7 @@ namespace ProyectoLab3
         public frmLogin()
         {
             InitializeComponent();
+            btnLogear.Enabled = false;
         }
 
         private void btnLogear_Click(object sender, EventArgs e)
@@ -33,6 +34,21 @@ namespace ProyectoLab3
             else
                 this.Dispose();
             
+        }
+
+        private void tbPass_TextChanged(object sender, EventArgs e)
+        {
+
+            validLoginInfo();
+        }
+
+        private void tbUser_TextChanged(object sender, EventArgs e)
+        {
+            validLoginInfo();
+        }
+
+        private void validLoginInfo() {
+            btnLogear.Enabled = tbPass.Text.Length > 0 && tbUser.Text.Length > 0;
         }
     }
 }

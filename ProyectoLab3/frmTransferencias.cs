@@ -22,6 +22,8 @@ namespace ProyectoLab3
             try
             {
                 dgvTransferencia.DataSource = clsEmpleado.HistorialDeTransferencias();
+                dgvTransferencia.Columns["Nombre"].DisplayIndex = 0;
+                dgvTransferencia.Columns["Apellido"].DisplayIndex = 0;
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
         }

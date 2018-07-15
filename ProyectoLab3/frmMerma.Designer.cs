@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbIngrediente = new System.Windows.Forms.RadioButton();
             this.rbBebida = new System.Windows.Forms.RadioButton();
@@ -47,9 +48,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.tbFiltroMerma = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pnlSol = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvSol = new Componentes.GrillaFormatead();
             ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMermas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            this.pnlSol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSol)).BeginInit();
             this.SuspendLayout();
             // 
             // rbIngrediente
@@ -173,14 +181,14 @@
             this.dgvMermas.AllowUserToResizeRows = false;
             this.dgvMermas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgvMermas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMermas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMermas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMermas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMermas.Location = new System.Drawing.Point(27, 296);
             this.dgvMermas.MultiSelect = false;
@@ -246,11 +254,74 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Mermas Cargadas";
             // 
+            // tbFiltroMerma
+            // 
+            this.tbFiltroMerma.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbFiltroMerma.Location = new System.Drawing.Point(275, 186);
+            this.tbFiltroMerma.Name = "tbFiltroMerma";
+            this.tbFiltroMerma.Size = new System.Drawing.Size(200, 20);
+            this.tbFiltroMerma.TabIndex = 16;
+            this.tbFiltroMerma.TextChanged += new System.EventHandler(this.tbFiltroMerma_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(354, 170);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Filtro";
+            // 
+            // pnlSol
+            // 
+            this.pnlSol.Controls.Add(this.dgvSol);
+            this.pnlSol.Controls.Add(this.label7);
+            this.pnlSol.Location = new System.Drawing.Point(512, 170);
+            this.pnlSol.Name = "pnlSol";
+            this.pnlSol.Size = new System.Drawing.Size(287, 120);
+            this.pnlSol.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(75, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Detalle de la Solicitud";
+            // 
+            // dgvSol
+            // 
+            this.dgvSol.AllowUserToAddRows = false;
+            this.dgvSol.AllowUserToResizeColumns = false;
+            this.dgvSol.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSol.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSol.Location = new System.Drawing.Point(21, 21);
+            this.dgvSol.MultiSelect = false;
+            this.dgvSol.Name = "dgvSol";
+            this.dgvSol.ReadOnly = true;
+            this.dgvSol.RowHeadersVisible = false;
+            this.dgvSol.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSol.Size = new System.Drawing.Size(249, 91);
+            this.dgvSol.TabIndex = 20;
+            // 
             // frmMerma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 565);
+            this.Controls.Add(this.pnlSol);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbFiltroMerma);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -274,6 +345,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMermas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            this.pnlSol.ResumeLayout(false);
+            this.pnlSol.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +372,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbFiltroMerma;
+        private System.Windows.Forms.Panel pnlSol;
+        private System.Windows.Forms.Label label7;
+        private Componentes.GrillaFormatead dgvSol;
     }
 }

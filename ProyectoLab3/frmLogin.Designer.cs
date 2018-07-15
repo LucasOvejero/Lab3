@@ -52,6 +52,7 @@
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(146, 20);
             this.tbUser.TabIndex = 0;
+            this.tbUser.TextChanged += new System.EventHandler(this.tbUser_TextChanged);
             // 
             // tbPass
             // 
@@ -60,6 +61,7 @@
             this.tbPass.PasswordChar = '*';
             this.tbPass.Size = new System.Drawing.Size(146, 20);
             this.tbPass.TabIndex = 1;
+            this.tbPass.TextChanged += new System.EventHandler(this.tbPass_TextChanged);
             // 
             // lblUsuario
             // 

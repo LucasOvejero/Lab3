@@ -70,7 +70,7 @@ namespace ProyectoLab3
             this.dgvSucursales.Name = "dgvSucursales";
             this.dgvSucursales.ReadOnly = true;
             this.dgvSucursales.RowHeadersVisible = false;
-            this.dgvSucursales.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvSucursales.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSucursales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSucursales.Size = new System.Drawing.Size(200, 318);
             this.dgvSucursales.TabIndex = 1;
@@ -123,7 +123,7 @@ namespace ProyectoLab3
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
-            this.dgvIngredientes.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvIngredientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIngredientes.Size = new System.Drawing.Size(184, 318);
             this.dgvIngredientes.TabIndex = 3;
@@ -184,7 +184,7 @@ namespace ProyectoLab3
             this.dgvSeleccion.Name = "dgvSeleccion";
             this.dgvSeleccion.ReadOnly = true;
             this.dgvSeleccion.RowHeadersVisible = false;
-            this.dgvSeleccion.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvSeleccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSeleccion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSeleccion.Size = new System.Drawing.Size(287, 318);
             this.dgvSeleccion.TabIndex = 7;

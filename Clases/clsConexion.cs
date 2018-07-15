@@ -13,8 +13,8 @@ namespace Clases
         //Data Source=CDR410U007679\SQLEXPRESS; Nahuel
         //Data Source=CDR410U007679\SQLEXPRESS; NahuelData Source=CDR410U007679\SQLEXPRESS; Nahuel @"Data Source=(localdb)\MSSQLLocalDB;
 
-        static string conexion = @"Data Source=cdr\SQLEXPRESS;Initial Catalog=lab3; User ID =NaLu ; Password=12345";
-       //  static string conexion = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=lab3; User ID =NaLu ; Password=1234";
+        //static string conexion = @"Data Source=cdr\SQLEXPRESS;Initial Catalog=lab3; User ID =NaLu ; Password=12345";
+        static string conexion = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=lab3; User ID =NaLu ; Password=1234";
 
 
         public static string NombreSucursal { get; set; }
@@ -24,6 +24,7 @@ namespace Clases
 
         public static string IdEmpleado { get; internal set; }
         public static string NombreCompleto { get; internal set; }
+        public static string Direccion { get; internal set; }
 
         /*public clsConexion()
         {
@@ -43,7 +44,11 @@ namespace Clases
         {
             cnn.Close();
         }
-        
+
+        static public string SucursalInfo() {
+
+            return NombreSucursal + " - "+ Direccion + " - "+ NombreCompleto ;
+        }
         
     }
 }

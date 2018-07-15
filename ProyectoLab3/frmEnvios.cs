@@ -30,8 +30,16 @@ namespace ProyectoLab3
             try
             {
                 DgvSolicitudes.DataSource = clsSolicitud.MisSolcitudesPorRecibir();
-                dgvDetalle.Columns["costoTotal"].HeaderText = "Costo Total";
-                dgvDetalle.Columns["fechaInicio"].HeaderText = "Inicio";
+                DgvSolicitudes.Columns["costoTotal"].HeaderText = "Costo Total";
+                DgvSolicitudes.Columns["fechaInicio"].HeaderText = "Inicio";
+
+
+                DgvSolicitudes.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+                DgvSolicitudes.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+                
+
 
             }
             catch (Exception ex) { Console.Write(ex.Message); }
@@ -54,11 +62,18 @@ namespace ProyectoLab3
                 dgvDetalle.Columns["fechaInicio"].Visible = false;
                 dgvDetalle.Columns["stockCritico"].Visible = false;
 
-                dgvDetalle.Columns["Nombre"].HeaderText = "Producto";
+                dgvDetalle.Columns["NombreProducto"].HeaderText = "Producto";
                 dgvDetalle.Columns["CostoxKg"].HeaderText = "Costo Producto";
                 dgvDetalle.Columns["cantidad"].HeaderText = "Cantidad";
                 dgvDetalle.Columns["costoTotal"].HeaderText = "Costo Total";
 
+
+                dgvDetalle.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDetalle.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDetalle.Columns["CostoxKg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+                
+                    
 
             }
             catch (Exception ex) { Console.Write(ex.Message); }
@@ -78,9 +93,9 @@ namespace ProyectoLab3
 
                     int IdSolicitud = (int)DgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value;
 
-                    clsSolicitud.marcarInconveniente(IdSolicitud);
+                    clsSolicitud.marcarInconveniente(IdSolicitud,tbInconveniente.Text);
                     MessageBox.Show("Se ha cargado la solicitud, por favor, especifique la merma si la hubiese.");
-                    ofrmMerma = new frmMerma();
+                    ofrmMerma = new frmMerma(IdSolicitud);
                     ofrmMerma.ShowDialog();
                 }
             }
@@ -92,6 +107,8 @@ namespace ProyectoLab3
             int IdSolicitud = (int)DgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value;
             MigrarStock();
             clsSolicitud.marcarRecibida(IdSolicitud);
+            formatearGrilla();
+            dgvDetalle.DataSource = null;
         }
 
 
@@ -107,5 +124,14 @@ namespace ProyectoLab3
             }
         }
 
+        private void tbInconveniente_TextChanged(object sender, EventArgs e)
+        {
+            btnInconveniente.Enabled = tbInconveniente.Text.Length > 0;
+        }
+
+        private void DgvSolicitudes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

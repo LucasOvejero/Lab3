@@ -72,7 +72,7 @@
             this.dgvSolicitudes.RowHeadersVisible = false;
             this.dgvSolicitudes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(397, 233);
+            this.dgvSolicitudes.Size = new System.Drawing.Size(404, 233);
             this.dgvSolicitudes.TabIndex = 0;
             this.dgvSolicitudes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_CellContentClick);
             this.dgvSolicitudes.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_RowEnter);
@@ -98,7 +98,7 @@
             this.dgvPeticiones.RowHeadersVisible = false;
             this.dgvPeticiones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPeticiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPeticiones.Size = new System.Drawing.Size(397, 158);
+            this.dgvPeticiones.Size = new System.Drawing.Size(404, 158);
             this.dgvPeticiones.TabIndex = 1;
             this.dgvPeticiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeticiones_CellContentClick);
             this.dgvPeticiones.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPeticiones_RowEnter);
@@ -166,7 +166,7 @@
             this.dgvDetalle.RowHeadersVisible = false;
             this.dgvDetalle.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalle.Size = new System.Drawing.Size(287, 428);
+            this.dgvDetalle.Size = new System.Drawing.Size(304, 428);
             this.dgvDetalle.TabIndex = 4;
             // 
             // lblDetalles
@@ -207,7 +207,7 @@
             this.pnlAceptarRechazar.Controls.Add(this.btnCancel);
             this.pnlAceptarRechazar.Location = new System.Drawing.Point(488, 492);
             this.pnlAceptarRechazar.Name = "pnlAceptarRechazar";
-            this.pnlAceptarRechazar.Size = new System.Drawing.Size(287, 72);
+            this.pnlAceptarRechazar.Size = new System.Drawing.Size(304, 72);
             this.pnlAceptarRechazar.TabIndex = 8;
             // 
             // btnEnvios

@@ -30,6 +30,7 @@ namespace ProyectoLab3
         
         private void frmVenta_Load(object sender, EventArgs e)
         {
+            lblInfo.Text = clsConexion.SucursalInfo();
             cargarPlatos();
             cargarBebidas();
             lblTotal.Text = total.ToString("c");

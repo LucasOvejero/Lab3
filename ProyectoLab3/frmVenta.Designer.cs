@@ -53,6 +53,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.nudPago = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).BeginInit();
@@ -68,7 +69,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.00452F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 423F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 424F));
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarPlato, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.pnlDescripcion, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarBebida, 3, 6);
@@ -87,6 +88,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnVender, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.pnlTotal, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.lblInfo, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -109,7 +111,7 @@
             this.btnAgregarPlato.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregarPlato.Location = new System.Drawing.Point(335, 295);
             this.btnAgregarPlato.Name = "btnAgregarPlato";
-            this.btnAgregarPlato.Size = new System.Drawing.Size(72, 45);
+            this.btnAgregarPlato.Size = new System.Drawing.Size(71, 45);
             this.btnAgregarPlato.TabIndex = 5;
             this.btnAgregarPlato.Text = "Agregar platos --->";
             this.btnAgregarPlato.UseVisualStyleBackColor = true;
@@ -119,7 +121,7 @@
             // 
             this.pnlDescripcion.AutoScroll = true;
             this.pnlDescripcion.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlDescripcion.Location = new System.Drawing.Point(413, 134);
+            this.pnlDescripcion.Location = new System.Drawing.Point(412, 134);
             this.pnlDescripcion.Name = "pnlDescripcion";
             this.pnlDescripcion.Size = new System.Drawing.Size(310, 333);
             this.pnlDescripcion.TabIndex = 6;
@@ -127,7 +129,7 @@
             // btnAgregarBebida
             // 
             this.btnAgregarBebida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarBebida.Location = new System.Drawing.Point(729, 295);
+            this.btnAgregarBebida.Location = new System.Drawing.Point(728, 295);
             this.btnAgregarBebida.Name = "btnAgregarBebida";
             this.btnAgregarBebida.Size = new System.Drawing.Size(91, 45);
             this.btnAgregarBebida.TabIndex = 5;
@@ -139,7 +141,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(514, 118);
+            this.label1.Location = new System.Drawing.Point(513, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 1;
@@ -240,13 +242,13 @@
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBebidas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBebidas.Location = new System.Drawing.Point(826, 134);
+            this.dgvBebidas.Location = new System.Drawing.Point(825, 134);
             this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBebidas.Size = new System.Drawing.Size(418, 368);
+            this.dgvBebidas.Size = new System.Drawing.Size(419, 368);
             this.dgvBebidas.TabIndex = 10;
             this.dgvBebidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBebidas_CellFormatting);
             this.dgvBebidas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBebidas_RowEnter);
@@ -255,9 +257,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.Location = new System.Drawing.Point(826, 5);
+            this.label4.Location = new System.Drawing.Point(825, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(418, 13);
+            this.label4.Size = new System.Drawing.Size(419, 13);
             this.label4.TabIndex = 15;
             this.label4.Text = "Nombre bebida";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -265,7 +267,7 @@
             // tbNombreBebida
             // 
             this.tbNombreBebida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbNombreBebida.Location = new System.Drawing.Point(985, 22);
+            this.tbNombreBebida.Location = new System.Drawing.Point(984, 22);
             this.tbNombreBebida.Name = "tbNombreBebida";
             this.tbNombreBebida.Size = new System.Drawing.Size(100, 20);
             this.tbNombreBebida.TabIndex = 7;
@@ -295,7 +297,7 @@
             // btnVender
             // 
             this.btnVender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnVender.Location = new System.Drawing.Point(413, 574);
+            this.btnVender.Location = new System.Drawing.Point(412, 574);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(310, 22);
             this.btnVender.TabIndex = 12;
@@ -308,16 +310,16 @@
             this.pnlTotal.Controls.Add(this.lblTotal);
             this.pnlTotal.Controls.Add(this.label6);
             this.pnlTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTotal.Location = new System.Drawing.Point(413, 508);
+            this.pnlTotal.Location = new System.Drawing.Point(412, 508);
             this.pnlTotal.Name = "pnlTotal";
             this.pnlTotal.Size = new System.Drawing.Size(310, 30);
             this.pnlTotal.TabIndex = 21;
             // 
             // lblTotal
             // 
-            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.ForeColor = System.Drawing.Color.Green;
             this.lblTotal.Location = new System.Drawing.Point(83, 0);
             this.lblTotal.Name = "lblTotal";
@@ -327,9 +329,9 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(37, 9);
             this.label6.Name = "label6";
@@ -342,7 +344,7 @@
             this.panel1.Controls.Add(this.nudPago);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(413, 544);
+            this.panel1.Location = new System.Drawing.Point(412, 544);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 24);
             this.panel1.TabIndex = 22;
@@ -363,15 +365,24 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(36, 6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Pago";
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Location = new System.Drawing.Point(412, 0);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(0, 13);
+            this.lblInfo.TabIndex = 23;
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmVenta
             // 
@@ -421,5 +432,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown nudPago;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

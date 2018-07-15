@@ -16,9 +16,11 @@ namespace ProyectoLab3
         int IdSucursal;
         bool ingrediente;
         Merma merma;
-        DataTable dtBebidas, dtIngredientes, dtEmpleado,dtMerma;
+        DataTable dtBebidas, dtIngredientes, dtEmpleado, dtMerma;
+        int IdsolicitudMerma;
         public frmMerma()
         {
+            IdsolicitudMerma = -1;
             InitializeComponent();
             IdSucursal = clsConexion.SucursalSession;
             try
@@ -32,36 +34,92 @@ namespace ProyectoLab3
                 ninguno["IdEmpleado"] = 0;
                 dtEmpleado.Rows.InsertAt(ninguno, 0);
             }
-            catch (Exception e) {
-                MessageBox.Show(e.Message,"ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             merma = new Merma();
             merma.IdInformante = Convert.ToInt32(clsConexion.IdEmpleado);
             merma.IdSucursal = clsConexion.SucursalSession;
         }
-     
+
+        public frmMerma(int IdSol)
+        {
+            this.IdsolicitudMerma = IdSol;
+            InitializeComponent();
+            IdSucursal = clsConexion.SucursalSession;
+            try
+            {
+                dtBebidas = clsBebida.getBebidas(IdSucursal);
+                dtIngredientes = clsIngrediente.getIngredientes(IdSucursal);
+                dtEmpleado = clsEmpleado.empleadosDeSucrursalMerma(IdSucursal);
+                dtMerma = clsMerma.getMerma(IdSucursal);
+                DataRow ninguno = dtEmpleado.NewRow();
+                ninguno["Nombre"] = "Nadie";
+                ninguno["IdEmpleado"] = 0;
+                dtEmpleado.Rows.InsertAt(ninguno, 0);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            merma = new Merma();
+            merma.IdInformante = Convert.ToInt32(clsConexion.IdEmpleado);
+            merma.IdSucursal = clsConexion.SucursalSession;
+        }
+
         private void frmMerma_Load(object sender, EventArgs e)
         {
-            lbEmpleado.DataSource = dtEmpleado;
-            lbEmpleado.DisplayMember = "Nombre";
-            rbIngrediente.Checked = true;
-            lbIngBeb.DataSource = dtIngredientes;
-            lbIngBeb.DisplayMember = "Nombre";
-            dgvMermas.DataSource = dtMerma;
-            dgvMermas.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            try
+            {
+                pnlSol.Visible = IdsolicitudMerma > -1;
+
+                lbEmpleado.DataSource = dtEmpleado;
+                lbEmpleado.DisplayMember = "Nombre";
+                rbIngrediente.Checked = true;
+                lbIngBeb.DataSource = dtIngredientes;
+                lbIngBeb.DisplayMember = "Nombre";
+                dgvMermas.DataSource = dtMerma;
+                dgvMermas.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+
+                dgvSol.DataSource = clsSolicitud.obtenerIngredientesDeSolicitud(this.IdsolicitudMerma);
+                dgvSol.Columns["stockCritico"].Visible = false;
+                dgvSol.Columns["estado"].Visible = false;
+                dgvSol.Columns["fechaFin"].Visible = false;
+                dgvSol.Columns["recibido"].Visible = false;
+                dgvSol.Columns["Observacion"].Visible = false;
+                dgvSol.Columns["fechaEnvio"].Visible = false;
+                dgvSol.Columns["fechaInicio"].Visible = false;
+                dgvSol.Columns["stockCritico"].Visible = false;
+
+                dgvSol.Columns["NombreProducto"].HeaderText = "Producto";
+                dgvSol.Columns["CostoxKg"].HeaderText = "Costo Producto";
+                dgvSol.Columns["cantidad"].HeaderText = "Cantidad";
+                dgvSol.Columns["costoTotal"].HeaderText = "Costo Total";
+
+
+                dgvSol.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvSol.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvSol.Columns["CostoxKg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+
+
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void rbIngrediente_CheckedChanged(object sender, EventArgs e)
         {
-            ingrediente= rbIngrediente.Checked;
+            ingrediente = rbIngrediente.Checked;
             lbIngBeb.DataSource = null;
-            lbIngBeb.DataSource= ingrediente?  dtIngredientes: dtBebidas;
+            lbIngBeb.DataSource = ingrediente ? dtIngredientes : dtBebidas;
             lbIngBeb.DisplayMember = "Nombre";
         }
 
         private void tbFiltro_TextChanged(object sender, EventArgs e)
         {
-            string filtro=string.Format(" Nombre like '%{0}%'", tbFiltro.Text);
+            string filtro = string.Format(" Nombre like '%{0}%'", tbFiltro.Text);
             dtIngredientes.DefaultView.RowFilter = filtro;
             dtBebidas.DefaultView.RowFilter = filtro;
             lbIngBeb.Refresh();
@@ -91,7 +149,8 @@ namespace ProyectoLab3
                 dgvMermas.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 tbMotivo.Clear();
             }
-            else {
+            else
+            {
                 error.SetError(tbMotivo, "Por favor ingresé un motivo");
             }
         }
@@ -107,14 +166,22 @@ namespace ProyectoLab3
                     merma.IdIngrediente = Convert.ToInt32(i["IdIngrediente"].ToString());
                     merma.IdBebida = -1;
                     string u = i["Unidad"].ToString().Trim();
-                    lblMerma.Text= u== "g" ? "Gramos" : u == "u" ? "Unidades" : "Milimetros";
+                    lblMerma.Text = u == "g" ? "Gramos" : u == "u" ? "Unidades" : "Milimetros";
                 }
-                else {
+                else
+                {
                     merma.IdBebida = Convert.ToInt32(i["IdBebida"].ToString());
                     merma.IdIngrediente = -1;
                     lblMerma.Text = "Unidades";
                 }
             }
+        }
+
+        private void tbFiltroMerma_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)dgvMermas.DataSource;
+            dt.DefaultView.RowFilter = string.Format("Informante  like '%{0}%' OR Causante like '%{0}%' OR Producto like '%{0}%' OR Motivo like '%{0}%' ", tbFiltroMerma.Text);
+            dgvMermas.Refresh();
         }
 
         private void nupCantidad_ValueChanged(object sender, EventArgs e)
@@ -133,6 +200,6 @@ namespace ProyectoLab3
 
         }
 
-        
+
     }
 }

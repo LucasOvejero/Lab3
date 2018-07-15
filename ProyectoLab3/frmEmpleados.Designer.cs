@@ -464,7 +464,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.tbMotivo);
             this.panel1.Controls.Add(this.btnTransferir);

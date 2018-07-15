@@ -88,7 +88,7 @@ namespace Clases
 
         public static void marcarRecibida(int idSolicitud)
         {
-            string query = "UPDATE Solicitudes SET recibido = 1  WHERE IdSolicitud = " + idSolicitud;
+            string query = "UPDATE Solicitudes SET recibido = 1, fechaFin = '" + DateTime.Now.ToString("yyyy-MM-dd") +"' WHERE IdSolicitud = " + idSolicitud;
             comando = new SqlCommand(query);
 
             try
@@ -122,9 +122,9 @@ namespace Clases
             return solicitudes;
         }
 
-        public static void marcarInconveniente(int idSolicitud)
+        public static void marcarInconveniente(int idSolicitud,string obs)
         {
-            string query = "UPDATE Solicitudes SET recibido = 0  WHERE IdSolicitud = " + idSolicitud;
+            string query = "UPDATE Solicitudes SET recibido = 0 ,observacion = '"+obs+ "' , fechaFin = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'  WHERE IdSolicitud = " + idSolicitud;
             comando = new SqlCommand(query);
 
             try

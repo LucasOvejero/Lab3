@@ -29,7 +29,7 @@ namespace Clases
 
         public static DataTable HistorialDeTransferencias()
         {
-            string query = "SELECT t1.Destino as \"Nombre Destino\", t1.Direccion \"Direccion Destino\", t2.Desde \"Nombre Desde\", t2.Direccion \"Direccion Desde\", e.Nombre, e.Apellido, t2.motivo as Motivo , fecha as Fecha  from " +
+            string query = "SELECT t1.Destino as \"Nombre Desde\", t1.Direccion \"Direccion Desde\", t2.Desde \"Nombre Destino\", t2.Direccion \"Direccion Destino\", e.Nombre, e.Apellido, t2.motivo as Motivo , fecha as Fecha  from " +
             "(Select NombreInterno as Destino, s.Direccion, IdTransferencia, t.IdEmpleado, fecha" +
             " From Sucursal s JOIN Transferencias t on t.IdDestinoSucursal = s.IdSucursal) t1" +
             " JOIN(Select NombreInterno as Desde, IdTransferencia, motivo, s.Direccion From Sucursal s JOIN Transferencias t on t.IdInicioSucursal = s.IdSucursal) t2" +
@@ -170,7 +170,7 @@ namespace Clases
 
         public static bool logeo(string usuario,string clave) {
             bool valid = false;//select Tipo,Nombre,Apellido,Empleado.IdSucursal,Empleado.IdEmpleado,NombreInterno from Empleado inner join Sucursal on (Empleado.IdSucursal=Sucursal.IdSucursal);
-            comando = new SqlCommand("select Tipo,Nombre,Apellido,Empleado.IdSucursal,Empleado.IdEmpleado,NombreInterno from Empleado inner join Sucursal on (Empleado.IdSucursal=Sucursal.IdSucursal) where Usuario = '" + usuario + "' AND Clave = '" + clave + "'");
+            comando = new SqlCommand("select Tipo,Nombre,Apellido,Empleado.IdSucursal,Empleado.IdEmpleado,NombreInterno, Direccion from Empleado inner join Sucursal on (Empleado.IdSucursal=Sucursal.IdSucursal) where Usuario = '" + usuario + "' AND Clave = '" + clave + "'");
 
             try
             {
@@ -189,6 +189,7 @@ namespace Clases
                     clsConexion.NombreCompleto = empleados.Rows[0]["Nombre"].ToString() + " " + empleados.Rows[0]["Apellido"].ToString(); ;
                     clsConexion.SucursalSession = Convert.ToInt32(empleados.Rows[0]["IdSucursal"].ToString());
                     clsConexion.NombreSucursal = empleados.Rows[0]["NombreInterno"].ToString();
+                    clsConexion.Direccion = empleados.Rows[0]["Direccion"].ToString();
                 }
             }
             catch (SqlException x) { Console.WriteLine(x.Message); }

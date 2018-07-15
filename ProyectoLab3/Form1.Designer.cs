@@ -35,8 +35,10 @@
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnNewSolicitudes = new System.Windows.Forms.Button();
             this.pnlVendedor = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlCritico = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgvCritico = new Componentes.GrillaFormatead();
             this.label1 = new System.Windows.Forms.Label();
             this.gbVentas = new System.Windows.Forms.GroupBox();
             this.gbDeposito = new System.Windows.Forms.GroupBox();
@@ -53,17 +55,16 @@
             this.btnEditPlato = new System.Windows.Forms.Button();
             this.btnPlato = new System.Windows.Forms.Button();
             this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.dgvCritico = new Componentes.GrillaFormatead();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblSucursalInfo = new System.Windows.Forms.Label();
             this.pnlVendedor.SuspendLayout();
             this.pnlCritico.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).BeginInit();
             this.gbVentas.SuspendLayout();
             this.gbDeposito.SuspendLayout();
             this.gbSucursal.SuspendLayout();
             this.gbProductos.SuspendLayout();
             this.gbPlatos.SuspendLayout();
             this.pnlAdmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSolicitudes
@@ -125,10 +126,21 @@
             this.pnlVendedor.Controls.Add(this.label1);
             this.pnlVendedor.Controls.Add(this.gbVentas);
             this.pnlVendedor.Controls.Add(this.gbDeposito);
-            this.pnlVendedor.Location = new System.Drawing.Point(1, 115);
+            this.pnlVendedor.Location = new System.Drawing.Point(0, 150);
             this.pnlVendedor.Name = "pnlVendedor";
-            this.pnlVendedor.Size = new System.Drawing.Size(1217, 527);
+            this.pnlVendedor.Size = new System.Drawing.Size(782, 493);
             this.pnlVendedor.TabIndex = 1;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnLogout.Location = new System.Drawing.Point(572, 465);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(89, 37);
+            this.btnLogout.TabIndex = 16;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // pnlCritico
             // 
@@ -189,7 +201,7 @@
             this.gbVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
             this.gbVentas.Controls.Add(this.btnVentas);
             this.gbVentas.Controls.Add(this.btnVenta);
-            this.gbVentas.Location = new System.Drawing.Point(449, 39);
+            this.gbVentas.Location = new System.Drawing.Point(232, 39);
             this.gbVentas.Name = "gbVentas";
             this.gbVentas.Size = new System.Drawing.Size(342, 97);
             this.gbVentas.TabIndex = 1;
@@ -227,7 +239,7 @@
             this.gbSucursal.Controls.Add(this.btnGraficosVentaGeneral);
             this.gbSucursal.Controls.Add(this.btnEmpleados);
             this.gbSucursal.Controls.Add(this.btnSuc);
-            this.gbSucursal.Location = new System.Drawing.Point(12, 7);
+            this.gbSucursal.Location = new System.Drawing.Point(12, 44);
             this.gbSucursal.Name = "gbSucursal";
             this.gbSucursal.Size = new System.Drawing.Size(357, 97);
             this.gbSucursal.TabIndex = 0;
@@ -272,7 +284,7 @@
             this.gbProductos.Controls.Add(this.btnMerma);
             this.gbProductos.Controls.Add(this.btnDepositos);
             this.gbProductos.Controls.Add(this.btnBebidas);
-            this.gbProductos.Location = new System.Drawing.Point(450, 7);
+            this.gbProductos.Location = new System.Drawing.Point(232, 44);
             this.gbProductos.Name = "gbProductos";
             this.gbProductos.Size = new System.Drawing.Size(342, 97);
             this.gbProductos.TabIndex = 1;
@@ -315,7 +327,7 @@
             this.gbPlatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.gbPlatos.Controls.Add(this.btnEditPlato);
             this.gbPlatos.Controls.Add(this.btnPlato);
-            this.gbPlatos.Location = new System.Drawing.Point(897, 7);
+            this.gbPlatos.Location = new System.Drawing.Point(464, 44);
             this.gbPlatos.Name = "gbPlatos";
             this.gbPlatos.Size = new System.Drawing.Size(308, 97);
             this.gbPlatos.TabIndex = 2;
@@ -344,55 +356,32 @@
             // 
             // pnlAdmin
             // 
+            this.pnlAdmin.Controls.Add(this.lblSucursalInfo);
             this.pnlAdmin.Controls.Add(this.gbPlatos);
             this.pnlAdmin.Controls.Add(this.gbProductos);
             this.pnlAdmin.Controls.Add(this.gbSucursal);
             this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAdmin.Location = new System.Drawing.Point(0, 0);
             this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(1219, 110);
+            this.pnlAdmin.Size = new System.Drawing.Size(784, 144);
             this.pnlAdmin.TabIndex = 0;
             // 
-            // dgvCritico
+            // lblSucursalInfo
             // 
-            this.dgvCritico.AllowUserToAddRows = false;
-            this.dgvCritico.AllowUserToResizeColumns = false;
-            this.dgvCritico.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCritico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCritico.Location = new System.Drawing.Point(27, 42);
-            this.dgvCritico.MultiSelect = false;
-            this.dgvCritico.Name = "dgvCritico";
-            this.dgvCritico.ReadOnly = true;
-            this.dgvCritico.RowHeadersVisible = false;
-            this.dgvCritico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCritico.Size = new System.Drawing.Size(342, 300);
-            this.dgvCritico.TabIndex = 0;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogout.Location = new System.Drawing.Point(572, 465);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(89, 37);
-            this.btnLogout.TabIndex = 16;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.lblSucursalInfo.AutoSize = true;
+            this.lblSucursalInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursalInfo.Location = new System.Drawing.Point(13, 13);
+            this.lblSucursalInfo.Name = "lblSucursalInfo";
+            this.lblSucursalInfo.Size = new System.Drawing.Size(15, 24);
+            this.lblSucursalInfo.TabIndex = 3;
+            this.lblSucursalInfo.Text = " ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1219, 725);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.pnlVendedor);
             this.Controls.Add(this.pnlAdmin);
             this.Name = "Form1";
@@ -405,6 +394,7 @@
             this.pnlVendedor.PerformLayout();
             this.pnlCritico.ResumeLayout(false);
             this.pnlCritico.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).EndInit();
             this.gbVentas.ResumeLayout(false);
             this.gbDeposito.ResumeLayout(false);
             this.gbSucursal.ResumeLayout(false);
@@ -412,7 +402,6 @@
             this.gbProductos.ResumeLayout(false);
             this.gbPlatos.ResumeLayout(false);
             this.pnlAdmin.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).EndInit();
             this.pnlAdmin.PerformLayout();
             this.ResumeLayout(false);
 
@@ -447,6 +436,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnMerma;
+        private System.Windows.Forms.Label lblSucursalInfo;
     }
 }
 

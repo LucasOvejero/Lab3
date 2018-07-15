@@ -38,14 +38,25 @@ namespace ProyectoLab3
 
                 dgvPeticiones.Columns["fechaInicio"].HeaderText = "Inicio";
                 dgvPeticiones.Columns["costoTotal"].HeaderText = "Costo Total";
+                dgvPeticiones.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvPeticiones.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
                 dgvSolicitudes.Columns["fechaInicio"].HeaderText = "Inicio";
                 dgvSolicitudes.Columns["costoTotal"].HeaderText = "Costo Total";
+                dgvSolicitudes.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvSolicitudes.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
 
                 dgvDetalle.Columns.Add("cantidadFormateada", "Cantidad");
+
+                dgvDetalle.Columns["CostoxKg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDetalle.Columns["CostoxKg"].HeaderText = "Costo";
+                dgvDetalle.Columns["cantidadFormateada"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDetalle.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+
                 dgvDetalle.Rows.Clear();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
@@ -156,6 +167,15 @@ namespace ProyectoLab3
         private void FormatearDetalle()
         {
             dgvDetalle.Columns["cantidad"].Visible = false;
+
+
+            dgvDetalle.Columns["CostoxKg"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvDetalle.Columns["CostoxKg"].HeaderText = "Costo";
+            dgvDetalle.Columns["cantidadFormateada"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvDetalle.Columns["costoTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+
+
 
 
             foreach (DataGridViewRow r in dgvDetalle.Rows)

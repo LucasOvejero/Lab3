@@ -40,10 +40,9 @@ namespace ProyectoLab3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            VerificarLogeo();
-
-            
+            VerificarLogeo();            
             updateCritico();
+            lblSucursalInfo.Text = clsConexion.SucursalInfo();
 
         }
 
@@ -133,6 +132,7 @@ namespace ProyectoLab3
                 default: break;
             }
 
+            lblSucursalInfo.Text = clsConexion.SucursalInfo();
 
         }
 
@@ -152,6 +152,7 @@ namespace ProyectoLab3
         {
             ofrMiDepo = new frmMiDeposito(clsConexion.SucursalSession);
             ofrMiDepo.ShowDialog();
+            updateCritico();
         }
 
         private void BtnEditPlato_Click(object sender, EventArgs e)
