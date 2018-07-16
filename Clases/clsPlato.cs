@@ -22,7 +22,7 @@ namespace Clases
             try
             {
                 platos = new DataTable("Platos");
-                SqlCommand select = new SqlCommand("SELECT p.IdPlato,p.Precio,p.Nombre,p.TACC, C.Costo,p.Estado,p.IdCategoria FROM Plato p inner join (Select IdPlato, SUM(case when CHARINDEX('u',Unidad)>0 then CostoxKg*Cantidad else CostoxKg*Cantidad/1000 end) Costo from Receta r inner join Ingrediente i on(i.IdIngrediente=r.IdIngrediente) group by IdPlato) C on(C.IdPlato=p.IdPlato)", clsConexion.getCon());
+                SqlCommand select = new SqlCommand("SELECT p.IdPlato,p.Nombre,C.Costo,p.Precio,p.TACC,p.IdCategoria FROM Plato p inner join (Select IdPlato, SUM(case when CHARINDEX('u',Unidad)>0 then CostoxKg*Cantidad else CostoxKg*Cantidad/1000 end) Costo from Receta r inner join Ingrediente i on(i.IdIngrediente=r.IdIngrediente) group by IdPlato) C on(C.IdPlato=p.IdPlato)", clsConexion.getCon());
                 SqlDataAdapter adaptador = new SqlDataAdapter(select);
                 adaptador.Fill(platos);
             }

@@ -45,7 +45,19 @@ namespace ProyectoLab3
             bsIng.DataMember = "RelPlatoIng";
             dgvPlatos.DataSource = bsPlato;
             dgvIngredientes.DataSource = bsIng;
-        
+            //dgvBebidas.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //dgvBebidas.Columns["Costo"].DefaultCellStyle.Format = "c";
+            dgvPlatos.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvPlatos.Columns["Costo"].DefaultCellStyle.Format = "c";
+            dgvPlatos.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvPlatos.Columns["Precio"].DefaultCellStyle.Format = "c";
+            dgvIngredientes.Columns["Cant"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvIngredientes.Columns["Cantidad"].Visible = false;
+            dgvIngredientes.Columns["Unidad"].Visible = false;
+            dgvIngredientes.Columns["CostoxKg"].Visible = false;
+            dgvIngredientes.Columns["NombreProducto"].HeaderText = "Ingrediente";
+            dgvIngredientes.Columns["Cant"].HeaderText = "Cantidad";
+
         }
         private void BtnEditar_Click(object sender, EventArgs e)
         {
@@ -75,7 +87,7 @@ namespace ProyectoLab3
                 ,Precio = decimal.Parse(plato.Cells["Precio"].Value.ToString())
                 ,TACC= bool.Parse(plato.Cells["TACC"].Value.ToString())
                 ,Costo=decimal.Parse(plato.Cells["Costo"].Value.ToString())
-                ,Estado=bool.Parse(plato.Cells["Estado"].Value.ToString())
+                
                 ,IdCategoria=int.Parse(plato.Cells["IdCategoria"].Value.ToString())
             };
             frmCrearPlatoSeleccionIng ofrmSelIng = new frmCrearPlatoSeleccionIng(ingredientes, p);
@@ -89,6 +101,20 @@ namespace ProyectoLab3
             //(bsPlato.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre like '%{0}%'", tbNombre.Text);
             bsPlato.Filter = string.Format("Nombre like '%{0}%'", tbNombre.Text);
             dgvPlatos.Refresh();
+        }
+
+        private void dgvPlatos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow r in dgvPlatos.Rows)
+            {
+                decimal costo = decimal.Parse(r.Cells["Costo"].Value.ToString());
+                decimal precio = decimal.Parse(r.Cells["Precio"].Value.ToString());
+                if (precio<costo)
+                {
+                    r.DefaultCellStyle.BackColor = Color.Red;
+                    r.DefaultCellStyle.ForeColor = Color.White;
+                }
+            }
         }
 
        

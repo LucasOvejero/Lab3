@@ -386,5 +386,16 @@ namespace ProyectoLab3
                 e.Handled = true;
             }
         }
+
+        private void cboEditUnidad_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+            switch (cboEditUnidad.SelectedItem.ToString())
+            {
+                case "u": lblEditCostoPor.Text = "Costo por unidad"; break;
+                case "g": lblEditCostoPor.Text = "Costo por kg"; break;
+                case "ml": lblEditCostoPor.Text = "Costo por litro"; break;
+            }
+        }
     }
 }

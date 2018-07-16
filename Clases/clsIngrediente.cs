@@ -189,7 +189,7 @@ namespace Clases
             DataTable tablaRec = new DataTable("Ingredientes");
             try
             {
-                SqlDataAdapter adaptador = new SqlDataAdapter(new SqlCommand("Select * from Ingrediente i Inner Join Receta r on(i.IdIngrediente=r.IdIngrediente)", clsConexion.getCon()));
+                SqlDataAdapter adaptador = new SqlDataAdapter(new SqlCommand("Select i.IdIngrediente,r.IdPlato,NombreProducto,CostoxKg,IdCategoria,Unidad, CONVERT(nvarchar,Cantidad)+' '+RTRIM(Unidad) as Cant,Cantidad from Ingrediente i Inner Join Receta r on(i.IdIngrediente=r.IdIngrediente)", clsConexion.getCon()));
                 adaptador.Fill(tablaRec);
             }
             catch (SqlException e)

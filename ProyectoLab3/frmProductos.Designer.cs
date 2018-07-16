@@ -78,7 +78,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.cboEditUnidad = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblEditCostoPor = new System.Windows.Forms.Label();
             this.cboEditCateg = new System.Windows.Forms.ComboBox();
             this.nudEditCostoIngrediente = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
@@ -579,7 +579,7 @@
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.cboEditUnidad);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.lblEditCostoPor);
             this.groupBox3.Controls.Add(this.cboEditCateg);
             this.groupBox3.Controls.Add(this.nudEditCostoIngrediente);
             this.groupBox3.Controls.Add(this.label12);
@@ -631,6 +631,7 @@
             this.cboEditUnidad.Name = "cboEditUnidad";
             this.cboEditUnidad.Size = new System.Drawing.Size(48, 21);
             this.cboEditUnidad.TabIndex = 24;
+            this.cboEditUnidad.SelectedValueChanged += new System.EventHandler(this.cboEditUnidad_SelectedValueChanged);
             // 
             // label14
             // 
@@ -641,21 +642,21 @@
             this.label14.TabIndex = 22;
             this.label14.Text = "Categorias";
             // 
-            // label11
+            // lblEditCostoPor
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.lblEditCostoPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(123, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Costo por Kilo";
+            this.lblEditCostoPor.AutoSize = true;
+            this.lblEditCostoPor.Location = new System.Drawing.Point(123, 16);
+            this.lblEditCostoPor.Name = "lblEditCostoPor";
+            this.lblEditCostoPor.Size = new System.Drawing.Size(72, 13);
+            this.lblEditCostoPor.TabIndex = 18;
+            this.lblEditCostoPor.Text = "Costo por Kilo";
             // 
             // cboEditCateg
             // 
             this.cboEditCateg.FormattingEnabled = true;
-            this.cboEditCateg.Location = new System.Drawing.Point(358, -12);
+            this.cboEditCateg.Location = new System.Drawing.Point(323, 29);
             this.cboEditCateg.Name = "cboEditCateg";
             this.cboEditCateg.Size = new System.Drawing.Size(121, 21);
             this.cboEditCateg.TabIndex = 22;
@@ -893,7 +894,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblEditCostoPor;
         private System.Windows.Forms.NumericUpDown nudEditCostoIngrediente;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tbEditNombreIngrediente;

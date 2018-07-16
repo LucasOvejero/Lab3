@@ -246,10 +246,10 @@ namespace Clases
             try
             {
 
-                comando = new SqlCommand("select * from Sucursal where IdSucursal=" + id);
+                comando = new SqlCommand("select IdManager,s.IdSucursal, s.NombreInterno as \"Nombre Sucursal\" , s.Direccion,s.Telefono,  Nombre +' '+ Apellido AS Manager, s.Estado , IdLocalidad from Sucursal s  left outer join Empleado ON IdManager = IdEmpleado where s.IdSucursal=" + id);
                 try
                 {
-                    sucursales = new DataTable("Sucursales");
+                   // sucursales = new DataTable("Sucursales");
                     comando.Connection = clsConexion.getCon();
                     adaptador = new SqlDataAdapter();
                     adaptador.SelectCommand = comando;
