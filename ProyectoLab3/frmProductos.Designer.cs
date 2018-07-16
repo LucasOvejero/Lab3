@@ -93,6 +93,10 @@
             this.dgvIngredientes = new Componentes.GrillaFormatead();
             this.tbStockCritico = new System.Windows.Forms.TextBox();
             this.errpNBebida = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.tbFIltroBebida = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tbFiltroIngre = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -112,11 +116,13 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errpNBebida)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(595, 74);
+            this.btnAgregar.Location = new System.Drawing.Point(616, 30);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 5;
@@ -338,6 +344,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.cboCatAddBebida);
             this.groupBox1.Controls.Add(this.nudPrecio);
@@ -451,7 +458,7 @@
             // btnAddIngrediente
             // 
             this.btnAddIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddIngrediente.Location = new System.Drawing.Point(421, 74);
+            this.btnAddIngrediente.Location = new System.Drawing.Point(460, 57);
             this.btnAddIngrediente.Name = "btnAddIngrediente";
             this.btnAddIngrediente.Size = new System.Drawing.Size(75, 23);
             this.btnAddIngrediente.TabIndex = 19;
@@ -710,6 +717,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.cboMedida);
             this.groupBox2.Controls.Add(this.label19);
@@ -820,6 +828,42 @@
             // 
             this.errpNBebida.ContainerControl = this;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.tbFIltroBebida);
+            this.groupBox6.Location = new System.Drawing.Point(257, 57);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(184, 42);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Filtro Bebida";
+            // 
+            // tbFIltroBebida
+            // 
+            this.tbFIltroBebida.Location = new System.Drawing.Point(6, 16);
+            this.tbFIltroBebida.Name = "tbFIltroBebida";
+            this.tbFIltroBebida.Size = new System.Drawing.Size(172, 20);
+            this.tbFIltroBebida.TabIndex = 0;
+            this.tbFIltroBebida.TextChanged += new System.EventHandler(this.tbFIltroBebida_TextChanged);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.tbFiltroIngre);
+            this.groupBox7.Location = new System.Drawing.Point(170, 57);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(184, 42);
+            this.groupBox7.TabIndex = 19;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Filtro Ingrediente";
+            // 
+            // tbFiltroIngre
+            // 
+            this.tbFiltroIngre.Location = new System.Drawing.Point(6, 16);
+            this.tbFiltroIngre.Name = "tbFiltroIngre";
+            this.tbFiltroIngre.Size = new System.Drawing.Size(172, 20);
+            this.tbFiltroIngre.TabIndex = 0;
+            this.tbFiltroIngre.TextChanged += new System.EventHandler(this.tbFiltroIngre_TextChanged);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -856,6 +900,10 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errpNBebida)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -924,5 +972,9 @@
         private System.Windows.Forms.TextBox tbEditStockCritico;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cboEditUnidad;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox tbFIltroBebida;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox tbFiltroIngre;
     }
 }

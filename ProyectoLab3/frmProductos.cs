@@ -397,5 +397,19 @@ namespace ProyectoLab3
                 case "ml": lblEditCostoPor.Text = "Costo por litro"; break;
             }
         }
+
+        private void tbFIltroBebida_TextChanged(object sender, EventArgs e)
+        {
+            DataTable d = dgvBebidas.DataSource as DataTable;
+            d.DefaultView.RowFilter = string.Format(" NombreBebida like '%{0}%' ", tbFIltroBebida.Text);
+            dgvBebidas.Refresh();
+        }
+
+        private void tbFiltroIngre_TextChanged(object sender, EventArgs e)
+        {
+            DataTable d = dgvIngredientes.DataSource as DataTable;
+            d.DefaultView.RowFilter = string.Format(" Nombre like '%{0}%' ", tbFiltroIngre.Text);
+            dgvIngredientes.Refresh();
+        }
     }
 }
