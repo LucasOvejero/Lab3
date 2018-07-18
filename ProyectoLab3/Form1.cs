@@ -36,6 +36,7 @@ namespace ProyectoLab3
         frmHistorial ofrmHistorial;
         frmTransferencias ofrmTransferencias;
         frmMerma ofrmMerma;
+        frmCUIT ofrmCuit;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -117,6 +118,7 @@ namespace ProyectoLab3
             {
                 case "Administrador":
                     pnlVendedor.Visible = false;
+
                     break;
 
                 case "Vendedor":
@@ -205,5 +207,12 @@ namespace ProyectoLab3
             dgvCritico.DataSource = null;
             VerificarLogeo();
         }
+
+        private void btnCUIT_Click(object sender, EventArgs e)
+        {
+            ofrmCuit = new frmCUIT();
+            ofrmCuit.ShowDialog();
+        }
+
     }
 }

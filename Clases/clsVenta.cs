@@ -71,5 +71,29 @@ namespace Clases
             }
             return resp;
         }
+
+        public static string updateCUIT(string cuit) {
+            string resp = "";
+            string sqlString="";
+            if (clsConexion.CUIT != string.Empty)
+                sqlString = "UPDATE CUIT SET CUIT=" + cuit;
+            else
+                sqlString=string.Format("Insert into CUIT values ('{0}')",cuit);
+            try
+            {
+                SqlCommand comando = new SqlCommand(sqlString, clsConexion.getCon());
+                int af=comando.ExecuteNonQuery();
+                if (af > 0)
+                {
+                    clsConexion.CUIT = cuit;
+                }
+            }
+            catch (SqlException e)
+            {
+                resp = e.Message;
+            }
+            finally { clsConexion.closeCon(); }
+            return resp;
+        }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnDeposito = new System.Windows.Forms.Button();
             this.btnVenta = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@
             this.btnPlato = new System.Windows.Forms.Button();
             this.pnlAdmin = new System.Windows.Forms.Panel();
             this.lblSucursalInfo = new System.Windows.Forms.Label();
+            this.btnCUIT = new System.Windows.Forms.Button();
             this.pnlVendedor.SuspendLayout();
             this.pnlCritico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCritico)).BeginInit();
@@ -119,8 +120,8 @@
             // 
             // pnlVendedor
             // 
-            this.pnlVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlVendedor.Controls.Add(this.btnLogout);
             this.pnlVendedor.Controls.Add(this.pnlCritico);
             this.pnlVendedor.Controls.Add(this.label1);
@@ -167,14 +168,14 @@
             this.dgvCritico.AllowUserToAddRows = false;
             this.dgvCritico.AllowUserToResizeColumns = false;
             this.dgvCritico.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCritico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCritico.Location = new System.Drawing.Point(27, 42);
             this.dgvCritico.MultiSelect = false;
@@ -356,6 +357,7 @@
             // 
             // pnlAdmin
             // 
+            this.pnlAdmin.Controls.Add(this.btnCUIT);
             this.pnlAdmin.Controls.Add(this.lblSucursalInfo);
             this.pnlAdmin.Controls.Add(this.gbPlatos);
             this.pnlAdmin.Controls.Add(this.gbProductos);
@@ -375,6 +377,17 @@
             this.lblSucursalInfo.Size = new System.Drawing.Size(15, 24);
             this.lblSucursalInfo.TabIndex = 3;
             this.lblSucursalInfo.Text = " ";
+            // 
+            // btnCUIT
+            // 
+            this.btnCUIT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCUIT.Location = new System.Drawing.Point(348, 12);
+            this.btnCUIT.Name = "btnCUIT";
+            this.btnCUIT.Size = new System.Drawing.Size(75, 23);
+            this.btnCUIT.TabIndex = 4;
+            this.btnCUIT.Text = "CUIT";
+            this.btnCUIT.UseVisualStyleBackColor = true;
+            this.btnCUIT.Click += new System.EventHandler(this.btnCUIT_Click);
             // 
             // Form1
             // 
@@ -437,6 +450,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnMerma;
         private System.Windows.Forms.Label lblSucursalInfo;
+        private System.Windows.Forms.Button btnCUIT;
     }
 }
 

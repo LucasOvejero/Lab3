@@ -64,6 +64,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTicket.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmCUIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCUIT.Designer.cs">
+      <DependentUpon>frmCUIT.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEnvios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCUIT.resx">
+      <DependentUpon>frmCUIT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEnvios.resx">
       <DependentUpon>frmEnvios.cs</DependentUpon>
     </EmbeddedResource>

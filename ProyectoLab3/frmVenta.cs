@@ -366,7 +366,7 @@ namespace ProyectoLab3
                     ticket.SetParameterValue("IdSucursal", this.idSucursal.ToString());
                     ticket.SetParameterValue("NumeroVenta", this.nroVenta.ToString());
                     ticket.SetParameterValue("NombreSucursal", clsConexion.NombreSucursal);
-                    ticket.SetParameterValue("CUIT", "20-3434343-0");
+                    ticket.SetParameterValue("CUIT", clsConexion.CUIT);
                     frmTicketVenta frmTicket = new frmTicketVenta(ticket);
                     frmTicket.ShowDialog();
                     limpiar();

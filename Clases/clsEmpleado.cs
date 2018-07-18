@@ -170,7 +170,7 @@ namespace Clases
 
         public static bool logeo(string usuario,string clave) {
             bool valid = false;//select Tipo,Nombre,Apellido,Empleado.IdSucursal,Empleado.IdEmpleado,NombreInterno from Empleado inner join Sucursal on (Empleado.IdSucursal=Sucursal.IdSucursal);
-            comando = new SqlCommand("select Tipo,Nombre,Apellido,Empleado.IdSucursal,Empleado.IdEmpleado,NombreInterno, Direccion from Empleado inner join Sucursal on (Empleado.IdSucursal=Sucursal.IdSucursal) where Usuario = '" + usuario + "' AND Clave = '" + clave + "'");
+            comando = new SqlCommand("select Tipo,Nombre,Apellido,Empleado.IdSucursal,Empleado.IdEmpleado,NombreInterno, Direccion, CUIT from Empleado inner join Sucursal on (Empleado.IdSucursal=Sucursal.IdSucursal) full outer join CUIT on(1=1) where Usuario = '" + usuario + "' AND Clave = '" + clave + "'");
 
             try
             {
@@ -190,6 +190,7 @@ namespace Clases
                     clsConexion.SucursalSession = Convert.ToInt32(empleados.Rows[0]["IdSucursal"].ToString());
                     clsConexion.NombreSucursal = empleados.Rows[0]["NombreInterno"].ToString();
                     clsConexion.Direccion = empleados.Rows[0]["Direccion"].ToString();
+                    clsConexion.CUIT = empleados.Rows[0]["CUIT"].ToString();
                 }
             }
             catch (SqlException x) { Console.WriteLine(x.Message); }
