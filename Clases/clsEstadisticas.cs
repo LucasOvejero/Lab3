@@ -113,5 +113,21 @@ namespace Clases
             return PMV;
         }
 
+        public static DataTable getVentasXEmpleado(int IdEmpleado,int IdSucursal, DateTime fecha) {
+            DataTable graficos = new DataTable("Graficos");
+            try
+            {
+                string sqlString = string.Format("select SUM (Precio) as Total,SUM(Precio-Costo) as Ganancia, DAY(Fecha) Dia from DescripcionVenta d inner join EncabezadoVenta v on(d.NroVenta=v.NroVenta) where IdEmpleado={0} and IdSucursal={1} and YEAR(Fecha)={2} and MONTH(Fecha)={3} and DAY(Fecha)={4} group by DAY(Fecha);", IdEmpleado, IdSucursal, fecha.Year, fecha.Month, fecha.Day);
+                SqlCommand comando = new SqlCommand(sqlString,clsConexion.getCon());
+                SqlDataAdapter adap = new SqlDataAdapter(comando);
+                adap.Fill(graficos);
+            }
+            catch (SqlException e)
+            {
+
+            }
+            finally { clsConexion.closeCon(); }
+            return graficos;
+        }
     }
 }

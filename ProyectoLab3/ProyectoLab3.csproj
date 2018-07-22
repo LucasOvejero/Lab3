@@ -112,6 +112,12 @@
     <Compile Include="frmTransferirEmpleado.Designer.cs">
       <DependentUpon>frmTransferirEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVentaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentaEmpleados.Designer.cs">
+      <DependentUpon>frmVentaEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="TicketVenta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTransferirEmpleado.resx">
       <DependentUpon>frmTransferirEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentaEmpleados.resx">
+      <DependentUpon>frmVentaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TicketVenta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
