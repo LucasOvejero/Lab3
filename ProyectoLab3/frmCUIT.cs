@@ -45,7 +45,7 @@ namespace ProyectoLab3
         private void frmCUIT_Load(object sender, EventArgs e)
         {
             if (clsConexion.CUIT != string.Empty)
-                tbCUIT.Text = clsConexion.CUIT;
+                tbCUIT.Text = clsConexion.CUIT.Trim();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
