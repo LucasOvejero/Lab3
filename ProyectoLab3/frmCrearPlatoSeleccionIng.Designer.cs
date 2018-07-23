@@ -43,10 +43,10 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 53);
+            this.label1.Location = new System.Drawing.Point(9, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 13);
             this.label1.TabIndex = 0;
@@ -55,7 +55,7 @@
             // cboCategoria
             // 
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(45, 89);
+            this.cboCategoria.Location = new System.Drawing.Point(12, 44);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
             this.cboCategoria.TabIndex = 1;
@@ -64,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 73);
+            this.label2.Location = new System.Drawing.Point(45, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 2;
@@ -72,18 +72,18 @@
             // 
             // lbIngredientes
             // 
-            this.lbIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbIngredientes.FormattingEnabled = true;
-            this.lbIngredientes.Location = new System.Drawing.Point(45, 161);
+            this.lbIngredientes.Location = new System.Drawing.Point(12, 116);
             this.lbIngredientes.Name = "lbIngredientes";
             this.lbIngredientes.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbIngredientes.Size = new System.Drawing.Size(120, 147);
+            this.lbIngredientes.Size = new System.Drawing.Size(120, 212);
             this.lbIngredientes.TabIndex = 2;
             // 
             // btnAgregarIngredientes
             // 
-            this.btnAgregarIngredientes.Location = new System.Drawing.Point(196, 193);
+            this.btnAgregarIngredientes.Location = new System.Drawing.Point(142, 148);
             this.btnAgregarIngredientes.Name = "btnAgregarIngredientes";
             this.btnAgregarIngredientes.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarIngredientes.TabIndex = 3;
@@ -93,7 +93,7 @@
             // 
             // btnQuitarIngredientes
             // 
-            this.btnQuitarIngredientes.Location = new System.Drawing.Point(196, 249);
+            this.btnQuitarIngredientes.Location = new System.Drawing.Point(142, 204);
             this.btnQuitarIngredientes.Name = "btnQuitarIngredientes";
             this.btnQuitarIngredientes.Size = new System.Drawing.Size(75, 23);
             this.btnQuitarIngredientes.TabIndex = 5;
@@ -103,31 +103,31 @@
             // 
             // lbIngredientesDelPlato
             // 
-            this.lbIngredientesDelPlato.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbIngredientesDelPlato.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbIngredientesDelPlato.FormattingEnabled = true;
-            this.lbIngredientesDelPlato.Location = new System.Drawing.Point(293, 161);
+            this.lbIngredientesDelPlato.Location = new System.Drawing.Point(239, 116);
             this.lbIngredientesDelPlato.Name = "lbIngredientesDelPlato";
             this.lbIngredientesDelPlato.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbIngredientesDelPlato.Size = new System.Drawing.Size(120, 147);
+            this.lbIngredientesDelPlato.Size = new System.Drawing.Size(120, 212);
             this.lbIngredientesDelPlato.TabIndex = 4;
             // 
             // pnlIngredientes
             // 
-            this.pnlIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlIngredientes.AutoScroll = true;
             this.pnlIngredientes.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlIngredientes.Location = new System.Drawing.Point(461, 135);
+            this.pnlIngredientes.Location = new System.Drawing.Point(381, 28);
             this.pnlIngredientes.Name = "pnlIngredientes";
-            this.pnlIngredientes.Size = new System.Drawing.Size(357, 306);
+            this.pnlIngredientes.Size = new System.Drawing.Size(391, 297);
             this.pnlIngredientes.TabIndex = 6;
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(825, 249);
+            this.btnSiguiente.Location = new System.Drawing.Point(526, 331);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.Size = new System.Drawing.Size(109, 56);
             this.btnSiguiente.TabIndex = 7;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -135,11 +135,11 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(53, 116);
+            this.label3.Location = new System.Drawing.Point(20, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 20);
             this.label3.TabIndex = 9;
@@ -148,7 +148,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(304, 116);
+            this.label4.Location = new System.Drawing.Point(250, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 42);
             this.label4.TabIndex = 10;
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 565);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSiguiente);
@@ -172,7 +172,6 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCrearPlatoSeleccionIng";
             this.Text = "Plato";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmCrearPlatoSeleccionIng_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

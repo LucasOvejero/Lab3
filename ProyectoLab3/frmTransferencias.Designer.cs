@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTransferencia = new Componentes.GrillaFormatead();
             this.label1 = new System.Windows.Forms.Label();
             this.tbFiltroTransferencia = new System.Windows.Forms.TextBox();
@@ -40,29 +40,29 @@
             this.dgvTransferencia.AllowUserToAddRows = false;
             this.dgvTransferencia.AllowUserToResizeColumns = false;
             this.dgvTransferencia.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransferencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransferencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTransferencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransferencia.Location = new System.Drawing.Point(12, 75);
+            this.dgvTransferencia.Location = new System.Drawing.Point(0, 97);
             this.dgvTransferencia.MultiSelect = false;
             this.dgvTransferencia.Name = "dgvTransferencia";
             this.dgvTransferencia.ReadOnly = true;
             this.dgvTransferencia.RowHeadersVisible = false;
-            this.dgvTransferencia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvTransferencia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransferencia.Size = new System.Drawing.Size(771, 464);
+            this.dgvTransferencia.Size = new System.Drawing.Size(700, 464);
             this.dgvTransferencia.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Location = new System.Drawing.Point(322, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 1;
@@ -70,9 +70,10 @@
             // 
             // tbFiltroTransferencia
             // 
-            this.tbFiltroTransferencia.Location = new System.Drawing.Point(12, 49);
+            this.tbFiltroTransferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFiltroTransferencia.Location = new System.Drawing.Point(275, 71);
             this.tbFiltroTransferencia.Name = "tbFiltroTransferencia";
-            this.tbFiltroTransferencia.Size = new System.Drawing.Size(147, 20);
+            this.tbFiltroTransferencia.Size = new System.Drawing.Size(141, 20);
             this.tbFiltroTransferencia.TabIndex = 2;
             this.tbFiltroTransferencia.TextChanged += new System.EventHandler(this.tbFiltroTransferencia_TextChanged);
             // 
@@ -80,14 +81,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 526);
+            this.ClientSize = new System.Drawing.Size(711, 528);
             this.Controls.Add(this.tbFiltroTransferencia);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvTransferencia);
             this.Name = "frmTransferencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Transferencias";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTransferencias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransferencia)).EndInit();
             this.ResumeLayout(false);

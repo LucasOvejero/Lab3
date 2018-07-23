@@ -65,7 +65,7 @@ namespace ProyectoLab3
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSucursales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSucursales.Location = new System.Drawing.Point(12, 95);
+            this.dgvSucursales.Location = new System.Drawing.Point(12, 69);
             this.dgvSucursales.MultiSelect = false;
             this.dgvSucursales.Name = "dgvSucursales";
             this.dgvSucursales.ReadOnly = true;
@@ -78,7 +78,7 @@ namespace ProyectoLab3
             // 
             // tbBusquedaSucursal
             // 
-            this.tbBusquedaSucursal.Location = new System.Drawing.Point(40, 69);
+            this.tbBusquedaSucursal.Location = new System.Drawing.Point(40, 43);
             this.tbBusquedaSucursal.Name = "tbBusquedaSucursal";
             this.tbBusquedaSucursal.Size = new System.Drawing.Size(141, 20);
             this.tbBusquedaSucursal.TabIndex = 0;
@@ -87,7 +87,7 @@ namespace ProyectoLab3
             // lblBusqueda
             // 
             this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(69, 53);
+            this.lblBusqueda.Location = new System.Drawing.Point(69, 27);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(84, 13);
             this.lblBusqueda.TabIndex = 11;
@@ -97,7 +97,7 @@ namespace ProyectoLab3
             // 
             this.lblSucursal.AutoSize = true;
             this.lblSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursal.Location = new System.Drawing.Point(79, 35);
+            this.lblSucursal.Location = new System.Drawing.Point(79, 9);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(66, 18);
             this.lblSucursal.TabIndex = 9;
@@ -118,21 +118,21 @@ namespace ProyectoLab3
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(238, 95);
+            this.dgvIngredientes.Location = new System.Drawing.Point(218, 69);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngredientes.Size = new System.Drawing.Size(184, 318);
+            this.dgvIngredientes.Size = new System.Drawing.Size(161, 318);
             this.dgvIngredientes.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(285, 35);
+            this.label1.Location = new System.Drawing.Point(244, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 18);
             this.label1.TabIndex = 13;
@@ -140,7 +140,7 @@ namespace ProyectoLab3
             // 
             // tbBusquedaIngrediente
             // 
-            this.tbBusquedaIngrediente.Location = new System.Drawing.Point(258, 69);
+            this.tbBusquedaIngrediente.Location = new System.Drawing.Point(218, 43);
             this.tbBusquedaIngrediente.Name = "tbBusquedaIngrediente";
             this.tbBusquedaIngrediente.Size = new System.Drawing.Size(141, 20);
             this.tbBusquedaIngrediente.TabIndex = 2;
@@ -149,7 +149,7 @@ namespace ProyectoLab3
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(276, 53);
+            this.label2.Location = new System.Drawing.Point(244, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 15;
@@ -157,7 +157,7 @@ namespace ProyectoLab3
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(455, 193);
+            this.btnAdd.Location = new System.Drawing.Point(411, 183);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(36, 34);
             this.btnAdd.TabIndex = 5;
@@ -179,19 +179,19 @@ namespace ProyectoLab3
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSeleccion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSeleccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSeleccion.Location = new System.Drawing.Point(531, 95);
+            this.dgvSeleccion.Location = new System.Drawing.Point(489, 69);
             this.dgvSeleccion.MultiSelect = false;
             this.dgvSeleccion.Name = "dgvSeleccion";
             this.dgvSeleccion.ReadOnly = true;
             this.dgvSeleccion.RowHeadersVisible = false;
             this.dgvSeleccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSeleccion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeleccion.Size = new System.Drawing.Size(287, 318);
+            this.dgvSeleccion.Size = new System.Drawing.Size(271, 318);
             this.dgvSeleccion.TabIndex = 7;
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(456, 233);
+            this.btnRemove.Location = new System.Drawing.Point(411, 223);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(35, 35);
             this.btnRemove.TabIndex = 6;
@@ -202,7 +202,7 @@ namespace ProyectoLab3
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(428, 138);
+            this.lblCantidad.Location = new System.Drawing.Point(385, 128);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(88, 26);
             this.lblCantidad.TabIndex = 18;
@@ -211,7 +211,7 @@ namespace ProyectoLab3
             // 
             // tbCantidad
             // 
-            this.tbCantidad.Location = new System.Drawing.Point(428, 167);
+            this.tbCantidad.Location = new System.Drawing.Point(383, 157);
             this.tbCantidad.Name = "tbCantidad";
             this.tbCantidad.Size = new System.Drawing.Size(100, 20);
             this.tbCantidad.TabIndex = 4;
@@ -220,7 +220,7 @@ namespace ProyectoLab3
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(646, 447);
+            this.btnEnviar.Location = new System.Drawing.Point(577, 393);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(115, 47);
             this.btnEnviar.TabIndex = 8;
@@ -232,7 +232,7 @@ namespace ProyectoLab3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 506);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.lblCantidad);
@@ -248,7 +248,6 @@ namespace ProyectoLab3
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.lblSucursal);
             this.Name = "frmNuevaSolicitud";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmNuevaSolicitud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();

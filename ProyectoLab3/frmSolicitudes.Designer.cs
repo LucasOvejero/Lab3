@@ -159,7 +159,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalle.Location = new System.Drawing.Point(488, 42);
+            this.dgvDetalle.Location = new System.Drawing.Point(443, 42);
             this.dgvDetalle.MultiSelect = false;
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.ReadOnly = true;
@@ -173,7 +173,7 @@
             // 
             this.lblDetalles.AutoSize = true;
             this.lblDetalles.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalles.Location = new System.Drawing.Point(599, 17);
+            this.lblDetalles.Location = new System.Drawing.Point(549, 17);
             this.lblDetalles.Name = "lblDetalles";
             this.lblDetalles.Size = new System.Drawing.Size(75, 22);
             this.lblDetalles.TabIndex = 5;
@@ -205,7 +205,7 @@
             // 
             this.pnlAceptarRechazar.Controls.Add(this.btnAccept);
             this.pnlAceptarRechazar.Controls.Add(this.btnCancel);
-            this.pnlAceptarRechazar.Location = new System.Drawing.Point(488, 492);
+            this.pnlAceptarRechazar.Location = new System.Drawing.Point(443, 492);
             this.pnlAceptarRechazar.Name = "pnlAceptarRechazar";
             this.pnlAceptarRechazar.Size = new System.Drawing.Size(304, 72);
             this.pnlAceptarRechazar.TabIndex = 8;
@@ -225,7 +225,7 @@
             // 
             this.lblEnViaje.AutoSize = true;
             this.lblEnViaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnViaje.Location = new System.Drawing.Point(113, 492);
+            this.lblEnViaje.Location = new System.Drawing.Point(87, 492);
             this.lblEnViaje.Name = "lblEnViaje";
             this.lblEnViaje.Size = new System.Drawing.Size(206, 18);
             this.lblEnViaje.TabIndex = 9;
@@ -235,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 602);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.lblEnViaje);
             this.Controls.Add(this.btnEnvios);
             this.Controls.Add(this.pnlAceptarRechazar);
@@ -247,7 +247,6 @@
             this.Controls.Add(this.dgvSolicitudes);
             this.Name = "FrmSolicitudes";
             this.Text = "Solicitudes";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmSolicitudes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticiones)).EndInit();

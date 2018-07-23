@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 548);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tbInconveniente);
             this.Controls.Add(this.btnInconveniente);
             this.Controls.Add(this.btnRecibir);
@@ -153,7 +153,7 @@
             this.Controls.Add(this.DgvSolicitudes);
             this.Name = "frmEnvios";
             this.Text = "Recibos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmEnvios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvSolicitudes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();

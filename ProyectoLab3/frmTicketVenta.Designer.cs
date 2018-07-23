@@ -39,18 +39,17 @@
             this.crTicket.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crTicket.Location = new System.Drawing.Point(0, 0);
             this.crTicket.Name = "crTicket";
-            this.crTicket.Size = new System.Drawing.Size(977, 452);
+            this.crTicket.Size = new System.Drawing.Size(784, 561);
             this.crTicket.TabIndex = 0;
             // 
             // frmTicketVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 452);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.crTicket);
             this.Name = "frmTicketVenta";
             this.Text = "Ticket";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTicketVenta_Load);
             this.ResumeLayout(false);
 

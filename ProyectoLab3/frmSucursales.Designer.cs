@@ -50,18 +50,18 @@
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.btnAddSucursal = new System.Windows.Forms.Button();
             this.pnlConfig = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbNombreEdit = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvManagers = new Componentes.GrillaFormatead();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbFiltroManager = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbNombreEdit = new System.Windows.Forms.TextBox();
             this.lblTel = new System.Windows.Forms.Label();
             this.lblDir = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tbDir = new System.Windows.Forms.TextBox();
             this.tbTel = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEstado = new System.Windows.Forms.Button();
-            this.tbFiltroManager = new System.Windows.Forms.TextBox();
             this.gpProv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincia)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -98,7 +98,7 @@
             this.gpProv.Controls.Add(this.dgvProvincia);
             this.gpProv.Location = new System.Drawing.Point(12, 9);
             this.gpProv.Name = "gpProv";
-            this.gpProv.Size = new System.Drawing.Size(134, 515);
+            this.gpProv.Size = new System.Drawing.Size(134, 350);
             this.gpProv.TabIndex = 0;
             this.gpProv.TabStop = false;
             this.gpProv.Text = "Provincias";
@@ -126,7 +126,7 @@
             this.dgvProvincia.RowHeadersVisible = false;
             this.dgvProvincia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProvincia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProvincia.Size = new System.Drawing.Size(120, 417);
+            this.dgvProvincia.Size = new System.Drawing.Size(120, 252);
             this.dgvProvincia.TabIndex = 2;
             this.dgvProvincia.TabStop = false;
             // 
@@ -137,9 +137,9 @@
             this.groupBox1.Controls.Add(this.btnAddLocalidad);
             this.groupBox1.Controls.Add(this.tbLocalidad);
             this.groupBox1.Controls.Add(this.dgvLocalidad);
-            this.groupBox1.Location = new System.Drawing.Point(177, 9);
+            this.groupBox1.Location = new System.Drawing.Point(152, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(138, 515);
+            this.groupBox1.Size = new System.Drawing.Size(138, 350);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Localidades";
@@ -184,7 +184,7 @@
             this.dgvLocalidad.RowHeadersVisible = false;
             this.dgvLocalidad.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvLocalidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocalidad.Size = new System.Drawing.Size(124, 417);
+            this.dgvLocalidad.Size = new System.Drawing.Size(124, 252);
             this.dgvLocalidad.TabIndex = 2;
             this.dgvLocalidad.TabStop = false;
             this.dgvLocalidad.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalidad_RowEnter_1);
@@ -201,9 +201,9 @@
             this.groupBox2.Controls.Add(this.tbNombreSucursal);
             this.groupBox2.Controls.Add(this.tbTelefono);
             this.groupBox2.Controls.Add(this.btnAddSucursal);
-            this.groupBox2.Location = new System.Drawing.Point(343, 12);
+            this.groupBox2.Location = new System.Drawing.Point(296, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(488, 512);
+            this.groupBox2.Size = new System.Drawing.Size(491, 347);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sucursal";
@@ -259,13 +259,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSucursal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSucursal.Location = new System.Drawing.Point(10, 89);
+            this.dgvSucursal.Location = new System.Drawing.Point(6, 89);
             this.dgvSucursal.MultiSelect = false;
             this.dgvSucursal.Name = "dgvSucursal";
             this.dgvSucursal.ReadOnly = true;
             this.dgvSucursal.RowHeadersVisible = false;
             this.dgvSucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSucursal.Size = new System.Drawing.Size(472, 417);
+            this.dgvSucursal.Size = new System.Drawing.Size(472, 252);
             this.dgvSucursal.TabIndex = 4;
             this.dgvSucursal.TabStop = false;
             this.dgvSucursal.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSucursal_DataBindingComplete);
@@ -303,47 +303,31 @@
             // 
             this.pnlConfig.Controls.Add(this.label6);
             this.pnlConfig.Controls.Add(this.tbNombreEdit);
-            this.pnlConfig.Controls.Add(this.label3);
-            this.pnlConfig.Controls.Add(this.dgvManagers);
             this.pnlConfig.Controls.Add(this.lblTel);
             this.pnlConfig.Controls.Add(this.lblDir);
-            this.pnlConfig.Controls.Add(this.label2);
+            this.pnlConfig.Controls.Add(this.btnEstado);
             this.pnlConfig.Controls.Add(this.tbDir);
             this.pnlConfig.Controls.Add(this.tbTel);
             this.pnlConfig.Controls.Add(this.btnGuardar);
-            this.pnlConfig.Controls.Add(this.btnEstado);
+            this.pnlConfig.Controls.Add(this.label3);
+            this.pnlConfig.Controls.Add(this.dgvManagers);
+            this.pnlConfig.Controls.Add(this.label2);
             this.pnlConfig.Controls.Add(this.tbFiltroManager);
-            this.pnlConfig.Location = new System.Drawing.Point(837, 12);
+            this.pnlConfig.Location = new System.Drawing.Point(12, 365);
             this.pnlConfig.Name = "pnlConfig";
-            this.pnlConfig.Size = new System.Drawing.Size(431, 506);
+            this.pnlConfig.Size = new System.Drawing.Size(775, 187);
             this.pnlConfig.TabIndex = 3;
             this.pnlConfig.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(192, 283);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Nombre";
-            // 
-            // tbNombreEdit
-            // 
-            this.tbNombreEdit.Location = new System.Drawing.Point(130, 299);
-            this.tbNombreEdit.Name = "tbNombreEdit";
-            this.tbNombreEdit.Size = new System.Drawing.Size(169, 20);
-            this.tbNombreEdit.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(120, 14);
+            this.label3.Location = new System.Drawing.Point(404, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 25);
+            this.label3.Size = new System.Drawing.Size(190, 25);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Seleccionar Manager";
+            this.label3.Text = "Modificar Sucursal";
             // 
             // dgvManagers
             // 
@@ -359,93 +343,106 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvManagers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvManagers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManagers.Location = new System.Drawing.Point(18, 85);
+            this.dgvManagers.Location = new System.Drawing.Point(3, 61);
             this.dgvManagers.MultiSelect = false;
             this.dgvManagers.Name = "dgvManagers";
             this.dgvManagers.ReadOnly = true;
             this.dgvManagers.RowHeadersVisible = false;
             this.dgvManagers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvManagers.Size = new System.Drawing.Size(397, 185);
+            this.dgvManagers.Size = new System.Drawing.Size(376, 113);
             this.dgvManagers.TabIndex = 1;
             this.dgvManagers.TabStop = false;
             this.dgvManagers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManagers_CellContentClick);
             // 
-            // lblTel
-            // 
-            this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(190, 383);
-            this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(49, 13);
-            this.lblTel.TabIndex = 9;
-            this.lblTel.Text = "Telefono";
-            // 
-            // lblDir
-            // 
-            this.lblDir.AutoSize = true;
-            this.lblDir.Location = new System.Drawing.Point(188, 334);
-            this.lblDir.Name = "lblDir";
-            this.lblDir.Size = new System.Drawing.Size(52, 13);
-            this.lblDir.TabIndex = 8;
-            this.lblDir.Text = "Direccion";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 53);
+            this.label2.Location = new System.Drawing.Point(40, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Filtrar Empleados:";
             // 
-            // tbDir
-            // 
-            this.tbDir.Location = new System.Drawing.Point(130, 350);
-            this.tbDir.Name = "tbDir";
-            this.tbDir.Size = new System.Drawing.Size(169, 20);
-            this.tbDir.TabIndex = 3;
-            // 
-            // tbTel
-            // 
-            this.tbTel.Location = new System.Drawing.Point(130, 399);
-            this.tbTel.MaxLength = 10;
-            this.tbTel.Name = "tbTel";
-            this.tbTel.Size = new System.Drawing.Size(169, 20);
-            this.tbTel.TabIndex = 4;
-            this.tbTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(130, 425);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(173, 37);
-            this.btnGuardar.TabIndex = 5;
-            this.btnGuardar.Text = "Guardar Cambios";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEstado
-            // 
-            this.btnEstado.Location = new System.Drawing.Point(130, 468);
-            this.btnEstado.Name = "btnEstado";
-            this.btnEstado.Size = new System.Drawing.Size(173, 34);
-            this.btnEstado.TabIndex = 6;
-            this.btnEstado.Text = "????";
-            this.btnEstado.UseVisualStyleBackColor = true;
-            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
-            // 
             // tbFiltroManager
             // 
-            this.tbFiltroManager.Location = new System.Drawing.Point(175, 51);
+            this.tbFiltroManager.Location = new System.Drawing.Point(136, 35);
             this.tbFiltroManager.Name = "tbFiltroManager";
             this.tbFiltroManager.Size = new System.Drawing.Size(200, 20);
             this.tbFiltroManager.TabIndex = 0;
             this.tbFiltroManager.TextChanged += new System.EventHandler(this.tbFiltroManager_TextChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(471, 87);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Nombre";
+            // 
+            // tbNombreEdit
+            // 
+            this.tbNombreEdit.Location = new System.Drawing.Point(409, 103);
+            this.tbNombreEdit.Name = "tbNombreEdit";
+            this.tbNombreEdit.Size = new System.Drawing.Size(169, 20);
+            this.tbNombreEdit.TabIndex = 13;
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Location = new System.Drawing.Point(469, 130);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(49, 13);
+            this.lblTel.TabIndex = 19;
+            this.lblTel.Text = "Telefono";
+            // 
+            // lblDir
+            // 
+            this.lblDir.AutoSize = true;
+            this.lblDir.Location = new System.Drawing.Point(642, 87);
+            this.lblDir.Name = "lblDir";
+            this.lblDir.Size = new System.Drawing.Size(52, 13);
+            this.lblDir.TabIndex = 18;
+            this.lblDir.Text = "Direccion";
+            // 
+            // tbDir
+            // 
+            this.tbDir.Location = new System.Drawing.Point(584, 103);
+            this.tbDir.Name = "tbDir";
+            this.tbDir.Size = new System.Drawing.Size(169, 20);
+            this.tbDir.TabIndex = 14;
+            // 
+            // tbTel
+            // 
+            this.tbTel.Location = new System.Drawing.Point(409, 146);
+            this.tbTel.MaxLength = 10;
+            this.tbTel.Name = "tbTel";
+            this.tbTel.Size = new System.Drawing.Size(169, 20);
+            this.tbTel.TabIndex = 15;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(584, 137);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(173, 37);
+            this.btnGuardar.TabIndex = 16;
+            this.btnGuardar.Text = "Guardar Cambios";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // btnEstado
+            // 
+            this.btnEstado.Location = new System.Drawing.Point(627, 3);
+            this.btnEstado.Name = "btnEstado";
+            this.btnEstado.Size = new System.Drawing.Size(139, 34);
+            this.btnEstado.TabIndex = 17;
+            this.btnEstado.Text = "????";
+            this.btnEstado.UseVisualStyleBackColor = true;
+            // 
             // frmSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 536);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.pnlConfig);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -453,7 +450,6 @@
             this.Name = "frmSucursales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sucursales";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSucursales_Load);
             this.gpProv.ResumeLayout(false);
             this.gpProv.PerformLayout();
@@ -489,13 +485,7 @@
         private System.Windows.Forms.RichTextBox rtbDir;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pnlConfig;
-        private System.Windows.Forms.Button btnEstado;
         private System.Windows.Forms.TextBox tbFiltroManager;
-        private System.Windows.Forms.Label lblTel;
-        private System.Windows.Forms.Label lblDir;
-        private System.Windows.Forms.TextBox tbDir;
-        private System.Windows.Forms.TextBox tbTel;
-        private System.Windows.Forms.Button btnGuardar;
         private Componentes.GrillaFormatead dgvManagers;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbNombreSucursal;
@@ -503,5 +493,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbNombreEdit;
+        private System.Windows.Forms.Label lblTel;
+        private System.Windows.Forms.Label lblDir;
+        private System.Windows.Forms.Button btnEstado;
+        private System.Windows.Forms.TextBox tbDir;
+        private System.Windows.Forms.TextBox tbTel;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

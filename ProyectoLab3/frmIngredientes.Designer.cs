@@ -47,7 +47,7 @@
             // lbSucursales
             // 
             this.lbSucursales.FormattingEnabled = true;
-            this.lbSucursales.Location = new System.Drawing.Point(93, 153);
+            this.lbSucursales.Location = new System.Drawing.Point(12, 156);
             this.lbSucursales.Name = "lbSucursales";
             this.lbSucursales.Size = new System.Drawing.Size(120, 95);
             this.lbSucursales.TabIndex = 2;
@@ -56,7 +56,7 @@
             // cboProvincia
             // 
             this.cboProvincia.FormattingEnabled = true;
-            this.cboProvincia.Location = new System.Drawing.Point(92, 61);
+            this.cboProvincia.Location = new System.Drawing.Point(11, 64);
             this.cboProvincia.Name = "cboProvincia";
             this.cboProvincia.Size = new System.Drawing.Size(121, 21);
             this.cboProvincia.TabIndex = 0;
@@ -65,7 +65,7 @@
             // cboLocalidad
             // 
             this.cboLocalidad.FormattingEnabled = true;
-            this.cboLocalidad.Location = new System.Drawing.Point(92, 106);
+            this.cboLocalidad.Location = new System.Drawing.Point(11, 109);
             this.cboLocalidad.Name = "cboLocalidad";
             this.cboLocalidad.Size = new System.Drawing.Size(121, 21);
             this.cboLocalidad.TabIndex = 1;
@@ -76,8 +76,8 @@
             this.dgvIngredientes.AllowUserToAddRows = false;
             this.dgvIngredientes.AllowUserToResizeColumns = false;
             this.dgvIngredientes.AllowUserToResizeRows = false;
-            this.dgvIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,13 +87,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(650, 61);
+            this.dgvIngredientes.Location = new System.Drawing.Point(465, 45);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngredientes.Size = new System.Drawing.Size(240, 433);
+            this.dgvIngredientes.Size = new System.Drawing.Size(240, 468);
             this.dgvIngredientes.TabIndex = 4;
             this.dgvIngredientes.TabStop = false;
             this.dgvIngredientes.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvIngredientes_CellBeginEdit);
@@ -103,8 +103,8 @@
             this.dgvBebidas.AllowUserToAddRows = false;
             this.dgvBebidas.AllowUserToResizeColumns = false;
             this.dgvBebidas.AllowUserToResizeRows = false;
-            this.dgvBebidas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvBebidas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,20 +114,20 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(326, 61);
+            this.dgvBebidas.Location = new System.Drawing.Point(141, 45);
             this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBebidas.Size = new System.Drawing.Size(240, 433);
+            this.dgvBebidas.Size = new System.Drawing.Size(240, 468);
             this.dgvBebidas.TabIndex = 3;
             this.dgvBebidas.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(126, 45);
+            this.label1.Location = new System.Drawing.Point(47, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 5;
@@ -136,7 +136,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(126, 90);
+            this.label2.Location = new System.Drawing.Point(45, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 6;
@@ -145,7 +145,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(128, 137);
+            this.label3.Location = new System.Drawing.Point(47, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 7;
@@ -154,7 +154,7 @@
             // Bebidas
             // 
             this.Bebidas.AutoSize = true;
-            this.Bebidas.Location = new System.Drawing.Point(417, 45);
+            this.Bebidas.Location = new System.Drawing.Point(232, 29);
             this.Bebidas.Name = "Bebidas";
             this.Bebidas.Size = new System.Drawing.Size(45, 13);
             this.Bebidas.TabIndex = 8;
@@ -163,7 +163,7 @@
             // Ingredientes
             // 
             this.Ingredientes.AutoSize = true;
-            this.Ingredientes.Location = new System.Drawing.Point(748, 45);
+            this.Ingredientes.Location = new System.Drawing.Point(563, 29);
             this.Ingredientes.Name = "Ingredientes";
             this.Ingredientes.Size = new System.Drawing.Size(65, 13);
             this.Ingredientes.TabIndex = 9;
@@ -173,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 526);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.Ingredientes);
             this.Controls.Add(this.Bebidas);
             this.Controls.Add(this.label3);
@@ -186,7 +186,6 @@
             this.Controls.Add(this.lbSucursales);
             this.Name = "frmDepositos";
             this.Text = "Depositos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmIngredientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();

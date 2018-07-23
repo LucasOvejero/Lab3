@@ -61,7 +61,7 @@
             this.chartVentas.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartVentas.Legends.Add(legend1);
-            this.chartVentas.Location = new System.Drawing.Point(218, 249);
+            this.chartVentas.Location = new System.Drawing.Point(18, 249);
             this.chartVentas.Name = "chartVentas";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -74,7 +74,7 @@
             // tbFiltroSuc
             // 
             this.tbFiltroSuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbFiltroSuc.Location = new System.Drawing.Point(441, 37);
+            this.tbFiltroSuc.Location = new System.Drawing.Point(241, 37);
             this.tbFiltroSuc.Name = "tbFiltroSuc";
             this.tbFiltroSuc.Size = new System.Drawing.Size(100, 20);
             this.tbFiltroSuc.TabIndex = 4;
@@ -83,7 +83,7 @@
             // tbFiltroEmp
             // 
             this.tbFiltroEmp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbFiltroEmp.Location = new System.Drawing.Point(768, 37);
+            this.tbFiltroEmp.Location = new System.Drawing.Point(568, 37);
             this.tbFiltroEmp.Name = "tbFiltroEmp";
             this.tbFiltroEmp.Size = new System.Drawing.Size(153, 20);
             this.tbFiltroEmp.TabIndex = 5;
@@ -93,7 +93,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(468, 21);
+            this.label1.Location = new System.Drawing.Point(268, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 6;
@@ -103,7 +103,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(814, 21);
+            this.label2.Location = new System.Drawing.Point(614, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 7;
@@ -125,7 +125,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(722, 63);
+            this.dgvEmpleados.Location = new System.Drawing.Point(522, 63);
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 715);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dgvSucursal);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.label2);

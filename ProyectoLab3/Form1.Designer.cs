@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnDeposito = new System.Windows.Forms.Button();
             this.btnVenta = new System.Windows.Forms.Button();
@@ -90,7 +90,7 @@
             // 
             // btnVenta
             // 
-            this.btnVenta.Location = new System.Drawing.Point(68, 27);
+            this.btnVenta.Location = new System.Drawing.Point(6, 27);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(75, 42);
             this.btnVenta.TabIndex = 0;
@@ -100,7 +100,7 @@
             // 
             // btnVentas
             // 
-            this.btnVentas.Location = new System.Drawing.Point(199, 27);
+            this.btnVentas.Location = new System.Drawing.Point(95, 27);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(75, 42);
             this.btnVentas.TabIndex = 1;
@@ -120,22 +120,21 @@
             // 
             // pnlVendedor
             // 
-            this.pnlVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlVendedor.Controls.Add(this.btnLogout);
             this.pnlVendedor.Controls.Add(this.pnlCritico);
-            this.pnlVendedor.Controls.Add(this.label1);
             this.pnlVendedor.Controls.Add(this.gbVentas);
+            this.pnlVendedor.Controls.Add(this.label1);
             this.pnlVendedor.Controls.Add(this.gbDeposito);
-            this.pnlVendedor.Location = new System.Drawing.Point(0, 150);
+            this.pnlVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlVendedor.Location = new System.Drawing.Point(368, 0);
             this.pnlVendedor.Name = "pnlVendedor";
-            this.pnlVendedor.Size = new System.Drawing.Size(782, 493);
+            this.pnlVendedor.Size = new System.Drawing.Size(416, 561);
             this.pnlVendedor.TabIndex = 1;
             // 
             // btnLogout
             // 
+            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnLogout.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogout.Location = new System.Drawing.Point(572, 465);
+            this.btnLogout.Location = new System.Drawing.Point(255, 519);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(89, 37);
             this.btnLogout.TabIndex = 16;
@@ -145,11 +144,12 @@
             // 
             // pnlCritico
             // 
-            this.pnlCritico.Controls.Add(this.label2);
+            this.pnlCritico.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlCritico.Controls.Add(this.dgvCritico);
-            this.pnlCritico.Location = new System.Drawing.Point(11, 157);
+            this.pnlCritico.Controls.Add(this.label2);
+            this.pnlCritico.Location = new System.Drawing.Point(3, 272);
             this.pnlCritico.Name = "pnlCritico";
-            this.pnlCritico.Size = new System.Drawing.Size(412, 345);
+            this.pnlCritico.Size = new System.Drawing.Size(398, 289);
             this.pnlCritico.TabIndex = 2;
             // 
             // label2
@@ -168,29 +168,31 @@
             this.dgvCritico.AllowUserToAddRows = false;
             this.dgvCritico.AllowUserToResizeColumns = false;
             this.dgvCritico.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCritico.Anchor = System.Windows.Forms.AnchorStyles.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCritico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCritico.Location = new System.Drawing.Point(27, 42);
+            this.dgvCritico.Location = new System.Drawing.Point(27, 46);
             this.dgvCritico.MultiSelect = false;
             this.dgvCritico.Name = "dgvCritico";
             this.dgvCritico.ReadOnly = true;
             this.dgvCritico.RowHeadersVisible = false;
             this.dgvCritico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCritico.Size = new System.Drawing.Size(342, 300);
+            this.dgvCritico.Size = new System.Drawing.Size(333, 229);
             this.dgvCritico.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 188);
+            this.label1.Location = new System.Drawing.Point(3, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(405, 25);
             this.label1.TabIndex = 15;
@@ -198,25 +200,26 @@
             // 
             // gbVentas
             // 
-            this.gbVentas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gbVentas.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gbVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
             this.gbVentas.Controls.Add(this.btnVentas);
             this.gbVentas.Controls.Add(this.btnVenta);
-            this.gbVentas.Location = new System.Drawing.Point(232, 39);
+            this.gbVentas.Location = new System.Drawing.Point(6, 176);
             this.gbVentas.Name = "gbVentas";
-            this.gbVentas.Size = new System.Drawing.Size(342, 97);
+            this.gbVentas.Size = new System.Drawing.Size(357, 80);
             this.gbVentas.TabIndex = 1;
             this.gbVentas.TabStop = false;
             this.gbVentas.Text = "Ventas";
             // 
             // gbDeposito
             // 
+            this.gbDeposito.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gbDeposito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(37)))));
             this.gbDeposito.Controls.Add(this.btnDeposito);
             this.gbDeposito.Controls.Add(this.btnHistorial);
             this.gbDeposito.Controls.Add(this.btnNewSolicitudes);
             this.gbDeposito.Controls.Add(this.btnSolicitudes);
-            this.gbDeposito.Location = new System.Drawing.Point(11, 39);
+            this.gbDeposito.Location = new System.Drawing.Point(6, 73);
             this.gbDeposito.Name = "gbDeposito";
             this.gbDeposito.Size = new System.Drawing.Size(357, 97);
             this.gbDeposito.TabIndex = 0;
@@ -240,7 +243,7 @@
             this.gbSucursal.Controls.Add(this.btnGraficosVentaGeneral);
             this.gbSucursal.Controls.Add(this.btnEmpleados);
             this.gbSucursal.Controls.Add(this.btnSuc);
-            this.gbSucursal.Location = new System.Drawing.Point(12, 44);
+            this.gbSucursal.Location = new System.Drawing.Point(3, 73);
             this.gbSucursal.Name = "gbSucursal";
             this.gbSucursal.Size = new System.Drawing.Size(357, 97);
             this.gbSucursal.TabIndex = 0;
@@ -285,16 +288,16 @@
             this.gbProductos.Controls.Add(this.btnMerma);
             this.gbProductos.Controls.Add(this.btnDepositos);
             this.gbProductos.Controls.Add(this.btnBebidas);
-            this.gbProductos.Location = new System.Drawing.Point(232, 44);
+            this.gbProductos.Location = new System.Drawing.Point(3, 176);
             this.gbProductos.Name = "gbProductos";
-            this.gbProductos.Size = new System.Drawing.Size(342, 97);
+            this.gbProductos.Size = new System.Drawing.Size(357, 97);
             this.gbProductos.TabIndex = 1;
             this.gbProductos.TabStop = false;
             this.gbProductos.Text = "Productos";
             // 
             // btnMerma
             // 
-            this.btnMerma.Location = new System.Drawing.Point(237, 27);
+            this.btnMerma.Location = new System.Drawing.Point(252, 27);
             this.btnMerma.Name = "btnMerma";
             this.btnMerma.Size = new System.Drawing.Size(75, 42);
             this.btnMerma.TabIndex = 2;
@@ -304,7 +307,7 @@
             // 
             // btnDepositos
             // 
-            this.btnDepositos.Location = new System.Drawing.Point(31, 27);
+            this.btnDepositos.Location = new System.Drawing.Point(30, 27);
             this.btnDepositos.Name = "btnDepositos";
             this.btnDepositos.Size = new System.Drawing.Size(75, 42);
             this.btnDepositos.TabIndex = 0;
@@ -314,7 +317,7 @@
             // 
             // btnBebidas
             // 
-            this.btnBebidas.Location = new System.Drawing.Point(131, 27);
+            this.btnBebidas.Location = new System.Drawing.Point(143, 27);
             this.btnBebidas.Name = "btnBebidas";
             this.btnBebidas.Size = new System.Drawing.Size(75, 42);
             this.btnBebidas.TabIndex = 1;
@@ -328,16 +331,16 @@
             this.gbPlatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.gbPlatos.Controls.Add(this.btnEditPlato);
             this.gbPlatos.Controls.Add(this.btnPlato);
-            this.gbPlatos.Location = new System.Drawing.Point(464, 44);
+            this.gbPlatos.Location = new System.Drawing.Point(3, 276);
             this.gbPlatos.Name = "gbPlatos";
-            this.gbPlatos.Size = new System.Drawing.Size(308, 97);
+            this.gbPlatos.Size = new System.Drawing.Size(357, 97);
             this.gbPlatos.TabIndex = 2;
             this.gbPlatos.TabStop = false;
             this.gbPlatos.Text = "Platos";
             // 
             // btnEditPlato
             // 
-            this.btnEditPlato.Location = new System.Drawing.Point(174, 27);
+            this.btnEditPlato.Location = new System.Drawing.Point(143, 27);
             this.btnEditPlato.Name = "btnEditPlato";
             this.btnEditPlato.Size = new System.Drawing.Size(75, 42);
             this.btnEditPlato.TabIndex = 1;
@@ -347,7 +350,7 @@
             // 
             // btnPlato
             // 
-            this.btnPlato.Location = new System.Drawing.Point(60, 27);
+            this.btnPlato.Location = new System.Drawing.Point(30, 27);
             this.btnPlato.Name = "btnPlato";
             this.btnPlato.Size = new System.Drawing.Size(75, 42);
             this.btnPlato.TabIndex = 0;
@@ -357,23 +360,24 @@
             // 
             // pnlAdmin
             // 
+            this.pnlAdmin.Controls.Add(this.btnLogout);
+            this.pnlAdmin.Controls.Add(this.gbPlatos);
             this.pnlAdmin.Controls.Add(this.btnCUIT);
             this.pnlAdmin.Controls.Add(this.lblSucursalInfo);
-            this.pnlAdmin.Controls.Add(this.gbPlatos);
             this.pnlAdmin.Controls.Add(this.gbProductos);
             this.pnlAdmin.Controls.Add(this.gbSucursal);
-            this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlAdmin.Location = new System.Drawing.Point(0, 0);
             this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(784, 144);
+            this.pnlAdmin.Size = new System.Drawing.Size(368, 561);
             this.pnlAdmin.TabIndex = 0;
             // 
             // btnCUIT
             // 
             this.btnCUIT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCUIT.Location = new System.Drawing.Point(348, 12);
+            this.btnCUIT.Location = new System.Drawing.Point(12, 519);
             this.btnCUIT.Name = "btnCUIT";
-            this.btnCUIT.Size = new System.Drawing.Size(75, 23);
+            this.btnCUIT.Size = new System.Drawing.Size(89, 30);
             this.btnCUIT.TabIndex = 4;
             this.btnCUIT.Text = "CUIT";
             this.btnCUIT.UseVisualStyleBackColor = true;
@@ -399,7 +403,6 @@
             this.Controls.Add(this.pnlAdmin);
             this.Name = "Form1";
             this.Text = "Inicio";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Enter += new System.EventHandler(this.Form1_Enter);
             this.MouseEnter += new System.EventHandler(this.Form1_MouseEnter);

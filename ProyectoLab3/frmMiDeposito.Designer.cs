@@ -63,13 +63,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(125, 97);
+            this.dgvBebidas.Location = new System.Drawing.Point(13, 123);
             this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBebidas.Size = new System.Drawing.Size(373, 438);
+            this.dgvBebidas.Size = new System.Drawing.Size(373, 354);
             this.dgvBebidas.TabIndex = 1;
             // 
             // dgvIngredientes
@@ -87,20 +87,20 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(739, 97);
+            this.dgvIngredientes.Location = new System.Drawing.Point(407, 123);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngredientes.Size = new System.Drawing.Size(394, 438);
+            this.dgvIngredientes.Size = new System.Drawing.Size(386, 354);
             this.dgvIngredientes.TabIndex = 4;
             this.dgvIngredientes.DataSourceChanged += new System.EventHandler(this.dgvIngredientes_DataSourceChanged);
             // 
             // tbBebidas
             // 
             this.tbBebidas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbBebidas.Location = new System.Drawing.Point(262, 49);
+            this.tbBebidas.Location = new System.Drawing.Point(150, 35);
             this.tbBebidas.Name = "tbBebidas";
             this.tbBebidas.Size = new System.Drawing.Size(100, 20);
             this.tbBebidas.TabIndex = 0;
@@ -109,7 +109,7 @@
             // tbIngredientes
             // 
             this.tbIngredientes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbIngredientes.Location = new System.Drawing.Point(886, 49);
+            this.tbIngredientes.Location = new System.Drawing.Point(550, 35);
             this.tbIngredientes.Name = "tbIngredientes";
             this.tbIngredientes.Size = new System.Drawing.Size(100, 20);
             this.tbIngredientes.TabIndex = 3;
@@ -119,7 +119,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(275, 9);
+            this.label1.Location = new System.Drawing.Point(163, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 4;
@@ -129,7 +129,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(889, 9);
+            this.label2.Location = new System.Drawing.Point(553, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 5;
@@ -140,15 +140,15 @@
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.Controls.Add(this.btnActB);
-            this.panel4.Location = new System.Drawing.Point(192, 553);
+            this.panel4.Location = new System.Drawing.Point(80, 543);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(240, 100);
+            this.panel4.Size = new System.Drawing.Size(240, 54);
             this.panel4.TabIndex = 8;
             // 
             // btnActB
             // 
             this.btnActB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActB.Location = new System.Drawing.Point(3, 5);
+            this.btnActB.Location = new System.Drawing.Point(3, -18);
             this.btnActB.Name = "btnActB";
             this.btnActB.Size = new System.Drawing.Size(234, 91);
             this.btnActB.TabIndex = 2;
@@ -161,16 +161,16 @@
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel5.Controls.Add(this.btnActI);
-            this.panel5.Location = new System.Drawing.Point(816, 553);
+            this.panel5.Location = new System.Drawing.Point(480, 543);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(240, 100);
+            this.panel5.Size = new System.Drawing.Size(240, 54);
             this.panel5.TabIndex = 9;
             // 
             // btnActI
             // 
-            this.btnActI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActI.Location = new System.Drawing.Point(3, 3);
+            this.btnActI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActI.Location = new System.Drawing.Point(3, -43);
             this.btnActI.Name = "btnActI";
             this.btnActI.Size = new System.Drawing.Size(234, 94);
             this.btnActI.TabIndex = 5;
@@ -191,26 +191,24 @@
             this.tableLayoutPanel1.Controls.Add(this.tbBebidas, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 3);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.04651F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.95349F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 459F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1248, 661);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 600);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // frmMiDeposito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 661);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmMiDeposito";
             this.Text = "Deposito";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMiDeposito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();

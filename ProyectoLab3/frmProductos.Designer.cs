@@ -66,12 +66,10 @@
             this.btnAddIngrediente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.tbCatBeb = new System.Windows.Forms.TextBox();
             this.btnAgregarCatBebida = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.tbNombreCategoria = new System.Windows.Forms.TextBox();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -97,6 +95,9 @@
             this.dgvIngredientes = new Componentes.GrillaFormatead();
             this.tbStockCritico = new System.Windows.Forms.TextBox();
             this.errpNBebida = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -118,11 +119,14 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errpNBebida)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(616, 30);
+            this.btnAgregar.Location = new System.Drawing.Point(506, 29);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 5;
@@ -132,7 +136,7 @@
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(35, 30);
+            this.tbNombre.Location = new System.Drawing.Point(8, 31);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
             this.tbNombre.TabIndex = 0;
@@ -140,7 +144,7 @@
             // nudLitros
             // 
             this.nudLitros.DecimalPlaces = 1;
-            this.nudLitros.Location = new System.Drawing.Point(380, 30);
+            this.nudLitros.Location = new System.Drawing.Point(292, 30);
             this.nudLitros.Name = "nudLitros";
             this.nudLitros.Size = new System.Drawing.Size(61, 20);
             this.nudLitros.TabIndex = 3;
@@ -148,7 +152,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 14);
+            this.label1.Location = new System.Drawing.Point(45, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 7;
@@ -157,7 +161,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(180, 14);
+            this.label2.Location = new System.Drawing.Point(135, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 8;
@@ -166,7 +170,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(299, 14);
+            this.label3.Location = new System.Drawing.Point(211, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 9;
@@ -175,7 +179,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(388, 14);
+            this.label4.Location = new System.Drawing.Point(300, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 10;
@@ -184,7 +188,7 @@
             // nudCosto
             // 
             this.nudCosto.DecimalPlaces = 2;
-            this.nudCosto.Location = new System.Drawing.Point(287, 30);
+            this.nudCosto.Location = new System.Drawing.Point(199, 30);
             this.nudCosto.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -197,7 +201,7 @@
             // nudPrecio
             // 
             this.nudPrecio.DecimalPlaces = 2;
-            this.nudPrecio.Location = new System.Drawing.Point(168, 30);
+            this.nudPrecio.Location = new System.Drawing.Point(123, 32);
             this.nudPrecio.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -221,7 +225,7 @@
             this.gpEdicion.Controls.Add(this.tbEditName);
             this.gpEdicion.Controls.Add(this.btnBorrar);
             this.gpEdicion.Controls.Add(this.btnEditar);
-            this.gpEdicion.Location = new System.Drawing.Point(24, 456);
+            this.gpEdicion.Location = new System.Drawing.Point(18, 414);
             this.gpEdicion.Name = "gpEdicion";
             this.gpEdicion.Size = new System.Drawing.Size(723, 98);
             this.gpEdicion.TabIndex = 2;
@@ -344,6 +348,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.cboCatAddBebida);
@@ -357,9 +362,9 @@
             this.groupBox1.Controls.Add(this.nudLitros);
             this.groupBox1.Controls.Add(this.tbNombre);
             this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Location = new System.Drawing.Point(24, 32);
+            this.groupBox1.Location = new System.Drawing.Point(5, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(723, 418);
+            this.groupBox1.Size = new System.Drawing.Size(760, 405);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Bebida";
@@ -367,7 +372,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.tbFIltroBebida);
-            this.groupBox6.Location = new System.Drawing.Point(257, 57);
+            this.groupBox6.Location = new System.Drawing.Point(234, 57);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(184, 42);
             this.groupBox6.TabIndex = 6;
@@ -385,7 +390,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(490, 16);
+            this.label17.Location = new System.Drawing.Point(402, 16);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(57, 13);
             this.label17.TabIndex = 21;
@@ -394,7 +399,7 @@
             // cboCatAddBebida
             // 
             this.cboCatAddBebida.FormattingEnabled = true;
-            this.cboCatAddBebida.Location = new System.Drawing.Point(462, 30);
+            this.cboCatAddBebida.Location = new System.Drawing.Point(374, 30);
             this.cboCatAddBebida.Name = "cboCatAddBebida";
             this.cboCatAddBebida.Size = new System.Drawing.Size(121, 21);
             this.cboCatAddBebida.TabIndex = 5;
@@ -414,13 +419,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(107, 105);
+            this.dgvBebidas.Location = new System.Drawing.Point(6, 105);
             this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBebidas.Size = new System.Drawing.Size(508, 297);
+            this.dgvBebidas.Size = new System.Drawing.Size(748, 291);
             this.dgvBebidas.StandardTab = true;
             this.dgvBebidas.TabIndex = 6;
             this.dgvBebidas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBebidas_RowEnter);
@@ -428,10 +433,9 @@
             // 
             // lblCosto
             // 
-            this.lblCosto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCosto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCosto.AutoSize = true;
-            this.lblCosto.Location = new System.Drawing.Point(147, 16);
+            this.lblCosto.Location = new System.Drawing.Point(166, 40);
             this.lblCosto.Name = "lblCosto";
             this.lblCosto.Size = new System.Drawing.Size(72, 13);
             this.lblCosto.TabIndex = 18;
@@ -439,10 +443,9 @@
             // 
             // nudCostoPorKilo
             // 
-            this.nudCostoPorKilo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudCostoPorKilo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nudCostoPorKilo.DecimalPlaces = 2;
-            this.nudCostoPorKilo.Location = new System.Drawing.Point(144, 30);
+            this.nudCostoPorKilo.Location = new System.Drawing.Point(163, 54);
             this.nudCostoPorKilo.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -455,10 +458,9 @@
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(49, 16);
+            this.label10.Location = new System.Drawing.Point(68, 40);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 13);
             this.label10.TabIndex = 16;
@@ -466,17 +468,16 @@
             // 
             // tbNombreIngrediente
             // 
-            this.tbNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNombreIngrediente.Location = new System.Drawing.Point(29, 30);
+            this.tbNombreIngrediente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbNombreIngrediente.Location = new System.Drawing.Point(48, 54);
             this.tbNombreIngrediente.Name = "tbNombreIngrediente";
             this.tbNombreIngrediente.Size = new System.Drawing.Size(100, 20);
             this.tbNombreIngrediente.TabIndex = 16;
             // 
             // btnAddIngrediente
             // 
-            this.btnAddIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddIngrediente.Location = new System.Drawing.Point(460, 57);
+            this.btnAddIngrediente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddIngrediente.Location = new System.Drawing.Point(479, 81);
             this.btnAddIngrediente.Name = "btnAddIngrediente";
             this.btnAddIngrediente.Size = new System.Drawing.Size(75, 23);
             this.btnAddIngrediente.TabIndex = 19;
@@ -486,45 +487,31 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.groupBox5);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.gpEdicion);
-            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(754, 811);
+            this.panel1.Size = new System.Drawing.Size(770, 529);
             this.panel1.TabIndex = 20;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.tbCatBeb);
             this.groupBox5.Controls.Add(this.btnAgregarCatBebida);
-            this.groupBox5.Location = new System.Drawing.Point(142, 582);
+            this.groupBox5.Controls.Add(this.tbCatBeb);
+            this.groupBox5.Location = new System.Drawing.Point(604, 14);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(392, 86);
+            this.groupBox5.Size = new System.Drawing.Size(132, 84);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Agregar Categoria";
             // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(88, 16);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 13);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "Nombre";
-            // 
             // tbCatBeb
             // 
-            this.tbCatBeb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCatBeb.Location = new System.Drawing.Point(63, 35);
+            this.tbCatBeb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCatBeb.Location = new System.Drawing.Point(16, 19);
             this.tbCatBeb.Name = "tbCatBeb";
             this.tbCatBeb.Size = new System.Drawing.Size(100, 20);
             this.tbCatBeb.TabIndex = 14;
@@ -532,9 +519,9 @@
             // btnAgregarCatBebida
             // 
             this.btnAgregarCatBebida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarCatBebida.Location = new System.Drawing.Point(237, 32);
+            this.btnAgregarCatBebida.Location = new System.Drawing.Point(8, 45);
             this.btnAgregarCatBebida.Name = "btnAgregarCatBebida";
-            this.btnAgregarCatBebida.Size = new System.Drawing.Size(108, 23);
+            this.btnAgregarCatBebida.Size = new System.Drawing.Size(120, 23);
             this.btnAgregarCatBebida.TabIndex = 15;
             this.btnAgregarCatBebida.Text = "Agregar categoria";
             this.btnAgregarCatBebida.UseVisualStyleBackColor = true;
@@ -542,46 +529,33 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel2.Controls.Add(this.groupBox4);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.groupBox2);
-            this.panel2.Location = new System.Drawing.Point(753, 1);
+            this.panel2.Location = new System.Drawing.Point(6, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(557, 792);
+            this.panel2.Size = new System.Drawing.Size(1019, 1030);
             this.panel2.TabIndex = 21;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.tbNombreCategoria);
             this.groupBox4.Controls.Add(this.btnAgregarCategoria);
-            this.groupBox4.Location = new System.Drawing.Point(58, 582);
+            this.groupBox4.Location = new System.Drawing.Point(603, 23);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(404, 86);
+            this.groupBox4.Size = new System.Drawing.Size(132, 81);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Agregar Categoria";
             // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(100, 16);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Nombre";
-            // 
             // tbNombreCategoria
             // 
-            this.tbNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNombreCategoria.Location = new System.Drawing.Point(75, 35);
+            this.tbNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNombreCategoria.Location = new System.Drawing.Point(17, 19);
             this.tbNombreCategoria.Name = "tbNombreCategoria";
             this.tbNombreCategoria.Size = new System.Drawing.Size(100, 20);
             this.tbNombreCategoria.TabIndex = 24;
@@ -589,9 +563,9 @@
             // btnAgregarCategoria
             // 
             this.btnAgregarCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(249, 32);
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(16, 45);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(108, 23);
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(105, 23);
             this.btnAgregarCategoria.TabIndex = 25;
             this.btnAgregarCategoria.Text = "Agregar categoria";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
@@ -610,7 +584,7 @@
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.tbEditNombreIngrediente);
             this.groupBox3.Controls.Add(this.btnActualizarIngrediente);
-            this.groupBox3.Location = new System.Drawing.Point(18, 468);
+            this.groupBox3.Location = new System.Drawing.Point(129, 418);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(524, 108);
             this.groupBox3.TabIndex = 5;
@@ -628,8 +602,8 @@
             // 
             // tbEditStockCritico
             // 
-            this.tbEditStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEditStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEditStockCritico.Location = new System.Drawing.Point(221, 30);
             this.tbEditStockCritico.Name = "tbEditStockCritico";
             this.tbEditStockCritico.Size = new System.Drawing.Size(96, 20);
@@ -669,8 +643,8 @@
             // 
             // lblEditCostoPor
             // 
-            this.lblEditCostoPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEditCostoPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditCostoPor.AutoSize = true;
             this.lblEditCostoPor.Location = new System.Drawing.Point(123, 16);
             this.lblEditCostoPor.Name = "lblEditCostoPor";
@@ -688,8 +662,8 @@
             // 
             // nudEditCostoIngrediente
             // 
-            this.nudEditCostoIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudEditCostoIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nudEditCostoIngrediente.DecimalPlaces = 2;
             this.nudEditCostoIngrediente.Location = new System.Drawing.Point(121, 30);
             this.nudEditCostoIngrediente.Maximum = new decimal(new int[] {
@@ -704,8 +678,8 @@
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(26, 16);
             this.label12.Name = "label12";
@@ -715,8 +689,8 @@
             // 
             // tbEditNombreIngrediente
             // 
-            this.tbEditNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEditNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEditNombreIngrediente.Location = new System.Drawing.Point(4, 30);
             this.tbEditNombreIngrediente.Name = "tbEditNombreIngrediente";
             this.tbEditNombreIngrediente.Size = new System.Drawing.Size(100, 20);
@@ -735,6 +709,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.cboMedida);
@@ -748,17 +723,18 @@
             this.groupBox2.Controls.Add(this.tbStockCritico);
             this.groupBox2.Controls.Add(this.tbNombreIngrediente);
             this.groupBox2.Controls.Add(this.btnAddIngrediente);
-            this.groupBox2.Location = new System.Drawing.Point(7, 32);
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(547, 430);
+            this.groupBox2.Size = new System.Drawing.Size(761, 397);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Ingrediente";
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox7.Controls.Add(this.tbFiltroIngre);
-            this.groupBox7.Location = new System.Drawing.Point(170, 57);
+            this.groupBox7.Location = new System.Drawing.Point(191, 81);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(184, 42);
             this.groupBox7.TabIndex = 19;
@@ -775,8 +751,9 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(494, 14);
+            this.label9.Location = new System.Drawing.Point(507, 38);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 21;
@@ -784,12 +761,13 @@
             // 
             // cboMedida
             // 
+            this.cboMedida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboMedida.FormattingEnabled = true;
             this.cboMedida.Items.AddRange(new object[] {
             "g",
             "u",
             "ml"});
-            this.cboMedida.Location = new System.Drawing.Point(487, 30);
+            this.cboMedida.Location = new System.Drawing.Point(500, 54);
             this.cboMedida.Name = "cboMedida";
             this.cboMedida.Size = new System.Drawing.Size(48, 21);
             this.cboMedida.TabIndex = 18;
@@ -797,8 +775,9 @@
             // 
             // label19
             // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(256, 14);
+            this.label19.Location = new System.Drawing.Point(277, 38);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(67, 13);
             this.label19.TabIndex = 20;
@@ -806,8 +785,9 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(380, 14);
+            this.label13.Location = new System.Drawing.Point(401, 38);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 13);
             this.label13.TabIndex = 20;
@@ -815,8 +795,9 @@
             // 
             // cboCategorias
             // 
+            this.cboCategorias.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboCategorias.FormattingEnabled = true;
-            this.cboCategorias.Location = new System.Drawing.Point(351, 30);
+            this.cboCategorias.Location = new System.Drawing.Point(359, 54);
             this.cboCategorias.Name = "cboCategorias";
             this.cboCategorias.Size = new System.Drawing.Size(121, 21);
             this.cboCategorias.TabIndex = 18;
@@ -826,8 +807,7 @@
             this.dgvIngredientes.AllowUserToAddRows = false;
             this.dgvIngredientes.AllowUserToResizeColumns = false;
             this.dgvIngredientes.AllowUserToResizeRows = false;
-            this.dgvIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvIngredientes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvIngredientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -838,22 +818,21 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(31, 105);
+            this.dgvIngredientes.Location = new System.Drawing.Point(21, 129);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngredientes.Size = new System.Drawing.Size(485, 292);
+            this.dgvIngredientes.Size = new System.Drawing.Size(725, 218);
             this.dgvIngredientes.StandardTab = true;
             this.dgvIngredientes.TabIndex = 20;
             this.dgvIngredientes.SelectionChanged += new System.EventHandler(this.dgvIngredientes_SelectionChanged);
             // 
             // tbStockCritico
             // 
-            this.tbStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbStockCritico.Location = new System.Drawing.Point(239, 30);
+            this.tbStockCritico.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbStockCritico.Location = new System.Drawing.Point(258, 54);
             this.tbStockCritico.Name = "tbStockCritico";
             this.tbStockCritico.Size = new System.Drawing.Size(96, 20);
             this.tbStockCritico.TabIndex = 17;
@@ -865,16 +844,47 @@
             // 
             this.errpNBebida.ContainerControl = this;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(784, 561);
+            this.tabControl1.TabIndex = 22;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(776, 535);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Bebidas";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(776, 535);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Ingredientes";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 702);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.tabControl1);
             this.Name = "frmProductos";
             this.Text = "Productos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBebidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).EndInit();
@@ -905,6 +915,9 @@
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errpNBebida)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -951,13 +964,11 @@
         private System.Windows.Forms.ComboBox cboCategorias;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox tbNombreCategoria;
         private System.Windows.Forms.Button btnAgregarCategoria;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cboEditCateg;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox tbCatBeb;
         private System.Windows.Forms.Button btnAgregarCatBebida;
         private System.Windows.Forms.Label label17;
@@ -977,5 +988,8 @@
         private System.Windows.Forms.TextBox tbFIltroBebida;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox tbFiltroIngre;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
