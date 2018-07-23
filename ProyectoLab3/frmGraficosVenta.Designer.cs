@@ -50,9 +50,9 @@
             this.lbSucursal = new System.Windows.Forms.ListBox();
             this.tbDirSuc = new System.Windows.Forms.TextBox();
             this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.btnGraficosPorEmp = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbHoy = new System.Windows.Forms.CheckBox();
+            this.btnGraficosPorEmp = new System.Windows.Forms.Button();
             this.cBMV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cPMV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartVntas)).BeginInit();
@@ -78,7 +78,7 @@
             series1.Name = "Series1";
             this.chartVntas.Series.Add(series1);
             this.chartVntas.Size = new System.Drawing.Size(291, 229);
-            this.chartVntas.TabIndex = 5;
+            this.chartVntas.TabIndex = 1;
             this.chartVntas.Text = "chart1";
             // 
             // cboMeses
@@ -87,7 +87,7 @@
             this.cboMeses.Location = new System.Drawing.Point(118, 58);
             this.cboMeses.Name = "cboMeses";
             this.cboMeses.Size = new System.Drawing.Size(121, 21);
-            this.cboMeses.TabIndex = 4;
+            this.cboMeses.TabIndex = 2;
             this.cboMeses.SelectedIndexChanged += new System.EventHandler(this.cboMeses_SelectedIndexChanged);
             // 
             // label1
@@ -113,7 +113,7 @@
             this.nudAnio.Location = new System.Drawing.Point(7, 59);
             this.nudAnio.Name = "nudAnio";
             this.nudAnio.Size = new System.Drawing.Size(60, 20);
-            this.nudAnio.TabIndex = 3;
+            this.nudAnio.TabIndex = 1;
             // 
             // chartCantidad
             // 
@@ -130,7 +130,7 @@
             series2.Name = "Series1";
             this.chartCantidad.Series.Add(series2);
             this.chartCantidad.Size = new System.Drawing.Size(321, 229);
-            this.chartCantidad.TabIndex = 6;
+            this.chartCantidad.TabIndex = 2;
             this.chartCantidad.Text = "449, 265";
             // 
             // label3
@@ -148,14 +148,14 @@
             this.lbSucursal.Location = new System.Drawing.Point(370, 21);
             this.lbSucursal.Name = "lbSucursal";
             this.lbSucursal.Size = new System.Drawing.Size(239, 69);
-            this.lbSucursal.TabIndex = 2;
+            this.lbSucursal.TabIndex = 4;
             // 
             // tbDirSuc
             // 
             this.tbDirSuc.Location = new System.Drawing.Point(90, 21);
             this.tbDirSuc.Name = "tbDirSuc";
             this.tbDirSuc.Size = new System.Drawing.Size(172, 20);
-            this.tbDirSuc.TabIndex = 1;
+            this.tbDirSuc.TabIndex = 0;
             // 
             // pnlAdmin
             // 
@@ -173,17 +173,6 @@
             this.pnlAdmin.Size = new System.Drawing.Size(638, 94);
             this.pnlAdmin.TabIndex = 10;
             // 
-            // btnGraficosPorEmp
-            // 
-            this.btnGraficosPorEmp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnGraficosPorEmp.Location = new System.Drawing.Point(697, 31);
-            this.btnGraficosPorEmp.Name = "btnGraficosPorEmp";
-            this.btnGraficosPorEmp.Size = new System.Drawing.Size(75, 42);
-            this.btnGraficosPorEmp.TabIndex = 14;
-            this.btnGraficosPorEmp.Text = "Ventas por Empleados";
-            this.btnGraficosPorEmp.UseVisualStyleBackColor = true;
-            this.btnGraficosPorEmp.Click += new System.EventHandler(this.btnGraficosPorEmp_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -199,10 +188,21 @@
             this.cbHoy.Location = new System.Drawing.Point(264, 60);
             this.cbHoy.Name = "cbHoy";
             this.cbHoy.Size = new System.Drawing.Size(67, 17);
-            this.cbHoy.TabIndex = 11;
+            this.cbHoy.TabIndex = 3;
             this.cbHoy.Text = "Sólo hoy";
             this.cbHoy.UseVisualStyleBackColor = true;
             this.cbHoy.CheckedChanged += new System.EventHandler(this.cboHoy_CheckedChanged);
+            // 
+            // btnGraficosPorEmp
+            // 
+            this.btnGraficosPorEmp.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnGraficosPorEmp.Location = new System.Drawing.Point(697, 31);
+            this.btnGraficosPorEmp.Name = "btnGraficosPorEmp";
+            this.btnGraficosPorEmp.Size = new System.Drawing.Size(75, 42);
+            this.btnGraficosPorEmp.TabIndex = 0;
+            this.btnGraficosPorEmp.Text = "Ventas por Empleados";
+            this.btnGraficosPorEmp.UseVisualStyleBackColor = true;
+            this.btnGraficosPorEmp.Click += new System.EventHandler(this.btnGraficosPorEmp_Click);
             // 
             // cBMV
             // 
@@ -219,7 +219,7 @@
             series3.Name = "Series1";
             this.cBMV.Series.Add(series3);
             this.cBMV.Size = new System.Drawing.Size(291, 229);
-            this.cBMV.TabIndex = 12;
+            this.cBMV.TabIndex = 3;
             this.cBMV.Text = "chart1";
             // 
             // cPMV
@@ -237,7 +237,7 @@
             series4.Name = "Series1";
             this.cPMV.Series.Add(series4);
             this.cPMV.Size = new System.Drawing.Size(321, 229);
-            this.cPMV.TabIndex = 13;
+            this.cPMV.TabIndex = 4;
             this.cPMV.Text = "chart2";
             // 
             // frmGraficos

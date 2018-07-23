@@ -50,18 +50,18 @@
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.btnAddSucursal = new System.Windows.Forms.Button();
             this.pnlConfig = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dgvManagers = new Componentes.GrillaFormatead();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbFiltroManager = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbNombreEdit = new System.Windows.Forms.TextBox();
             this.lblTel = new System.Windows.Forms.Label();
             this.lblDir = new System.Windows.Forms.Label();
+            this.btnEstado = new System.Windows.Forms.Button();
             this.tbDir = new System.Windows.Forms.TextBox();
             this.tbTel = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEstado = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgvManagers = new Componentes.GrillaFormatead();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbFiltroManager = new System.Windows.Forms.TextBox();
             this.gpProv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincia)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -319,6 +319,73 @@
             this.pnlConfig.TabIndex = 3;
             this.pnlConfig.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(471, 87);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Nombre";
+            // 
+            // tbNombreEdit
+            // 
+            this.tbNombreEdit.Location = new System.Drawing.Point(409, 103);
+            this.tbNombreEdit.Name = "tbNombreEdit";
+            this.tbNombreEdit.Size = new System.Drawing.Size(169, 20);
+            this.tbNombreEdit.TabIndex = 2;
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Location = new System.Drawing.Point(469, 130);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(49, 13);
+            this.lblTel.TabIndex = 19;
+            this.lblTel.Text = "Telefono";
+            // 
+            // lblDir
+            // 
+            this.lblDir.AutoSize = true;
+            this.lblDir.Location = new System.Drawing.Point(642, 87);
+            this.lblDir.Name = "lblDir";
+            this.lblDir.Size = new System.Drawing.Size(52, 13);
+            this.lblDir.TabIndex = 18;
+            this.lblDir.Text = "Direccion";
+            // 
+            // btnEstado
+            // 
+            this.btnEstado.Location = new System.Drawing.Point(627, 3);
+            this.btnEstado.Name = "btnEstado";
+            this.btnEstado.Size = new System.Drawing.Size(139, 34);
+            this.btnEstado.TabIndex = 6;
+            this.btnEstado.Text = "????";
+            this.btnEstado.UseVisualStyleBackColor = true;
+            // 
+            // tbDir
+            // 
+            this.tbDir.Location = new System.Drawing.Point(584, 103);
+            this.tbDir.Name = "tbDir";
+            this.tbDir.Size = new System.Drawing.Size(169, 20);
+            this.tbDir.TabIndex = 3;
+            // 
+            // tbTel
+            // 
+            this.tbTel.Location = new System.Drawing.Point(409, 146);
+            this.tbTel.MaxLength = 10;
+            this.tbTel.Name = "tbTel";
+            this.tbTel.Size = new System.Drawing.Size(169, 20);
+            this.tbTel.TabIndex = 4;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(584, 137);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(173, 37);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar Cambios";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -370,73 +437,6 @@
             this.tbFiltroManager.Size = new System.Drawing.Size(200, 20);
             this.tbFiltroManager.TabIndex = 0;
             this.tbFiltroManager.TextChanged += new System.EventHandler(this.tbFiltroManager_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(471, 87);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Nombre";
-            // 
-            // tbNombreEdit
-            // 
-            this.tbNombreEdit.Location = new System.Drawing.Point(409, 103);
-            this.tbNombreEdit.Name = "tbNombreEdit";
-            this.tbNombreEdit.Size = new System.Drawing.Size(169, 20);
-            this.tbNombreEdit.TabIndex = 13;
-            // 
-            // lblTel
-            // 
-            this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(469, 130);
-            this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(49, 13);
-            this.lblTel.TabIndex = 19;
-            this.lblTel.Text = "Telefono";
-            // 
-            // lblDir
-            // 
-            this.lblDir.AutoSize = true;
-            this.lblDir.Location = new System.Drawing.Point(642, 87);
-            this.lblDir.Name = "lblDir";
-            this.lblDir.Size = new System.Drawing.Size(52, 13);
-            this.lblDir.TabIndex = 18;
-            this.lblDir.Text = "Direccion";
-            // 
-            // tbDir
-            // 
-            this.tbDir.Location = new System.Drawing.Point(584, 103);
-            this.tbDir.Name = "tbDir";
-            this.tbDir.Size = new System.Drawing.Size(169, 20);
-            this.tbDir.TabIndex = 14;
-            // 
-            // tbTel
-            // 
-            this.tbTel.Location = new System.Drawing.Point(409, 146);
-            this.tbTel.MaxLength = 10;
-            this.tbTel.Name = "tbTel";
-            this.tbTel.Size = new System.Drawing.Size(169, 20);
-            this.tbTel.TabIndex = 15;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(584, 137);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(173, 37);
-            this.btnGuardar.TabIndex = 16;
-            this.btnGuardar.Text = "Guardar Cambios";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnEstado
-            // 
-            this.btnEstado.Location = new System.Drawing.Point(627, 3);
-            this.btnEstado.Name = "btnEstado";
-            this.btnEstado.Size = new System.Drawing.Size(139, 34);
-            this.btnEstado.TabIndex = 17;
-            this.btnEstado.Text = "????";
-            this.btnEstado.UseVisualStyleBackColor = true;
             // 
             // frmSucursales
             // 

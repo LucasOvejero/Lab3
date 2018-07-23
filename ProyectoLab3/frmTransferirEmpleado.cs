@@ -25,6 +25,7 @@ namespace ProyectoLab3
         {
             dgvSucursales.DataSource = clsSucursal.seleccionarTodasLasSucursales();
             formatear();
+            tbFiltroSucursal.Focus();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)

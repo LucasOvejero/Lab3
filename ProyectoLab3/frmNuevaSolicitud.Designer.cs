@@ -73,7 +73,7 @@ namespace ProyectoLab3
             this.dgvSucursales.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSucursales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSucursales.Size = new System.Drawing.Size(200, 318);
-            this.dgvSucursales.TabIndex = 1;
+            this.dgvSucursales.TabIndex = 2;
             this.dgvSucursales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSucursales_CellContentClick);
             // 
             // tbBusquedaSucursal
@@ -143,7 +143,7 @@ namespace ProyectoLab3
             this.tbBusquedaIngrediente.Location = new System.Drawing.Point(218, 43);
             this.tbBusquedaIngrediente.Name = "tbBusquedaIngrediente";
             this.tbBusquedaIngrediente.Size = new System.Drawing.Size(141, 20);
-            this.tbBusquedaIngrediente.TabIndex = 2;
+            this.tbBusquedaIngrediente.TabIndex = 1;
             this.tbBusquedaIngrediente.TextChanged += new System.EventHandler(this.tbBusquedaIngrediente_TextChanged);
             // 
             // label2

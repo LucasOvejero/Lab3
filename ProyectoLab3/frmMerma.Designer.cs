@@ -94,7 +94,7 @@
             this.lbIngBeb.Location = new System.Drawing.Point(248, 58);
             this.lbIngBeb.Name = "lbIngBeb";
             this.lbIngBeb.Size = new System.Drawing.Size(120, 95);
-            this.lbIngBeb.TabIndex = 2;
+            this.lbIngBeb.TabIndex = 3;
             this.lbIngBeb.SelectedIndexChanged += new System.EventHandler(this.lbIngBeb_SelectedIndexChanged);
             // 
             // tbFiltro
@@ -103,7 +103,7 @@
             this.tbFiltro.Location = new System.Drawing.Point(259, 28);
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(100, 20);
-            this.tbFiltro.TabIndex = 3;
+            this.tbFiltro.TabIndex = 2;
             this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged);
             // 
             // nupCantidad
@@ -142,7 +142,7 @@
             this.tbFiltroNombre.Location = new System.Drawing.Point(484, 28);
             this.tbFiltroNombre.Name = "tbFiltroNombre";
             this.tbFiltroNombre.Size = new System.Drawing.Size(100, 20);
-            this.tbFiltroNombre.TabIndex = 6;
+            this.tbFiltroNombre.TabIndex = 5;
             this.tbFiltroNombre.TextChanged += new System.EventHandler(this.tbFiltroNombre_TextChanged);
             // 
             // lbEmpleado
@@ -152,7 +152,7 @@
             this.lbEmpleado.Location = new System.Drawing.Point(474, 58);
             this.lbEmpleado.Name = "lbEmpleado";
             this.lbEmpleado.Size = new System.Drawing.Size(120, 95);
-            this.lbEmpleado.TabIndex = 7;
+            this.lbEmpleado.TabIndex = 6;
             this.lbEmpleado.SelectedIndexChanged += new System.EventHandler(this.lbEmpleado_SelectedIndexChanged);
             // 
             // tbMotivo
@@ -162,7 +162,7 @@
             this.tbMotivo.Multiline = true;
             this.tbMotivo.Name = "tbMotivo";
             this.tbMotivo.Size = new System.Drawing.Size(288, 44);
-            this.tbMotivo.TabIndex = 8;
+            this.tbMotivo.TabIndex = 7;
             // 
             // btnIngresar
             // 
@@ -171,7 +171,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(504, 175);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(122, 46);
-            this.btnIngresar.TabIndex = 9;
+            this.btnIngresar.TabIndex = 8;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -262,7 +262,7 @@
             this.tbFiltroMerma.Location = new System.Drawing.Point(450, 258);
             this.tbFiltroMerma.Name = "tbFiltroMerma";
             this.tbFiltroMerma.Size = new System.Drawing.Size(200, 20);
-            this.tbFiltroMerma.TabIndex = 16;
+            this.tbFiltroMerma.TabIndex = 9;
             this.tbFiltroMerma.TextChanged += new System.EventHandler(this.tbFiltroMerma_TextChanged);
             // 
             // label6
@@ -306,7 +306,7 @@
             this.dgvSol.RowHeadersVisible = false;
             this.dgvSol.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSol.Size = new System.Drawing.Size(214, 216);
-            this.dgvSol.TabIndex = 20;
+            this.dgvSol.TabIndex = 0;
             // 
             // label7
             // 

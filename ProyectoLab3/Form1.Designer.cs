@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnDeposito = new System.Windows.Forms.Button();
             this.btnVenta = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnNewSolicitudes = new System.Windows.Forms.Button();
             this.pnlVendedor = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlCritico = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.dgvCritico = new Componentes.GrillaFormatead();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbVentas = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbDeposito = new System.Windows.Forms.GroupBox();
             this.btnHistorial = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.gbSucursal = new System.Windows.Forms.GroupBox();
             this.btnGraficosVentaGeneral = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
@@ -130,18 +130,6 @@
             this.pnlVendedor.Size = new System.Drawing.Size(416, 561);
             this.pnlVendedor.TabIndex = 1;
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLogout.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogout.Location = new System.Drawing.Point(255, 519);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(89, 37);
-            this.btnLogout.TabIndex = 16;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // pnlCritico
             // 
             this.pnlCritico.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -150,7 +138,31 @@
             this.pnlCritico.Location = new System.Drawing.Point(3, 272);
             this.pnlCritico.Name = "pnlCritico";
             this.pnlCritico.Size = new System.Drawing.Size(398, 289);
-            this.pnlCritico.TabIndex = 2;
+            this.pnlCritico.TabIndex = 0;
+            // 
+            // dgvCritico
+            // 
+            this.dgvCritico.AllowUserToAddRows = false;
+            this.dgvCritico.AllowUserToResizeColumns = false;
+            this.dgvCritico.AllowUserToResizeRows = false;
+            this.dgvCritico.Anchor = System.Windows.Forms.AnchorStyles.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCritico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCritico.Location = new System.Drawing.Point(27, 46);
+            this.dgvCritico.MultiSelect = false;
+            this.dgvCritico.Name = "dgvCritico";
+            this.dgvCritico.ReadOnly = true;
+            this.dgvCritico.RowHeadersVisible = false;
+            this.dgvCritico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCritico.Size = new System.Drawing.Size(333, 229);
+            this.dgvCritico.TabIndex = 0;
             // 
             // label2
             // 
@@ -162,41 +174,6 @@
             this.label2.Size = new System.Drawing.Size(333, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "Atencion, los siguientes productos estan en stock critico:\r\n";
-            // 
-            // dgvCritico
-            // 
-            this.dgvCritico.AllowUserToAddRows = false;
-            this.dgvCritico.AllowUserToResizeColumns = false;
-            this.dgvCritico.AllowUserToResizeRows = false;
-            this.dgvCritico.Anchor = System.Windows.Forms.AnchorStyles.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCritico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCritico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCritico.Location = new System.Drawing.Point(27, 46);
-            this.dgvCritico.MultiSelect = false;
-            this.dgvCritico.Name = "dgvCritico";
-            this.dgvCritico.ReadOnly = true;
-            this.dgvCritico.RowHeadersVisible = false;
-            this.dgvCritico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCritico.Size = new System.Drawing.Size(333, 229);
-            this.dgvCritico.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 275);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(405, 25);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Sin Ningun Stock en cantidad Critica.";
             // 
             // gbVentas
             // 
@@ -210,6 +187,17 @@
             this.gbVentas.TabIndex = 1;
             this.gbVentas.TabStop = false;
             this.gbVentas.Text = "Ventas";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(405, 25);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Sin Ningun Stock en cantidad Critica.";
             // 
             // gbDeposito
             // 
@@ -235,6 +223,18 @@
             this.btnHistorial.Text = "Historial de Solicitudes";
             this.btnHistorial.UseVisualStyleBackColor = true;
             this.btnHistorial.Click += new System.EventHandler(this.BtnHistorial_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnLogout.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnLogout.Location = new System.Drawing.Point(255, 519);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(89, 37);
+            this.btnLogout.TabIndex = 16;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // gbSucursal
             // 

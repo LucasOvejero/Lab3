@@ -58,7 +58,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(12, 44);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoria.TabIndex = 1;
+            this.cboCategoria.TabIndex = 0;
             this.cboCategoria.SelectedValueChanged += new System.EventHandler(this.cboCategoria_SelectedValueChanged);
             // 
             // label2
@@ -79,14 +79,14 @@
             this.lbIngredientes.Name = "lbIngredientes";
             this.lbIngredientes.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lbIngredientes.Size = new System.Drawing.Size(120, 212);
-            this.lbIngredientes.TabIndex = 2;
+            this.lbIngredientes.TabIndex = 1;
             // 
             // btnAgregarIngredientes
             // 
             this.btnAgregarIngredientes.Location = new System.Drawing.Point(142, 148);
             this.btnAgregarIngredientes.Name = "btnAgregarIngredientes";
             this.btnAgregarIngredientes.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarIngredientes.TabIndex = 3;
+            this.btnAgregarIngredientes.TabIndex = 2;
             this.btnAgregarIngredientes.Text = ">>>";
             this.btnAgregarIngredientes.UseVisualStyleBackColor = true;
             this.btnAgregarIngredientes.Click += new System.EventHandler(this.btnAgregarIngredientes_Click);
@@ -96,7 +96,7 @@
             this.btnQuitarIngredientes.Location = new System.Drawing.Point(142, 204);
             this.btnQuitarIngredientes.Name = "btnQuitarIngredientes";
             this.btnQuitarIngredientes.Size = new System.Drawing.Size(75, 23);
-            this.btnQuitarIngredientes.TabIndex = 5;
+            this.btnQuitarIngredientes.TabIndex = 3;
             this.btnQuitarIngredientes.Text = "<<<";
             this.btnQuitarIngredientes.UseVisualStyleBackColor = true;
             this.btnQuitarIngredientes.Click += new System.EventHandler(this.btnQuitarIngredientes_Click);
@@ -121,14 +121,14 @@
             this.pnlIngredientes.Location = new System.Drawing.Point(381, 28);
             this.pnlIngredientes.Name = "pnlIngredientes";
             this.pnlIngredientes.Size = new System.Drawing.Size(391, 297);
-            this.pnlIngredientes.TabIndex = 6;
+            this.pnlIngredientes.TabIndex = 5;
             // 
             // btnSiguiente
             // 
             this.btnSiguiente.Location = new System.Drawing.Point(526, 331);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(109, 56);
-            this.btnSiguiente.TabIndex = 7;
+            this.btnSiguiente.TabIndex = 6;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);

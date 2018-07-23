@@ -154,18 +154,20 @@
             // Bebidas
             // 
             this.Bebidas.AutoSize = true;
-            this.Bebidas.Location = new System.Drawing.Point(232, 29);
+            this.Bebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bebidas.Location = new System.Drawing.Point(223, 22);
             this.Bebidas.Name = "Bebidas";
-            this.Bebidas.Size = new System.Drawing.Size(45, 13);
+            this.Bebidas.Size = new System.Drawing.Size(67, 20);
             this.Bebidas.TabIndex = 8;
             this.Bebidas.Text = "Bebidas";
             // 
             // Ingredientes
             // 
             this.Ingredientes.AutoSize = true;
-            this.Ingredientes.Location = new System.Drawing.Point(563, 29);
+            this.Ingredientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Ingredientes.Location = new System.Drawing.Point(535, 22);
             this.Ingredientes.Name = "Ingredientes";
-            this.Ingredientes.Size = new System.Drawing.Size(65, 13);
+            this.Ingredientes.Size = new System.Drawing.Size(98, 20);
             this.Ingredientes.TabIndex = 9;
             this.Ingredientes.Text = "Ingredientes";
             // 

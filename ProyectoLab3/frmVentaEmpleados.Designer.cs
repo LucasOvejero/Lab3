@@ -48,7 +48,7 @@
             // 
             // mcFecha
             // 
-            this.mcFecha.Location = new System.Drawing.Point(31, 21);
+            this.mcFecha.Location = new System.Drawing.Point(9, 18);
             this.mcFecha.MaxSelectionCount = 1;
             this.mcFecha.Name = "mcFecha";
             this.mcFecha.TabIndex = 0;
@@ -68,7 +68,7 @@
             series1.Name = "Series1";
             this.chartVentas.Series.Add(series1);
             this.chartVentas.Size = new System.Drawing.Size(721, 300);
-            this.chartVentas.TabIndex = 3;
+            this.chartVentas.TabIndex = 5;
             this.chartVentas.Text = "chart1";
             // 
             // tbFiltroSuc
@@ -77,7 +77,7 @@
             this.tbFiltroSuc.Location = new System.Drawing.Point(241, 37);
             this.tbFiltroSuc.Name = "tbFiltroSuc";
             this.tbFiltroSuc.Size = new System.Drawing.Size(100, 20);
-            this.tbFiltroSuc.TabIndex = 4;
+            this.tbFiltroSuc.TabIndex = 1;
             this.tbFiltroSuc.TextChanged += new System.EventHandler(this.tbFiltroSuc_TextChanged);
             // 
             // tbFiltroEmp
@@ -86,7 +86,7 @@
             this.tbFiltroEmp.Location = new System.Drawing.Point(568, 37);
             this.tbFiltroEmp.Name = "tbFiltroEmp";
             this.tbFiltroEmp.Size = new System.Drawing.Size(153, 20);
-            this.tbFiltroEmp.TabIndex = 5;
+            this.tbFiltroEmp.TabIndex = 3;
             this.tbFiltroEmp.TextChanged += new System.EventHandler(this.tbFiltroEmp_TextChanged);
             // 
             // label1
@@ -125,14 +125,14 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(522, 63);
+            this.dgvEmpleados.Location = new System.Drawing.Point(546, 63);
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.RowHeadersVisible = false;
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.Size = new System.Drawing.Size(226, 150);
-            this.dgvEmpleados.TabIndex = 8;
+            this.dgvEmpleados.TabIndex = 4;
             this.dgvEmpleados.SelectionChanged += new System.EventHandler(this.dgvEmpleados_SelectionChanged);
             // 
             // dgvSucursal
@@ -150,14 +150,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSucursal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSucursal.Location = new System.Drawing.Point(302, 63);
+            this.dgvSucursal.Location = new System.Drawing.Point(213, 63);
             this.dgvSucursal.MultiSelect = false;
             this.dgvSucursal.Name = "dgvSucursal";
             this.dgvSucursal.ReadOnly = true;
             this.dgvSucursal.RowHeadersVisible = false;
             this.dgvSucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSucursal.Size = new System.Drawing.Size(383, 150);
-            this.dgvSucursal.TabIndex = 9;
+            this.dgvSucursal.Size = new System.Drawing.Size(327, 150);
+            this.dgvSucursal.TabIndex = 2;
             this.dgvSucursal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaFormatead1_CellContentClick);
             this.dgvSucursal.SelectionChanged += new System.EventHandler(this.dgvSucursal_SelectionChanged);
             // 

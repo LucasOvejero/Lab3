@@ -74,7 +74,7 @@
             this.dgvDetalle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalle.Size = new System.Drawing.Size(303, 500);
-            this.dgvDetalle.TabIndex = 0;
+            this.dgvDetalle.TabIndex = 4;
             this.dgvDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaFormatead1_CellContentClick);
             // 
             // lblHistorial
@@ -108,7 +108,7 @@
             this.dgvHistorial.RowHeadersVisible = false;
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.Size = new System.Drawing.Size(318, 500);
-            this.dgvHistorial.TabIndex = 0;
+            this.dgvHistorial.TabIndex = 3;
             this.dgvHistorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaFormatead1_CellContentClick);
             this.dgvHistorial.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHistorial_RowEnter);
             this.dgvHistorial.Sorted += new System.EventHandler(this.DgvHistorial_Sorted);
@@ -133,7 +133,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 160);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(122, 94);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 1;
             // 
             // rbAmbas
             // 
@@ -254,7 +254,7 @@
             this.tbFiltro.Location = new System.Drawing.Point(12, 95);
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(122, 20);
-            this.tbFiltro.TabIndex = 3;
+            this.tbFiltro.TabIndex = 0;
             this.tbFiltro.TextChanged += new System.EventHandler(this.tbFiltro_TextChanged_1);
             // 
             // frmHistorial

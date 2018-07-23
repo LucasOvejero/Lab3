@@ -39,6 +39,7 @@
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.pnlNuevo = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbPass = new System.Windows.Forms.TextBox();
@@ -70,7 +71,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tbMotivo = new System.Windows.Forms.TextBox();
             this.btnTransferencias = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.pnlNuevo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -146,7 +146,7 @@
             this.cbTipo.Location = new System.Drawing.Point(11, 478);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(141, 21);
-            this.cbTipo.TabIndex = 6;
+            this.cbTipo.TabIndex = 8;
             // 
             // lblTipo
             // 
@@ -184,6 +184,16 @@
             this.pnlNuevo.Size = new System.Drawing.Size(342, 523);
             this.pnlNuevo.TabIndex = 0;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(73, 278);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(128, 16);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Nuevo Empleado";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -209,7 +219,7 @@
             this.tbPass.Name = "tbPass";
             this.tbPass.PasswordChar = '*';
             this.tbPass.Size = new System.Drawing.Size(141, 20);
-            this.tbPass.TabIndex = 8;
+            this.tbPass.TabIndex = 7;
             // 
             // tbUser
             // 
@@ -217,7 +227,7 @@
             this.tbUser.MaxLength = 10;
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(121, 20);
-            this.tbUser.TabIndex = 7;
+            this.tbUser.TabIndex = 6;
             // 
             // dgvSucursales
             // 
@@ -499,20 +509,10 @@
             this.btnTransferencias.Location = new System.Drawing.Point(442, 524);
             this.btnTransferencias.Name = "btnTransferencias";
             this.btnTransferencias.Size = new System.Drawing.Size(262, 26);
-            this.btnTransferencias.TabIndex = 11;
+            this.btnTransferencias.TabIndex = 10;
             this.btnTransferencias.Text = "Historial de Transferencias";
             this.btnTransferencias.UseVisualStyleBackColor = true;
             this.btnTransferencias.Click += new System.EventHandler(this.btnTransferencias_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(73, 278);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(128, 16);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Nuevo Empleado";
             // 
             // frmEmpleados
             // 

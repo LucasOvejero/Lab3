@@ -57,7 +57,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(311, 9);
+            this.label2.Location = new System.Drawing.Point(310, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 1;
@@ -84,8 +84,8 @@
             this.dgvPlatos.ReadOnly = true;
             this.dgvPlatos.RowHeadersVisible = false;
             this.dgvPlatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlatos.Size = new System.Drawing.Size(251, 393);
-            this.dgvPlatos.TabIndex = 2;
+            this.dgvPlatos.Size = new System.Drawing.Size(250, 393);
+            this.dgvPlatos.TabIndex = 1;
             this.dgvPlatos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPlatos_CellFormatting);
             // 
             // dgvIngredientes
@@ -103,14 +103,14 @@
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngredientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvIngredientes.Location = new System.Drawing.Point(260, 79);
+            this.dgvIngredientes.Location = new System.Drawing.Point(259, 79);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIngredientes.Size = new System.Drawing.Size(168, 393);
-            this.dgvIngredientes.TabIndex = 3;
+            this.dgvIngredientes.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
@@ -120,7 +120,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.62877F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.37123F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 350F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 351F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvIngredientes, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
@@ -141,10 +141,10 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEditar.Location = new System.Drawing.Point(535, 235);
+            this.btnEditar.Location = new System.Drawing.Point(534, 235);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(143, 81);
-            this.btnEditar.TabIndex = 4;
+            this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar seleccionado";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
@@ -165,7 +165,7 @@
             this.tbNombre.Location = new System.Drawing.Point(78, 54);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
-            this.tbNombre.TabIndex = 6;
+            this.tbNombre.TabIndex = 0;
             this.tbNombre.TextChanged += new System.EventHandler(this.TbNombre_TextChanged);
             // 
             // FrmEditPlato

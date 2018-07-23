@@ -167,7 +167,7 @@
             this.dgvDetalle.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalle.Size = new System.Drawing.Size(304, 428);
-            this.dgvDetalle.TabIndex = 4;
+            this.dgvDetalle.TabIndex = 2;
             // 
             // lblDetalles
             // 
@@ -185,7 +185,7 @@
             this.btnAccept.Location = new System.Drawing.Point(27, 3);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(90, 48);
-            this.btnAccept.TabIndex = 6;
+            this.btnAccept.TabIndex = 0;
             this.btnAccept.Text = "ENVIAR";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.BtnAccept_Click);
@@ -196,7 +196,7 @@
             this.btnCancel.Location = new System.Drawing.Point(177, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(82, 48);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "RECHAZAR";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -216,7 +216,7 @@
             this.btnEnvios.Location = new System.Drawing.Point(116, 516);
             this.btnEnvios.Name = "btnEnvios";
             this.btnEnvios.Size = new System.Drawing.Size(118, 48);
-            this.btnEnvios.TabIndex = 6;
+            this.btnEnvios.TabIndex = 3;
             this.btnEnvios.Text = "Reportar Solicitud";
             this.btnEnvios.UseVisualStyleBackColor = true;
             this.btnEnvios.Click += new System.EventHandler(this.btnEnvios_Click);

@@ -54,6 +54,9 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnAgregarCatBebida = new System.Windows.Forms.Button();
+            this.tbCatBeb = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tbFIltroBebida = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -65,13 +68,7 @@
             this.tbNombreIngrediente = new System.Windows.Forms.TextBox();
             this.btnAddIngrediente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.tbCatBeb = new System.Windows.Forms.TextBox();
-            this.btnAgregarCatBebida = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tbNombreCategoria = new System.Windows.Forms.TextBox();
-            this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
             this.tbEditStockCritico = new System.Windows.Forms.TextBox();
@@ -85,6 +82,9 @@
             this.tbEditNombreIngrediente = new System.Windows.Forms.TextBox();
             this.btnActualizarIngrediente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tbNombreCategoria = new System.Windows.Forms.TextBox();
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tbFiltroIngre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -106,16 +106,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEditCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditLitros)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoPorKilo)).BeginInit();
             this.panel1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditCostoIngrediente)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errpNBebida)).BeginInit();
@@ -247,7 +247,7 @@
             this.cboEditCatBebida.Location = new System.Drawing.Point(477, 41);
             this.cboEditCatBebida.Name = "cboEditCatBebida";
             this.cboEditCatBebida.Size = new System.Drawing.Size(121, 21);
-            this.cboEditCatBebida.TabIndex = 12;
+            this.cboEditCatBebida.TabIndex = 4;
             // 
             // nudEditPrecio
             // 
@@ -260,7 +260,7 @@
             0});
             this.nudEditPrecio.Name = "nudEditPrecio";
             this.nudEditPrecio.Size = new System.Drawing.Size(66, 20);
-            this.nudEditPrecio.TabIndex = 8;
+            this.nudEditPrecio.TabIndex = 1;
             // 
             // nudEditCosto
             // 
@@ -273,7 +273,7 @@
             0});
             this.nudEditCosto.Name = "nudEditCosto";
             this.nudEditCosto.Size = new System.Drawing.Size(70, 20);
-            this.nudEditCosto.TabIndex = 9;
+            this.nudEditCosto.TabIndex = 2;
             // 
             // label5
             // 
@@ -317,21 +317,21 @@
             this.nudEditLitros.Location = new System.Drawing.Point(380, 42);
             this.nudEditLitros.Name = "nudEditLitros";
             this.nudEditLitros.Size = new System.Drawing.Size(61, 20);
-            this.nudEditLitros.TabIndex = 10;
+            this.nudEditLitros.TabIndex = 3;
             // 
             // tbEditName
             // 
             this.tbEditName.Location = new System.Drawing.Point(35, 42);
             this.tbEditName.Name = "tbEditName";
             this.tbEditName.Size = new System.Drawing.Size(100, 20);
-            this.tbEditName.TabIndex = 7;
+            this.tbEditName.TabIndex = 0;
             // 
             // btnBorrar
             // 
             this.btnBorrar.Location = new System.Drawing.Point(616, 69);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(101, 23);
-            this.btnBorrar.TabIndex = 13;
+            this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
@@ -341,7 +341,7 @@
             this.btnEditar.Location = new System.Drawing.Point(497, 71);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(101, 23);
-            this.btnEditar.TabIndex = 12;
+            this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Aceptar edicion";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -368,6 +368,37 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Bebida";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btnAgregarCatBebida);
+            this.groupBox5.Controls.Add(this.tbCatBeb);
+            this.groupBox5.Location = new System.Drawing.Point(604, 14);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(132, 84);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Agregar Categoria";
+            // 
+            // btnAgregarCatBebida
+            // 
+            this.btnAgregarCatBebida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarCatBebida.Location = new System.Drawing.Point(8, 45);
+            this.btnAgregarCatBebida.Name = "btnAgregarCatBebida";
+            this.btnAgregarCatBebida.Size = new System.Drawing.Size(120, 23);
+            this.btnAgregarCatBebida.TabIndex = 1;
+            this.btnAgregarCatBebida.Text = "Agregar categoria";
+            this.btnAgregarCatBebida.UseVisualStyleBackColor = true;
+            this.btnAgregarCatBebida.Click += new System.EventHandler(this.btnAgregarCatBebida_Click);
+            // 
+            // tbCatBeb
+            // 
+            this.tbCatBeb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCatBeb.Location = new System.Drawing.Point(16, 19);
+            this.tbCatBeb.Name = "tbCatBeb";
+            this.tbCatBeb.Size = new System.Drawing.Size(100, 20);
+            this.tbCatBeb.TabIndex = 0;
             // 
             // groupBox6
             // 
@@ -402,7 +433,7 @@
             this.cboCatAddBebida.Location = new System.Drawing.Point(374, 30);
             this.cboCatAddBebida.Name = "cboCatAddBebida";
             this.cboCatAddBebida.Size = new System.Drawing.Size(121, 21);
-            this.cboCatAddBebida.TabIndex = 5;
+            this.cboCatAddBebida.TabIndex = 4;
             // 
             // dgvBebidas
             // 
@@ -496,37 +527,6 @@
             this.panel1.Size = new System.Drawing.Size(770, 529);
             this.panel1.TabIndex = 20;
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.btnAgregarCatBebida);
-            this.groupBox5.Controls.Add(this.tbCatBeb);
-            this.groupBox5.Location = new System.Drawing.Point(604, 14);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(132, 84);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Agregar Categoria";
-            // 
-            // tbCatBeb
-            // 
-            this.tbCatBeb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCatBeb.Location = new System.Drawing.Point(16, 19);
-            this.tbCatBeb.Name = "tbCatBeb";
-            this.tbCatBeb.Size = new System.Drawing.Size(100, 20);
-            this.tbCatBeb.TabIndex = 14;
-            // 
-            // btnAgregarCatBebida
-            // 
-            this.btnAgregarCatBebida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarCatBebida.Location = new System.Drawing.Point(8, 45);
-            this.btnAgregarCatBebida.Name = "btnAgregarCatBebida";
-            this.btnAgregarCatBebida.Size = new System.Drawing.Size(120, 23);
-            this.btnAgregarCatBebida.TabIndex = 15;
-            this.btnAgregarCatBebida.Text = "Agregar categoria";
-            this.btnAgregarCatBebida.UseVisualStyleBackColor = true;
-            this.btnAgregarCatBebida.Click += new System.EventHandler(this.btnAgregarCatBebida_Click);
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -539,37 +539,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1019, 1030);
             this.panel2.TabIndex = 21;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.tbNombreCategoria);
-            this.groupBox4.Controls.Add(this.btnAgregarCategoria);
-            this.groupBox4.Location = new System.Drawing.Point(603, 23);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(132, 81);
-            this.groupBox4.TabIndex = 6;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Agregar Categoria";
-            // 
-            // tbNombreCategoria
-            // 
-            this.tbNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNombreCategoria.Location = new System.Drawing.Point(17, 19);
-            this.tbNombreCategoria.Name = "tbNombreCategoria";
-            this.tbNombreCategoria.Size = new System.Drawing.Size(100, 20);
-            this.tbNombreCategoria.TabIndex = 24;
-            // 
-            // btnAgregarCategoria
-            // 
-            this.btnAgregarCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(16, 45);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(105, 23);
-            this.btnAgregarCategoria.TabIndex = 25;
-            this.btnAgregarCategoria.Text = "Agregar categoria";
-            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click_1);
             // 
             // groupBox3
             // 
@@ -729,6 +698,37 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Ingrediente";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.tbNombreCategoria);
+            this.groupBox4.Controls.Add(this.btnAgregarCategoria);
+            this.groupBox4.Location = new System.Drawing.Point(603, 23);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(132, 81);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Agregar Categoria";
+            // 
+            // tbNombreCategoria
+            // 
+            this.tbNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNombreCategoria.Location = new System.Drawing.Point(17, 19);
+            this.tbNombreCategoria.Name = "tbNombreCategoria";
+            this.tbNombreCategoria.Size = new System.Drawing.Size(100, 20);
+            this.tbNombreCategoria.TabIndex = 24;
+            // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(16, 45);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(105, 23);
+            this.btnAgregarCategoria.TabIndex = 25;
+            this.btnAgregarCategoria.Text = "Agregar categoria";
+            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click_1);
             // 
             // groupBox7
             // 
@@ -896,21 +896,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEditLitros)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoPorKilo)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditCostoIngrediente)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();

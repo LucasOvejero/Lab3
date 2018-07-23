@@ -36,15 +36,11 @@
             this.tbIngredientes = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnActB = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnActI = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnActB = new System.Windows.Forms.Button();
+            this.btnActI = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,14 +59,14 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(13, 123);
+            this.dgvBebidas.Location = new System.Drawing.Point(13, 85);
             this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersVisible = false;
             this.dgvBebidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBebidas.Size = new System.Drawing.Size(373, 354);
-            this.dgvBebidas.TabIndex = 1;
+            this.dgvBebidas.TabIndex = 2;
             // 
             // dgvIngredientes
             // 
@@ -87,14 +83,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(407, 123);
+            this.dgvIngredientes.Location = new System.Drawing.Point(407, 85);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIngredientes.Size = new System.Drawing.Size(386, 354);
-            this.dgvIngredientes.TabIndex = 4;
+            this.dgvIngredientes.TabIndex = 3;
             this.dgvIngredientes.DataSourceChanged += new System.EventHandler(this.dgvIngredientes_DataSourceChanged);
             // 
             // tbBebidas
@@ -112,7 +108,7 @@
             this.tbIngredientes.Location = new System.Drawing.Point(550, 35);
             this.tbIngredientes.Name = "tbIngredientes";
             this.tbIngredientes.Size = new System.Drawing.Size(100, 20);
-            this.tbIngredientes.TabIndex = 3;
+            this.tbIngredientes.TabIndex = 1;
             this.tbIngredientes.TextChanged += new System.EventHandler(this.tbIngredientes_TextChanged);
             // 
             // label1
@@ -135,71 +131,49 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Filtrar Ingredientes";
             // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel4.Controls.Add(this.btnActB);
-            this.panel4.Location = new System.Drawing.Point(80, 543);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(240, 54);
-            this.panel4.TabIndex = 8;
-            // 
-            // btnActB
-            // 
-            this.btnActB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActB.Location = new System.Drawing.Point(3, -18);
-            this.btnActB.Name = "btnActB";
-            this.btnActB.Size = new System.Drawing.Size(234, 91);
-            this.btnActB.TabIndex = 2;
-            this.btnActB.Text = "Actualizar depositos de bebidas";
-            this.btnActB.UseVisualStyleBackColor = true;
-            this.btnActB.Click += new System.EventHandler(this.btnActB_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel5.Controls.Add(this.btnActI);
-            this.panel5.Location = new System.Drawing.Point(480, 543);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(240, 54);
-            this.panel5.TabIndex = 9;
-            // 
-            // btnActI
-            // 
-            this.btnActI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActI.Location = new System.Drawing.Point(3, -43);
-            this.btnActI.Name = "btnActI";
-            this.btnActI.Size = new System.Drawing.Size(234, 94);
-            this.btnActI.TabIndex = 5;
-            this.btnActI.Text = "Actualizar depositos de ingredientes";
-            this.btnActI.UseVisualStyleBackColor = true;
-            this.btnActI.Click += new System.EventHandler(this.btnActI_Click);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnActB, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.dgvIngredientes, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tbIngredientes, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvBebidas, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tbBebidas, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnActI, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.66666F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.33333F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 600);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // btnActB
+            // 
+            this.btnActB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnActB.Location = new System.Drawing.Point(88, 512);
+            this.btnActB.Name = "btnActB";
+            this.btnActB.Size = new System.Drawing.Size(223, 40);
+            this.btnActB.TabIndex = 4;
+            this.btnActB.Text = "Actualizar depositos de bebidas";
+            this.btnActB.UseVisualStyleBackColor = true;
+            // 
+            // btnActI
+            // 
+            this.btnActI.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnActI.Location = new System.Drawing.Point(472, 513);
+            this.btnActI.Name = "btnActI";
+            this.btnActI.Size = new System.Drawing.Size(256, 39);
+            this.btnActI.TabIndex = 5;
+            this.btnActI.Text = "Actualizar depositos de ingredientes";
+            this.btnActI.UseVisualStyleBackColor = true;
             // 
             // frmMiDeposito
             // 
@@ -212,8 +186,6 @@
             this.Load += new System.EventHandler(this.frmMiDeposito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -228,10 +200,8 @@
         private System.Windows.Forms.TextBox tbIngredientes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnActB;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnActI;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnActB;
+        private System.Windows.Forms.Button btnActI;
     }
 }

@@ -62,7 +62,7 @@
             this.DgvSolicitudes.RowHeadersVisible = false;
             this.DgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvSolicitudes.Size = new System.Drawing.Size(343, 360);
-            this.DgvSolicitudes.TabIndex = 1;
+            this.DgvSolicitudes.TabIndex = 0;
             this.DgvSolicitudes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_CellContentClick);
             this.DgvSolicitudes.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_RowEnter);
             // 
@@ -87,7 +87,7 @@
             this.dgvDetalle.RowHeadersVisible = false;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalle.Size = new System.Drawing.Size(273, 360);
-            this.dgvDetalle.TabIndex = 5;
+            this.dgvDetalle.TabIndex = 1;
             // 
             // lblDetalles
             // 
@@ -114,7 +114,7 @@
             this.btnRecibir.Location = new System.Drawing.Point(102, 451);
             this.btnRecibir.Name = "btnRecibir";
             this.btnRecibir.Size = new System.Drawing.Size(106, 67);
-            this.btnRecibir.TabIndex = 8;
+            this.btnRecibir.TabIndex = 2;
             this.btnRecibir.Text = "Recibido";
             this.btnRecibir.UseVisualStyleBackColor = true;
             this.btnRecibir.Click += new System.EventHandler(this.btnRecibir_Click);
@@ -125,7 +125,7 @@
             this.btnInconveniente.Location = new System.Drawing.Point(458, 451);
             this.btnInconveniente.Name = "btnInconveniente";
             this.btnInconveniente.Size = new System.Drawing.Size(93, 67);
-            this.btnInconveniente.TabIndex = 8;
+            this.btnInconveniente.TabIndex = 4;
             this.btnInconveniente.Text = "Reportar Inconveniente";
             this.btnInconveniente.UseVisualStyleBackColor = true;
             this.btnInconveniente.Click += new System.EventHandler(this.btnInconveniente_Click);
@@ -136,7 +136,7 @@
             this.tbInconveniente.Multiline = true;
             this.tbInconveniente.Name = "tbInconveniente";
             this.tbInconveniente.Size = new System.Drawing.Size(177, 67);
-            this.tbInconveniente.TabIndex = 9;
+            this.tbInconveniente.TabIndex = 3;
             this.tbInconveniente.TextChanged += new System.EventHandler(this.tbInconveniente_TextChanged);
             // 
             // frmEnvios

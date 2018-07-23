@@ -107,6 +107,16 @@ namespace ProyectoLab3
      
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnActB_Click(object sender, EventArgs e)
         {
              DataTable bebidas = (DataTable)dgvBebidas.DataSource;
