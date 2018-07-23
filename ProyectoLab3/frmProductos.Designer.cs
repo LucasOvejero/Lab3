@@ -54,6 +54,8 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.tbFIltroBebida = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cboCatAddBebida = new System.Windows.Forms.ComboBox();
             this.dgvBebidas = new Componentes.GrillaFormatead();
@@ -85,6 +87,8 @@
             this.tbEditNombreIngrediente = new System.Windows.Forms.TextBox();
             this.btnActualizarIngrediente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tbFiltroIngre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cboMedida = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -93,10 +97,6 @@
             this.dgvIngredientes = new Componentes.GrillaFormatead();
             this.tbStockCritico = new System.Windows.Forms.TextBox();
             this.errpNBebida = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.tbFIltroBebida = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.tbFiltroIngre = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -105,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEditCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditLitros)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoPorKilo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -114,10 +115,9 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditCostoIngrediente)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errpNBebida)).BeginInit();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -363,6 +363,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Bebida";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.tbFIltroBebida);
+            this.groupBox6.Location = new System.Drawing.Point(257, 57);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(184, 42);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Filtro Bebida";
+            // 
+            // tbFIltroBebida
+            // 
+            this.tbFIltroBebida.Location = new System.Drawing.Point(6, 16);
+            this.tbFIltroBebida.Name = "tbFIltroBebida";
+            this.tbFIltroBebida.Size = new System.Drawing.Size(172, 20);
+            this.tbFIltroBebida.TabIndex = 0;
+            this.tbFIltroBebida.TextChanged += new System.EventHandler(this.tbFIltroBebida_TextChanged);
             // 
             // label17
             // 
@@ -737,6 +755,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Ingrediente";
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.tbFiltroIngre);
+            this.groupBox7.Location = new System.Drawing.Point(170, 57);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(184, 42);
+            this.groupBox7.TabIndex = 19;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Filtro Ingrediente";
+            // 
+            // tbFiltroIngre
+            // 
+            this.tbFiltroIngre.Location = new System.Drawing.Point(6, 16);
+            this.tbFiltroIngre.Name = "tbFiltroIngre";
+            this.tbFiltroIngre.Size = new System.Drawing.Size(172, 20);
+            this.tbFiltroIngre.TabIndex = 0;
+            this.tbFiltroIngre.TextChanged += new System.EventHandler(this.tbFiltroIngre_TextChanged);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -822,47 +858,12 @@
             this.tbStockCritico.Size = new System.Drawing.Size(96, 20);
             this.tbStockCritico.TabIndex = 17;
             this.tbStockCritico.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbStockCritico.TextChanged += new System.EventHandler(this.tbStockCritico_TextChanged);
             this.tbStockCritico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbStockCritico_KeyPress_1);
             // 
             // errpNBebida
             // 
             this.errpNBebida.ContainerControl = this;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.tbFIltroBebida);
-            this.groupBox6.Location = new System.Drawing.Point(257, 57);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(184, 42);
-            this.groupBox6.TabIndex = 6;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Filtro Bebida";
-            // 
-            // tbFIltroBebida
-            // 
-            this.tbFIltroBebida.Location = new System.Drawing.Point(6, 16);
-            this.tbFIltroBebida.Name = "tbFIltroBebida";
-            this.tbFIltroBebida.Size = new System.Drawing.Size(172, 20);
-            this.tbFIltroBebida.TabIndex = 0;
-            this.tbFIltroBebida.TextChanged += new System.EventHandler(this.tbFIltroBebida_TextChanged);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.tbFiltroIngre);
-            this.groupBox7.Location = new System.Drawing.Point(170, 57);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(184, 42);
-            this.groupBox7.TabIndex = 19;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Filtro Ingrediente";
-            // 
-            // tbFiltroIngre
-            // 
-            this.tbFiltroIngre.Location = new System.Drawing.Point(6, 16);
-            this.tbFiltroIngre.Name = "tbFiltroIngre";
-            this.tbFiltroIngre.Size = new System.Drawing.Size(172, 20);
-            this.tbFiltroIngre.TabIndex = 0;
-            this.tbFiltroIngre.TextChanged += new System.EventHandler(this.tbFiltroIngre_TextChanged);
             // 
             // frmProductos
             // 
@@ -885,6 +886,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEditLitros)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCostoPorKilo)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -898,12 +901,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEditCostoIngrediente)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errpNBebida)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errpNBebida)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -37,7 +37,7 @@ namespace ProyectoLab3
                 int row = dgvBebidas.SelectedRows.Count > 0 ? dgvBebidas.SelectedRows[0].Index : 0;
                 dgvBebidas.DataSource = null;
                 dgvBebidas.DataSource = bebida.seleccionarBebidas();
-                dgvBebidas.Rows[row].Selected = true;
+                //dgvBebidas.Rows[row].Selected = true;
                 actualizarCboCatBebida();
             }
             catch (SqlException e)
@@ -225,8 +225,8 @@ namespace ProyectoLab3
 
             try
             {
-                //dgvIngredientes.DataSource = null;
-                //dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
+                dgvIngredientes.DataSource = null;
+                dgvIngredientes.DataSource = clsIngrediente.seleccionarIngredientes();
                 cboMedida.SelectedIndex = 0;
                 actualizarCategoriasIngredientes();
             }
@@ -410,6 +410,11 @@ namespace ProyectoLab3
             DataTable d = dgvIngredientes.DataSource as DataTable;
             d.DefaultView.RowFilter = string.Format(" Nombre like '%{0}%' ", tbFiltroIngre.Text);
             dgvIngredientes.Refresh();
+        }
+
+        private void tbStockCritico_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

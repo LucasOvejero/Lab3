@@ -60,7 +60,7 @@ namespace Clases
                     resp = "Se ha insertado el ingrediente " + nombre + " correctamente";
                     comando.CommandText = "insert into Deposito (IdSucursal,Stock,IdIngrediente) select Distinct(IdSucursal),0," + id + " from Sucursal";
                     comando.ExecuteNonQuery();
-                    actualizar(id);
+                   // actualizar(id);
                 }
 
             }
