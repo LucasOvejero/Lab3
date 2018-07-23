@@ -74,7 +74,7 @@
             // tbFiltroSuc
             // 
             this.tbFiltroSuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbFiltroSuc.Location = new System.Drawing.Point(241, 37);
+            this.tbFiltroSuc.Location = new System.Drawing.Point(335, 37);
             this.tbFiltroSuc.Name = "tbFiltroSuc";
             this.tbFiltroSuc.Size = new System.Drawing.Size(100, 20);
             this.tbFiltroSuc.TabIndex = 1;
@@ -93,7 +93,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(268, 21);
+            this.label1.Location = new System.Drawing.Point(366, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 6;
@@ -150,13 +150,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSucursal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSucursal.Location = new System.Drawing.Point(213, 63);
+            this.dgvSucursal.Location = new System.Drawing.Point(241, 63);
             this.dgvSucursal.MultiSelect = false;
             this.dgvSucursal.Name = "dgvSucursal";
             this.dgvSucursal.ReadOnly = true;
             this.dgvSucursal.RowHeadersVisible = false;
             this.dgvSucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSucursal.Size = new System.Drawing.Size(327, 150);
+            this.dgvSucursal.Size = new System.Drawing.Size(299, 150);
             this.dgvSucursal.TabIndex = 2;
             this.dgvSucursal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaFormatead1_CellContentClick);
             this.dgvSucursal.SelectionChanged += new System.EventHandler(this.dgvSucursal_SelectionChanged);
@@ -175,6 +175,7 @@
             this.Controls.Add(this.chartVentas);
             this.Controls.Add(this.mcFecha);
             this.Name = "frmVentaEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta Empleados";
             this.Load += new System.EventHandler(this.frmVentaEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartVentas)).EndInit();

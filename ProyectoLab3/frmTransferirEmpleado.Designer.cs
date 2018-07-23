@@ -41,9 +41,9 @@
             this.dgvSucursales.AllowUserToAddRows = false;
             this.dgvSucursales.AllowUserToResizeColumns = false;
             this.dgvSucursales.AllowUserToResizeRows = false;
-            this.dgvSucursales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSucursales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -105,6 +105,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(419, 440);
             this.Name = "frmTransferirEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trasnferir";
             this.Load += new System.EventHandler(this.frmTransferirEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).EndInit();

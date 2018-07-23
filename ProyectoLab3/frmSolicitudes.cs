@@ -118,6 +118,8 @@ namespace ProyectoLab3
                     clsSolicitud.rechazarSolicitud((int)dgvSolicitudes.SelectedRows[0].Cells["IdSolicitud"].Value);
                     RefrezcarVista();
                 }
+                dgvDetalle.DataSource = null;
+                dgvDetalle.Refresh();
             }
             catch (Exception ex) { Console.Write(ex.Message); }
         }
@@ -183,7 +185,7 @@ namespace ProyectoLab3
                 double cantidadSinFormato = Convert.ToDouble(r.Cells["cantidad"].Value);
                 int unidades = 0;
 
-                if (cantidadSinFormato > 500) { cantidadSinFormato /= 1000; }
+                if (cantidadSinFormato >= 500) { cantidadSinFormato /= 1000; }
                 else unidades = (int)cantidadSinFormato;
 
 

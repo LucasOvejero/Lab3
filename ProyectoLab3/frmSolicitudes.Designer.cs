@@ -246,6 +246,7 @@
             this.Controls.Add(this.dgvPeticiones);
             this.Controls.Add(this.dgvSolicitudes);
             this.Name = "FrmSolicitudes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitudes";
             this.Load += new System.EventHandler(this.FrmSolicitudes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();

@@ -50,7 +50,6 @@
             this.lbSucursal = new System.Windows.Forms.ListBox();
             this.tbDirSuc = new System.Windows.Forms.TextBox();
             this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.cbHoy = new System.Windows.Forms.CheckBox();
             this.btnGraficosPorEmp = new System.Windows.Forms.Button();
             this.cBMV = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -65,8 +64,8 @@
             // 
             // chartVntas
             // 
-            this.chartVntas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartVntas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chartVntas.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -84,7 +83,7 @@
             // cboMeses
             // 
             this.cboMeses.FormattingEnabled = true;
-            this.cboMeses.Location = new System.Drawing.Point(118, 58);
+            this.cboMeses.Location = new System.Drawing.Point(478, 43);
             this.cboMeses.Name = "cboMeses";
             this.cboMeses.Size = new System.Drawing.Size(121, 21);
             this.cboMeses.TabIndex = 2;
@@ -93,7 +92,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 42);
+            this.label1.Location = new System.Drawing.Point(518, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 2;
@@ -102,7 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 42);
+            this.label2.Location = new System.Drawing.Point(384, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 3;
@@ -110,15 +109,15 @@
             // 
             // nudAnio
             // 
-            this.nudAnio.Location = new System.Drawing.Point(7, 59);
+            this.nudAnio.Location = new System.Drawing.Point(367, 44);
             this.nudAnio.Name = "nudAnio";
             this.nudAnio.Size = new System.Drawing.Size(60, 20);
             this.nudAnio.TabIndex = 1;
             // 
             // chartCantidad
             // 
-            this.chartCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             chartArea2.Name = "ChartArea1";
             this.chartCantidad.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -145,9 +144,9 @@
             // lbSucursal
             // 
             this.lbSucursal.FormattingEnabled = true;
-            this.lbSucursal.Location = new System.Drawing.Point(370, 21);
+            this.lbSucursal.Location = new System.Drawing.Point(50, 47);
             this.lbSucursal.Name = "lbSucursal";
-            this.lbSucursal.Size = new System.Drawing.Size(239, 69);
+            this.lbSucursal.Size = new System.Drawing.Size(239, 43);
             this.lbSucursal.TabIndex = 4;
             // 
             // tbDirSuc
@@ -159,33 +158,19 @@
             // 
             // pnlAdmin
             // 
-            this.pnlAdmin.Controls.Add(this.label4);
             this.pnlAdmin.Controls.Add(this.tbDirSuc);
             this.pnlAdmin.Controls.Add(this.lbSucursal);
-            this.pnlAdmin.Controls.Add(this.cbHoy);
             this.pnlAdmin.Controls.Add(this.label3);
-            this.pnlAdmin.Controls.Add(this.cboMeses);
-            this.pnlAdmin.Controls.Add(this.nudAnio);
-            this.pnlAdmin.Controls.Add(this.label1);
-            this.pnlAdmin.Controls.Add(this.label2);
             this.pnlAdmin.Location = new System.Drawing.Point(25, 4);
             this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(638, 94);
+            this.pnlAdmin.Size = new System.Drawing.Size(334, 94);
             this.pnlAdmin.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(444, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Sucursal Actual";
+            this.pnlAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAdmin_Paint);
             // 
             // cbHoy
             // 
             this.cbHoy.AutoSize = true;
-            this.cbHoy.Location = new System.Drawing.Point(264, 60);
+            this.cbHoy.Location = new System.Drawing.Point(624, 45);
             this.cbHoy.Name = "cbHoy";
             this.cbHoy.Size = new System.Drawing.Size(67, 17);
             this.cbHoy.TabIndex = 3;
@@ -206,8 +191,8 @@
             // 
             // cBMV
             // 
-            this.cBMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cBMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             chartArea3.Name = "ChartArea1";
             this.cBMV.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
@@ -224,8 +209,8 @@
             // 
             // cPMV
             // 
-            this.cPMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cPMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             chartArea4.Name = "ChartArea1";
             this.cPMV.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
@@ -248,10 +233,16 @@
             this.Controls.Add(this.btnGraficosPorEmp);
             this.Controls.Add(this.cPMV);
             this.Controls.Add(this.cBMV);
+            this.Controls.Add(this.cbHoy);
             this.Controls.Add(this.pnlAdmin);
             this.Controls.Add(this.chartCantidad);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.chartVntas);
+            this.Controls.Add(this.cboMeses);
+            this.Controls.Add(this.nudAnio);
+            this.Controls.Add(this.label1);
             this.Name = "frmGraficos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Graficos de ventas";
             this.Load += new System.EventHandler(this.frmGraficosVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartVntas)).EndInit();
@@ -262,6 +253,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cBMV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPMV)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -278,7 +270,6 @@
         private System.Windows.Forms.TextBox tbDirSuc;
         private System.Windows.Forms.Panel pnlAdmin;
         private System.Windows.Forms.CheckBox cbHoy;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataVisualization.Charting.Chart cBMV;
         private System.Windows.Forms.DataVisualization.Charting.Chart cPMV;
         private System.Windows.Forms.Button btnGraficosPorEmp;
