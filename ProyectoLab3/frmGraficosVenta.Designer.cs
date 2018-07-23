@@ -50,10 +50,11 @@
             this.lbSucursal = new System.Windows.Forms.ListBox();
             this.tbDirSuc = new System.Windows.Forms.TextBox();
             this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbHoy = new System.Windows.Forms.CheckBox();
             this.cBMV = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label4 = new System.Windows.Forms.Label();
             this.cPMV = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnGraficosPorEmp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartVntas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAnio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCantidad)).BeginInit();
@@ -64,8 +65,8 @@
             // 
             // chartVntas
             // 
-            this.chartVntas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartVntas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chartVntas.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -116,8 +117,8 @@
             // 
             // chartCantidad
             // 
-            this.chartCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea2.Name = "ChartArea1";
             this.chartCantidad.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -158,6 +159,7 @@
             // 
             // pnlAdmin
             // 
+            this.pnlAdmin.Controls.Add(this.btnGraficosPorEmp);
             this.pnlAdmin.Controls.Add(this.label4);
             this.pnlAdmin.Controls.Add(this.tbDirSuc);
             this.pnlAdmin.Controls.Add(this.lbSucursal);
@@ -166,6 +168,15 @@
             this.pnlAdmin.Name = "pnlAdmin";
             this.pnlAdmin.Size = new System.Drawing.Size(638, 94);
             this.pnlAdmin.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(382, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Sucursal Actual";
             // 
             // cbHoy
             // 
@@ -180,8 +191,8 @@
             // 
             // cBMV
             // 
-            this.cBMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.cBMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea3.Name = "ChartArea1";
             this.cBMV.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
@@ -196,19 +207,10 @@
             this.cBMV.TabIndex = 12;
             this.cBMV.Text = "chart1";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(382, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Sucursal Actual";
-            // 
             // cPMV
             // 
-            this.cPMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.cPMV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea4.Name = "ChartArea1";
             this.cPMV.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
@@ -222,6 +224,17 @@
             this.cPMV.Size = new System.Drawing.Size(571, 229);
             this.cPMV.TabIndex = 13;
             this.cPMV.Text = "chart2";
+            // 
+            // btnGraficosPorEmp
+            // 
+            this.btnGraficosPorEmp.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnGraficosPorEmp.Location = new System.Drawing.Point(137, 48);
+            this.btnGraficosPorEmp.Name = "btnGraficosPorEmp";
+            this.btnGraficosPorEmp.Size = new System.Drawing.Size(75, 42);
+            this.btnGraficosPorEmp.TabIndex = 14;
+            this.btnGraficosPorEmp.Text = "Ventas por Empleados";
+            this.btnGraficosPorEmp.UseVisualStyleBackColor = true;
+            this.btnGraficosPorEmp.Click += new System.EventHandler(this.btnGraficosPorEmp_Click);
             // 
             // frmGraficos
             // 
@@ -270,6 +283,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataVisualization.Charting.Chart cBMV;
         private System.Windows.Forms.DataVisualization.Charting.Chart cPMV;
-
+        private System.Windows.Forms.Button btnGraficosPorEmp;
     }
 }

@@ -37,7 +37,6 @@ namespace ProyectoLab3
         frmTransferencias ofrmTransferencias;
         frmMerma ofrmMerma;
         frmCUIT ofrmCuit;
-        frmVentaEmpleados ofrmVentaEmpleados;
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -168,6 +167,8 @@ namespace ProyectoLab3
         {
             ofrmVenta = new frmVenta(clsConexion.SucursalSession);
             ofrmVenta.ShowDialog();
+
+            VerificarLogeo();
         }
 
         private void BtnVentas_Click(object sender, EventArgs e)
@@ -215,11 +216,6 @@ namespace ProyectoLab3
             ofrmCuit.ShowDialog();
         }
 
-        private void btnGraficosPorEmp_Click(object sender, EventArgs e)
-        {
-            ofrmVentaEmpleados = new frmVentaEmpleados();
-            ofrmVentaEmpleados.ShowDialog();
-        }
 
     }
 }

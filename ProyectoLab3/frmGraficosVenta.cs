@@ -14,6 +14,11 @@ namespace ProyectoLab3
     {
         int IdSucursal;
         DataTable sucursales;
+
+        frmVentaEmpleados ofrmVentaEmpleados;
+
+
+
         public frmGraficos(int IdSucursal)
         {
             InitializeComponent();
@@ -147,5 +152,15 @@ namespace ProyectoLab3
                 setearDatasource();
             }
         }
+
+        private void btnGraficosPorEmp_Click(object sender, EventArgs e)
+        {
+            ofrmVentaEmpleados = new frmVentaEmpleados();
+            ofrmVentaEmpleados.ShowDialog();
+        }
+
+
+
+
     }
 }

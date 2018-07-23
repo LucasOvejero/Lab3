@@ -349,6 +349,16 @@ namespace ProyectoLab3
         
         }
 
+        private void btnCierre_Click(object sender, EventArgs e)
+        {
+            string nroVentasTurno = clsVenta.getnroVentasTurno();
+            string dineroRecaudado = clsVenta.DineroRecaudado();
+
+            MessageBox.Show(nroVentasTurno + '\n' + dineroRecaudado,"Fin de turno");
+            clsConexion.SucursalSession = -1;
+            this.Close();
+        }
+
         private void btnVender_Click(object sender, EventArgs e)
         {
             List<Producto> listaProductos;

@@ -55,7 +55,6 @@
             this.btnEditPlato = new System.Windows.Forms.Button();
             this.btnPlato = new System.Windows.Forms.Button();
             this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.btnGraficosPorEmp = new System.Windows.Forms.Button();
             this.btnCUIT = new System.Windows.Forms.Button();
             this.lblSucursalInfo = new System.Windows.Forms.Label();
             this.pnlVendedor.SuspendLayout();
@@ -121,8 +120,8 @@
             // 
             // pnlVendedor
             // 
-            this.pnlVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlVendedor.Controls.Add(this.btnLogout);
             this.pnlVendedor.Controls.Add(this.pnlCritico);
             this.pnlVendedor.Controls.Add(this.label1);
@@ -358,7 +357,6 @@
             // 
             // pnlAdmin
             // 
-            this.pnlAdmin.Controls.Add(this.btnGraficosPorEmp);
             this.pnlAdmin.Controls.Add(this.btnCUIT);
             this.pnlAdmin.Controls.Add(this.lblSucursalInfo);
             this.pnlAdmin.Controls.Add(this.gbPlatos);
@@ -369,17 +367,6 @@
             this.pnlAdmin.Name = "pnlAdmin";
             this.pnlAdmin.Size = new System.Drawing.Size(784, 144);
             this.pnlAdmin.TabIndex = 0;
-            // 
-            // btnGraficosPorEmp
-            // 
-            this.btnGraficosPorEmp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnGraficosPorEmp.Location = new System.Drawing.Point(511, 3);
-            this.btnGraficosPorEmp.Name = "btnGraficosPorEmp";
-            this.btnGraficosPorEmp.Size = new System.Drawing.Size(75, 42);
-            this.btnGraficosPorEmp.TabIndex = 5;
-            this.btnGraficosPorEmp.Text = "Graficos Empleados";
-            this.btnGraficosPorEmp.UseVisualStyleBackColor = true;
-            this.btnGraficosPorEmp.Click += new System.EventHandler(this.btnGraficosPorEmp_Click);
             // 
             // btnCUIT
             // 
@@ -464,7 +451,6 @@
         private System.Windows.Forms.Button btnMerma;
         private System.Windows.Forms.Label lblSucursalInfo;
         private System.Windows.Forms.Button btnCUIT;
-        private System.Windows.Forms.Button btnGraficosPorEmp;
     }
 }
 
