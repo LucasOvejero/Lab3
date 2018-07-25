@@ -538,6 +538,7 @@
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.pnlNuevo);
             this.Name = "frmEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleados";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmEmpleados_Load);

@@ -136,7 +136,14 @@ namespace Clases
             {
                 DataTable Ventas = new DataTable("Ventas");
                 comando.Connection = clsConexion.getCon();
-                double cantidad = Convert.ToDouble(comando.ExecuteScalar());
+                double cantidad;
+                try
+                {
+                    cantidad = Convert.ToDouble(comando.ExecuteScalar());
+                }
+                catch (Exception) {
+                    cantidad = 0;
+                }
                 if (cantidad == 0)
                 {
                     return "Sin recaudacion.";
@@ -147,6 +154,7 @@ namespace Clases
                 }
             }
             catch (SqlException x) { Console.WriteLine(x.Message); }
+          
             finally { clsConexion.closeCon(); }
             return "";
         }

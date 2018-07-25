@@ -393,8 +393,8 @@
             // 
             // tbCatBeb
             // 
-            this.tbCatBeb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCatBeb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tbCatBeb.Location = new System.Drawing.Point(16, 19);
             this.tbCatBeb.Name = "tbCatBeb";
             this.tbCatBeb.Size = new System.Drawing.Size(100, 20);
@@ -529,9 +529,9 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.groupBox2);
@@ -571,8 +571,8 @@
             // 
             // tbEditStockCritico
             // 
-            this.tbEditStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEditStockCritico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEditStockCritico.Location = new System.Drawing.Point(221, 30);
             this.tbEditStockCritico.Name = "tbEditStockCritico";
             this.tbEditStockCritico.Size = new System.Drawing.Size(96, 20);
@@ -612,8 +612,8 @@
             // 
             // lblEditCostoPor
             // 
-            this.lblEditCostoPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEditCostoPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditCostoPor.AutoSize = true;
             this.lblEditCostoPor.Location = new System.Drawing.Point(123, 16);
             this.lblEditCostoPor.Name = "lblEditCostoPor";
@@ -631,8 +631,8 @@
             // 
             // nudEditCostoIngrediente
             // 
-            this.nudEditCostoIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudEditCostoIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.nudEditCostoIngrediente.DecimalPlaces = 2;
             this.nudEditCostoIngrediente.Location = new System.Drawing.Point(121, 30);
             this.nudEditCostoIngrediente.Maximum = new decimal(new int[] {
@@ -647,8 +647,8 @@
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(26, 16);
             this.label12.Name = "label12";
@@ -658,8 +658,8 @@
             // 
             // tbEditNombreIngrediente
             // 
-            this.tbEditNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEditNombreIngrediente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEditNombreIngrediente.Location = new System.Drawing.Point(4, 30);
             this.tbEditNombreIngrediente.Name = "tbEditNombreIngrediente";
             this.tbEditNombreIngrediente.Size = new System.Drawing.Size(100, 20);
@@ -712,8 +712,8 @@
             // 
             // tbNombreCategoria
             // 
-            this.tbNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNombreCategoria.Location = new System.Drawing.Point(17, 19);
             this.tbNombreCategoria.Name = "tbNombreCategoria";
             this.tbNombreCategoria.Size = new System.Drawing.Size(100, 20);
@@ -884,6 +884,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.frmBebidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudLitros)).EndInit();

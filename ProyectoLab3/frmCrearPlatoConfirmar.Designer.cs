@@ -117,8 +117,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnEditarPlato);
             this.groupBox1.Controls.Add(this.cbTACC);
             this.groupBox1.Controls.Add(this.lblGanancia);
@@ -270,6 +270,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCrearPlatoConfirmar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Confirmar Plato";
             this.Load += new System.EventHandler(this.frmCrearPlatoConfirmar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();

@@ -248,6 +248,7 @@ namespace ProyectoLab3
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.lblSucursal);
             this.Name = "frmNuevaSolicitud";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmNuevaSolicitud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();

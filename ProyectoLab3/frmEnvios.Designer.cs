@@ -152,6 +152,7 @@
             this.Controls.Add(this.dgvDetalle);
             this.Controls.Add(this.DgvSolicitudes);
             this.Name = "frmEnvios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recibos";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmEnvios_Load);

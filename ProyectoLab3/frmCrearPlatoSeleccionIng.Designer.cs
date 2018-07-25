@@ -43,8 +43,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 8);
             this.label1.Name = "label1";
@@ -72,8 +72,8 @@
             // 
             // lbIngredientes
             // 
-            this.lbIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.lbIngredientes.FormattingEnabled = true;
             this.lbIngredientes.Location = new System.Drawing.Point(12, 116);
             this.lbIngredientes.Name = "lbIngredientes";
@@ -103,8 +103,8 @@
             // 
             // lbIngredientesDelPlato
             // 
-            this.lbIngredientesDelPlato.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbIngredientesDelPlato.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.lbIngredientesDelPlato.FormattingEnabled = true;
             this.lbIngredientesDelPlato.Location = new System.Drawing.Point(239, 116);
             this.lbIngredientesDelPlato.Name = "lbIngredientesDelPlato";
@@ -114,8 +114,8 @@
             // 
             // pnlIngredientes
             // 
-            this.pnlIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlIngredientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlIngredientes.AutoScroll = true;
             this.pnlIngredientes.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnlIngredientes.Location = new System.Drawing.Point(381, 28);
@@ -135,8 +135,8 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(20, 71);
@@ -171,6 +171,7 @@
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.label1);
             this.Name = "frmCrearPlatoSeleccionIng";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plato";
             this.Load += new System.EventHandler(this.frmCrearPlatoSeleccionIng_Load);
             this.ResumeLayout(false);

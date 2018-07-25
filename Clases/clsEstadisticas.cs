@@ -19,8 +19,9 @@ namespace Clases
                 SqlDataAdapter adapter = new SqlDataAdapter(comando);
                 DataTable tabla = new DataTable();
                 adapter.Fill(tabla);
-                MinMax[0] = tabla.Rows[0].Field<int>("minimo");
-                MinMax[1] = tabla.Rows[0].Field<int>("maximo");
+                MinMax[0] = tabla.Rows[0]["minimo"] is DBNull ? 2018 : tabla.Rows[0].Field<int>("minimo");
+                MinMax[1] = tabla.Rows[0]["maximo"] is DBNull?2018:tabla.Rows[0].Field<int>("maximo");
+                
             }
             catch (SqlException e)
             {

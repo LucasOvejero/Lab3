@@ -159,6 +159,11 @@ namespace ProyectoLab3
             ofrmVentaEmpleados.ShowDialog();
         }
 
+        private void pnlAdmin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
 
 
 

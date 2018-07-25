@@ -273,6 +273,7 @@
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.dgvDetalle);
             this.Name = "frmHistorial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial envios";
             this.Load += new System.EventHandler(this.FrmHistorial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();

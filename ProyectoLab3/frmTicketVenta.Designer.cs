@@ -49,6 +49,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.crTicket);
             this.Name = "frmTicketVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ticket";
             this.Load += new System.EventHandler(this.frmTicketVenta_Load);
             this.ResumeLayout(false);

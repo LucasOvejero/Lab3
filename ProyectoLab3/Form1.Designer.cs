@@ -35,6 +35,7 @@
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnNewSolicitudes = new System.Windows.Forms.Button();
             this.pnlVendedor = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlCritico = new System.Windows.Forms.Panel();
             this.dgvCritico = new Componentes.GrillaFormatead();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gbDeposito = new System.Windows.Forms.GroupBox();
             this.btnHistorial = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.gbSucursal = new System.Windows.Forms.GroupBox();
             this.btnGraficosVentaGeneral = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
@@ -120,15 +120,29 @@
             // 
             // pnlVendedor
             // 
+            this.pnlVendedor.Controls.Add(this.btnLogout);
             this.pnlVendedor.Controls.Add(this.pnlCritico);
+            this.pnlVendedor.Controls.Add(this.lblSucursalInfo);
             this.pnlVendedor.Controls.Add(this.gbVentas);
             this.pnlVendedor.Controls.Add(this.label1);
             this.pnlVendedor.Controls.Add(this.gbDeposito);
-            this.pnlVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlVendedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlVendedor.Location = new System.Drawing.Point(368, 0);
             this.pnlVendedor.Name = "pnlVendedor";
             this.pnlVendedor.Size = new System.Drawing.Size(416, 561);
             this.pnlVendedor.TabIndex = 1;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnLogout.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnLogout.Location = new System.Drawing.Point(312, 13);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(89, 37);
+            this.btnLogout.TabIndex = 16;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // pnlCritico
             // 
@@ -223,18 +237,6 @@
             this.btnHistorial.Text = "Historial de Solicitudes";
             this.btnHistorial.UseVisualStyleBackColor = true;
             this.btnHistorial.Click += new System.EventHandler(this.BtnHistorial_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLogout.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnLogout.Location = new System.Drawing.Point(255, 519);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(89, 37);
-            this.btnLogout.TabIndex = 16;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // gbSucursal
             // 
@@ -360,10 +362,8 @@
             // 
             // pnlAdmin
             // 
-            this.pnlAdmin.Controls.Add(this.btnLogout);
             this.pnlAdmin.Controls.Add(this.gbPlatos);
             this.pnlAdmin.Controls.Add(this.btnCUIT);
-            this.pnlAdmin.Controls.Add(this.lblSucursalInfo);
             this.pnlAdmin.Controls.Add(this.gbProductos);
             this.pnlAdmin.Controls.Add(this.gbSucursal);
             this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Left;
@@ -375,7 +375,7 @@
             // btnCUIT
             // 
             this.btnCUIT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCUIT.Location = new System.Drawing.Point(12, 519);
+            this.btnCUIT.Location = new System.Drawing.Point(120, 517);
             this.btnCUIT.Name = "btnCUIT";
             this.btnCUIT.Size = new System.Drawing.Size(89, 30);
             this.btnCUIT.TabIndex = 4;
@@ -385,11 +385,10 @@
             // 
             // lblSucursalInfo
             // 
-            this.lblSucursalInfo.AutoSize = true;
             this.lblSucursalInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursalInfo.Location = new System.Drawing.Point(13, 13);
+            this.lblSucursalInfo.Location = new System.Drawing.Point(6, 9);
             this.lblSucursalInfo.Name = "lblSucursalInfo";
-            this.lblSucursalInfo.Size = new System.Drawing.Size(15, 24);
+            this.lblSucursalInfo.Size = new System.Drawing.Size(300, 61);
             this.lblSucursalInfo.TabIndex = 3;
             this.lblSucursalInfo.Text = " ";
             // 
@@ -402,6 +401,7 @@
             this.Controls.Add(this.pnlVendedor);
             this.Controls.Add(this.pnlAdmin);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Enter += new System.EventHandler(this.Form1_Enter);

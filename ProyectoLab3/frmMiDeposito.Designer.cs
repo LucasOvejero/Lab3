@@ -59,7 +59,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBebidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(13, 85);
+            this.dgvBebidas.Location = new System.Drawing.Point(13, 86);
             this.dgvBebidas.MultiSelect = false;
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
@@ -83,13 +83,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngredientes.Location = new System.Drawing.Point(407, 85);
+            this.dgvIngredientes.Location = new System.Drawing.Point(417, 86);
             this.dgvIngredientes.MultiSelect = false;
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.ReadOnly = true;
             this.dgvIngredientes.RowHeadersVisible = false;
             this.dgvIngredientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngredientes.Size = new System.Drawing.Size(386, 354);
+            this.dgvIngredientes.Size = new System.Drawing.Size(365, 354);
             this.dgvIngredientes.TabIndex = 3;
             this.dgvIngredientes.DataSourceChanged += new System.EventHandler(this.dgvIngredientes_DataSourceChanged);
             // 
@@ -158,12 +158,13 @@
             // btnActB
             // 
             this.btnActB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActB.Location = new System.Drawing.Point(88, 512);
+            this.btnActB.Location = new System.Drawing.Point(88, 513);
             this.btnActB.Name = "btnActB";
             this.btnActB.Size = new System.Drawing.Size(223, 40);
             this.btnActB.TabIndex = 4;
             this.btnActB.Text = "Actualizar depositos de bebidas";
             this.btnActB.UseVisualStyleBackColor = true;
+            this.btnActB.Click += new System.EventHandler(this.btnActB_Click);
             // 
             // btnActI
             // 
@@ -174,6 +175,7 @@
             this.btnActI.TabIndex = 5;
             this.btnActI.Text = "Actualizar depositos de ingredientes";
             this.btnActI.UseVisualStyleBackColor = true;
+            this.btnActI.Click += new System.EventHandler(this.btnActI_Click);
             // 
             // frmMiDeposito
             // 
@@ -182,6 +184,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmMiDeposito";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deposito";
             this.Load += new System.EventHandler(this.frmMiDeposito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();
