@@ -14,7 +14,7 @@ namespace Clases
         //Data Source=CDR410U007679\SQLEXPRESS; NahuelData Source=CDR410U007679\SQLEXPRESS; Nahuel @"Data Source=(localdb)\MSSQLLocalDB;
 
         static string conexion = @"Data Source=cdr\SQLEXPRESS;Initial Catalog=lab3; User ID =NaLu ; Password=12345";
-       // static string conexion = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=lab3; User ID =NaLu ; Password=1234";
+        // static string conexion = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=lab3; User ID =NaLu ; Password=1234";
 
 
         public static string NombreSucursal { get; set; }

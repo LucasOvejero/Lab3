@@ -21,7 +21,7 @@ namespace ProyectoLab3
         {
             dgvHistorial.DataSource = clsSolicitud.GetHistorial();
             FormatoGrillaHistorial();
-            rbAmbas.Checked = true;
+            rbEnviadas.Checked = true;
             FormatoGrillaHistorial();
         }
 
@@ -56,11 +56,11 @@ namespace ProyectoLab3
                     dgvHistorial.Columns["Telefono"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                     dgvHistorial.Columns["Direccion"].DisplayIndex = 2;
 
-
+                    FormatoGrillaHistorial();
 
                 }
                 catch (Exception ex) { Console.WriteLine(ex.Message); }
-                FormatoGrillaHistorial();
+
             }
         }
 
@@ -71,7 +71,7 @@ namespace ProyectoLab3
 
                 try
                 {
-                    dgvHistorial.DataSource = clsSolicitud.Enviadas();
+                    dgvHistorial.DataSource = clsSolicitud.Recibidas();
                     dgvHistorial.Columns["Estado1"].Visible = false;
 
                     dgvHistorial.Columns["NombreInterno"].DisplayIndex = 0;
@@ -166,6 +166,11 @@ namespace ProyectoLab3
 
                     colorearGrillas();
                 }
+
+
+                dgvHistorial.Columns["NumeroTransaccion"].Visible = false;
+
+
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
 
@@ -181,25 +186,54 @@ namespace ProyectoLab3
 
                     string recibido = r.Cells["recibido"].Value.ToString();
 
-
-                    if (r.Cells["Fin"].Value.ToString().Length > 0 && recibido == "True")
+                    if (rbAmbas.Checked)
                     {
-                        //Si todo correcto = VERDE
-                        r.DefaultCellStyle.BackColor = Color.Green;
+                        if (r.Cells["Fin"].Value.ToString().Length > 0 && recibido == "True")
+                        {
+                            //Si todo correcto = VERDE
+                            r.DefaultCellStyle.BackColor = Color.Green;
+                            r.DefaultCellStyle.ForeColor = Color.White;
+                        }
+                        else
+                        {
+                            if (r.Cells["Fin"].Value.ToString().Length > 0 && r.Cells["Envio"].Value.ToString().Length == 0)
+                            {
+                                // Si termino y no fue enviada (rechazada) : rojo
+                                r.DefaultCellStyle.BackColor = Color.Red;
+                                r.DefaultCellStyle.ForeColor = Color.White;
+                            }
+                            //Si esta en camino
+                            else if (r.Cells["Fin"].Value.ToString().Length == 0 && r.Cells["Envio"].Value.ToString().Length > 0)
+                                r.DefaultCellStyle.BackColor = Color.Yellow;
+                            //Si llego con dificultad
+                            else if (r.Cells["Observaciones"].Value.ToString().Length > 0)
+                                r.DefaultCellStyle.BackColor = Color.Orange;
+                        }
                     }
                     else
                     {
-                        if (r.Cells["Fin"].Value.ToString().Length > 0 && r.Cells["Envio"].Value.ToString().Length == 0)
+                        if (r.Cells["fechaFin"].Value.ToString().Length > 0 && recibido == "True")
                         {
-                            // Si termino y no fue enviada (rechazada) : rojo
-                            r.DefaultCellStyle.BackColor = Color.Red;
+                            //Si todo correcto = VERDE
+                            r.DefaultCellStyle.BackColor = Color.Green;
+                            r.DefaultCellStyle.ForeColor = Color.White;
                         }
-                        //Si esta en camino
-                        else if (r.Cells["Fin"].Value.ToString().Length == 0 && r.Cells["Envio"].Value.ToString().Length > 0)
-                            r.DefaultCellStyle.BackColor = Color.Yellow;
-                        //Si llego con dificultad
-                        else if (r.Cells["Observaciones"].Value.ToString().Length > 0)
-                            r.DefaultCellStyle.BackColor = Color.Orange;
+                        else
+                        {
+                            if (r.Cells["fechaFin"].Value.ToString().Length > 0 && r.Cells["fechaEnvio"].Value.ToString().Length == 0)
+                            {
+                                // Si termino y no fue enviada (rechazada) : rojo
+                                r.DefaultCellStyle.BackColor = Color.Red;
+                                r.DefaultCellStyle.ForeColor = Color.White;
+                            }
+                            //Si esta en camino
+                            else if (r.Cells["fechaFin"].Value.ToString().Length == 0 && r.Cells["fechaEnvio"].Value.ToString().Length > 0)
+                                r.DefaultCellStyle.BackColor = Color.Yellow;
+                            //Si llego con dificultad
+                            else if (r.Cells["observacion"].Value.ToString().Length > 0)
+                                r.DefaultCellStyle.BackColor = Color.Orange;
+                        }
+
                     }
 
                 }
