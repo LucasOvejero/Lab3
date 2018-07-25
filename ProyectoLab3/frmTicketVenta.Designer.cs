@@ -41,6 +41,7 @@
             this.crTicket.Name = "crTicket";
             this.crTicket.Size = new System.Drawing.Size(784, 561);
             this.crTicket.TabIndex = 0;
+            this.crTicket.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // frmTicketVenta
             // 

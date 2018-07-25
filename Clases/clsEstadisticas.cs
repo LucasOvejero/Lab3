@@ -59,6 +59,29 @@ namespace Clases
             }
             return ventas;
         }
+        public static DataTable getVentas(DateTime desde, DateTime hasta, int IdSucursal)
+        {
+            DataTable ventas = new DataTable("Ventas");
+            try
+            {
+                string sqlText = "select COUNT(*) Cantidad,sum(Costo) Costo,sum(Precio) Precio,sum(Precio)-sum(Costo) Ganancia,s.NombreInterno as Nombre from DescripcionVenta d inner join EncabezadoVenta e on (d.NroVenta=e.NroVenta) inner join Sucursal s on(e.IdSucursal=s.IdSucursal) where e.IdSucursal=" + IdSucursal + " and CAST(Fecha as date) between Cast('" + desde.ToShortDateString() + "' as Date) and CAST('" + hasta.ToShortDateString() + "' as date) group by NombreInterno;";
+            
+
+                SqlCommand comando = new SqlCommand(sqlText, clsConexion.getCon());
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                adaptador.Fill(ventas);
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                clsConexion.closeCon();
+            }
+            return ventas;
+        }
         public static DataTable BebidasMasVendidasSuc(int anio, int mes, int IdSucursal, Nullable<int> hoy)
         {
             DataTable BMVS = new DataTable("BMVS");
@@ -85,6 +108,29 @@ namespace Clases
             }
             finally { clsConexion.closeCon(); }
             return BMVS;
+        }
+
+        public static DataTable BebidasMasVendidasSuc(DateTime desde, DateTime hasta, int IdSucursal) {
+            DataTable BMVS = new DataTable("BMVS");
+       
+            string idSQL = " and IdSucursal=" + IdSucursal;
+            string betweenDates=" and CAST(Fecha as date) between Cast('" + desde.ToShortDateString() + "' as Date) and CAST('" + hasta.ToShortDateString() + "' as date) ";
+            string sql = string.Format("Select NombreBebida as Nombre, Cantidad, b.IdBebida from Bebida b inner join " +
+                 "(select SUM(Cantidad) Cantidad, IdBebida from DescripcionVenta inner join EncabezadoVenta e on (DescripcionVenta.NroVenta=e.NroVenta) where IdBebida is not null {0} {1} group by IdBebida ) " +
+                "g on (b.IdBebida=g.IdBebida)  order by Cantidad desc;", idSQL,betweenDates );
+            try
+            {
+                SqlCommand comando = new SqlCommand(sql, clsConexion.getCon());
+                SqlDataAdapter adap = new SqlDataAdapter(comando);
+                adap.Fill(BMVS);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally { clsConexion.closeCon(); }
+            return BMVS;
+        
         }
         public static DataTable PlatosMasVendidosSuc(int anio, int mes, int IdSucursal, Nullable<int> hoy)
         {
@@ -114,6 +160,28 @@ namespace Clases
             return PMV;
         }
 
+        public static DataTable PlatosMasVendidosSuc(DateTime desde, DateTime hasta, int IdSucursal)
+        {
+            DataTable PMV = new DataTable("PMV");
+            string idSQL = " and IdSucursal=" + IdSucursal;
+            string betweenDates = " and CAST(Fecha as date) between Cast('" + desde.ToShortDateString() + "' as Date) and CAST('" + hasta.ToShortDateString() + "' as date) ";
+           
+            string sql = string.Format("select  Nombre, Cantidad, p.IdPlato from Plato p inner join " +
+                "(select SUM(Cantidad) Cantidad,IdPlato from DescripcionVenta inner join EncabezadoVenta e on (DescripcionVenta.NroVenta=e.NroVenta) where IdPlato is not null {0} {1}  group by IdPlato ) " +
+                "g on(p.IdPlato=g.IdPlato) order by Cantidad Desc;", idSQL, betweenDates);
+            try
+            {
+                SqlCommand comando = new SqlCommand(sql, clsConexion.getCon());
+                SqlDataAdapter adap = new SqlDataAdapter(comando);
+                adap.Fill(PMV);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally { clsConexion.closeCon(); }
+            return PMV;
+        }
         public static DataTable getVentasXEmpleado(int IdEmpleado,int IdSucursal, DateTime fecha) {
             DataTable graficos = new DataTable("Graficos");
             try
@@ -130,5 +198,57 @@ namespace Clases
             finally { clsConexion.closeCon(); }
             return graficos;
         }
+        public static DataTable getVentasXEmpleado(DateTime desde, DateTime hasta, int IdSucursal,int IdEmpleado)
+        {
+            DataTable graficos = new DataTable("Graficos");
+            try
+            {
+                string betweenDates = " and CAST(Fecha as date) between Cast('" + desde.ToShortDateString() + "' as Date) and CAST('" + hasta.ToShortDateString() + "' as date) ";
+                string sqlString = string.Format("select SUM (Precio) as Total,SUM(Precio-Costo) as Ganancia, DAY(Fecha) Dia from DescripcionVenta d inner join EncabezadoVenta v on(d.NroVenta=v.NroVenta) where IdEmpleado={0} and IdSucursal={1} {2}  group by DAY(Fecha);", IdEmpleado, IdSucursal, betweenDates);
+                SqlCommand comando = new SqlCommand(sqlString, clsConexion.getCon());
+                SqlDataAdapter adap = new SqlDataAdapter(comando);
+                adap.Fill(graficos);
+            }
+            catch (SqlException e)
+            {
+
+            }
+            finally { clsConexion.closeCon(); }
+            return graficos;
+        }
+        public static DataTable getVentasPInforme(DateTime desde, DateTime hasta)
+        {
+            DataTable graficos = new DataTable("VentasPInforme");
+            string sqlString = "select sum(Precio) Recaudado,sum(Precio)-sum(Costo) Ganancia,CAST(s.IdSucursal as nvarchar(10))+'-'+s.NombreInterno as Nombre from DescripcionVenta d inner join EncabezadoVenta e on (d.NroVenta=e.NroVenta) inner join Sucursal s on(e.IdSucursal=s.IdSucursal) where  CAST(Fecha as date) between Cast('" + desde.ToShortDateString() + "' as Date) and CAST('" + hasta.ToShortDateString() + "' as date) group by NombreInterno,s.IdSucursal;";
+            try
+            {
+                SqlCommand comando = new SqlCommand(sqlString, clsConexion.getCon());
+                SqlDataAdapter adap = new SqlDataAdapter(comando);
+                adap.Fill(graficos);
+            }
+            catch (SqlException e)
+            {
+
+            }
+            finally { clsConexion.closeCon(); }
+            return graficos;
+        }
+
+
+        public static DataTable getVentasPVendedor(DateTime desde, DateTime hasta,int IdEmpleado,int IdSucursal) {
+            DataTable graficos = new DataTable("VentasVendedor");
+            string sqlString = string.Format("select e.Nombre+' '+e.Apellido+' DNI: '+e.Dni Vendedor, case when b.IdBebida is null then p.Nombre else b.NombreBebida end Producto, COUNT (d.Costo) as Cantidad, d.Precio  from DescripcionVenta d inner join EncabezadoVenta v on(d.NroVenta=v.NroVenta) inner join Empleado e on (v.IdEmpleado=e.IdEmpleado) left join Plato p on (p.IdPlato=d.IdPlato) left join Bebida b on(d.IdBebida=b.IdBebida) where v.IdEmpleado={0} and v.IdSucursal={1}  and CAST(Fecha as date) between Cast('{2}' as Date) and CAST('{3}' as date)   group by b.NombreBebida,p.Nombre,b.IdBebida,p.IdPlato,d.Precio,e.Nombre,e.Apellido,e.Dni;", IdEmpleado, IdSucursal, desde.ToShortDateString(), hasta.ToShortDateString());
+            try
+            {
+                SqlCommand comando = new SqlCommand(sqlString, clsConexion.getCon());
+                SqlDataAdapter adap = new SqlDataAdapter(comando);
+                adap.Fill(graficos);
+            }
+            catch (SqlException e) { }
+
+            finally { clsConexion.closeCon(); }
+            
+            return graficos;
+        } //select  case when b.IdBebida is null then p.Nombre else b.NombreBebida end Producto, COUNT (d.Costo) as Cantidad, d.Precio  from DescripcionVenta d inner join EncabezadoVenta v on(d.NroVenta=v.NroVenta) inner join Empleado e on (v.IdEmpleado=e.IdEmpleado) left join Plato p on (p.IdPlato=d.IdPlato) left join Bebida b on(d.IdBebida=b.IdBebida) where v.IdEmpleado=6 and v.IdSucursal=2  and CAST(Fecha as date) between Cast('25/07/2018' as Date) and CAST('26/07/2018' as date)   group by b.NombreBebida,p.Nombre,b.IdBebida,p.IdPlato,d.Precio;
     }
 }

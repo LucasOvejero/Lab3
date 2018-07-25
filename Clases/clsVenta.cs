@@ -81,7 +81,7 @@ namespace Clases
             string resp = "";
             string sqlString = "";
             if (clsConexion.CUIT != string.Empty)
-                sqlString = "UPDATE CUIT SET CUIT=" + cuit;
+                sqlString = "UPDATE CUIT SET CUIT='" + cuit+"'";
             else
                 sqlString = string.Format("Insert into CUIT values ('{0}')", cuit);
             try

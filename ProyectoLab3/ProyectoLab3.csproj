@@ -118,6 +118,12 @@
     <Compile Include="frmVentaEmpleados.Designer.cs">
       <DependentUpon>frmVentaEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="reporteGlobal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteGlobal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TicketVenta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,6 +210,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ventasVendedor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ventasVendedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="frmCUIT.resx">
       <DependentUpon>frmCUIT.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +242,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentaEmpleados.resx">
       <DependentUpon>frmVentaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteGlobal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteGlobal.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TicketVenta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -284,6 +300,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ventasVendedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ventasVendedor.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="dsTicket.xsc">
       <DependentUpon>dsTicket.xsd</DependentUpon>

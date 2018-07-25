@@ -24,29 +24,29 @@ namespace ProyectoLab3
             InitializeComponent();
             this.IdSucursal = IdSucursal;
             pnlAdmin.Visible = false;
+            btnInforme.Visible = false;
         }
         public frmGraficos()
         {
             InitializeComponent();
             lbSucursal.SelectedIndexChanged += lbSucursal_SelectedIndexChanged;
             tbDirSuc.TextChanged += tbDirSuc_TextChanged;
-            sucursales=clsSucursal.getTodasSuc();
+            sucursales=clsSucursal.getTodasSuc2();
             lbSucursal.DataSource = sucursales;
-            lbSucursal.DisplayMember = "Direccion";
+            lbSucursal.DisplayMember = "NombreInterno";
             lbSucursal.ValueMember = "IdSucursal";
             
             lbSucursal.SelectedIndex = 0;
             
         }
-        String[] meses = new String[13] {"Todos", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre" };
         private void frmGraficosVenta_Load(object sender, EventArgs e)
         {
             chartCantidad.Series.Add("Cantidad de ventas");
           
             chartVntas.Series.Add("Costo");
-            chartVntas.Series.Add("Venta neta");
+            chartVntas.Series.Add("Recaudado");
             chartVntas.Series.Add("Ganancia total");
-            cboMeses.Items.AddRange(meses);
+          
             chartVntas.Series.RemoveAt(0);
             chartCantidad.Series.RemoveAt(0);
 
@@ -54,117 +54,85 @@ namespace ProyectoLab3
             cPMV.Series.Add("Plato mas vendido");
             cBMV.Series.RemoveAt(0);
             cBMV.Series.Add("Bebidas mas vendidas");
-            try
-            {
-                int[] MinMax = clsEstadisticas.getMaxMinYear();
-                nudAnio.Minimum = MinMax[0];
-                nudAnio.Maximum = MinMax[1];
-               
-            }
-            catch(SqlException ex) {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
-            }
-            
-            cboMeses.SelectedIndex = 0;
-        }
-
-        private void cboMeses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-            chartVntas.Series["Costo"].XValueMember = "Mes";
+            chartVntas.Series["Costo"].XValueMember = "Nombre";
             chartVntas.Series["Costo"].YValueMembers = "Costo";
-            chartCantidad.Series["Cantidad de ventas"].XValueMember = "Mes";
+            chartVntas.Series["Recaudado"].XValueMember = "Nombre";
+            chartVntas.Series["Recaudado"].YValueMembers = "Precio";
+            chartVntas.Series["Ganancia total"].XValueMember = "Nombre";
+            chartVntas.Series["Ganancia total"].YValueMembers = "Ganancia";
+            chartCantidad.Series["Cantidad de ventas"].XValueMember = "Nombre";
             chartCantidad.Series["Cantidad de ventas"].YValueMembers = "Cantidad";
             //chartVntas.Series["Cantidad"].XValueMember = "Mes";
             //chartVntas.Series["Cantidad"].YValueMembers = "Cantidad";
-            chartVntas.Series["Venta neta"].XValueMember = "Mes";
-            chartVntas.Series["Venta neta"].YValueMembers = "Precio";
-            chartVntas.Series["Ganancia total"].XValueMember = "Mes";
-            chartVntas.Series["Ganancia total"].YValueMembers = "Ganancia";
+
             cBMV.Series["Bebidas mas vendidas"].XValueMember = "Nombre";
             cBMV.Series["Bebidas mas vendidas"].YValueMembers = "Cantidad";
             cPMV.Series["Plato mas vendido"].XValueMember = "Nombre";
             cPMV.Series["Plato mas vendido"].YValueMembers = "Cantidad";
-            setearDatasource();
-            
+            calcular();
         }
 
         private void lbSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.IdSucursal=int.Parse(((DataRowView)lbSucursal.SelectedItem)["IdSucursal"].ToString());
-            setearDatasource();
+            
         }
 
         private void tbDirSuc_TextChanged(object sender, EventArgs e)
         {
-            sucursales.DefaultView.RowFilter = string.Format("Direccion like '%{0}%'", tbDirSuc.Text);
-            lbSucursal.Refresh();
+            sucursales.DefaultView.RowFilter = string.Format("NombreInterno like '%{0}%'", tbDirSuc.Text);
+          
         }
-
-        private void setearDatasource() {
-            chartVntas.DataSource = null;
-            chartCantidad.DataSource = null;
-            cBMV.DataSource = null;
-            int anio = (int)nudAnio.Value;
-            int mes = cboMeses.SelectedIndex;
-            DataTable source = clsEstadisticas.getVentas(anio, mes, IdSucursal,null);
-            chartVntas.DataSource = source;
-            chartCantidad.DataSource = source;
-            DataTable BMV = clsEstadisticas.BebidasMasVendidasSuc(anio, mes, IdSucursal, null);
-            DataTable PMV = clsEstadisticas.PlatosMasVendidosSuc(anio, mes, IdSucursal, null);
-            cPMV.DataSource = PMV;
-            cPMV.DataBind();
-            chartVntas.DataBind();
-            chartCantidad.DataBind();
-            cBMV.DataSource = BMV;
-            cBMV.DataBind();
-
-        
-        }
-
-        private void cboHoy_CheckedChanged(object sender, EventArgs e)
-        {
-            bool hoy=cbHoy.Checked;
-            cboMeses.Enabled = !hoy;
-            nudAnio.Enabled = !hoy;
-            if (hoy)
-            {
-                chartVntas.DataSource = null;
-                chartCantidad.DataSource = null;
-                cBMV.DataSource = null;
-                int dia = int.Parse(DateTime.Now.Date.Day.ToString());
-                int mes = int.Parse(DateTime.Now.Date.Month.ToString());
-                int anio = int.Parse(DateTime.Now.Date.Year.ToString());
-                DataTable source = clsEstadisticas.getVentas(anio, mes, IdSucursal, dia);
-                DataTable BMV = clsEstadisticas.BebidasMasVendidasSuc(anio, mes, IdSucursal, dia);
-                DataTable PMV = clsEstadisticas.PlatosMasVendidosSuc(anio, mes, IdSucursal, dia);
-                cPMV.DataSource = PMV;
-                cPMV.DataBind();
-                chartVntas.DataSource = source;
-                chartCantidad.DataSource = source;
-                cBMV.DataSource = BMV;
-                chartVntas.DataBind();
-                chartCantidad.DataBind();
-                cBMV.DataBind();
-            }
-            else {
-                setearDatasource();
-            }
-        }
-
         private void btnGraficosPorEmp_Click(object sender, EventArgs e)
         {
             ofrmVentaEmpleados = new frmVentaEmpleados();
             ofrmVentaEmpleados.ShowDialog();
         }
 
-        private void pnlAdmin_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+            dtpHasta.MinDate = dtpDesde.Value;
+            calcular();
         }
 
+        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+            calcular();
+        }
 
+        private void calcular() {
+            DataTable ventas = clsEstadisticas.getVentas(dtpDesde.Value, dtpHasta.Value, this.IdSucursal);
+            chartVntas.DataSource = ventas;
+            chartVntas.DataBind();
+
+            chartCantidad.DataSource = ventas;
+            chartCantidad.DataBind();
+
+            DataTable BMV = clsEstadisticas.BebidasMasVendidasSuc(dtpDesde.Value, dtpHasta.Value, this.IdSucursal);
+            DataTable PMV = clsEstadisticas.PlatosMasVendidosSuc(dtpDesde.Value, dtpHasta.Value, this.IdSucursal);
+            cPMV.DataSource = PMV;
+            cPMV.DataBind();
+
+            cBMV.DataSource = BMV;
+            cBMV.DataBind();
+        }
+
+        private void lbSucursal_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            this.IdSucursal = int.Parse(((DataRowView)lbSucursal.SelectedItem)["IdSucursal"].ToString());
+            calcular();
+        }
+
+        private void btnInforme_Click(object sender, EventArgs e)
+        {
+            reporteGlobal rptGlobalCR = new reporteGlobal();
+            rptGlobalCR.SetDataSource(clsEstadisticas.getVentasPInforme(dtpDesde.Value,dtpHasta.Value));
+            rptGlobalCR.SetParameterValue("Desde",dtpDesde.Value);
+            rptGlobalCR.SetParameterValue("Hasta", dtpHasta.Value);
+            frmTicketVenta frmTicket = new frmTicketVenta(rptGlobalCR);
+            frmTicket.ShowDialog();
+        }
 
 
     }

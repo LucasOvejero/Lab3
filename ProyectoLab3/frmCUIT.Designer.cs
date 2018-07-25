@@ -72,7 +72,7 @@
             this.Controls.Add(this.tbCUIT);
             this.Name = "frmCUIT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CUIT";
+            this.Text = "Configuración";
             this.Load += new System.EventHandler(this.frmCUIT_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

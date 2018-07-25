@@ -177,6 +177,28 @@ namespace Clases
             }
             return sc;
         }
+        public static DataTable getTodasSuc2()
+        {
+
+            DataTable sc = new DataTable();
+            try
+            {
+
+                adaptador = new SqlDataAdapter();
+                comando = new SqlCommand("Select IdSucursal,NombreInterno from Sucursal");
+                comando.Connection = clsConexion.getCon();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(sc);
+
+
+            }
+            catch (SqlException e) { throw e; }
+            finally
+            {
+                clsConexion.closeCon();
+            }
+            return sc;
+        }
         public static string[] getPerProv(string provincia)
         {
             List<string> lSuc = new List<string>();

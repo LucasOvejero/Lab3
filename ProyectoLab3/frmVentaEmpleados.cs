@@ -83,17 +83,10 @@ namespace ProyectoLab3
             }
              MostrarChart();
         }
-
-        private void mcFecha_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            
-            fecha=e.Start;
-            MostrarChart();
-        }
         private void MostrarChart() {
             if (idEmpleado != -1) {
                 chartVentas.DataSource = null;
-                Ventas = clsEstadisticas.getVentasXEmpleado(idEmpleado, idSucursal, fecha);
+                Ventas = clsEstadisticas.getVentasXEmpleado(dtpDesde.Value, dtpHasta.Value, idSucursal, idEmpleado);//(idEmpleado, idSucursal, fecha);
                 //chartVentas.Series["Ventas"].XValueMember = fecha.Day.ToString();
                 //chartVentas.Series["Ganancias"].XValueMember = fecha.Day.ToString();
                 chartVentas.DataSource = Ventas;
@@ -106,6 +99,23 @@ namespace ProyectoLab3
             if (dgvSucursal.SelectedRows.Count > 0) {
                 
             }
+        }
+
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+            dtpHasta.MinDate = dtpDesde.Value;
+            MostrarChart();
+        }
+
+        private void btnInforme_Click(object sender, EventArgs e)
+        {
+            ventasVendedor ventasCr = new ventasVendedor();
+            DataTable tabla = clsEstadisticas.getVentasPVendedor(dtpDesde.Value, dtpHasta.Value, idEmpleado, idSucursal);
+            ventasCr.SetDataSource(tabla);
+            ventasCr.SetParameterValue("Desde", dtpDesde.Value);
+            ventasCr.SetParameterValue("Hasta", dtpHasta.Value);
+            frmTicketVenta frmTicket = new frmTicketVenta(ventasCr);
+            frmTicket.ShowDialog();
         }
 
     }
