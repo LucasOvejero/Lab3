@@ -51,14 +51,24 @@ namespace ProyectoLab3
         {
             try
             {
+                string unidad = dgvIngredientes.SelectedRows[0].Cells["Unidad"].Value.ToString();
+
+
                 string nombre = dgvIngredientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
                 int IdIngrediente = Convert.ToInt32(dgvIngredientes.SelectedRows[0].Cells["IdIngrediente"].Value);
+                
                 double costoxKg = Convert.ToDouble(dgvIngredientes.SelectedRows[0].Cells["Costo"].Value.ToString());
+
                 double cantidadGramos = Convert.ToDouble(this.tbCantidad.Text);
+
                 string gramosString;
-                double valor;
-                if (cantidadGramos >= 500) { valor = costoxKg * (cantidadGramos / 1000); gramosString = (cantidadGramos / 1000).ToString() + " Kg"; }
-                else { valor = costoxKg * cantidadGramos; gramosString = cantidadGramos.ToString() + " Unidades"; }
+
+                double valor = 0;
+                gramosString = "";
+
+                if (unidad.Contains("g")) { valor = costoxKg * (cantidadGramos / 1000); gramosString = (cantidadGramos / 1000).ToString() + " Kg"; }
+                if (unidad.Contains("ml")) { valor = costoxKg * (cantidadGramos / 1000); gramosString = (cantidadGramos / 1000).ToString() + " L";  }
+                if (unidad.Contains("u")) { valor = costoxKg * cantidadGramos; gramosString = cantidadGramos.ToString() + " Unidades"; }
 
                 string[] nuevaRow = new string[] { IdIngrediente.ToString(), nombre, gramosString, valor.ToString("C", CultureInfo.CurrentCulture) };
 
@@ -122,7 +132,8 @@ namespace ProyectoLab3
                         String[] unidad = r.Cells["Cantidad"].Value.ToString().Split(' ');
 
                         double cantidad = Convert.ToDouble(unidad[0]);
-                        if (unidad[1] == "Kg") { cantidad *= 1000; }
+                        if (unidad[1] == "Kg" || unidad[1]=="L") { cantidad *= 1000; }
+                        
 
                         clsSolicitud.nuevoDetalleSolicitud(nuevaSolicitudId, Convert.ToInt32(r.Cells["IdIngrediente"].Value), cantidad);
                     }

@@ -81,6 +81,8 @@ namespace ProyectoLab3
                     RefrezcarVista();
                 }
 
+                dgvDetalle.DataSource = null;
+
                 //
             }
 
@@ -176,20 +178,34 @@ namespace ProyectoLab3
 
 
 
-
-
             foreach (DataGridViewRow r in dgvDetalle.Rows)
             {
+
+                
+
+
+                string unidad = r.Cells["Unidad"].Value.ToString();
+
+                double costoxKg = Convert.ToDouble(dgvDetalle.SelectedRows[0].Cells["CostoxKg"].Value.ToString());
+
                 double cantidadSinFormato = Convert.ToDouble(r.Cells["cantidad"].Value);
-                int unidades = 0;
 
-                if (cantidadSinFormato > 500) { cantidadSinFormato /= 1000; }
-                else unidades = (int)cantidadSinFormato;
-
+                double valor = 0;
+                string unidadString = cantidadSinFormato + " Unidades";
 
 
-                if (unidades > 0) r.Cells["cantidadFormateada"].Value = unidades + " Unidades";
-                else r.Cells["cantidadFormateada"].Value = cantidadSinFormato + " Kg";
+                if (unidad.Contains("g")) { valor = costoxKg * (cantidadSinFormato / 1000); unidadString = (cantidadSinFormato / 1000).ToString() + " Kg"; }
+                if (unidad.Contains("ml")) { valor = costoxKg * (cantidadSinFormato / 1000); unidadString = (cantidadSinFormato / 1000).ToString() + " L"; }
+                if (unidad.Contains("u")) { valor = costoxKg * cantidadSinFormato; }
+
+
+                r.Cells["cantidadFormateada"].Value = unidadString; ;
+
+                dgvDetalle.Columns["cantidad"].DisplayIndex = 1;
+                dgvDetalle.Columns["NombreProducto"].DisplayIndex = 2;
+                dgvDetalle.Columns["costoTotal"].DisplayIndex = 3;
+                dgvDetalle.Columns["costoTotal"].HeaderText = "Costo Total";
+
 
             }
 

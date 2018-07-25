@@ -164,7 +164,7 @@
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.ReadOnly = true;
             this.dgvDetalle.RowHeadersVisible = false;
-            this.dgvDetalle.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvDetalle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalle.Size = new System.Drawing.Size(304, 428);
             this.dgvDetalle.TabIndex = 2;
