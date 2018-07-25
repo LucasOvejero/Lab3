@@ -85,6 +85,8 @@ namespace ProyectoLab3
 
                 foreach (DataGridViewRow r in dgvSucursal.Rows)
                 {
+
+                    r.DefaultCellStyle.ForeColor = Color.White;
                     r.DefaultCellStyle.BackColor = Color.Red;
                     if ((bool)r.Cells["Estado"].Value)
                     {

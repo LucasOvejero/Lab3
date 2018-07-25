@@ -360,7 +360,7 @@ namespace Clases
 
         public static object Enviadas()
         {
-            comando = new SqlCommand("SELECT * FROM Solicitudes JOIN Sucursal on IdSolicitado = IdSucursal WHERE fechaEnvio IS NOT NULL AND IdSolicitante = " + clsConexion.SucursalSession);
+            comando = new SqlCommand("SELECT * FROM Solicitudes JOIN Sucursal on IdSolicitado = IdSucursal WHERE IdSolicitante = " + clsConexion.SucursalSession);
             try
             {
                 solicitudes = new DataTable("Solicitud");
@@ -376,7 +376,7 @@ namespace Clases
 
         public static object Recibidas()
         {
-            comando = new SqlCommand("SELECT * FROM Solicitudes JOIN Sucursal on IdSolicitado = IdSucursal WHERE fechaEnvio IS NOT NULL AND IdSolicitado = " + clsConexion.SucursalSession);
+            comando = new SqlCommand("SELECT * FROM Solicitudes JOIN Sucursal on IdSolicitado = IdSucursal WHERE IdSolicitado = " + clsConexion.SucursalSession);
             try
             {
                 solicitudes = new DataTable("Solicitud");
