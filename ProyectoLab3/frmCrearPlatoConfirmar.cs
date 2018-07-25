@@ -165,5 +165,15 @@ namespace ProyectoLab3
             }
         }
 
+        private void tbNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
@@ -61,32 +61,33 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(176, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(98, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ingredientes";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(535, 16);
+            this.label2.Location = new System.Drawing.Point(526, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre";
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(497, 32);
+            this.tbNombre.Location = new System.Drawing.Point(497, 26);
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(121, 20);
+            this.tbNombre.Size = new System.Drawing.Size(121, 26);
             this.tbNombre.TabIndex = 0;
+            this.tbNombre.TextChanged += new System.EventHandler(this.tbNombre_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(535, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Precio";
             // 
@@ -100,7 +101,7 @@
             0,
             0});
             this.nudPrecio.Name = "nudPrecio";
-            this.nudPrecio.Size = new System.Drawing.Size(113, 20);
+            this.nudPrecio.Size = new System.Drawing.Size(113, 26);
             this.nudPrecio.TabIndex = 2;
             this.nudPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPrecio.ValueChanged += new System.EventHandler(this.nudPrecio_ValueChanged);
@@ -109,7 +110,7 @@
             // 
             this.btnAgregar.Location = new System.Drawing.Point(501, 322);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 45);
+            this.btnAgregar.Size = new System.Drawing.Size(113, 45);
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar plato";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -132,18 +133,20 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dgvIngredientes);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(11, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(640, 427);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Plato";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnEditarPlato
             // 
             this.btnEditarPlato.Location = new System.Drawing.Point(501, 373);
             this.btnEditarPlato.Name = "btnEditarPlato";
-            this.btnEditarPlato.Size = new System.Drawing.Size(100, 48);
+            this.btnEditarPlato.Size = new System.Drawing.Size(113, 48);
             this.btnEditarPlato.TabIndex = 6;
             this.btnEditarPlato.Text = "Editar Plato";
             this.btnEditarPlato.UseVisualStyleBackColor = true;
@@ -155,7 +158,7 @@
             this.cbTACC.AutoSize = true;
             this.cbTACC.Location = new System.Drawing.Point(530, 221);
             this.cbTACC.Name = "cbTACC";
-            this.cbTACC.Size = new System.Drawing.Size(54, 17);
+            this.cbTACC.Size = new System.Drawing.Size(70, 24);
             this.cbTACC.TabIndex = 3;
             this.cbTACC.Text = "TACC";
             this.cbTACC.UseVisualStyleBackColor = true;
@@ -166,16 +169,16 @@
             this.lblGanancia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblGanancia.Location = new System.Drawing.Point(504, 271);
             this.lblGanancia.Name = "lblGanancia";
-            this.lblGanancia.Size = new System.Drawing.Size(97, 23);
+            this.lblGanancia.Size = new System.Drawing.Size(97, 48);
             this.lblGanancia.TabIndex = 4;
             this.lblGanancia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(527, 249);
+            this.label6.Location = new System.Drawing.Point(510, 248);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.Size = new System.Drawing.Size(78, 20);
             this.label6.TabIndex = 10;
             this.label6.Text = "Ganancia";
             // 
@@ -184,15 +187,15 @@
             this.cboCategorias.FormattingEnabled = true;
             this.cboCategorias.Location = new System.Drawing.Point(497, 81);
             this.cboCategorias.Name = "cboCategorias";
-            this.cboCategorias.Size = new System.Drawing.Size(121, 21);
+            this.cboCategorias.Size = new System.Drawing.Size(121, 28);
             this.cboCategorias.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(532, 55);
+            this.label5.Location = new System.Drawing.Point(522, 58);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Categoria";
             // 
@@ -201,14 +204,14 @@
             this.dgvIngredientes.AllowUserToAddRows = false;
             this.dgvIngredientes.AllowUserToResizeColumns = false;
             this.dgvIngredientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngredientes.Location = new System.Drawing.Point(8, 32);
             this.dgvIngredientes.MultiSelect = false;
@@ -225,7 +228,8 @@
             this.groupBox2.Controls.Add(this.tbCat);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btnAgregarCategoria);
-            this.groupBox2.Location = new System.Drawing.Point(12, 458);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 445);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(473, 123);
             this.groupBox2.TabIndex = 9;
@@ -236,7 +240,7 @@
             // 
             this.tbCat.Location = new System.Drawing.Point(106, 56);
             this.tbCat.Name = "tbCat";
-            this.tbCat.Size = new System.Drawing.Size(194, 20);
+            this.tbCat.Size = new System.Drawing.Size(194, 26);
             this.tbCat.TabIndex = 0;
             // 
             // label4
@@ -244,7 +248,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(26, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Nombre";
             // 
@@ -252,7 +256,7 @@
             // 
             this.btnAgregarCategoria.Location = new System.Drawing.Point(334, 44);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(81, 43);
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(104, 58);
             this.btnAgregarCategoria.TabIndex = 1;
             this.btnAgregarCategoria.Text = "Agregar Categoria";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;

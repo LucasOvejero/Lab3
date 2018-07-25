@@ -61,7 +61,7 @@
             this.DgvSolicitudes.ReadOnly = true;
             this.DgvSolicitudes.RowHeadersVisible = false;
             this.DgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvSolicitudes.Size = new System.Drawing.Size(343, 360);
+            this.DgvSolicitudes.Size = new System.Drawing.Size(406, 360);
             this.DgvSolicitudes.TabIndex = 0;
             this.DgvSolicitudes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_CellContentClick);
             this.DgvSolicitudes.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSolicitudes_RowEnter);
@@ -86,14 +86,14 @@
             this.dgvDetalle.ReadOnly = true;
             this.dgvDetalle.RowHeadersVisible = false;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalle.Size = new System.Drawing.Size(273, 360);
+            this.dgvDetalle.Size = new System.Drawing.Size(301, 360);
             this.dgvDetalle.TabIndex = 1;
             // 
             // lblDetalles
             // 
             this.lblDetalles.AutoSize = true;
             this.lblDetalles.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalles.Location = new System.Drawing.Point(563, 11);
+            this.lblDetalles.Location = new System.Drawing.Point(589, 11);
             this.lblDetalles.Name = "lblDetalles";
             this.lblDetalles.Size = new System.Drawing.Size(66, 22);
             this.lblDetalles.TabIndex = 7;
@@ -103,7 +103,7 @@
             // 
             this.lblSolicitudes.AutoSize = true;
             this.lblSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolicitudes.Location = new System.Drawing.Point(71, 11);
+            this.lblSolicitudes.Location = new System.Drawing.Point(98, 11);
             this.lblSolicitudes.Name = "lblSolicitudes";
             this.lblSolicitudes.Size = new System.Drawing.Size(190, 22);
             this.lblSolicitudes.TabIndex = 6;
@@ -111,7 +111,7 @@
             // 
             // btnRecibir
             // 
-            this.btnRecibir.Location = new System.Drawing.Point(102, 451);
+            this.btnRecibir.Location = new System.Drawing.Point(138, 451);
             this.btnRecibir.Name = "btnRecibir";
             this.btnRecibir.Size = new System.Drawing.Size(106, 67);
             this.btnRecibir.TabIndex = 2;
@@ -132,10 +132,10 @@
             // 
             // tbInconveniente
             // 
-            this.tbInconveniente.Location = new System.Drawing.Point(554, 451);
+            this.tbInconveniente.Location = new System.Drawing.Point(557, 451);
             this.tbInconveniente.Multiline = true;
             this.tbInconveniente.Name = "tbInconveniente";
-            this.tbInconveniente.Size = new System.Drawing.Size(177, 67);
+            this.tbInconveniente.Size = new System.Drawing.Size(215, 67);
             this.tbInconveniente.TabIndex = 3;
             this.tbInconveniente.TextChanged += new System.EventHandler(this.tbInconveniente_TextChanged);
             // 

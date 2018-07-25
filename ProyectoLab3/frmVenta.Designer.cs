@@ -70,7 +70,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 260F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 294F));
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarPlato, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.pnlDescripcion, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.btnAgregarBebida, 3, 6);
@@ -143,9 +143,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(387, 80);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(373, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(135, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Descripción de venta";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -153,9 +154,10 @@
             // tbNombrePlato
             // 
             this.tbNombrePlato.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbNombrePlato.Location = new System.Drawing.Point(62, 5);
+            this.tbNombrePlato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNombrePlato.Location = new System.Drawing.Point(62, 4);
             this.tbNombrePlato.Name = "tbNombrePlato";
-            this.tbNombrePlato.Size = new System.Drawing.Size(145, 20);
+            this.tbNombrePlato.Size = new System.Drawing.Size(145, 22);
             this.tbNombrePlato.TabIndex = 0;
             this.tbNombrePlato.TextChanged += new System.EventHandler(this.tbNombreBebida_TextChanged);
             // 
@@ -174,9 +176,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Location = new System.Drawing.Point(3, 31);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(263, 13);
+            this.label3.Size = new System.Drawing.Size(263, 15);
             this.label3.TabIndex = 10;
             this.label3.Text = "Categoria plato";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,10 +199,11 @@
             // cboCategoriaPlato
             // 
             this.cboCategoriaPlato.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCategoriaPlato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoriaPlato.FormattingEnabled = true;
-            this.cboCategoriaPlato.Location = new System.Drawing.Point(63, 51);
+            this.cboCategoriaPlato.Location = new System.Drawing.Point(63, 49);
             this.cboCategoriaPlato.Name = "cboCategoriaPlato";
-            this.cboCategoriaPlato.Size = new System.Drawing.Size(142, 21);
+            this.cboCategoriaPlato.Size = new System.Drawing.Size(142, 24);
             this.cboCategoriaPlato.TabIndex = 1;
             this.cboCategoriaPlato.SelectedIndexChanged += new System.EventHandler(this.tbNombreBebida_TextChanged);
             // 
@@ -269,9 +273,10 @@
             // tbNombreBebida
             // 
             this.tbNombreBebida.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbNombreBebida.Location = new System.Drawing.Point(718, 5);
+            this.tbNombreBebida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNombreBebida.Location = new System.Drawing.Point(718, 4);
             this.tbNombreBebida.Name = "tbNombreBebida";
-            this.tbNombreBebida.Size = new System.Drawing.Size(100, 20);
+            this.tbNombreBebida.Size = new System.Drawing.Size(100, 22);
             this.tbNombreBebida.TabIndex = 7;
             this.tbNombreBebida.TextChanged += new System.EventHandler(this.tbNombreBebida_TextChanged_1);
             // 
@@ -279,9 +284,10 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(724, 30);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(711, 29);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.Size = new System.Drawing.Size(113, 15);
             this.label5.TabIndex = 17;
             this.label5.Text = "Categoria bebida";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -289,16 +295,18 @@
             // cboCategoriaBebida
             // 
             this.cboCategoriaBebida.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboCategoriaBebida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoriaBebida.FormattingEnabled = true;
-            this.cboCategoriaBebida.Location = new System.Drawing.Point(707, 51);
+            this.cboCategoriaBebida.Location = new System.Drawing.Point(707, 49);
             this.cboCategoriaBebida.Name = "cboCategoriaBebida";
-            this.cboCategoriaBebida.Size = new System.Drawing.Size(121, 21);
+            this.cboCategoriaBebida.Size = new System.Drawing.Size(121, 24);
             this.cboCategoriaBebida.TabIndex = 8;
             this.cboCategoriaBebida.SelectedIndexChanged += new System.EventHandler(this.tbNombreBebida_TextChanged_1);
             // 
             // btnVender
             // 
             this.btnVender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVender.Location = new System.Drawing.Point(314, 536);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(254, 22);
@@ -322,6 +330,7 @@
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Green;
             this.lblTotal.Location = new System.Drawing.Point(83, 0);
             this.lblTotal.Name = "lblTotal";
@@ -335,9 +344,10 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(37, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.Size = new System.Drawing.Size(42, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Total:";
             // 
@@ -354,6 +364,7 @@
             // nudPago
             // 
             this.nudPago.DecimalPlaces = 2;
+            this.nudPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPago.Location = new System.Drawing.Point(86, 3);
             this.nudPago.Maximum = new decimal(new int[] {
             10000,
@@ -361,7 +372,7 @@
             0,
             0});
             this.nudPago.Name = "nudPago";
-            this.nudPago.Size = new System.Drawing.Size(87, 20);
+            this.nudPago.Size = new System.Drawing.Size(87, 22);
             this.nudPago.TabIndex = 11;
             this.nudPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -371,9 +382,10 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(36, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "Pago";
             // 
@@ -389,9 +401,10 @@
             // btnCierre
             // 
             this.btnCierre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCierre.Location = new System.Drawing.Point(395, 47);
+            this.btnCierre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCierre.Location = new System.Drawing.Point(372, 47);
             this.btnCierre.Name = "btnCierre";
-            this.btnCierre.Size = new System.Drawing.Size(92, 29);
+            this.btnCierre.Size = new System.Drawing.Size(137, 29);
             this.btnCierre.TabIndex = 24;
             this.btnCierre.Text = "Terminar Turno";
             this.btnCierre.UseVisualStyleBackColor = true;

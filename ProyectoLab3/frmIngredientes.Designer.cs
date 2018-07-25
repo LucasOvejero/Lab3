@@ -164,7 +164,7 @@
             // Ingredientes
             // 
             this.Ingredientes.AutoSize = true;
-            this.Ingredientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Ingredientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ingredientes.Location = new System.Drawing.Point(535, 22);
             this.Ingredientes.Name = "Ingredientes";
             this.Ingredientes.Size = new System.Drawing.Size(98, 20);

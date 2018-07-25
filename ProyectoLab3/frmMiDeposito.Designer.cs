@@ -96,18 +96,20 @@
             // tbBebidas
             // 
             this.tbBebidas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbBebidas.Location = new System.Drawing.Point(150, 35);
+            this.tbBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBebidas.Location = new System.Drawing.Point(150, 33);
             this.tbBebidas.Name = "tbBebidas";
-            this.tbBebidas.Size = new System.Drawing.Size(100, 20);
+            this.tbBebidas.Size = new System.Drawing.Size(100, 26);
             this.tbBebidas.TabIndex = 0;
             this.tbBebidas.TextChanged += new System.EventHandler(this.tbBebidas_TextChanged);
             // 
             // tbIngredientes
             // 
             this.tbIngredientes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbIngredientes.Location = new System.Drawing.Point(550, 35);
+            this.tbIngredientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIngredientes.Location = new System.Drawing.Point(550, 33);
             this.tbIngredientes.Name = "tbIngredientes";
-            this.tbIngredientes.Size = new System.Drawing.Size(100, 20);
+            this.tbIngredientes.Size = new System.Drawing.Size(100, 26);
             this.tbIngredientes.TabIndex = 1;
             this.tbIngredientes.TextChanged += new System.EventHandler(this.tbIngredientes_TextChanged);
             // 
@@ -115,9 +117,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 8);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(144, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.Size = new System.Drawing.Size(111, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Filtrar Bebidas";
             // 
@@ -125,9 +128,10 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(553, 8);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(529, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.Size = new System.Drawing.Size(142, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Filtrar Ingredientes";
             // 
@@ -158,9 +162,10 @@
             // btnActB
             // 
             this.btnActB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActB.Location = new System.Drawing.Point(88, 513);
+            this.btnActB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActB.Location = new System.Drawing.Point(88, 503);
             this.btnActB.Name = "btnActB";
-            this.btnActB.Size = new System.Drawing.Size(223, 40);
+            this.btnActB.Size = new System.Drawing.Size(223, 59);
             this.btnActB.TabIndex = 4;
             this.btnActB.Text = "Actualizar depositos de bebidas";
             this.btnActB.UseVisualStyleBackColor = true;
@@ -169,9 +174,10 @@
             // btnActI
             // 
             this.btnActI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActI.Location = new System.Drawing.Point(472, 513);
+            this.btnActI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActI.Location = new System.Drawing.Point(472, 505);
             this.btnActI.Name = "btnActI";
-            this.btnActI.Size = new System.Drawing.Size(256, 39);
+            this.btnActI.Size = new System.Drawing.Size(256, 56);
             this.btnActI.TabIndex = 5;
             this.btnActI.Text = "Actualizar depositos de ingredientes";
             this.btnActI.UseVisualStyleBackColor = true;

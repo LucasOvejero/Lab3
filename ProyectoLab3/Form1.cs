@@ -19,7 +19,7 @@ namespace ProyectoLab3
 
         }
 
-
+        TabPage administracion;
         #region Formularios
         frmProductos ofrmBebidas;
         frmSucursales ofrmSuc;
@@ -41,6 +41,7 @@ namespace ProyectoLab3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            administracion = tcPrincipal.TabPages["Administracion"];
             VerificarLogeo();            
             updateCritico();
             lblSucursalInfo.Text = clsConexion.SucursalInfo();
@@ -117,8 +118,9 @@ namespace ProyectoLab3
             switch (clsConexion.Tipo)
             {
                 case "Administrador":
-                    pnlVendedor.Visible = false;
-
+                    if (!tcPrincipal.Controls.Contains(administracion))
+                      tcPrincipal.TabPages.Add(administracion);
+                    pnlAdmin.Visible = true;
                     break;
 
                 case "Vendedor":
@@ -129,6 +131,7 @@ namespace ProyectoLab3
                     break;
                 case "Manager":
                     pnlAdmin.Visible = false;
+                    tcPrincipal.TabPages.RemoveByKey("Administracion");
                     break;
 
                 default: break;
@@ -214,6 +217,11 @@ namespace ProyectoLab3
         {
             ofrmCuit = new frmCUIT();
             ofrmCuit.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
 
