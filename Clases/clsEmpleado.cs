@@ -149,7 +149,21 @@ namespace Clases
             finally { clsConexion.closeCon(); }
             return empleados;
         }
-
+        public static DataTable seleccionarVendedores(int idSucursal)
+        {
+            comando = new SqlCommand("select IdEmpleado,IdSucursal,Nombre,Apellido,DNI from Empleado Where Tipo='Vendedor' and IdSucursal="+idSucursal);
+            try
+            {
+                empleados = new DataTable("Empleados");
+                comando.Connection = clsConexion.getCon();
+                adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                adaptador.Fill(empleados);
+            }
+            catch (SqlException x) { Console.WriteLine(x.Message); }
+            finally { clsConexion.closeCon(); }
+            return empleados;
+        }
         public static DataTable empleadosDeSucrursal(int id)
         {
             comando = new SqlCommand("select * from Empleado where IdSucursal = " + id);

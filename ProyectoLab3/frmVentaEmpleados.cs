@@ -32,7 +32,22 @@ namespace ProyectoLab3
             chartVentas.Series["Ganancias"].XValueMember = "Dia";
             chartVentas.Series["Ganancias"].YValueMembers = "Ganancia";
         }
-       
+        public frmVentaEmpleados(int idSucursal)
+        {
+            InitializeComponent();
+            Empleados = clsEmpleado.seleccionarVendedores(idSucursal);
+            Sucursales = clsSucursal.seleccionarTodasLasSucursales();
+            ds.Tables.Add(Empleados);
+            ds.Tables.Add(Sucursales);
+            ds.Relations.Add(new DataRelation("RelSucEm", ds.Tables["Sucursales"].Columns["IdSucursal"], ds.Tables["Empleados"].Columns["IdSucursal"]));
+            chartVentas.Series.RemoveAt(0);
+            chartVentas.Series.Add("Ventas");
+            chartVentas.Series.Add("Ganancias");
+            chartVentas.Series["Ventas"].XValueMember = "Dia";
+            chartVentas.Series["Ventas"].YValueMembers = "Total";
+            chartVentas.Series["Ganancias"].XValueMember = "Dia";
+            chartVentas.Series["Ganancias"].YValueMembers = "Ganancia";
+        }
         private void frmVentaEmpleados_Load(object sender, EventArgs e)
         {
             asignarGrilla();

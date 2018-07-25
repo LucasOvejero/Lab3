@@ -36,7 +36,7 @@
             this.chartVentas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbFiltroSuc = new System.Windows.Forms.TextBox();
             this.tbFiltroEmp = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSuc = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvEmpleados = new Componentes.GrillaFormatead();
             this.dgvSucursal = new Componentes.GrillaFormatead();
@@ -85,16 +85,16 @@
             this.tbFiltroEmp.TabIndex = 3;
             this.tbFiltroEmp.TextChanged += new System.EventHandler(this.tbFiltroEmp_TextChanged);
             // 
-            // label1
+            // lblSuc
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(303, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Sucursal";
+            this.lblSuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSuc.AutoSize = true;
+            this.lblSuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuc.Location = new System.Drawing.Point(303, 18);
+            this.lblSuc.Name = "lblSuc";
+            this.lblSuc.Size = new System.Drawing.Size(60, 16);
+            this.lblSuc.TabIndex = 6;
+            this.lblSuc.Text = "Sucursal";
             // 
             // label2
             // 
@@ -223,7 +223,7 @@
             this.Controls.Add(this.dgvSucursal);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSuc);
             this.Controls.Add(this.tbFiltroEmp);
             this.Controls.Add(this.tbFiltroSuc);
             this.Controls.Add(this.chartVentas);
@@ -244,7 +244,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartVentas;
         private System.Windows.Forms.TextBox tbFiltroSuc;
         private System.Windows.Forms.TextBox tbFiltroEmp;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSuc;
         private System.Windows.Forms.Label label2;
         private Componentes.GrillaFormatead dgvEmpleados;
         private Componentes.GrillaFormatead dgvSucursal;
